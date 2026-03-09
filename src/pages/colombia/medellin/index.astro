@@ -1,0 +1,468 @@
+---
+// src/pages/colombia/medellin/index.astro — Hola Rentia · Medellín City Page
+---
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<!-- ══ SEO ══ -->
+<title>Software de Alquiler Vacacional en Medellín | Gestión Airbnb El Poblado | Hola Rentia</title>
+<meta name="description" content="Software para gestionar tu Airbnb en Medellín. Automatiza tu alquiler vacacional en El Poblado, Laureles y el Eje Cafetero. Channel manager, nómadas digitales y RNT. Desde $99/mes."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://holarentia.com/colombia/medellin/"/>
+<link rel="icon" type="image/webp" href="/images/favicon.webp"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://holarentia.com/colombia/medellin/"/>
+<meta property="og:title" content="Software Alquiler Vacacional Medellín | Gestión Airbnb El Poblado | Hola Rentia"/>
+<meta property="og:description" content="Gestiona tu Airbnb en Medellín con IA. El Poblado, Laureles, Envigado. Channel manager, automatización y cumplimiento RNT. Desde $99/mes. Sin comisiones."/>
+<meta property="og:image" content="https://holarentia.com/images/hola-rentia-resultados-airbnb-ia-espana.webp"/>
+<meta property="og:locale" content="es_CO"/>
+<meta property="og:site_name" content="Hola Rentia"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Software Airbnb Medellín | Hola Rentia"/>
+<meta name="twitter:description" content="Gestión automatizada de Airbnb en El Poblado, Laureles y Medellín. Desde $99/mes. Sin comisiones."/>
+<meta name="twitter:image" content="https://holarentia.com/images/hola-rentia-resultados-airbnb-ia-espana.webp"/>
+<link rel="preload" as="image" href="/images/hola-rentia-logo-gestion-airbnb-ia.webp" fetchpriority="high"/>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"SoftwareApplication",
+      "@id":"https://holarentia.com/#app",
+      "name":"Hola Rentia",
+      "applicationCategory":"BusinessApplication",
+      "operatingSystem":"Web",
+      "description":"Software de gestión de alquiler vacacional en Medellín, Colombia. Especializado en El Poblado, Laureles y el mercado de nómadas digitales.",
+      "areaServed":{"@type":"City","name":"Medellín","addressRegion":"Antioquia","addressCountry":"CO"},
+      "offers":[
+        {"@type":"Offer","name":"Plan Gestión Digital","price":"99","priceCurrency":"USD"},
+        {"@type":"Offer","name":"Plan Gestión Operativa 360","price":"199","priceCurrency":"USD"}
+      ]
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {
+          "@type":"Question",
+          "name":"¿Por qué los apartamentos en El Poblado necesitan software de gestión?",
+          "acceptedAnswer":{"@type":"Answer","text":"El Poblado y Laureles concentran la mayor densidad de apartamentos turísticos de Medellín, lo que genera una competencia intensa y huéspedes muy exigentes (nómadas digitales, ejecutivos, turistas internacionales). Sin un software de gestión, es imposible mantener los tiempos de respuesta rápidos que exigen Airbnb y Booking para mantener el Superanfitrión o la puntuación de Preferred Partner, ni gestionar múltiples propiedades de forma eficiente."}
+        },
+        {
+          "@type":"Question",
+          "name":"¿Hola Rentia funciona para el mercado de nómadas digitales en Medellín?",
+          "acceptedAnswer":{"@type":"Answer","text":"Sí, y está especialmente adaptado. Los nómadas digitales suelen reservar estancias más largas (1 semana a 3 meses), buscan WiFi de alta velocidad, espacios de trabajo y comunicación ágil. Hola Rentia te permite crear mensajes y guías personalizadas para este perfil de huésped, configurar descuentos por estancias largas e identificar automáticamente qué propiedades tienen el perfil ideal para este nicho."}
+        },
+        {
+          "@type":"Question",
+          "name":"¿Cómo me ayuda Hola Rentia a superar la competencia en Medellín?",
+          "acceptedAnswer":{"@type":"Answer","text":"Medellín tiene miles de apartamentos publicados en Airbnb. Hola Rentia te da ventaja competitiva mediante precios dinámicos (que ajustan tus tarifas automáticamente según la demanda del mercado local), una gestión de reseñas que mejora tu posicionamiento orgánico en las plataformas, y una optimización del anuncio con copywriting SEO para aparecer primero en las búsquedas de El Poblado y Laureles."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- ══ FONTS ══ -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800;12..96,900&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800;12..96,900&display=swap" media="print" onload="this.media='all'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800;12..96,900&display=swap"/></noscript>
+
+<style>
+:root{
+  --red:#ff3b30;--red-d:#d62e24;--red-l:#ff6a5a;--orange:#ff7a00;--violet:#7c3aed;--blue:#2563eb;--cyan:#06b6d4;
+  --g-ai:linear-gradient(135deg,#ff3b30,#ff7a00,#7c3aed);
+  --g-ai-s:linear-gradient(135deg,#ff3b30 0%,#ff6a5a 100%);
+  --white:#ffffff;--bg:#ffffff;--bg2:#f8f9fb;--bg3:#f1f4f8;
+  --border:#e5e8ef;--text:#0f172a;--text2:#334155;--muted:#64748b;--muted2:#94a3b8;
+  --font-d:'Bricolage Grotesque',system-ui,sans-serif;
+  --font-b:'Inter',system-ui,sans-serif;
+  --r-sm:8px;--r-md:14px;--r-lg:20px;--r-xl:28px;--r-2xl:40px;
+  --sh-sm:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.05);
+  --sh-md:0 4px 16px rgba(0,0,0,.08),0 2px 6px rgba(0,0,0,.04);
+  --sh-lg:0 16px 48px rgba(0,0,0,.1),0 4px 16px rgba(0,0,0,.06);
+  --sh-red:0 8px 28px rgba(255,59,48,.28);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:var(--font-b);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{font-family:var(--font-b);cursor:pointer}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+.wrap-wide{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:14px 0;transition:background .3s,border-color .3s,box-shadow .3s,padding .25s;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid transparent}
+#nav.scrolled{background:rgba(255,255,255,.96);border-bottom-color:var(--border);box-shadow:0 1px 12px rgba(0,0,0,.06);padding:10px 0}
+.nav-inner{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav-logo-img{height:90px;width:auto;display:block;transition:height .3s}
+@media(max-width:768px){.nav-logo-img{height:56px}}
+nav.nl{display:flex;align-items:center;gap:26px}
+nav.nl a{font-size:.85rem;font-weight:500;color:var(--muted);transition:color .2s}
+nav.nl a:hover{color:var(--text)}
+.btn-nav{background:var(--g-ai-s);color:#fff;font-size:.81rem;font-weight:700;padding:9px 20px;border-radius:50px;border:none;cursor:pointer;transition:all .22s;box-shadow:0 4px 14px rgba(255,59,48,.25)}
+.btn-nav:hover{box-shadow:0 8px 24px rgba(255,59,48,.4);transform:translateY(-1px)}
+.mob-btn{display:none;background:none;border:1.5px solid var(--border);color:var(--text);padding:7px;border-radius:var(--r-sm);cursor:pointer}
+#mob-nav{display:none;position:fixed;inset:0;background:#fff;z-index:190;flex-direction:column;align-items:center;justify-content:center;gap:24px}
+#mob-nav.open{display:flex}
+#mob-nav a{font-family:var(--font-d);font-size:1.6rem;font-weight:800;color:var(--text)}
+#mob-nav .x{position:absolute;top:20px;right:22px;background:none;border:none;color:var(--muted);font-size:1.5rem;cursor:pointer}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;border:none;border-radius:var(--r-md);cursor:pointer;text-decoration:none;transition:all .22s;font-family:var(--font-b)}
+.btn-fire{background:var(--g-ai-s);color:#fff;padding:14px 28px;font-size:.93rem;font-weight:700;box-shadow:var(--sh-red);position:relative;overflow:hidden}
+.btn-fire:hover{box-shadow:0 12px 36px rgba(255,59,48,.42);transform:translateY(-2px)}
+.btn-ghost{background:var(--white);color:var(--text);padding:14px 28px;font-size:.93rem;border:1.5px solid var(--border);box-shadow:var(--sh-sm);border-radius:var(--r-md);font-weight:600;transition:all .22s;display:inline-flex;align-items:center}
+.btn-ghost:hover{border-color:rgba(255,59,48,.3);color:var(--red);box-shadow:var(--sh-md);transform:translateY(-2px)}
+
+/* Eyebrow */
+.eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:5px 14px;border-radius:50px;margin-bottom:16px;background:rgba(255,59,48,.07);border:1px solid rgba(255,59,48,.18);color:var(--red)}
+@keyframes pulse3{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(1.8)}}
+.eyebrow::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0;animation:pulse3 2s ease infinite}
+
+/* Hero */
+#hero{padding:140px 0 80px;background:var(--bg);position:relative;overflow:hidden}
+.hero-mesh{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 55% at 55% -5%,rgba(255,59,48,.07) 0%,transparent 55%),radial-gradient(ellipse 45% 40% at 95% 60%,rgba(124,58,237,.05) 0%,transparent 50%)}
+h1{font-family:var(--font-d);font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:900;color:var(--text);line-height:1.07;letter-spacing:-.035em;margin-bottom:20px}
+h1 .ai-word{background:var(--g-ai);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:1.06rem;color:var(--muted);line-height:1.74;max-width:640px;margin-bottom:28px}
+.hero-desc strong{color:var(--text);font-weight:700}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+
+/* Sections */
+section{padding:80px 0}
+section:nth-child(even){background:var(--bg2)}
+h2{font-family:var(--font-d);font-weight:800;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--text);line-height:1.12;letter-spacing:-.02em;margin-bottom:18px}
+h2 em{font-style:normal;background:var(--g-ai);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+p{color:var(--muted);font-size:1rem;line-height:1.72;margin-bottom:14px}
+p:last-child{margin-bottom:0}
+p strong{color:var(--text2);font-weight:700}
+
+.feat-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin:24px 0}
+.feat-list li{display:flex;align-items:flex-start;gap:12px;font-size:.95rem;color:var(--text2);line-height:1.55}
+.feat-list li::before{content:'✅';flex-shrink:0;font-size:1rem}
+
+/* Stat band */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden;margin:32px 0}
+.stat{background:var(--white);padding:28px 24px;text-align:center}
+.stat-num{font-family:var(--font-d);font-size:2.4rem;font-weight:900;background:var(--g-ai);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;line-height:1}
+.stat-lbl{font-size:.78rem;color:var(--muted);margin-top:4px;display:block}
+
+/* Neighborhood pills */
+.barrios{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
+.barrio{font-size:.82rem;font-weight:600;color:var(--red);background:rgba(255,59,48,.07);border:1px solid rgba(255,59,48,.18);padding:6px 14px;border-radius:50px}
+
+/* Cards */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:32px}
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-xl);padding:28px;box-shadow:var(--sh-sm);transition:transform .28s,box-shadow .28s,border-color .22s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--sh-lg);border-color:rgba(255,59,48,.2)}
+.card-ico{font-size:2rem;margin-bottom:12px}
+.card h3{font-family:var(--font-d);font-size:1.05rem;font-weight:800;color:var(--text);margin-bottom:6px}
+.card p{font-size:.84rem;color:var(--muted);margin:0}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:10px;margin-top:32px}
+.faq-item{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-lg);overflow:hidden;transition:border-color .22s}
+.faq-item.open{border-color:rgba(255,59,48,.25);box-shadow:0 4px 16px rgba(255,59,48,.08)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 22px;background:none;border:none;text-align:left;cursor:pointer;transition:background .18s}
+.faq-q:hover{background:var(--bg2)}
+.faq-q span:first-child{font-size:.93rem;font-weight:600;color:var(--text)}
+.faq-icon{width:24px;height:24px;border-radius:6px;background:rgba(255,59,48,.08);border:1px solid rgba(255,59,48,.16);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .28s}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-icon svg{width:12px;height:12px;stroke:var(--red);fill:none;stroke-width:2.5}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .32s ease}
+.faq-a p{padding:0 22px 18px;font-size:.84rem;color:var(--muted);line-height:1.7;margin:0}
+
+/* CTA */
+#cta-final{background:var(--text);padding:80px 0}
+#cta-final h2{color:#fff;text-align:center}
+#cta-final h2 em{font-style:normal;background:var(--g-ai);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+#cta-final p{color:rgba(255,255,255,.55);text-align:center;max-width:480px;margin:0 auto 32px}
+.cta-center{text-align:center}
+.cta-pills{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:20px}
+.cta-pill{font-size:.78rem;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:5px}
+
+/* Breadcrumb */
+.breadcrumb{padding:100px 0 0;font-size:.8rem;color:var(--muted2)}
+.breadcrumb a{color:var(--muted2);transition:color .18s}
+.breadcrumb a:hover{color:var(--red)}
+.breadcrumb span{margin:0 6px}
+
+/* Footer */
+footer{background:var(--white);border-top:1px solid var(--border);padding:40px 0 0}
+.footer-btm{border-top:1px solid var(--border);padding:18px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.fcopy{font-size:.73rem;color:var(--muted2)}
+.flegal{display:flex;flex-wrap:wrap;gap:16px}
+.flegal a{font-size:.73rem;color:var(--muted2);transition:color .18s}
+.flegal a:hover{color:var(--text)}
+
+@media(max-width:768px){
+  .cards{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  nav.nl,.btn-nav{display:none}
+  .mob-btn{display:flex!important;align-items:center;justify-content:center}
+  h1{font-size:2.2rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header id="nav" role="banner">
+  <div class="nav-inner">
+    <a href="/" aria-label="Hola Rentia – Inicio">
+      <img src="/images/hola-rentia-logo-gestion-airbnb-ia.webp" alt="Hola Rentia – Software Gestión Airbnb" class="nav-logo-img" width="350" height="90" loading="eager" decoding="async" fetchpriority="high"/>
+    </a>
+    <nav class="nl" aria-label="Navegación principal">
+      <a href="/#funciona">Cómo funciona</a>
+      <a href="/#precios">Precios</a>
+      <a href="/#testimonios">Clientes</a>
+    </nav>
+    <a href="/#formulario" class="btn-nav">🔍 Analizar mi propiedad</a>
+    <button class="mob-btn" id="mob-btn" aria-label="Abrir menú" aria-expanded="false">
+      <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<nav id="mob-nav" aria-label="Menú móvil" aria-hidden="true">
+  <button class="x" id="mob-close" aria-label="Cerrar menú">✕</button>
+  <a href="/#funciona" onclick="closeMob()">Cómo funciona</a>
+  <a href="/#precios" onclick="closeMob()">Precios</a>
+  <a href="/#testimonios" onclick="closeMob()">Clientes</a>
+  <a href="/#formulario" onclick="closeMob()" class="btn btn-fire" style="margin-top:8px">🔍 Analizar mi propiedad</a>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="wrap">
+    <a href="/">Hola Rentia</a>
+    <span>›</span>
+    <a href="/colombia/">Colombia</a>
+    <span>›</span>
+    <span>Medellín</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="hero" aria-labelledby="hero-heading">
+  <div class="hero-mesh" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="eyebrow">Software Airbnb · Medellín, Colombia</div>
+    <h1 id="hero-heading">Software de alquiler vacacional en <span class="ai-word">Medellín</span> para anfitriones profesionales</h1>
+    <p class="hero-desc">
+      El crecimiento de Medellín como destino global no se detiene. <strong>El Poblado y Laureles</strong> ya concentran cientos de apartamentos turísticos compitiendo por los mismos huéspedes: nómadas digitales, turistas internacionales y ejecutivos de paso.
+    </p>
+    <p class="hero-desc">
+      La diferencia entre los anfitriones que escalan y los que se estancan es simple: <strong>quién tiene mejores sistemas de gestión</strong>. Hola Rentia es el software que te pone en ventaja.
+    </p>
+    <div class="hero-btns">
+      <a href="/#formulario" class="btn btn-fire">🚀 Empezar gratis — Sin tarjeta</a>
+      <a href="/colombia/" class="btn-ghost">← Colombia</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 1: Medellín como mercado -->
+<section aria-labelledby="s1-heading">
+  <div class="wrap">
+    <div class="eyebrow">El mercado de Medellín</div>
+    <h2 id="s1-heading">Medellín: el destino de nómadas digitales que exige <em>gestión profesional</em></h2>
+
+    <p>Medellín ya no es solo una ciudad en transformación. Es el destino con más crecimiento de turismo de larga estancia en Latinoamérica. <strong>Forbes, Nomad List y Time Out</strong> la sitúan entre las mejores ciudades del mundo para trabajar en remoto, y eso se traduce en un perfil de huésped muy específico: <strong>exigente, largo estante y con alto poder adquisitivo</strong>.</p>
+
+    <p>Estos nómadas digitales no reservan una noche. Reservan semanas, a veces meses. Necesitan WiFi potente, espacio de trabajo, cocina equipada y una experiencia fluida desde el primer mensaje hasta el check-out. El anfitrión que no pueda ofrecer eso de manera consistente pierde la reseña de 5 estrellas. Y sin reseñas de 5 estrellas, es imposible competir en El Poblado.</p>
+
+    <div class="stats">
+      <div class="stat"><span class="stat-num">+40%</span><span class="stat-lbl">Crecimiento turismo Medellín en los últimos 3 años</span></div>
+      <div class="stat"><span class="stat-num">72%</span><span class="stat-lbl">Ocupación media en El Poblado (temporada media)</span></div>
+      <div class="stat"><span class="stat-num">3,2x</span><span class="stat-lbl">Más ingresos con gestión profesional vs. gestión manual</span></div>
+    </div>
+
+    <p>Los barrios más activos para el alquiler vacacional en Medellín:</p>
+    <div class="barrios">
+      <span class="barrio">🏙️ El Poblado</span>
+      <span class="barrio">🌿 Laureles</span>
+      <span class="barrio">🏘️ Envigado</span>
+      <span class="barrio">🏢 El Centro</span>
+      <span class="barrio">🌳 Sabaneta</span>
+      <span class="barrio">🚋 Estadio</span>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 2: Qué hace Hola Rentia en Medellín -->
+<section aria-labelledby="s2-heading">
+  <div class="wrap">
+    <div class="eyebrow">Nuestra solución</div>
+    <h2 id="s2-heading">¿Qué hace Hola Rentia por tu Airbnb en Medellín?</h2>
+
+    <p>Hola Rentia centraliza toda la operación de tus propiedades en Medellín en un único panel de control. Tanto si tienes 2 apartamentos en El Poblado como si gestionas una cartera de 15 propiedades repartidas por Laureles y Envigado, el sistema se adapta a tu escala.</p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-ico">💻</div>
+        <h3>Perfil para nómadas digitales</h3>
+        <p>Crea guías de bienvenida personalizadas con las mejores cafeterías con WiFi, coworkings y restaurantes de El Poblado. Diferénciate de la competencia desde el primer mensaje.</p>
+      </div>
+      <div class="card">
+        <div class="card-ico">📊</div>
+        <h3>Precios dinámicos locales</h3>
+        <p>El sistema ajusta automáticamente tus tarifas según eventos como el Festival de las Flores, conciertos en el Estadio Atanasio o temporadas de alta demanda en Medellín.</p>
+      </div>
+      <div class="card">
+        <div class="card-ico">🔄</div>
+        <h3>Channel manager en tiempo real</h3>
+        <p>Sincroniza tu disponibilidad en Airbnb, Booking.com y VRBO simultáneamente. Sin overbooking. Sin errores manuales. Sin estrés.</p>
+      </div>
+      <div class="card">
+        <div class="card-ico">📋</div>
+        <h3>Cumplimiento RNT simplificado</h3>
+        <p>Recopilamos los datos de cada huésped (cédula, pasaporte, fechas) en el formato que necesitas para cumplir con el Registro Nacional de Turismo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 3: Automatización -->
+<section aria-labelledby="s3-heading">
+  <div class="wrap">
+    <div class="eyebrow">Automatización</div>
+    <h2 id="s3-heading">Gestiona tu operación en Medellín sin estar <em>siempre disponible</em></h2>
+
+    <p>El mayor problema de los anfitriones en Medellín no es la falta de demanda. Es el agotamiento de gestionar cada reserva manualmente: responder a las 11 de la noche, coordinar limpiezas a última hora y lidiar con el check-in de un huésped que llegó tarde del aeropuerto José María Córdova.</p>
+
+    <p>Hola Rentia automatiza todo lo que consume tu tiempo:</p>
+
+    <ul class="feat-list">
+      <li><strong>Mensajes de bienvenida automáticos</strong> con instrucciones de llegada, código de acceso y guía personalizada del barrio en el idioma del huésped</li>
+      <li><strong>Check-in y check-out autónomo 24/7</strong> mediante cerraduras inteligentes o cajitas de llaves, sin necesidad de estar presente</li>
+      <li><strong>Coordinación del equipo de limpieza</strong> tras cada salida, con notificación automática y checklist de revisión</li>
+      <li><strong>Solicitud de reseña automatizada</strong> en el momento óptimo para maximizar las valoraciones de 5 estrellas</li>
+      <li><strong>Reportes mensuales</strong> de ingresos por propiedad, ocupación y rentabilidad, listos para tu contador colombiano</li>
+      <li><strong>Estancias de larga duración:</strong> detecta automáticamente reservas de más de 7 noches y aplica descuentos y condiciones especiales configuradas por ti</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SECCIÓN 4: FAQ -->
+<section aria-labelledby="faq-heading">
+  <div class="wrap">
+    <div class="eyebrow">FAQ Medellín</div>
+    <h2 id="faq-heading">Preguntas frecuentes sobre la gestión de Airbnb en Medellín</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>¿Por qué los apartamentos en El Poblado necesitan software de gestión?</span>
+          <span class="faq-icon"><svg viewBox="0 0 14 14" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2v10M2 7h10"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>El Poblado y Laureles concentran la mayor densidad de apartamentos turísticos de Medellín, lo que genera una competencia intensa y huéspedes muy exigentes. Sin software de gestión, es imposible mantener los tiempos de respuesta rápidos que exigen Airbnb y Booking para mantener el rango de Superanfitrión o Preferred Partner, ni gestionar múltiples propiedades de forma eficiente.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>¿Hola Rentia funciona para el mercado de nómadas digitales en Medellín?</span>
+          <span class="faq-icon"><svg viewBox="0 0 14 14" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2v10M2 7h10"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Sí, y está especialmente adaptado. Los nómadas digitales suelen reservar estancias más largas (1 semana a 3 meses), buscan WiFi de alta velocidad y comunicación ágil. Hola Rentia te permite crear mensajes y guías personalizadas para este perfil, configurar descuentos por estancias largas e identificar automáticamente qué propiedades tienen el perfil ideal para atraer a este nicho.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>¿Cómo me ayuda Hola Rentia a superar la competencia en Medellín?</span>
+          <span class="faq-icon"><svg viewBox="0 0 14 14" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2v10M2 7h10"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Medellín tiene miles de apartamentos publicados en Airbnb. Hola Rentia te da ventaja competitiva mediante precios dinámicos (que ajustan tus tarifas automáticamente según la demanda del mercado local), una gestión de reseñas que mejora tu posicionamiento orgánico en las plataformas, y optimización del anuncio con copywriting SEO para aparecer primero en búsquedas de El Poblado y Laureles.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta-final" aria-labelledby="cta-heading">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center;display:flex">Medellín, Colombia</div>
+    <h2 id="cta-heading">Convierte tu Airbnb en Medellín en un negocio que trabaja <em>solo</em></h2>
+    <p>Únete a los property managers de Medellín que ya automatizan su operación con Hola Rentia. $99/mes por propiedad. 0% comisiones. Sin permanencia.</p>
+    <div class="cta-center">
+      <a href="/#formulario" class="btn btn-fire" style="font-size:1rem;padding:16px 38px">
+        ANALIZAR MI PROPIEDAD — GRATIS
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      </a>
+      <div class="cta-pills">
+        <span class="cta-pill">🔒 Sin permanencia</span>
+        <span class="cta-pill">✅ Garantía 30 días</span>
+        <span class="cta-pill">💳 Sin tarjeta de crédito</span>
+        <span class="cta-pill">🇨🇴 Soporte en español</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Internal links -->
+<section style="padding:40px 0;background:var(--bg2)">
+  <div class="wrap">
+    <p style="font-size:.84rem;color:var(--muted2);text-align:center">
+      ¿Tienes propiedades en otras ciudades? Consulta nuestra guía de
+      <a href="/colombia/" style="color:var(--red);font-weight:600">software de alquiler vacacional en Colombia</a>
+      o vuelve a la <a href="/" style="color:var(--red);font-weight:600">página principal de Hola Rentia</a>.
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="wrap-wide">
+    <div style="padding:32px 0;display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+      <a href="/" aria-label="Hola Rentia">
+        <img src="/images/hola-rentia-logo-gestion-airbnb-ia.webp" alt="Hola Rentia" style="height:48px;width:auto" loading="lazy"/>
+      </a>
+      <p style="font-size:.83rem;color:var(--muted);margin:0">Software de gestión de alquiler vacacional · 0% comisiones · Pagos directos a tu cuenta.</p>
+    </div>
+    <div class="footer-btm">
+      <p class="fcopy">© 2026 Hola Rentia. Todos los derechos reservados.</p>
+      <nav class="flegal" aria-label="Legal">
+        <a href="/terminos-y-condiciones/">Términos</a>
+        <a href="/cookies/">Cookies</a>
+        <a href="/aviso-legal/">Aviso Legal</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const nav=document.getElementById('nav');
+  window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>50)},{passive:true});
+  const mNav=document.getElementById('mob-nav');
+  const mBtn=document.getElementById('mob-btn');
+  const mX=document.getElementById('mob-close');
+  function closeMob(){mNav.classList.remove('open');mNav.setAttribute('aria-hidden','true');if(mBtn)mBtn.setAttribute('aria-expanded','false')}
+  window.closeMob=closeMob;
+  if(mBtn)mBtn.addEventListener('click',()=>{mNav.classList.add('open');mNav.setAttribute('aria-hidden','false');mBtn.setAttribute('aria-expanded','true')});
+  if(mX)mX.addEventListener('click',closeMob);
+  document.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const item=btn.parentElement;
+      const ans=item.querySelector('.faq-a');
+      const open=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(fi=>{fi.classList.remove('open');fi.querySelector('.faq-a').style.maxHeight='0';fi.querySelector('.faq-q').setAttribute('aria-expanded','false')});
+      if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';btn.setAttribute('aria-expanded','true')}
+    });
+  });
+})();
+</script>
+</body>
+</html>

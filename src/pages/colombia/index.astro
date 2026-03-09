@@ -1,0 +1,500 @@
+---
+// src/pages/colombia/index.astro — Hola Rentia · Colombia SEO Power Page
+---
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<!-- ══ SEO ══ -->
+<title>Software de Alquiler Vacacional en Colombia | Gestión Airbnb | Hola Rentia</title>
+<meta name="description" content="El mejor software de alquiler vacacional en Colombia. Gestiona tus apartamentos turísticos en Medellín, Cartagena, Santa Marta y Bogotá. Channel manager, automatización y cumplimiento RNT. Desde $99/mes."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://holarentia.com/colombia/"/>
+<link rel="icon" type="image/webp" href="/images/favicon.webp"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://holarentia.com/colombia/"/>
+<meta property="og:title" content="Software de Alquiler Vacacional en Colombia | Hola Rentia"/>
+<meta property="og:description" content="Gestiona tu negocio de alquiler vacacional en Colombia con IA. Channel manager para Airbnb, Booking, VRBO. Cumplimiento RNT. Desde $99/mes."/>
+<meta property="og:image" content="https://holarentia.com/images/hola-rentia-resultados-airbnb-ia-espana.webp"/>
+<meta property="og:locale" content="es_CO"/>
+<meta property="og:site_name" content="Hola Rentia"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Software Alquiler Vacacional Colombia | Hola Rentia"/>
+<meta name="twitter:description" content="Gestiona tus propiedades vacacionales en Colombia. Desde $99/mes. Sin comisiones."/>
+<meta name="twitter:image" content="https://holarentia.com/images/hola-rentia-resultados-airbnb-ia-espana.webp"/>
+<link rel="preload" as="image" href="/images/hola-rentia-logo-gestion-airbnb-ia.webp" fetchpriority="high"/>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"SoftwareApplication",
+      "@id":"https://holarentia.com/#app",
+      "name":"Hola Rentia",
+      "applicationCategory":"BusinessApplication",
+      "operatingSystem":"Web",
+      "description":"Software de alquiler vacacional en Colombia. Gestión integral de apartamentos turísticos con IA para Property Managers, agencias y anfitriones profesionales.",
+      "offers":[
+        {"@type":"Offer","name":"Plan Gestión Digital","price":"99","priceCurrency":"USD"},
+        {"@type":"Offer","name":"Plan Gestión Operativa 360","price":"199","priceCurrency":"USD"}
+      ],
+      "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"500"}
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {
+          "@type":"Question",
+          "name":"¿Hola Rentia ayuda con el Registro Nacional de Turismo (RNT) en Colombia?",
+          "acceptedAnswer":{"@type":"Answer","text":"Sí. Hola Rentia automatiza la recopilación de datos de huéspedes (nombre, documento, nacionalidad) y los organiza para que puedas cumplir con el reporte al RNT de forma sencilla. Aunque el registro ante el Ministerio de Comercio es responsabilidad del propietario, nuestro software te da toda la información lista para su presentación."}
+        },
+        {
+          "@type":"Question",
+          "name":"¿Puedo gestionar propiedades en Medellín y Cartagena desde la misma plataforma?",
+          "acceptedAnswer":{"@type":"Answer","text":"Absolutamente. Hola Rentia es una plataforma centralizada que te permite gestionar propiedades en distintas ciudades y departamentos de Colombia desde un único dashboard. Calendarios, precios, mensajes y reportes de todas tus propiedades en un solo lugar, sin importar si están en El Poblado, Bocagrande o el Centro Histórico."}
+        },
+        {
+          "@type":"Question",
+          "name":"¿Cómo maneja Hola Rentia las reservas internacionales en pesos colombianos?",
+          "acceptedAnswer":{"@type":"Answer","text":"Hola Rentia sincroniza tus propiedades con Airbnb, Booking.com, VRBO y otras plataformas internacionales en tiempo real. Las plataformas gestionan la conversión de divisas y el pago llega directamente a tu cuenta bancaria. Nuestro sistema te permite definir tarifas base, reglas de temporada y ajustes por demanda de forma automática."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- ══ FONTS ══ -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800;12..96,900&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800;12..96,900&display=swap" media="print" onload="this.media='all'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800;12..96,900&display=swap"/></noscript>
+
+<style>
+:root{
+  --red:#ff3b30;--red-d:#d62e24;--red-l:#ff6a5a;--orange:#ff7a00;--violet:#7c3aed;--blue:#2563eb;--cyan:#06b6d4;
+  --g-ai:linear-gradient(135deg,#ff3b30,#ff7a00,#7c3aed);
+  --g-ai-s:linear-gradient(135deg,#ff3b30 0%,#ff6a5a 100%);
+  --white:#ffffff;--bg:#ffffff;--bg2:#f8f9fb;--bg3:#f1f4f8;
+  --border:#e5e8ef;--text:#0f172a;--text2:#334155;--muted:#64748b;--muted2:#94a3b8;
+  --font-d:'Bricolage Grotesque',system-ui,sans-serif;
+  --font-b:'Inter',system-ui,sans-serif;
+  --r-sm:8px;--r-md:14px;--r-lg:20px;--r-xl:28px;--r-2xl:40px;
+  --sh-sm:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.05);
+  --sh-md:0 4px 16px rgba(0,0,0,.08),0 2px 6px rgba(0,0,0,.04);
+  --sh-lg:0 16px 48px rgba(0,0,0,.1),0 4px 16px rgba(0,0,0,.06);
+  --sh-red:0 8px 28px rgba(255,59,48,.28);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:var(--font-b);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{font-family:var(--font-b);cursor:pointer}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+.wrap-wide{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:14px 0;transition:background .3s,border-color .3s,box-shadow .3s,padding .25s;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid transparent}
+#nav.scrolled{background:rgba(255,255,255,.96);border-bottom-color:var(--border);box-shadow:0 1px 12px rgba(0,0,0,.06);padding:10px 0}
+.nav-inner{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav-logo-img{height:90px;width:auto;display:block;transition:height .3s}
+@media(max-width:768px){.nav-logo-img{height:56px}}
+nav.nl{display:flex;align-items:center;gap:26px}
+nav.nl a{font-size:.85rem;font-weight:500;color:var(--muted);transition:color .2s}
+nav.nl a:hover{color:var(--text)}
+.btn-nav{background:var(--g-ai-s);color:#fff;font-size:.81rem;font-weight:700;padding:9px 20px;border-radius:50px;border:none;cursor:pointer;transition:all .22s;box-shadow:0 4px 14px rgba(255,59,48,.25)}
+.btn-nav:hover{box-shadow:0 8px 24px rgba(255,59,48,.4);transform:translateY(-1px)}
+.mob-btn{display:none;background:none;border:1.5px solid var(--border);color:var(--text);padding:7px;border-radius:var(--r-sm);cursor:pointer}
+#mob-nav{display:none;position:fixed;inset:0;background:#fff;z-index:190;flex-direction:column;align-items:center;justify-content:center;gap:24px}
+#mob-nav.open{display:flex}
+#mob-nav a{font-family:var(--font-d);font-size:1.6rem;font-weight:800;color:var(--text)}
+#mob-nav .x{position:absolute;top:20px;right:22px;background:none;border:none;color:var(--muted);font-size:1.5rem;cursor:pointer}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;border:none;border-radius:var(--r-md);cursor:pointer;text-decoration:none;transition:all .22s;font-family:var(--font-b)}
+.btn-fire{background:var(--g-ai-s);color:#fff;padding:14px 28px;font-size:.93rem;font-weight:700;box-shadow:var(--sh-red);position:relative;overflow:hidden}
+.btn-fire:hover{box-shadow:0 12px 36px rgba(255,59,48,.42);transform:translateY(-2px)}
+
+/* Eyebrow */
+.eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:5px 14px;border-radius:50px;margin-bottom:16px;background:rgba(255,59,48,.07);border:1px solid rgba(255,59,48,.18);color:var(--red)}
+@keyframes pulse3{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(1.8)}}
+.eyebrow::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0;animation:pulse3 2s ease infinite}
+
+/* Hero */
+#hero{padding:140px 0 80px;background:var(--bg);position:relative;overflow:hidden}
+.hero-mesh{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 55% at 55% -5%,rgba(255,59,48,.07) 0%,transparent 55%),radial-gradient(ellipse 45% 40% at 95% 60%,rgba(124,58,237,.05) 0%,transparent 50%)}
+h1{font-family:var(--font-d);font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:900;color:var(--text);line-height:1.07;letter-spacing:-.035em;margin-bottom:20px}
+h1 .ai-word{background:var(--g-ai);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:1.06rem;color:var(--muted);line-height:1.74;max-width:640px;margin-bottom:28px}
+.hero-desc strong{color:var(--text);font-weight:700}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+.btn-ghost{background:var(--white);color:var(--text);padding:14px 28px;font-size:.93rem;border:1.5px solid var(--border);box-shadow:var(--sh-sm);border-radius:var(--r-md);font-weight:600;transition:all .22s;display:inline-flex;align-items:center}
+.btn-ghost:hover{border-color:rgba(255,59,48,.3);color:var(--red);box-shadow:var(--sh-md);transform:translateY(-2px)}
+
+/* Sections */
+section{padding:80px 0}
+section:nth-child(even){background:var(--bg2)}
+h2{font-family:var(--font-d);font-weight:800;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--text);line-height:1.12;letter-spacing:-.02em;margin-bottom:18px}
+h2 em{font-style:normal;background:var(--g-ai);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+p{color:var(--muted);font-size:1rem;line-height:1.72;margin-bottom:14px}
+p:last-child{margin-bottom:0}
+p strong{color:var(--text2);font-weight:700}
+
+/* Feature list */
+.feat-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin:24px 0}
+.feat-list li{display:flex;align-items:flex-start;gap:12px;font-size:.95rem;color:var(--text2);line-height:1.55}
+.feat-list li::before{content:'✅';flex-shrink:0;font-size:1rem}
+
+/* Cards grid */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:32px}
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-xl);padding:28px;box-shadow:var(--sh-sm);transition:transform .28s,box-shadow .28s,border-color .22s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--sh-lg);border-color:rgba(255,59,48,.2)}
+.card-ico{font-size:2rem;margin-bottom:12px}
+.card h3{font-family:var(--font-d);font-size:1.05rem;font-weight:800;color:var(--text);margin-bottom:6px}
+.card p{font-size:.84rem;color:var(--muted);margin:0}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:10px;margin-top:32px}
+.faq-item{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-lg);overflow:hidden;transition:border-color .22s}
+.faq-item.open{border-color:rgba(255,59,48,.25);box-shadow:0 4px 16px rgba(255,59,48,.08)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 22px;background:none;border:none;text-align:left;cursor:pointer;transition:background .18s}
+.faq-q:hover{background:var(--bg2)}
+.faq-q span:first-child{font-size:.93rem;font-weight:600;color:var(--text)}
+.faq-icon{width:24px;height:24px;border-radius:6px;background:rgba(255,59,48,.08);border:1px solid rgba(255,59,48,.16);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .28s}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-icon svg{width:12px;height:12px;stroke:var(--red);fill:none;stroke-width:2.5}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .32s ease}
+.faq-a p{padding:0 22px 18px;font-size:.84rem;color:var(--muted);line-height:1.7;margin:0}
+
+/* CTA */
+#cta-final{background:var(--text);padding:80px 0}
+#cta-final h2{color:#fff;text-align:center}
+#cta-final h2 em{font-style:normal;background:var(--g-ai);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+#cta-final p{color:rgba(255,255,255,.55);text-align:center;max-width:480px;margin:0 auto 32px}
+.cta-center{text-align:center}
+.cta-pills{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:20px}
+.cta-pill{font-size:.78rem;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:5px}
+
+/* Breadcrumb */
+.breadcrumb{padding:100px 0 0;font-size:.8rem;color:var(--muted2)}
+.breadcrumb a{color:var(--muted2);transition:color .18s}
+.breadcrumb a:hover{color:var(--red)}
+.breadcrumb span{margin:0 6px}
+
+/* Footer */
+footer{background:var(--white);border-top:1px solid var(--border);padding:40px 0 0}
+.footer-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:32px;padding-bottom:40px;flex-wrap:wrap}
+.fb p{font-size:.83rem;color:var(--muted);line-height:1.72;margin:14px 0;max-width:280px}
+.footer-btm{border-top:1px solid var(--border);padding:18px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.fcopy{font-size:.73rem;color:var(--muted2)}
+.flegal{display:flex;flex-wrap:wrap;gap:16px}
+.flegal a{font-size:.73rem;color:var(--muted2);transition:color .18s}
+.flegal a:hover{color:var(--text)}
+
+/* Responsive */
+@media(max-width:768px){
+  .cards{grid-template-columns:1fr}
+  nav.nl,.btn-nav{display:none}
+  .mob-btn{display:flex!important;align-items:center;justify-content:center}
+  h1{font-size:2.2rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header id="nav" role="banner">
+  <div class="nav-inner">
+    <a href="/" aria-label="Hola Rentia – Inicio">
+      <img src="/images/hola-rentia-logo-gestion-airbnb-ia.webp" alt="Hola Rentia – Software Gestión Airbnb" class="nav-logo-img" width="350" height="90" loading="eager" decoding="async" fetchpriority="high"/>
+    </a>
+    <nav class="nl" aria-label="Navegación principal">
+      <a href="/#funciona">Cómo funciona</a>
+      <a href="/#precios">Precios</a>
+      <a href="/#testimonios">Clientes</a>
+    </nav>
+    <a href="/#formulario" class="btn-nav">🔍 Analizar mi propiedad</a>
+    <button class="mob-btn" id="mob-btn" aria-label="Abrir menú" aria-expanded="false">
+      <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile nav -->
+<nav id="mob-nav" aria-label="Menú móvil" aria-hidden="true">
+  <button class="x" id="mob-close" aria-label="Cerrar menú">✕</button>
+  <a href="/#funciona" onclick="closeMob()">Cómo funciona</a>
+  <a href="/#precios" onclick="closeMob()">Precios</a>
+  <a href="/#testimonios" onclick="closeMob()">Clientes</a>
+  <a href="/#formulario" onclick="closeMob()" class="btn btn-fire" style="margin-top:8px">🔍 Analizar mi propiedad</a>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="wrap">
+    <a href="/">Hola Rentia</a>
+    <span>›</span>
+    <span>Colombia</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="hero" aria-labelledby="hero-heading">
+  <div class="hero-mesh" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="eyebrow">Software Alquiler Vacacional · Colombia</div>
+    <h1 id="hero-heading">El mejor <em class="ai-word">software</em> de alquiler vacacional en Colombia</h1>
+    <p class="hero-desc">
+      Cada mes, miles de noches de alojamiento se pierden por errores de gestión: <strong>overbooking, mensajes sin responder, precios desactualizados</strong> y calendarios desincronizados entre plataformas.<br/><br/>
+      El alquiler vacacional en Colombia crece a doble dígito y la competencia se profesionaliza. Si todavía gestionas con Excel y WhatsApp, estás dejando dinero sobre la mesa.
+    </p>
+    <div class="hero-btns">
+      <a href="/#formulario" class="btn btn-fire">🚀 Empezar gratis — Sin tarjeta</a>
+      <a href="/#precios" class="btn-ghost">Ver planes y precios →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 1: Crecimiento Colombia -->
+<section aria-labelledby="s1-heading">
+  <div class="wrap">
+    <div class="eyebrow">El mercado colombiano</div>
+    <h2 id="s1-heading">El crecimiento del alquiler vacacional en Colombia: una oportunidad que exige profesionalización</h2>
+
+    <p>Medellín consolida su posición como destino predilecto de <strong>nómadas digitales y expatriados</strong>. Barrios como El Poblado o Laureles ya compiten en ocupación con cualquier capital europea. Cartagena de Indias mantiene tasas de ocupación superiores al 85% en temporadas altas, especialmente en Bocagrande y la Ciudad Amurallada. Santa Marta, Bogotá y el Eje Cafetero completan un ecosistema de destinos con demanda creciente.</p>
+
+    <p>Operar en este entorno hoy requiere mucho más que un buen apartamento. El <strong>Registro Nacional de Turismo (RNT)</strong> —obligatorio para todo alojamiento turístico— exige llevar un control riguroso de datos de huéspedes. La sincronización con plataformas internacionales, la gestión de reseñas y los precios dinámicos ya no son ventajas: son la base mínima para ser competitivo.</p>
+
+    <p>El <strong>programa de gestión de alquiler vacacional en Colombia</strong> que elijas determinará si tu negocio escala o se estanca. Hola Rentia está construido para que escales.</p>
+  </div>
+</section>
+
+<!-- SECCIÓN 2: Plataforma central -->
+<section aria-labelledby="s2-heading">
+  <div class="wrap">
+    <div class="eyebrow">Una sola plataforma</div>
+    <h2 id="s2-heading">Gestiona tus <em>apartamentos turísticos</em> en Colombia desde un solo lugar</h2>
+
+    <p>Con Hola Rentia, todas tus propiedades —estén en Cartagena, Medellín o Bogotá— viven en un único dashboard. Sin cambiar de pestaña, sin duplicar trabajo, sin perder información.</p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-ico">📅</div>
+        <h3>Calendarios unificados</h3>
+        <p>Visualiza la disponibilidad de todas tus propiedades en una vista de calendario. Bloquea fechas, gestiona temporadas y detecta huecos de ocupación en segundos.</p>
+      </div>
+      <div class="card">
+        <div class="card-ico">💬</div>
+        <h3>Gestión de huéspedes 24/7</h3>
+        <p>Responde a los huéspedes en minutos con mensajes automáticos y personalizados. Nuestra IA se encarga de las preguntas frecuentes en cualquier idioma.</p>
+      </div>
+      <div class="card">
+        <div class="card-ico">💳</div>
+        <h3>Pagos directos a tu cuenta</h3>
+        <p>Airbnb y Booking pagan directamente a tu cuenta. Hola Rentia cobra una tarifa plana mensual fija. Ni un peso en comisiones sobre tus ingresos.</p>
+      </div>
+      <div class="card">
+        <div class="card-ico">📋</div>
+        <h3>Datos RNT organizados</h3>
+        <p>Recopilamos y organizamos automáticamente los datos de tus huéspedes que necesitas para el cumplimiento del Registro Nacional de Turismo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 3: Channel Manager -->
+<section aria-labelledby="s3-heading">
+  <div class="wrap">
+    <div class="eyebrow">Channel Manager</div>
+    <h2 id="s3-heading"><em>Channel manager</em> para Airbnb, Booking, VRBO y más</h2>
+
+    <p>El mayor riesgo del anfitrión profesional es el <strong>overbooking</strong>: dos reservas para la misma noche en la misma propiedad. Un solo error así puede destruir meses de reseñas positivas y generarte penalizaciones en las plataformas.</p>
+
+    <p>El <strong>channel manager para Airbnb en Colombia</strong> de Hola Rentia sincroniza tus calendarios en tiempo real con todas las plataformas donde publicas. Cuando alguien reserva en Airbnb, el sistema bloquea esa disponibilidad en Booking.com, VRBO y el resto en milisegundos. Sin intervención manual. Sin margen de error.</p>
+
+    <p>Además, puedes gestionar <strong>reservas internacionales</strong> sin complicaciones: define tus tarifas en dólares o pesos, aplica reglas de precios dinámicos según la demanda, temporadas o días de la semana, y maximiza tu ingreso promedio por noche.</p>
+
+    <ul class="feat-list">
+      <li>Sincronización en tiempo real con Airbnb, Booking.com, VRBO, Google Vacation Rentals y Expedia</li>
+      <li>Precios dinámicos ajustados automáticamente según ocupación, temporada y eventos locales</li>
+      <li>Gestión de tarifas en múltiples divisas (USD, COP, EUR)</li>
+      <li>Alertas instantáneas ante cualquier nueva reserva o modificación</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SECCIÓN 4: Automatización -->
+<section aria-labelledby="s4-heading">
+  <div class="wrap">
+    <div class="eyebrow">Automatización total</div>
+    <h2 id="s4-heading">Automatiza tu operación y escala tu negocio</h2>
+
+    <p>Gestionar 1 propiedad requiere esfuerzo. Gestionar 5 o 10 propiedades sin automatización es agotador. Hola Rentia elimina todas las tareas repetitivas para que puedas enfocarte en hacer crecer tu cartera:</p>
+
+    <ul class="feat-list">
+      <li><strong>Mensajes automáticos a huéspedes:</strong> Bienvenida, instrucciones de llegada, guía de la ciudad y solicitud de reseña. Todo en el idioma del huésped, en el momento exacto.</li>
+      <li><strong>Check-in autónomo 24/7:</strong> Envío de códigos de acceso, cerraduras inteligentes y guías de self check-in sin que tengas que estar presente.</li>
+      <li><strong>Coordinación de limpieza:</strong> Notifica automáticamente al equipo de limpieza tras cada salida con los detalles de la propiedad y el timing exacto.</li>
+      <li><strong>Gestión de mantenimiento:</strong> Registra incidencias, asigna técnicos y hace seguimiento sin llamadas ni WhatsApps.</li>
+      <li><strong>Reportes financieros:</strong> Informes mensuales de ingresos, ocupación y rentabilidad por propiedad, listos para tu contador.</li>
+      <li><strong>Filtrado anti-fiestas:</strong> Sistema de verificación de huéspedes para proteger tus propiedades de inquilinos problemáticos.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SECCIÓN 5: Para quién -->
+<section aria-labelledby="s5-heading">
+  <div class="wrap">
+    <div class="eyebrow">Cliente ideal</div>
+    <h2 id="s5-heading">¿Para quién es Hola Rentia?</h2>
+
+    <p>Hola Rentia está diseñado para profesionales del alquiler vacacional en Colombia que ya han probado la gestión manual y saben que no escala:</p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-ico">🏢</div>
+        <h3>Property Managers</h3>
+        <p>Gestoras con 5 o más propiedades en cartera que necesitan sistemas para operar eficientemente y reportar a sus clientes propietarios.</p>
+      </div>
+      <div class="card">
+        <div class="card-ico">🏨</div>
+        <h3>Agencias de alquiler vacacional</h3>
+        <p>Agencias que gestionan apartamentos turísticos en Medellín, Cartagena o Bogotá y quieren digitalizar y automatizar su operación.</p>
+      </div>
+      <div class="card">
+        <div class="card-ico">📈</div>
+        <h3>Anfitriones profesionales</h3>
+        <p>Propietarios que han pasado de 1 propiedad a 3 o más y necesitan herramientas para gestionar sin volverse locos ni contratar más personal.</p>
+      </div>
+      <div class="card">
+        <div class="card-ico">🌎</div>
+        <h3>Inversores inmobiliarios</h3>
+        <p>Inversores que han apostado por el alquiler vacacional en Colombia y necesitan un software que les dé visibilidad y control total de su cartera.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:28px">Si tienes <strong>una sola propiedad</strong> y la gestionas relajadamente, quizás todavía no nos necesitas. Pero si quieres crecer, <strong>Hola Rentia es el sistema operativo de tu negocio vacacional</strong>.</p>
+  </div>
+</section>
+
+<!-- SECCIÓN 6: FAQ -->
+<section aria-labelledby="faq-heading">
+  <div class="wrap">
+    <div class="eyebrow">FAQ Colombia</div>
+    <h2 id="faq-heading">Preguntas frecuentes sobre la gestión de Airbnb en Colombia</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>¿Hola Rentia ayuda con el Registro Nacional de Turismo (RNT) en Colombia?</span>
+          <span class="faq-icon"><svg viewBox="0 0 14 14" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2v10M2 7h10"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Sí. Hola Rentia automatiza la recopilación de datos de huéspedes —nombre, documento, nacionalidad, fechas de estancia— y los organiza de forma estructurada para que puedas cumplir con los reportes del RNT sin esfuerzo adicional. Aunque el registro ante el Ministerio de Comercio es responsabilidad del propietario, nuestro software te entrega toda la información lista para su presentación.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>¿Puedo gestionar propiedades en Medellín y Cartagena desde la misma plataforma?</span>
+          <span class="faq-icon"><svg viewBox="0 0 14 14" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2v10M2 7h10"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Absolutamente. Hola Rentia es una plataforma centralizada que te permite gestionar propiedades en distintas ciudades de Colombia desde un único dashboard. Calendarios, precios, mensajes y reportes de todas tus propiedades en un solo lugar, sin importar si están en El Poblado, Bocagrande o La Candelaria.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>¿Cómo maneja Hola Rentia las reservas internacionales y los pagos en pesos colombianos?</span>
+          <span class="faq-icon"><svg viewBox="0 0 14 14" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2v10M2 7h10"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Las plataformas como Airbnb y Booking gestionan la conversión de divisas y el pago llega directamente a tu cuenta bancaria colombiana. Hola Rentia te permite definir tarifas base, reglas de temporada alta (Semana Santa, Diciembre, Carnavales de Barranquilla) y ajustes automáticos por demanda. Sin intermediarios. Sin sorpresas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta-final" aria-labelledby="cta-heading">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center;display:flex">Colombia y +20 países</div>
+    <h2 id="cta-heading">Empieza hoy a rentabilizar tus propiedades en Colombia con <em>Hola Rentia</em></h2>
+    <p>Miles de property managers ya gestionan su operación con Hola Rentia. Tarifa fija mensual, 0% comisiones y sin permanencia. Prueba 30 días sin riesgo.</p>
+    <div class="cta-center">
+      <a href="/#formulario" class="btn btn-fire" style="font-size:1rem;padding:16px 38px">
+        ANALIZAR MI PROPIEDAD — GRATIS
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      </a>
+      <div class="cta-pills">
+        <span class="cta-pill">🔒 Sin permanencia</span>
+        <span class="cta-pill">✅ Garantía 30 días</span>
+        <span class="cta-pill">💳 Sin tarjeta de crédito</span>
+        <span class="cta-pill">🇨🇴 Soporte en español</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERNAL LINKS -->
+<section style="padding:40px 0;background:var(--bg2)">
+  <div class="wrap">
+    <p style="font-size:.84rem;color:var(--muted2);text-align:center">
+      También puedes ver nuestra guía específica para
+      <a href="/colombia/medellin/" style="color:var(--red);font-weight:600">software de alquiler vacacional en Medellín</a>
+      o volver a la <a href="/" style="color:var(--red);font-weight:600">página principal de Hola Rentia</a>.
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="wrap-wide">
+    <div class="footer-inner">
+      <div class="fb">
+        <a href="/" aria-label="Hola Rentia">
+          <img src="/images/hola-rentia-logo-gestion-airbnb-ia.webp" alt="Hola Rentia" style="height:48px;width:auto" loading="lazy"/>
+        </a>
+        <p>Software de gestión de alquiler vacacional.<br/>0% comisiones · Pagos directos a tu cuenta.<br/>IA + Equipo humano real.</p>
+      </div>
+    </div>
+    <div class="footer-btm">
+      <p class="fcopy">© 2026 Hola Rentia. Todos los derechos reservados.</p>
+      <nav class="flegal" aria-label="Legal">
+        <a href="/terminos-y-condiciones/">Términos</a>
+        <a href="/cookies/">Cookies</a>
+        <a href="/aviso-legal/">Aviso Legal</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const nav=document.getElementById('nav');
+  window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>50)},{passive:true});
+  const mNav=document.getElementById('mob-nav');
+  const mBtn=document.getElementById('mob-btn');
+  const mX=document.getElementById('mob-close');
+  function closeMob(){mNav.classList.remove('open');mNav.setAttribute('aria-hidden','true');if(mBtn)mBtn.setAttribute('aria-expanded','false')}
+  window.closeMob=closeMob;
+  if(mBtn)mBtn.addEventListener('click',()=>{mNav.classList.add('open');mNav.setAttribute('aria-hidden','false');mBtn.setAttribute('aria-expanded','true')});
+  if(mX)mX.addEventListener('click',closeMob);
+  document.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const item=btn.parentElement;
+      const ans=item.querySelector('.faq-a');
+      const open=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(fi=>{fi.classList.remove('open');fi.querySelector('.faq-a').style.maxHeight='0';fi.querySelector('.faq-q').setAttribute('aria-expanded','false')});
+      if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';btn.setAttribute('aria-expanded','true')}
+    });
+  });
+})();
+</script>
+</body>
+</html>
