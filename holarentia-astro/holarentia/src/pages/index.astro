@@ -1,0 +1,34 @@
+---
+// src/pages/index.astro — Landing page principal de Hola Rentia
+import Layout       from '../layouts/Layout.astro';
+import Navbar       from '../components/Navbar.astro';
+import Hero         from '../components/Hero.astro';
+import LogoBar      from '../components/LogoBar.astro';
+import HowItWorks   from '../components/HowItWorks.astro';
+import PainPoints   from '../components/PainPoints.astro';
+import Pricing      from '../components/Pricing.astro';
+import Comparison   from '../components/Comparison.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQ          from '../components/FAQ.astro';
+import CTA          from '../components/CTA.astro';
+import Footer       from '../components/Footer.astro';
+---
+
+<Layout
+  title="Gestión Airbnb con IA desde €99/mes | 0% Comisiones | Hola Rentia"
+  description="Gestiona tu alquiler vacacional en Airbnb y Booking con Inteligencia Artificial. Sin comisiones: quédate con el 100% de tus ingresos. Tarifa fija desde €99/mes, sin permanencia. Servicio en España y +20 países."
+>
+  <Navbar />
+  <main id="content">
+    <Hero />
+    <LogoBar />
+    <HowItWorks />
+    <PainPoints />
+    <Pricing />
+    <Comparison />
+    <Testimonials />
+    <FAQ />
+    <CTA />
+  </main>
+  <Footer />
+</Layout>

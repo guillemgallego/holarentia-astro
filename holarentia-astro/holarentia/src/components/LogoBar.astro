@@ -1,0 +1,27 @@
+---
+// LogoBar.astro
+const platforms = [
+  { name: 'Airbnb',      emoji: '🏠' },
+  { name: 'Booking.com', emoji: '🔵' },
+  { name: 'Vrbo',        emoji: '🏡' },
+  { name: 'Google Vacaciones', emoji: '🔴' },
+  { name: 'TripAdvisor', emoji: '🦉' },
+  { name: 'Expedia',     emoji: '✈️' },
+];
+---
+
+<section class="py-14 border-y border-brand-border bg-brand-deep/60">
+  <div class="max-w-5xl mx-auto px-5 text-center">
+    <p class="text-xs text-brand-muted uppercase tracking-[0.2em] mb-8 font-semibold">
+      Visible en las mayores plataformas del mundo
+    </p>
+    <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-5">
+      {platforms.map(p => (
+        <div class="flex items-center gap-2 text-brand-muted hover:text-white transition-colors duration-200 cursor-default">
+          <span class="text-2xl">{p.emoji}</span>
+          <span class="font-display font-semibold text-base">{p.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
