@@ -668,7 +668,12 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
    FOOTER
 ══════════════════════════════════════════════ */
 footer{background:var(--white);border-top:1px solid var(--border);padding:56px 0 0}
-.footer-g{display:grid;grid-template-columns:1.5fr 1fr 1.2fr;gap:44px;margin-bottom:0;padding-bottom:48px}
+.footer-g{display:grid;grid-template-columns:1.5fr 0.8fr 0.8fr 1.2fr;gap:32px;margin-bottom:0;padding-bottom:48px}
+.f-col{display:flex;flex-direction:column;gap:12px}
+.f-tit{font-family:var(--font-d);font-size:.9rem;font-weight:800;color:var(--text);text-transform:uppercase;letter-spacing:.05em}
+.f-links{list-style:none;display:flex;flex-direction:column;gap:8px}
+.f-links a{font-size:.85rem;color:var(--muted);transition:color .2s}
+.f-links a:hover{color:var(--red)}
 .fb p{font-size:.83rem;color:var(--muted);line-height:1.72;margin:14px 0 16px;max-width:280px}
 .fchips{display:flex;flex-wrap:wrap;gap:7px}
 .fchip{font-size:.68rem;color:var(--muted2);background:var(--bg2);border:1px solid var(--border);padding:4px 10px;border-radius:50px}
@@ -945,7 +950,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:56px 0
         <h3 class="step-t">Logística resuelta (Plan 360)</h3>
         <p class="step-s">Delegación total con equipo local supervisado por nosotros.</p>
         <ul class="fl" aria-label="Características">
-          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Coordinación de limpieza tras cada salida</li>
+          <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Coordinación de Limpieza tras cada salida</li>
           <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Mantenimiento y reparaciones sin desplazarte</li>
           <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Check-in 24/7, inventario y control de accesos</li>
         </ul>
@@ -1213,13 +1218,22 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:56px 0
           <span class="fchip">✔ Garantía 30 días</span>
         </div>
       </div>
-      <div>
-        <p class="fh">Tecnología global</p>
-        <div class="countries">
-          <span class="co">Panamá</span><span class="co">España</span><span class="co">México</span>
-          <span class="co">Costa Rica</span><span class="co">Colombia</span><span class="co">Portugal</span>
-          <span class="co">EE.UU.</span><span class="co">+20 países</span>
-        </div>
+      <div class="f-col">
+        <p class="fh">Países</p>
+        <ul class="f-links">
+          <li><a href="/colombia/">Colombia</a></li>
+          <li><a href="#">España</a></li>
+          <li><a href="#">México</a></li>
+          <li><a href="#">Panamá</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <p class="fh">Ciudades</p>
+        <ul class="f-links">
+          <li><a href="/colombia/medellin/">Medellín</a></li>
+          <li><a href="#">Cartagena</a></li>
+          <li><a href="#">Bogotá</a></li>
+        </ul>
       </div>
       <div>
         <p class="fh">¿Hablamos?</p>
