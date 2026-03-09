@@ -27,6 +27,8 @@
 <meta name="twitter:title" content="Gestión Airbnb con IA desde €99/mes | Sin Comisiones | Hola Rentia"/>
 <meta name="twitter:description" content="IA + equipo humano real. 0% comisiones. Tarifa fija mensual."/>
 <meta name="twitter:image" content="https://holarentia.com/images/hola-rentia-resultados-airbnb-ia-espana.png"/>
+<link rel="preload" as="image" href="/images/hola-rentia-logo-gestion-airbnb-ia.png" fetchpriority="high"/>
+<link rel="preload" as="image" href="/images/hola-rentia-resultados-airbnb-ia-espana.png" fetchpriority="high"/>
 
 <script type="application/ld+json">
 {
@@ -200,7 +202,8 @@ p.sp{color:var(--muted);font-size:1rem;line-height:1.72;margin-top:12px;max-widt
   padding:10px 0;
 }
 .nav-inner{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.nav-logo-img{height:90px;width:auto;display:block}
+.nav-logo-img{height:90px;width:auto;display:block;transition:height .3s}
+@media(max-width:768px){ .nav-logo-img{height:56px} }
 nav.nl{display:flex;align-items:center;gap:26px}
 nav.nl a{font-size:.85rem;font-weight:500;color:var(--muted);transition:color .2s;position:relative}
 nav.nl a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1.5px;background:var(--g-ai-s);transform:scaleX(0);transition:transform .22s;transform-origin:left}
@@ -777,7 +780,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:56px 0
 <header id="nav" role="banner">
   <div class="nav-inner">
     <a href="/" aria-label="Hola Rentia – Inicio">
-      <img src="/images/hola-rentia-logo-gestion-airbnb-ia.png" alt="Hola Rentia – Gestión Airbnb con IA" class="nav-logo-img" width="350" height="90" loading="eager" decoding="async"/>
+      <img src="/images/hola-rentia-logo-gestion-airbnb-ia.png" alt="Hola Rentia – Gestión Airbnb con IA" class="nav-logo-img" width="350" height="90" loading="eager" decoding="async" fetchpriority="high"/>
     </a>
     <nav class="nl" aria-label="Navegación principal">
       <a href="#funciona">Cómo funciona</a>
