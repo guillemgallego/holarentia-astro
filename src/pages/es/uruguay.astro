@@ -1,0 +1,41 @@
+---
+import CountryPage from '../../components/CountryPage.astro';
+
+const props = {
+  country: "Uruguay",
+  slug: "uruguay",
+  flag: "🇺🇾",
+  locale: "es_UY",
+  metaTitle: "Software de Alquiler Vacacional en Uruguay | Gestión Airbnb | Hola Rentia",
+  metaDesc: "Software de alquiler vacacional en Uruguay. Gestiona tus propiedades en Punta del Este, Montevideo y la Costa Este. Channel manager, automatización y precios dinámicos. Desde $99/mes.",
+  ogTitle: "Software Alquiler Vacacional Uruguay | Hola Rentia",
+  ogDesc: "Gestiona tu Airbnb en Uruguay con IA. Sin comisiones, tarifa fija mensual. Para anfitriones en Punta del Este, Montevideo y toda la Costa Este.",
+  twitterTitle: "Software Airbnb Uruguay | Hola Rentia",
+  twitterDesc: "Automatiza tu alquiler vacacional en Uruguay. Punta del Este, Montevideo, Costa Este. Desde $99/mes.",
+  canonicalUrl: "https://holarentia.com/es/uruguay",
+  schemaDesc: "Software de alquiler vacacional en Uruguay. Gestión integral de propiedades turísticas para Property Managers y anfitriones en Punta del Este, Montevideo, José Ignacio y toda la Costa Este uruguaya.",
+  intro: `<p>Uruguay tiene el mercado de alquiler vacacional más sofisticado del Cono Sur. <strong>Punta del Este</strong> es el destino más exclusivo y codiciado de Argentina y Uruguay juntos, con precios por noche que en temporada alta pueden competir con las plazas turísticas de moda de Europa. <strong>José Ignacio</strong>, por su parte, se ha convertido en el capricho de la élite latinoamericana y celebridades internacionales.</p>
+  <p>Este mercado premium exige <strong>gestión absolutamente profesional</strong>: los propietarios de casas en José Ignacio o apartamentos en Punta del Este no pueden permitirse errores de gestión, comunicaciones tardías o falta de sincronización entre plataformas. Hola Rentia está diseñado para este estándar de exigencia.</p>`,
+  platformTitle: "Gestiona tus propiedades en Uruguay desde una sola plataforma",
+  platformContent: `<p>Con Hola Rentia, puedes gestionar desde un departamento frente al mar en La Brava hasta una casa de campo en Carmelo —todo en el mismo panel de control—. <strong>Calendarios unificados, reportes financieros detallados</strong> y gestión de huéspedes centralizada para todas tus propiedades en Uruguay.</p>
+  <p>El mercado uruguayo opera fundamentalmente con turismo argentino y brasileño en enero y febrero, con precios que en algunos casos se multiplican por 4 o 5 respecto a la temporada baja. El sistema de precios dinámicos de Hola Rentia analiza esta demanda y ajusta automáticamente tus tarifas para <strong>maximizar el ingreso en los meses de alta temporada</strong>.</p>`,
+  channelContent: `<p>La temporada turística uruguaya es muy concentrada: enero y febrero son los meses de oro, especialmente en Punta del Este, Punta Ballena y la Costa Este. Durante estos meses, gestionar calendarios manualmente entre Airbnb, Booking.com y VRBO es una fuente constante de errores y overbookings que destrozan la reputación construida durante meses.</p>
+  <p>Hola Rentia sincroniza en tiempo real la disponibilidad de todas tus propiedades. Cuando llega una reserva, <strong>todos los calendarios se actualizan en milisegundos</strong> en todas las plataformas. Además, puedes configurar precios mínimos exclusivos para enero y febrero, garantizando que no vendas por debajo del mercado en la temporada más rentable.</p>`,
+  automationContent: `<p>Los huéspedes que alquilan en Uruguay —especialmente los argentinos y brasileños que llegan a Punta del Este— son exigentes y digitales. Esperan respuestas rápidas, check-in sin complicaciones a cualquier hora y una experiencia profesional. Hola Rentia automatiza todo el proceso para que puedas gestionarlo desde Buenos Aires, São Paulo o donde estés.</p>`,
+  destinations: [
+    { icon: "🌊", name: "Punta del Este", desc: "El resort más exclusivo del Cono Sur. Alta demanda en enero-febrero con precios premium." },
+    { icon: "🌿", name: "José Ignacio", desc: "El Hamptons latinoamericano. Destino de lujo con propiedades de altísimo valor por noche." },
+    { icon: "🏙️", name: "Montevideo", desc: "Capital cosmopolita con turismo de negocios y cultural estable durante todo el año." },
+    { icon: "🍷", name: "Carmelo y Colonia", desc: "Turismo gastronómico y patrimonial. Bodegas del Río de la Plata en pleno auge." },
+    { icon: "🐬", name: "La Pedrera y Cabo Polonio", desc: "Costa Este virgen. Turismo de naturaleza, desconexión y minimalismo de alto valor." },
+    { icon: "🏖️", name: "Punta Ballena y La Barra", desc: "Las playas más de moda entre el público joven de alta gama del Cono Sur." },
+  ],
+  faq: [
+    { q: "¿Hola Rentia funciona para propiedades de lujo en José Ignacio?", a: "Sí. Hola Rentia está diseñado para gestionar propiedades de cualquier valor, incluyendo las casas de lujo en José Ignacio donde una sola reserva puede superar los $5.000 por semana. El sistema garantiza comunicación profesional, check-in impecable y un proceso de reserva sin errores que justifica el precio premium de estas propiedades." },
+    { q: "¿Puedo gestionar mis propiedades en Uruguay desde Argentina?", a: "Absolutamente. Hola Rentia es una plataforma 100% online que te permite gestionar propiedades en Uruguay desde cualquier lugar del mundo. Muchos de nuestros clientes gestionan sus propiedades en Punta del Este desde Buenos Aires, con el mismo nivel de control que si estuvieran presentes. El check-in autónomo, la coordinación remota de limpieza y los mensajes automáticos hacen posible esta gestión a distancia." },
+    { q: "¿Cómo gestiona Hola Rentia la temporada altísima de enero y febrero en Punta del Este?", a: "El sistema de precios dinámicos de Hola Rentia está especialmente calibrado para mercados con estacionalidad extrema como el uruguayo. Puedes configurar tarifas mínimas para enero y febrero, aplicar surcargas automáticas para fines de semana y feriados y garantizar que el sistema nunca acepte reservas por debajo de tu precio de temporada alta, maximizando tus ingresos en los meses más rentables del año." },
+  ],
+  ctaText: "Empieza a rentabilizar tus propiedades en Uruguay con <em>Hola Rentia</em>",
+};
+---
+<CountryPage {...props} />

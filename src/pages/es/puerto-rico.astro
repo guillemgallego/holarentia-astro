@@ -1,0 +1,41 @@
+---
+import CountryPage from '../../components/CountryPage.astro';
+
+const props = {
+  country: "Puerto Rico",
+  slug: "puerto-rico",
+  flag: "🇵🇷",
+  locale: "es_PR",
+  metaTitle: "Software de Alquiler Vacacional en Puerto Rico | Gestión Airbnb | Hola Rentia",
+  metaDesc: "Software de alquiler vacacional en Puerto Rico. Gestiona tus propiedades en San Juan, Rincón, Culebra y Vieques. Channel manager, automatización y precios dinámicos. Desde $99/mes.",
+  ogTitle: "Software Alquiler Vacacional Puerto Rico | Hola Rentia",
+  ogDesc: "Gestiona tu Airbnb en Puerto Rico con IA. Sin comisiones, tarifa fija mensual. Para anfitriones en San Juan, Rincón, Vieques y toda la Isla del Encanto.",
+  twitterTitle: "Software Airbnb Puerto Rico | Hola Rentia",
+  twitterDesc: "Automatiza tu alquiler vacacional en Puerto Rico. San Juan, Rincón, Culebra y Vieques. Desde $99/mes.",
+  canonicalUrl: "https://holarentia.com/es/puerto-rico",
+  schemaDesc: "Software de alquiler vacacional en Puerto Rico. Gestión integral de propiedades turísticas para Property Managers y anfitriones en San Juan, Rincón, Culebra, Vieques y toda la Isla del Encanto.",
+  intro: `<p>Puerto Rico es el destino turístico más visitado del Caribe hispano, con una posición única: opera con el <strong>dólar estadounidense</strong>, cumple con estándares norteamericanos y es accesible sin pasaporte para los ciudadanos de EE.UU., lo que genera un flujo constante de turistas americanos durante todo el año.</p>
+  <p>El mercado de Airbnb en Puerto Rico es uno de los más activos del Caribe. <strong>San Juan Viejo, Rincón y las islas de Culebra y Vieques</strong> concentran una demanda extraordinaria, especialmente entre diciembre y abril, cuando el frío del norte impulsa a miles de estadounidenses a buscar sol y playas caribeñas a pocas horas de vuelo desde la Costa Este.</p>`,
+  platformTitle: "Gestiona tus propiedades en Puerto Rico desde una sola plataforma",
+  platformContent: `<p>Con Hola Rentia, centraliza la gestión de todas tus propiedades en Puerto Rico —desde un apartamento en el Viejo San Juan hasta una villa frente al mar en Rincón— en un único panel de control. <strong>Calendarios sincronizados, reportes en dólares</strong> y gestión de huéspedes centralizda para todas tus propiedades.</p>
+  <p>Puerto Rico opera en dólares, tiene infraestructura bancaria americana y cumple con regulaciones de EE.UU. Hola Rentia se integra perfectamente en este entorno y te proporciona la tecnología para competir con los mejores anfitriones de Airbnb en el Caribe, que operan con sistemas automatizados de última generación.</p>`,
+  channelContent: `<p>El mercado de Airbnb en Puerto Rico es altamente competitivo: miles de propiedades compiten por los viajeros que buscan alternativas a los resorts all-inclusive. La clave para destacar es la combinación de anuncios optimizados y un <strong>channel manager que garantice disponibilidad actualizada</strong> en todos los canales de distribución simultáneamente.</p>
+  <p>Hola Rentia sincroniza tu disponibilidad en tiempo real en Airbnb, Booking.com, VRBO y otros canales. El overbooking en Puerto Rico es especialmente costoso por las penalizaciones de Airbnb y el daño reputacional en un mercado tan competitivo. <strong>Con Hola Rentia, el overbooking es imposible</strong>.</p>`,
+  automationContent: `<p>El turista que visita Puerto Rico es principalmente norteamericano y tiene expectativas muy altas en términos de comunicación digital, velocidad de respuesta y experiencia de check-in. Hola Rentia automatiza todos estos procesos en inglés y español, garantizando que cada huésped reciba la mejor experiencia posible desde el primer mensaje.</p>`,
+  destinations: [
+    { icon: "🏛️", name: "Viejo San Juan", desc: "Barrio histórico colonial. Alta demanda turística y los precios por noche más altos de la isla." },
+    { icon: "🏄", name: "Rincón", desc: "La capital del surf del Caribe. Turismo de aventura y viajeros de larga estancia." },
+    { icon: "🌴", name: "Culebra", desc: "Isla con las mejores playas del Caribe. Capacidad limitada y precios premium todo el año." },
+    { icon: "🌠", name: "Vieques", desc: "La bahía bioluminiscente más famosa del mundo. Turismo de lujo y naturaleza única." },
+    { icon: "🌊", name: "Dorado y Condado", desc: "La costa de lujo de San Juan. Turismo de alto nivel con resorts de marca mundial." },
+    { icon: "🌿", name: "Bosque Nacional El Yunque", desc: "El único bosque tropical de EE.UU. Ecoturismo en crecimiento constante." },
+  ],
+  faq: [
+    { q: "¿Hola Rentia cumple con los requisitos legales de alquiler turístico de Puerto Rico?", a: "Hola Rentia te ayuda a gestionar la información de tus huéspedes de forma organizada y a mantener registros completos de todas las estancias, lo que facilita el cumplimiento de los requisitos del Departamento de Hacienda de Puerto Rico y las regulaciones municipales de alquiler a corto plazo (STR)." },
+    { q: "¿El sistema funciona bien para el mercado de turistas americanos que visitan Puerto Rico?", a: "Sí. Hola Rentia gestiona la comunicación en inglés y español de forma automática. El sistema detecta el idioma preferido del huésped —en el caso de Puerto Rico, la mayoría son anglófonos— y les envía todos los mensajes automáticos en inglés: bienvenida, instrucciones de check-in, guía del barrio y solicitud de reseña al final de la estancia." },
+    { q: "¿Cómo gestiona Hola Rentia la alta demanda de diciembre a abril en Puerto Rico?", a: "El sistema de precios dinámicos analiza la demanda del mercado local en tiempo real y ajusta automáticamente tus tarifas para capturar el pico de entre diciembre y abril, cuando los viajeros del noreste de EE.UU. buscan masivamente sol y calor. Puedes configurar tarifas mínimas para esta temporada y garantizar que maximizas tus ingresos en los meses de mayor demanda." },
+  ],
+  ctaText: "Empieza a rentabilizar tus propiedades en Puerto Rico con <em>Hola Rentia</em>",
+};
+---
+<CountryPage {...props} />

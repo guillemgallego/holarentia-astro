@@ -1,0 +1,41 @@
+---
+import CountryPage from '../../components/CountryPage.astro';
+
+const props = {
+  country: "México",
+  slug: "mexico",
+  flag: "🇲🇽",
+  locale: "es_MX",
+  metaTitle: "Software de Alquiler Vacacional en México | Gestión Airbnb | Hola Rentia",
+  metaDesc: "Software de alquiler vacacional en México. Gestiona tus propiedades en Cancún, Los Cabos, Ciudad de México y Tulum. Channel manager, automatización y precios dinámicos. Desde $99/mes.",
+  ogTitle: "Software Alquiler Vacacional México | Hola Rentia",
+  ogDesc: "Gestiona tu Airbnb en México con IA. Sin comisiones, tarifa fija mensual. Channel manager para Airbnb, Booking y VRBO.",
+  twitterTitle: "Software Airbnb México | Hola Rentia",
+  twitterDesc: "Automatiza tu alquiler vacacional en Cancún, Los Cabos, CDMX y Tulum. Desde $99/mes. Sin comisiones.",
+  canonicalUrl: "https://holarentia.com/es/mexico",
+  schemaDesc: "Software de alquiler vacacional en México. Gestión integral de propiedades turísticas con IA para Property Managers y anfitriones en Cancún, Los Cabos, Ciudad de México, Tulum y toda la Riviera Maya.",
+  intro: `<p>México es el segundo destino turístico más visitado de América Latina y uno de los mercados de Airbnb con mayor crecimiento en el mundo. <strong>Cancún, Los Cabos y la Riviera Maya</strong> registran tasas de ocupación superiores al 80% durante temporada alta, mientras que Ciudad de México y Guadalajara consolidan un mercado urbano sofisticado impulsado por el auge del coliving y los nómadas digitales.</p>
+  <p>Operar en este entorno competitivo requiere más que un buen apartamento. La <strong>sincronización en tiempo real entre plataformas</strong>, los precios dinámicos que reaccionan a la demanda del mercado y la automatización de la comunicación con huéspedes internacionales ya no son una ventaja: son el mínimo para ser competitivo.</p>`,
+  platformTitle: "Gestiona tus apartamentos turísticos en México desde una sola plataforma",
+  platformContent: `<p>Con Hola Rentia, puedes centralizar la gestión de todas tus propiedades en México —desde un departamento en La Condesa hasta una villa en Los Cabos— en un único dashboard. <strong>Sin hojas de Excel, sin WhatsApps a las 2 de la mañana</strong>, sin coordinaciones interminables por separado para cada propiedad.</p>
+  <p>El sistema te permite gestionar múltiples divisas, configurar comisiones de limpieza en pesos mexicanos y mantener el control total de tus ingresos con reportes mensuales detallados. Los cobros llegan directamente a tu cuenta bancaria desde Airbnb y Booking: <strong>nosotros nunca tocamos tu dinero</strong>.</p>`,
+  channelContent: `<p>El mercado vacacional mexicano es muy dinámico: precios que varían enormemente entre Semana Santa, temporada de verano, el Buen Fin y la temporada baja. Sin un channel manager profesional, es imposible mantener los calendarios actualizados en Airbnb, Booking.com, VRBO y Expedia simultáneamente, especialmente si gestionas varias propiedades.</p>
+  <p>Hola Rentia sincroniza tu disponibilidad en tiempo real en todas las plataformas. Cuando alguien reserva en Airbnb, el resto de plataformas se actualiza de inmediato. Además, puedes configurar <strong>tarifas diferenciadas por plataforma</strong>, aplicar descuentos por estancia larga y activar precios especiales para temporadas de alta demanda en México.</p>`,
+  automationContent: `<p>Gestionar propiedades en destinos turísticos mexicanos implica lidiar con huéspedes internacionales que esperan respuestas rápidas, check-in sin complicaciones y una experiencia impecable. Hola Rentia automatiza toda la operación para que puedas escalar tu negocio sin escalar tu carga de trabajo.</p>`,
+  destinations: [
+    { icon: "🏖️", name: "Cancún y Riviera Maya", desc: "El polo vacacional más importante de México. Tulum, Playa del Carmen, Akumal y Holbox en auge." },
+    { icon: "🌵", name: "Los Cabos", desc: "Destino premium de alta gama con huéspedes de alto poder adquisitivo, especialmente americanos." },
+    { icon: "🏙️", name: "Ciudad de México", desc: "Mercado urbano sofisticado con alta demanda de nómadas digitales y turismo de negocios." },
+    { icon: "🌺", name: "Puerto Vallarta", desc: "Destino consolidado de playa con mercado diverso: parejas, familias y turismo LGBTQ+." },
+    { icon: "🏛️", name: "Oaxaca y San Cristóbal", desc: "Destinos culturales en auge con turismo nacional e internacional exigente y de calidad." },
+    { icon: "🚢", name: "Mazatlán y Manzanillo", desc: "Destinos costeros del Pacífico mexicano con crecimiento sostenido de turismo nacional." },
+  ],
+  faq: [
+    { q: "¿Hola Rentia funciona para el mercado de nómadas digitales que llegan a México desde EE.UU.?", a: "Sí. Hola Rentia está especialmente adaptado para el perfil de nómada digital: estancias largas (2 semanas a 3 meses), comunicación en inglés y español, y búsqueda de propiedades con WiFi potente y espacio de trabajo. El sistema te permite crear mensajes de bienvenida en múltiples idiomas, configurar descuentos automáticos por estancias largas y crear guías personalizadas del barrio." },
+    { q: "¿Puedo gestionar propiedades en Cancún y Ciudad de México desde el mismo panel?", a: "Absolutamente. Hola Rentia es una plataforma centralizada que te permite gestionar propiedades en cualquier parte de México desde un único dashboard. Calendarios, precios, mensajes y reportes de todas tus propiedades en un solo lugar, independientemente de si están en la Riviera Maya, Los Cabos o Guadalajara." },
+    { q: "¿Cómo maneja Hola Rentia los pagos en pesos mexicanos y las reservas en dólares?", a: "Las plataformas como Airbnb y Booking gestionan la conversión de divisas y los pagos llegan directamente a tu cuenta bancaria en México. Hola Rentia te permite definir tus tarifas base, aplicar reglas de precio dinámico según la demanda del mercado local y configurar recargos o descuentos por temporada alta, fines de semana o eventos especiales en tu destino." },
+  ],
+  ctaText: "Empieza a rentabilizar tus propiedades en México con <em>Hola Rentia</em>",
+};
+---
+<CountryPage {...props} />

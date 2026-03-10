@@ -1,0 +1,41 @@
+---
+import CountryPage from '../../components/CountryPage.astro';
+
+const props = {
+  country: "República Dominicana",
+  slug: "republica-dominicana",
+  flag: "🇩🇴",
+  locale: "es_DO",
+  metaTitle: "Software de Alquiler Vacacional en República Dominicana | Gestión Airbnb | Hola Rentia",
+  metaDesc: "Software de alquiler vacacional en República Dominicana. Gestiona tus villas en Punta Cana, Las Terrenas, Samaná y Santo Domingo. Channel manager y automatización. Desde $99/mes.",
+  ogTitle: "Software Alquiler Vacacional República Dominicana | Hola Rentia",
+  ogDesc: "Gestiona tu Airbnb en República Dominicana con IA. Sin comisiones, tarifa fija mensual. Para anfitriones en Punta Cana, Las Terrenas y Samaná.",
+  twitterTitle: "Software Airbnb República Dominicana | Hola Rentia",
+  twitterDesc: "Automatiza tu alquiler vacacional en República Dominicana. Punta Cana, Las Terrenas, Samaná. Desde $99/mes.",
+  canonicalUrl: "https://holarentia.com/es/republica-dominicana",
+  schemaDesc: "Software de alquiler vacacional en República Dominicana. Gestión integral de villas y apartamentos turísticos para Property Managers en Punta Cana, Las Terrenas, Samaná y Santo Domingo.",
+  intro: `<p>República Dominicana es el destino turístico más visitado del Caribe, con más de 10 millones de turistas al año. <strong>Punta Cana</strong> es uno de los aeropuertos más transitados de toda Latinoamérica, mientras que destinos emergentes como <strong>Las Terrenas, Samaná y Las Galeras</strong> atraen a un turismo europeo de alto valor que busca autenticidad y exclusividad lejos del turismo masivo.</p>
+  <p>El mercado de villas y apartamentos vacacionales en República Dominicana está viviendo un momento de auge. Los propietarios que quieren captar una porción de este mercado necesitan <strong>presencia en Airbnb, Booking.com y VRBO simultáneamente</strong>, precios optimizados y una gestión profesional que garantice la experiencia que los turistas internacionales esperan.</p>`,
+  platformTitle: "Gestiona tus villas y apartamentos en República Dominicana desde una sola plataforma",
+  platformContent: `<p>Con Hola Rentia, puedes gestionar todas tus propiedades en República Dominicana —desde un villa en Cap Cana hasta un apartamento frente al mar en Las Terrenas— en un único panel de control. <strong>Calendarios unificados, gestión de pagos centralizada</strong> y reportes financieros detallados para cada propiedad.</p>
+  <p>El sistema está especialmente diseñado para propietarios que gestionan villas de alto valor, donde la tasa de ocupación y el precio medio por noche determinan la rentabilidad anual. <strong>Los precios dinámicos de Hola Rentia</strong> analizan la demanda del mercado caribeño y ajustan tus tarifas para maximizar los ingresos en temporada alta y mantener competitividad en temporada baja.</p>`,
+  channelContent: `<p>El turismo en República Dominicana opera en un entorno altamente competitivo donde miles de propiedades compiten por los mismos viajeros en múltiples plataformas. Gestionar calendarios manualmente entre Airbnb, Booking.com, VRBO y tu propio sitio web es una fuente constante de overbookings y errores que destruyen reputación.</p>
+  <p>Hola Rentia sincroniza en tiempo real la disponibilidad de tus propiedades en todas las plataformas. <strong>Cero posibilidad de overbooking.</strong> Además, puedes configurar tarifas especiales para temporada alta de Navidad y Año Nuevo —cuando los precios en el Caribe se multiplican— y garantizar que no te quedes por debajo del mercado.</p>`,
+  automationContent: `<p>Los turistas que visitan República Dominicana esperan la misma experiencia digital que en cualquier resort de lujo: respuestas instantáneas, check-in sin esperas y información proactiva sobre la propiedad y el destino. Hola Rentia automatiza toda esta experiencia para que puedas competir con los grandes complejos hoteleros a una fracción del costo.</p>`,
+  destinations: [
+    { icon: "🏖️", name: "Punta Cana y Bávaro", desc: "El epicentro del turismo caribeño. Alta demanda internacional durante todo el año." },
+    { icon: "🌴", name: "Las Terrenas", desc: "El favorito de los europeos. Turismo de calidad que busca autenticidad y naturaleza." },
+    { icon: "🐋", name: "Samaná y Las Galeras", desc: "Paraíso natural con avistamiento de ballenas jorobadas de enero a marzo." },
+    { icon: "🏙️", name: "Santo Domingo", desc: "Capital y Zona Colonial UNESCO. Turismo cultural, de negocios y gastronomía en auge." },
+    { icon: "⛵", name: "Juan Dolio y La Romana", desc: "Casa de Campo y playas del Este. Turismo de golf y lujo consolidado." },
+    { icon: "🌊", name: "Cabarete y Puerto Plata", desc: "La costa del Caribe Norte. Kite surf, surf y turismo de aventura en pleno crecimiento." },
+  ],
+  faq: [
+    { q: "¿Hola Rentia funciona para villas en zonas exclusivas como Cap Cana?", a: "Sí, y está especialmente diseñado para este tipo de propiedades. Las villas de alto valor en zonas como Cap Cana, Casa de Campo o Las Terrenas requieren una gestión impecable: comunicación en inglés y español, check-in profesional, coordinación de servicios adicionales y precios que reflejen el valor premium de la propiedad. Hola Rentia gestiona todo esto de forma automatizada." },
+    { q: "¿Cómo gestiona Hola Rentia las reservas durante la temporada alta de Navidad en el Caribe?", a: "El sistema de precios dinámicos de Hola Rentia analiza la demanda del mercado en tiempo real y ajusta automáticamente tus tarifas para capturar el pico de precios de diciembre y enero, cuando el Caribe experimenta la mayor demanda del año. Puedes configurar tarifas mínimas para estas fechas y garantizar que no vendas por debajo del precio de mercado." },
+    { q: "¿El sistema maneja bien la comunicación con turistas europeos y norteamericanos?", a: "Sí. Hola Rentia permite configurar mensajes automáticos en múltiples idiomas —español, inglés, francés, italiano, alemán— adaptados al perfil del huésped. El sistema detecta el idioma del viajero y le envía toda la información en ese idioma: instrucciones de check-in, guía del entorno, recomendaciones locales y solicitud de reseña al final de la estancia." },
+  ],
+  ctaText: "Empieza a rentabilizar tus propiedades en República Dominicana con <em>Hola Rentia</em>",
+};
+---
+<CountryPage {...props} />

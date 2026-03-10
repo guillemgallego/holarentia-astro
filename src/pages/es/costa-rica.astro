@@ -1,0 +1,41 @@
+---
+import CountryPage from '../../components/CountryPage.astro';
+
+const props = {
+  country: "Costa Rica",
+  slug: "costa-rica",
+  flag: "🇨🇷",
+  locale: "es_CR",
+  metaTitle: "Software de Alquiler Vacacional en Costa Rica | Gestión Airbnb | Hola Rentia",
+  metaDesc: "Software de alquiler vacacional en Costa Rica. Gestiona tus villas y apartamentos en Guanacaste, Manuel Antonio, Monteverde y San José. Channel manager y automatización. Desde $99/mes.",
+  ogTitle: "Software Alquiler Vacacional Costa Rica | Hola Rentia",
+  ogDesc: "Gestiona tu Airbnb en Costa Rica con IA. Sin comisiones, tarifa fija mensual. Para anfitriones en Guanacaste, Manuel Antonio y toda Costa Rica.",
+  twitterTitle: "Software Airbnb Costa Rica | Hola Rentia",
+  twitterDesc: "Automatiza tu alquiler vacacional en Costa Rica. Guanacaste, Manuel Antonio, Monteverde. Desde $99/mes.",
+  canonicalUrl: "https://holarentia.com/es/costa-rica",
+  schemaDesc: "Software de alquiler vacacional en Costa Rica. Gestión integral de villas y apartamentos turísticos con IA para Property Managers y anfitriones en Guanacaste, Manuel Antonio y toda Costa Rica.",
+  intro: `<p>Costa Rica es uno de los destinos de ecoturismo más reconocidos del mundo y un mercado de alquiler vacacional con características muy particulares. La combinación de <strong>playas del Pacífico e Hispanismo Caribe</strong>, selvas tropicales, volcanes activos y una infraestructura turística de primer nivel genera una demanda constante de turistas de alto poder adquisitivo, principalmente de América del Norte y Europa.</p>
+  <p>El mercado costarricense está cada vez más profesionalizado. Los propietarios de villas y casas vacacionales en Guanacaste o Manuel Antonio que quieren competir con los grandes complejos hoteleros necesitan <strong>tecnología de gestión profesional</strong>: precios dinámicos, automatización y canal manager multi-plataforma.</p>`,
+  platformTitle: "Gestiona tus villas y apartamentos en Costa Rica desde una sola plataforma",
+  platformContent: `<p>Con Hola Rentia, centraliza la gestión de todas tus propiedades en Costa Rica —desde una villa en Flamingo Beach hasta un ecolodge cerca de Monteverde— en un único panel de control. Calendarios, precios, mensajes a huéspedes y reportes financieros, todo en un solo lugar.</p>
+  <p>El sistema es especialmente útil para propietarios que gestionan villas de alto valor donde la rentabilidad de cada reserva es crítica. <strong>Los precios dinámicos de Hola Rentia analizan la demanda del mercado local</strong> y ajustan tus tarifas automáticamente para maximizar el ingreso por noche sin perder competitividad.</p>`,
+  channelContent: `<p>El turismo en Costa Rica tiene una estacionalidad muy marcada: la temporada seca (diciembre a abril) concentra la mayor afluencia de turistas internacionales, especialmente en Guanacaste y las playas del Pacífico. Durante estos meses, la demanda supera ampliamente la oferta y los precios pueden triplicarse. Sin un channel manager, es prácticamente imposible gestionar calendarios en múltiples plataformas durante estos picos.</p>
+  <p>Hola Rentia sincroniza en tiempo real tu disponibilidad en Airbnb, Booking.com, VRBO, Expedia y otras plataformas. Cuando llega una reserva, <strong>todos los calendarios se actualizan instantáneamente</strong>. Además, puedes configurar precios mínimos de temporada alta para garantizar que no vendas por debajo del mercado.</p>`,
+  automationContent: `<p>El turista que visita Costa Rica es exigente y digital: busca propiedades en Airbnb, compara opciones en Booking.com y espera comunicación instantánea. Hola Rentia automatiza todas las respuestas y procesos de manera que puedas ofrecer una experiencia de 5 estrellas sin que requiera tu atención constante.</p>`,
+  destinations: [
+    { icon: "🌴", name: "Guanacaste", desc: "Playas del Pacífico Norte: Tamarindo, Flamingo, Playa del Coco. Alta demanda de turistas norteamericanos." },
+    { icon: "🦜", name: "Manuel Antonio", desc: "Parque nacional con playas paradisíacas. Uno de los destinos más codiciados de Costa Rica." },
+    { icon: "🌿", name: "Monteverde", desc: "Selva nubosa y ecoturismo de lujo. Turistas europeos y americanos exigentes todo el año." },
+    { icon: "🏙️", name: "San José", desc: "Capital y hub de conexiones. Demanda de turismo de negocios y tránsito internacional." },
+    { icon: "🌊", name: "Jacó y Dominical", desc: "Costa del Pacífico Central. Surf, naturaleza y turismo de aventura en crecimiento." },
+    { icon: "🐊", name: "Tortuguero y Caribe", desc: "Turismo de naturaleza único. Avistamiento de tortugas y selva tropical virgen." },
+  ],
+  faq: [
+    { q: "¿Hola Rentia funciona para villas de alto valor en Guanacaste?", a: "Sí. Hola Rentia está especialmente adaptado para propiedades de alto valor donde cada reserva representa un ingreso significativo. El sistema de precios dinámicos garantiza que maximices el precio por noche según la demanda del mercado, mientras que la automatización de mensajes y el check-in profesional generan la experiencia premium que esperan los huéspedes de alto poder adquisitivo." },
+    { q: "¿Puedo gestionar propiedades en distintas zonas de Costa Rica desde el mismo panel?", a: "Absolutamente. Con Hola Rentia puedes gestionar una villa en Guanacaste, un apartamento en San José y una casa en Manuel Antonio desde el mismo dashboard. Calendarios sincronizados, precios diferenciados por zona y reportes financieros por propiedad, todo en un único lugar." },
+    { q: "¿El sistema ayuda a captar más turistas internacionales para mis propiedades?", a: "Hola Rentia optimiza tus anuncios en todas las plataformas para maximizar la visibilidad ante el turismo internacional. La comunicación automática en inglés y español, las guías personalizadas de la zona y el proceso de check-in profesional generan reseñas de 5 estrellas que mejoran tu posicionamiento orgánico en Airbnb y Booking, atrayendo más reservas de forma orgánica." },
+  ],
+  ctaText: "Empieza a rentabilizar tus propiedades en Costa Rica con <em>Hola Rentia</em>",
+};
+---
+<CountryPage {...props} />

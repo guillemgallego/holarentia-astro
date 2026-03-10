@@ -1,0 +1,556 @@
+---
+// src/components/CountryPage.astro — Hola Rentia · Country SEO Page Template
+import Footer from './Footer.astro';
+import WhatsApp from './WhatsApp.astro';
+
+export interface Destination {
+  icon: string;
+  name: string;
+  desc: string;
+}
+
+export interface FAQ {
+  q: string;
+  a: string;
+}
+
+export interface Props {
+  country: string;
+  slug: string;
+  locale: string;
+  flag: string;
+  metaTitle: string;
+  metaDesc: string;
+  ogTitle: string;
+  ogDesc: string;
+  twitterTitle: string;
+  twitterDesc: string;
+  canonicalUrl: string;
+  schemaDesc: string;
+  faq: FAQ[];
+  // Content sections
+  intro: string;
+  platformTitle: string;
+  platformContent: string;
+  channelContent: string;
+  automationContent: string;
+  destinations: Destination[];
+  ctaText: string;
+  // Breadcrumb
+  parentPage?: { name: string; href: string };
+}
+
+const {
+  country, slug, locale, flag, metaTitle, metaDesc, ogTitle, ogDesc,
+  twitterTitle, twitterDesc, canonicalUrl, schemaDesc, faq,
+  intro, platformTitle, platformContent, channelContent, automationContent,
+  destinations, ctaText, parentPage
+} = Astro.props;
+
+const schemaFaq = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://holarentia.com/#app",
+      "name": "Hola Rentia",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": schemaDesc,
+      "offers": [
+        {"@type": "Offer", "name": "Plan Gestión Digital", "price": "99", "priceCurrency": "USD"},
+        {"@type": "Offer", "name": "Plan Gestión Operativa 360", "price": "199", "priceCurrency": "USD"}
+      ],
+      "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "500"}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faq.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": {"@type": "Answer", "text": f.a}
+      }))
+    }
+  ]
+});
+---
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<!-- ══ SEO ══ -->
+<title>{metaTitle}</title>
+<meta name="description" content={metaDesc}/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href={canonicalUrl}/>
+<link rel="icon" type="image/webp" href="/images/favicon.webp"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content={canonicalUrl}/>
+<meta property="og:title" content={ogTitle}/>
+<meta property="og:description" content={ogDesc}/>
+<meta property="og:image" content="https://holarentia.com/images/hola-rentia-resultados-airbnb-ia-espana.webp"/>
+<meta property="og:locale" content={locale}/>
+<meta property="og:site_name" content="Hola Rentia"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content={twitterTitle}/>
+<meta name="twitter:description" content={twitterDesc}/>
+<meta name="twitter:image" content="https://holarentia.com/images/hola-rentia-resultados-airbnb-ia-espana.webp"/>
+<link rel="preload" as="image" href="/images/hola-rentia-logo-gestion-airbnb-ia.webp" fetchpriority="high"/>
+
+<script type="application/ld+json" set:html={schemaFaq}/>
+
+<!-- ══ FONTS ══ -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800;12..96,900&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800;12..96,900&display=swap" media="print" onload="this.media='all'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800;12..96,900&display=swap"/></noscript>
+
+<style>
+:root{
+  --red:#ff3b30;--red-d:#d62e24;--red-l:#ff6a5a;--orange:#ff7a00;--violet:#7c3aed;--blue:#2563eb;--cyan:#06b6d4;
+  --g-ai:linear-gradient(135deg,#ff3b30,#ff7a00,#7c3aed);
+  --g-ai-s:linear-gradient(135deg,#ff3b30 0%,#ff6a5a 100%);
+  --white:#ffffff;--bg:#ffffff;--bg2:#f8f9fb;--bg3:#f1f4f8;
+  --border:#e5e8ef;--text:#0f172a;--text2:#334155;--muted:#64748b;--muted2:#94a3b8;
+  --font-d:'Bricolage Grotesque',system-ui,sans-serif;
+  --font-b:'Inter',system-ui,sans-serif;
+  --r-sm:8px;--r-md:14px;--r-lg:20px;--r-xl:28px;--r-2xl:40px;
+  --sh-sm:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.05);
+  --sh-md:0 4px 16px rgba(0,0,0,.08),0 2px 6px rgba(0,0,0,.04);
+  --sh-lg:0 16px 48px rgba(0,0,0,.1),0 4px 16px rgba(0,0,0,.06);
+  --sh-red:0 8px 28px rgba(255,59,48,.28);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:var(--font-b);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{font-family:var(--font-b);cursor:pointer}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+.wrap-wide{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:14px 0;transition:background .3s,border-color .3s,box-shadow .3s,padding .25s;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid transparent}
+#nav.scrolled{background:rgba(255,255,255,.96);border-bottom-color:var(--border);box-shadow:0 1px 12px rgba(0,0,0,.06);padding:10px 0}
+.nav-inner{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav-logo-img{height:90px;width:auto;display:block;transition:height .3s}
+@media(max-width:768px){.nav-logo-img{height:56px}}
+nav.nl{display:flex;align-items:center;gap:26px}
+nav.nl a{font-size:.85rem;font-weight:500;color:var(--muted);transition:color .2s}
+nav.nl a:hover{color:var(--text)}
+.btn-nav{background:var(--g-ai-s);color:#fff;font-size:.81rem;font-weight:700;padding:9px 20px;border-radius:50px;border:none;cursor:pointer;transition:all .22s;box-shadow:0 4px 14px rgba(255,59,48,.25);text-decoration:none;display:inline-block}
+.btn-nav:hover{box-shadow:0 8px 24px rgba(255,59,48,.4);transform:translateY(-1px)}
+.mob-btn{display:none;background:none;border:1.5px solid var(--border);color:var(--text);padding:7px;border-radius:var(--r-sm);cursor:pointer}
+#mob-nav{display:none;position:fixed;inset:0;background:#fff;z-index:190;flex-direction:column;align-items:center;justify-content:center;gap:24px}
+#mob-nav.open{display:flex}
+#mob-nav a{font-family:var(--font-d);font-size:1.6rem;font-weight:800;color:var(--text)}
+#mob-nav .x{position:absolute;top:20px;right:22px;background:none;border:none;color:var(--muted);font-size:1.5rem;cursor:pointer}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;border:none;border-radius:var(--r-md);cursor:pointer;text-decoration:none;transition:all .22s;font-family:var(--font-b)}
+.btn-fire{background:var(--g-ai-s);color:#fff;padding:14px 28px;font-size:.93rem;font-weight:700;box-shadow:var(--sh-red);position:relative;overflow:hidden;border-radius:var(--r-md)}
+.btn-fire:hover{box-shadow:0 12px 36px rgba(255,59,48,.42);transform:translateY(-2px)}
+.btn-ghost{background:var(--white);color:var(--text);padding:14px 28px;font-size:.93rem;border:1.5px solid var(--border);box-shadow:var(--sh-sm);border-radius:var(--r-md);font-weight:600;transition:all .22s;display:inline-flex;align-items:center}
+.btn-ghost:hover{border-color:rgba(255,59,48,.3);color:var(--red);box-shadow:var(--sh-md);transform:translateY(-2px)}
+
+/* Eyebrow */
+.eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:5px 14px;border-radius:50px;margin-bottom:16px;background:rgba(255,59,48,.07);border:1px solid rgba(255,59,48,.18);color:var(--red)}
+@keyframes pulse3{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(1.8)}}
+.eyebrow::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0;animation:pulse3 2s ease infinite}
+
+/* Breadcrumb */
+.breadcrumb{padding:100px 0 0;font-size:.8rem;color:var(--muted2)}
+.breadcrumb a{color:var(--muted2);transition:color .18s}
+.breadcrumb a:hover{color:var(--red)}
+.breadcrumb span{margin:0 6px}
+
+/* Hero */
+#hero{padding:48px 0 80px;background:var(--bg);position:relative;overflow:hidden}
+.hero-mesh{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 55% at 55% -5%,rgba(255,59,48,.07) 0%,transparent 55%),radial-gradient(ellipse 45% 40% at 95% 60%,rgba(124,58,237,.05) 0%,transparent 50%)}
+h1{font-family:var(--font-d);font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:900;color:var(--text);line-height:1.07;letter-spacing:-.035em;margin-bottom:20px}
+h1 .ai-word{background:var(--g-ai);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:1.06rem;color:var(--muted);line-height:1.74;max-width:700px;margin-bottom:28px}
+.hero-desc strong{color:var(--text);font-weight:700}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.hero-meta{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.hero-star{font-size:.82rem;color:var(--muted);display:flex;align-items:center;gap:4px}
+.hero-star strong{color:var(--text)}
+
+/* Sections */
+section{padding:80px 0}
+section:nth-child(even){background:var(--bg2)}
+h2{font-family:var(--font-d);font-weight:800;font-size:clamp(1.6rem,3vw,2.3rem);color:var(--text);line-height:1.12;letter-spacing:-.02em;margin-bottom:18px}
+h2 em{font-style:normal;background:var(--g-ai);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+p{color:var(--muted);font-size:1rem;line-height:1.72;margin-bottom:14px}
+p:last-child{margin-bottom:0}
+p strong{color:var(--text2);font-weight:700}
+
+/* Feature list */
+.feat-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin:24px 0}
+.feat-list li{display:flex;align-items:flex-start;gap:12px;font-size:.95rem;color:var(--text2);line-height:1.55}
+.feat-list li::before{content:'✅';flex-shrink:0;font-size:1rem}
+
+/* Stats mini */
+.stat-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden;margin:36px 0}
+.ss{background:var(--white);padding:24px 20px;text-align:center}
+.ss-num{font-family:var(--font-d);font-size:2rem;font-weight:900;background:var(--g-ai);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;line-height:1}
+.ss-lbl{font-size:.74rem;color:var(--muted);margin-top:4px;display:block}
+
+/* Channel manager logo pills */
+.platform-pills{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}
+.pp{font-size:.82rem;font-weight:600;color:var(--text2);background:var(--white);border:1.5px solid var(--border);padding:8px 16px;border-radius:50px;display:flex;align-items:center;gap:6px;box-shadow:var(--sh-sm);transition:all .22s}
+.pp:hover{border-color:rgba(255,59,48,.3);color:var(--red);box-shadow:var(--sh-md)}
+
+/* Automation features grid */
+.auto-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px}
+.auto-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-xl);padding:24px;box-shadow:var(--sh-sm);transition:all .28s;position:relative;overflow:hidden}
+.auto-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--g-ai-s);opacity:0;transition:opacity .22s}
+.auto-card:hover{transform:translateY(-4px);box-shadow:var(--sh-lg);border-color:rgba(255,59,48,.2)}
+.auto-card:hover::before{opacity:1}
+.auto-ico{font-size:1.8rem;margin-bottom:10px}
+.auto-card h3{font-family:var(--font-d);font-size:.95rem;font-weight:800;color:var(--text);margin-bottom:6px}
+.auto-card p{font-size:.82rem;color:var(--muted);margin:0}
+
+/* Destinations */
+.dest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.dest{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:20px;box-shadow:var(--sh-sm);transition:all .28s;text-align:center}
+.dest:hover{transform:translateY(-4px);box-shadow:var(--sh-lg);border-color:rgba(255,59,48,.2)}
+.dest-ico{font-size:2rem;margin-bottom:8px}
+.dest h3{font-family:var(--font-d);font-size:.92rem;font-weight:800;color:var(--text);margin-bottom:4px}
+.dest p{font-size:.78rem;color:var(--muted);margin:0}
+
+/* Target audience */
+.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.who{background:var(--white);border:1px solid var(--border);border-radius:var(--r-xl);padding:24px;box-shadow:var(--sh-sm);text-align:center;transition:all .28s}
+.who:hover{transform:translateY(-4px);box-shadow:var(--sh-lg);border-color:rgba(255,59,48,.18)}
+.who-ico{font-size:2.2rem;margin-bottom:10px}
+.who h3{font-family:var(--font-d);font-size:.95rem;font-weight:800;color:var(--text);margin-bottom:6px}
+.who p{font-size:.82rem;color:var(--muted);margin:0}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:10px;margin-top:32px}
+.faq-item{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r-lg);overflow:hidden;transition:border-color .22s}
+.faq-item.open{border-color:rgba(255,59,48,.25);box-shadow:0 4px 16px rgba(255,59,48,.08)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 22px;background:none;border:none;text-align:left;cursor:pointer;transition:background .18s}
+.faq-q:hover{background:var(--bg2)}
+.faq-q span:first-child{font-size:.93rem;font-weight:600;color:var(--text)}
+.faq-icon{width:24px;height:24px;border-radius:6px;background:rgba(255,59,48,.08);border:1px solid rgba(255,59,48,.16);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .28s}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-icon svg{width:12px;height:12px;stroke:var(--red);fill:none;stroke-width:2.5}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .32s ease}
+.faq-a p{padding:0 22px 18px;font-size:.84rem;color:var(--muted);line-height:1.7;margin:0}
+
+/* CTA final */
+#cta-final{background:var(--text);padding:80px 0}
+#cta-final .eyebrow{background:rgba(255,59,48,.15);border-color:rgba(255,59,48,.35);color:#ff6a5a;justify-content:center;display:flex}
+#cta-final h2{color:#fff;text-align:center;margin-bottom:14px}
+#cta-final h2 em{font-style:normal;background:var(--g-ai);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+#cta-final p{color:rgba(255,255,255,.55);text-align:center;max-width:520px;margin:0 auto 32px}
+.cta-center{text-align:center}
+.cta-pills{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:18px}
+.cta-pill{font-size:.77rem;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:5px}
+
+/* Internal links */
+.int-links{padding:40px 0;background:var(--bg2)}
+.int-links p{font-size:.84rem;color:var(--muted2);text-align:center;margin:0}
+.int-links a{color:var(--red);font-weight:600}
+
+@media(max-width:1024px){
+  .dest-grid{grid-template-columns:repeat(2,1fr)}
+  .who-grid{grid-template-columns:repeat(2,1fr)}
+  .stat-strip{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .auto-grid{grid-template-columns:1fr}
+  .dest-grid{grid-template-columns:1fr 1fr}
+  .who-grid{grid-template-columns:1fr}
+  nav.nl,.btn-nav{display:none}
+  .mob-btn{display:flex!important;align-items:center;justify-content:center}
+  h1{font-size:2.2rem}
+  .stat-strip{grid-template-columns:1fr}
+  .hero-meta{flex-direction:column;align-items:flex-start;gap:8px}
+}
+@media(max-width:480px){
+  .dest-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<WhatsApp />
+
+<!-- NAVBAR -->
+<header id="nav" role="banner">
+  <div class="nav-inner">
+    <a href="/" aria-label="Hola Rentia – Inicio">
+      <img src="/images/hola-rentia-logo-gestion-airbnb-ia.webp" alt="Hola Rentia – Software Gestión Airbnb" class="nav-logo-img" width="350" height="90" loading="eager" decoding="async" fetchpriority="high"/>
+    </a>
+    <nav class="nl" aria-label="Navegación principal">
+      <a href="/#funciona">Cómo funciona</a>
+      <a href="/#precios">Precios</a>
+      <a href="/#testimonios">Clientes</a>
+    </nav>
+    <a href="/#formulario" class="btn-nav">🔍 Analizar mi propiedad</a>
+    <button class="mob-btn" id="mob-btn" aria-label="Abrir menú" aria-expanded="false">
+      <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<nav id="mob-nav" aria-label="Menú móvil" aria-hidden="true">
+  <button class="x" id="mob-close" aria-label="Cerrar menú">✕</button>
+  <a href="/#funciona" onclick="closeMob()">Cómo funciona</a>
+  <a href="/#precios" onclick="closeMob()">Precios</a>
+  <a href="/#testimonios" onclick="closeMob()">Clientes</a>
+  <a href="/#formulario" onclick="closeMob()" class="btn btn-fire" style="margin-top:8px">🔍 Analizar mi propiedad</a>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="wrap">
+    <a href="/">Hola Rentia</a>
+    {parentPage && <><span>›</span><a href={parentPage.href}>{parentPage.name}</a></>}
+    <span>›</span>
+    <span>{country}</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="hero" aria-labelledby="hero-heading">
+  <div class="hero-mesh" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="eyebrow">Software Alquiler Vacacional · {flag} {country}</div>
+    <h1 id="hero-heading">Software de alquiler vacacional en <span class="ai-word">{country}</span></h1>
+    <div class="hero-desc" set:html={intro}/>
+    <div class="hero-btns">
+      <a href="/#formulario" class="btn btn-fire">🚀 Empezar gratis — Sin tarjeta</a>
+      <a href="/#precios" class="btn-ghost">Ver planes y precios →</a>
+    </div>
+    <div class="hero-meta">
+      <span class="hero-star">⭐⭐⭐⭐⭐ <strong>4.9/5</strong> de más de 500 gestores</span>
+      <span class="hero-star">✔ <strong>0% comisiones</strong> sobre tus ingresos</span>
+      <span class="hero-star">✔ Sin permanencia</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section style="padding:0;background:var(--bg2)">
+  <div class="wrap" style="padding-top:48px;padding-bottom:48px">
+    <div class="stat-strip">
+      <div class="ss"><span class="ss-num">+500</span><span class="ss-lbl">Gestores activos en +20 países</span></div>
+      <div class="ss"><span class="ss-num">+24%</span><span class="ss-lbl">Ingresos de media con precios IA</span></div>
+      <div class="ss"><span class="ss-num">4.9⭐</span><span class="ss-lbl">Valoración media en reseñas</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATAFORMA -->
+<section aria-labelledby="plat-heading">
+  <div class="wrap">
+    <div class="eyebrow">Una sola plataforma</div>
+    <h2 id="plat-heading">{platformTitle}</h2>
+    <div set:html={platformContent}/>
+    <ul class="feat-list">
+      <li>Dashboard centralizado con todas tus propiedades en tiempo real</li>
+      <li>Calendarios sincronizados entre Airbnb, Booking.com, VRBO y más</li>
+      <li>Gestión de pagos: cobros directos a tu cuenta, cero intermediarios</li>
+      <li>Comunicación con huéspedes desde un único bandeja de entrada</li>
+      <li>Reportes financieros mensuales listos para tu contable</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CHANNEL MANAGER -->
+<section aria-labelledby="channel-heading">
+  <div class="wrap">
+    <div class="eyebrow">Channel Manager</div>
+    <h2 id="channel-heading">Channel Manager para Airbnb, Booking y otras <em>plataformas</em></h2>
+    <div set:html={channelContent}/>
+    <div class="platform-pills">
+      <span class="pp">✈ Airbnb</span>
+      <span class="pp">🏨 Booking.com</span>
+      <span class="pp">🏠 VRBO / HomeAway</span>
+      <span class="pp">🔍 Google Vacation Rentals</span>
+      <span class="pp">✈ Expedia</span>
+      <span class="pp">⭐ TripAdvisor</span>
+    </div>
+  </div>
+</section>
+
+<!-- AUTOMATIZACIÓN -->
+<section aria-labelledby="auto-heading">
+  <div class="wrap">
+    <div class="eyebrow">Automatización total</div>
+    <h2 id="auto-heading">Automatiza la gestión de alquiler vacacional en <em>{country}</em></h2>
+    <div set:html={automationContent}/>
+    <div class="auto-grid">
+      <div class="auto-card">
+        <div class="auto-ico">💬</div>
+        <h3>Mensajes automáticos a huéspedes</h3>
+        <p>Bienvenida, instrucciones de llegada y solicitud de reseña. En el idioma del huésped, en el momento exacto.</p>
+      </div>
+      <div class="auto-card">
+        <div class="auto-ico">📅</div>
+        <h3>Sincronización de calendarios</h3>
+        <p>Actualización en tiempo real en todas las plataformas. Adiós al overbooking y a los errores manuales.</p>
+      </div>
+      <div class="auto-card">
+        <div class="auto-ico">💰</div>
+        <h3>Precios dinámicos con IA</h3>
+        <p>El sistema ajusta tus tarifas automáticamente según demanda local, temporadas y eventos. +20% de ingresos de media.</p>
+      </div>
+      <div class="auto-card">
+        <div class="auto-ico">🔐</div>
+        <h3>Check-in autónomo 24/7</h3>
+        <p>Envío de códigos de acceso y cerraduras inteligentes. Tus huéspedes entran solos, sin necesidad de que estés presente.</p>
+      </div>
+      <div class="auto-card">
+        <div class="auto-ico">🧹</div>
+        <h3>Coordinación de limpieza</h3>
+        <p>Notificación automática al equipo de limpieza tras cada salida con checklist de revisión y seguimiento.</p>
+      </div>
+      <div class="auto-card">
+        <div class="auto-ico">🛡️</div>
+        <h3>Filtrado anti-problemas</h3>
+        <p>Sistema de verificación de huéspedes para proteger tus propiedades de inquilinos que incumplan las normas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINOS -->
+<section aria-labelledby="dest-heading">
+  <div class="wrap">
+    <div class="eyebrow">Destinos turísticos</div>
+    <h2 id="dest-heading">Principales destinos de alquiler vacacional en <em>{country}</em></h2>
+    <p>Hola Rentia opera en todos los mercados de {country}, desde grandes ciudades hasta destinos de playa y montaña. Gestiona propiedades en cualquier destino desde un único panel de control.</p>
+    <div class="dest-grid">
+      {destinations.map(d => (
+        <div class="dest">
+          <div class="dest-ico">{d.icon}</div>
+          <h3>{d.name}</h3>
+          <p>{d.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section aria-labelledby="who-heading">
+  <div class="wrap">
+    <div class="eyebrow">Cliente ideal</div>
+    <h2 id="who-heading">¿Para quién es <em>HOLA RENTIA</em>?</h2>
+    <p>Hola Rentia está diseñado para profesionales del alquiler vacacional en {country} que ya han probado la gestión manual y saben que no escala.</p>
+    <div class="who-grid">
+      <div class="who">
+        <div class="who-ico">🏢</div>
+        <h3>Property Managers</h3>
+        <p>Gestoras con 3 o más propiedades que necesitan sistemas para operar eficientemente y reportar a sus clientes.</p>
+      </div>
+      <div class="who">
+        <div class="who-ico">🏨</div>
+        <h3>Agencias vacacionales</h3>
+        <p>Agencias que gestionan apartamentos turísticos y quieren digitalizar y automatizar toda su operación.</p>
+      </div>
+      <div class="who">
+        <div class="who-ico">📈</div>
+        <h3>Anfitriones profesionales</h3>
+        <p>Propietarios de múltiples propiedades que necesitan herramientas para gestionar sin contratar más personal.</p>
+      </div>
+    </div>
+    <p style="margin-top:28px;text-align:center">Si tienes <strong>una sola propiedad</strong> y la gestionas relajadamente, quizás todavía no nos necesitas. Pero si quieres crecer, <strong>Hola Rentia es el sistema operativo de tu negocio vacacional</strong>.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section aria-labelledby="faq-heading">
+  <div class="wrap">
+    <div class="eyebrow">FAQ · {country}</div>
+    <h2 id="faq-heading">Preguntas frecuentes sobre gestión de alquiler vacacional en {country}</h2>
+    <div class="faq-list">
+      {faq.map((f, i) => (
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>{f.q}</span>
+            <span class="faq-icon"><svg viewBox="0 0 14 14" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2v10M2 7h10"/></svg></span>
+          </button>
+          <div class="faq-a">
+            <p>{f.a}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta-final" aria-labelledby="cta-heading">
+  <div class="wrap">
+    <div class="eyebrow">{country} y +20 países</div>
+    <h2 id="cta-heading" set:html={ctaText}/>
+    <p>Miles de property managers ya automatizan su operación con Hola Rentia. Tarifa fija mensual, 0% comisiones y sin permanencia. Prueba 30 días sin riesgo.</p>
+    <div class="cta-center">
+      <a href="/#formulario" class="btn btn-fire" style="font-size:1rem;padding:16px 38px">
+        ANALIZAR MI PROPIEDAD — GRATIS
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      </a>
+      <div class="cta-pills">
+        <span class="cta-pill">🔒 Sin permanencia</span>
+        <span class="cta-pill">✅ Garantía 30 días</span>
+        <span class="cta-pill">💳 Sin tarjeta de crédito</span>
+        <span class="cta-pill">🌍 Soporte en español</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERNAL LINKS -->
+<div class="int-links">
+  <div class="wrap">
+    <p>
+      También disponible en:
+      <a href="/es/espana">España</a> ·
+      <a href="/es/mexico">México</a> ·
+      <a href="/colombia/">Colombia</a> ·
+      <a href="/es/argentina">Argentina</a> ·
+      <a href="/es/chile">Chile</a> ·
+      <a href="/es/peru">Perú</a> ·
+      <a href="/es/costa-rica">Costa Rica</a> ·
+      <a href="/es/panama">Panamá</a> ·
+      <a href="/es/uruguay">Uruguay</a> ·
+      <a href="/">Inicio</a>
+    </p>
+  </div>
+</div>
+
+<Footer />
+
+<script>
+(function(){
+  const nav=document.getElementById('nav');
+  window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>50)},{passive:true});
+  const mNav=document.getElementById('mob-nav');
+  const mBtn=document.getElementById('mob-btn');
+  const mX=document.getElementById('mob-close');
+  function closeMob(){mNav.classList.remove('open');mNav.setAttribute('aria-hidden','true');if(mBtn)mBtn.setAttribute('aria-expanded','false')}
+  window.closeMob=closeMob;
+  if(mBtn)mBtn.addEventListener('click',()=>{mNav.classList.add('open');mNav.setAttribute('aria-hidden','false');mBtn.setAttribute('aria-expanded','true')});
+  if(mX)mX.addEventListener('click',closeMob);
+  document.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const item=btn.parentElement;
+      const ans=item.querySelector('.faq-a');
+      const open=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(fi=>{fi.classList.remove('open');fi.querySelector('.faq-a').style.maxHeight='0';fi.querySelector('.faq-q').setAttribute('aria-expanded','false')});
+      if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';btn.setAttribute('aria-expanded','true')}
+    });
+  });
+})();
+</script>
+</body>
+</html>

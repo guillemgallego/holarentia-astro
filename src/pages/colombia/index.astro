@@ -1,5 +1,7 @@
 ---
 // src/pages/colombia/index.astro — Hola Rentia · Colombia SEO Power Page
+import Footer from '../../components/Footer.astro';
+import WhatsApp from '../../components/WhatsApp.astro';
 ---
 <!doctype html>
 <html lang="es">
@@ -186,15 +188,7 @@ p strong{color:var(--text2);font-weight:700}
 .breadcrumb a:hover{color:var(--red)}
 .breadcrumb span{margin:0 6px}
 
-/* Footer */
-footer{background:var(--white);border-top:1px solid var(--border);padding:40px 0 0}
-.footer-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:32px;padding-bottom:40px;flex-wrap:wrap}
-.fb p{font-size:.83rem;color:var(--muted);line-height:1.72;margin:14px 0;max-width:280px}
-.footer-btm{border-top:1px solid var(--border);padding:18px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
-.fcopy{font-size:.73rem;color:var(--muted2)}
-.flegal{display:flex;flex-wrap:wrap;gap:16px}
-.flegal a{font-size:.73rem;color:var(--muted2);transition:color .18s}
-.flegal a:hover{color:var(--text)}
+
 
 /* Responsive */
 @media(max-width:768px){
@@ -206,6 +200,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:40px 0
 </style>
 </head>
 <body>
+<WhatsApp />
 
 <!-- NAVBAR -->
 <header id="nav" role="banner">
@@ -452,27 +447,8 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:40px 0
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer role="contentinfo">
-  <div class="wrap-wide">
-    <div class="footer-inner">
-      <div class="fb">
-        <a href="/" aria-label="Hola Rentia">
-          <img src="/images/hola-rentia-logo-gestion-airbnb-ia.webp" alt="Hola Rentia" style="height:48px;width:auto" loading="lazy"/>
-        </a>
-        <p>Software de gestión de alquiler vacacional.<br/>0% comisiones · Pagos directos a tu cuenta.<br/>IA + Equipo humano real.</p>
-      </div>
-    </div>
-    <div class="footer-btm">
-      <p class="fcopy">© 2026 Hola Rentia. Todos los derechos reservados.</p>
-      <nav class="flegal" aria-label="Legal">
-        <a href="/terminos-y-condiciones/">Términos</a>
-        <a href="/cookies/">Cookies</a>
-        <a href="/aviso-legal/">Aviso Legal</a>
-      </nav>
-    </div>
-  </div>
-</footer>
+<Footer />
+
 
 <script>
 (function(){

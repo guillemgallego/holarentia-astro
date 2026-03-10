@@ -1,0 +1,41 @@
+---
+import CountryPage from '../../components/CountryPage.astro';
+
+const props = {
+  country: "España",
+  slug: "espana",
+  flag: "🇪🇸",
+  locale: "es_ES",
+  metaTitle: "Software de Alquiler Vacacional en España | Gestión Airbnb con IA | Hola Rentia",
+  metaDesc: "El mejor software de alquiler vacacional en España. Gestiona tus apartamentos turísticos en Barcelona, Madrid, Málaga y Canarias. Channel manager, precios dinámicos y automatización. Desde €99/mes.",
+  ogTitle: "Software Alquiler Vacacional España | Hola Rentia",
+  ogDesc: "Gestiona tu negocio de alquiler vacacional en España con IA. Sin comisiones, tarifa fija. Desde €99/mes.",
+  twitterTitle: "Software Airbnb España | Hola Rentia",
+  twitterDesc: "Channel manager, automatización y precios dinámicos para tus propiedades en España. Desde €99/mes.",
+  canonicalUrl: "https://holarentia.com/es/espana",
+  schemaDesc: "Software de alquiler vacacional en España. Gestión integral de apartamentos turísticos con IA para Property Managers, agencias y anfitriones profesionales en Barcelona, Madrid, Málaga, Sevilla y las islas.",
+  intro: `<p>España es uno de los mercados de alquiler vacacional más competitivos del mundo. Con más de <strong>90 millones de turistas al año</strong> y un parque de viviendas turísticas que supera las 300.000 unidades, el sector exige hoy una gestión profesional y tecnológica.</p>
+  <p>La nueva normativa de alquiler de corta duración, el <strong>Registro de Viajeros obligatorio</strong> ante la Policía o Guardia Civil, y la creciente exigencia de las plataformas para mantener el rango de Superanfitrión o Preferred Partner hacen imposible ser competitivo con gestión manual. Hola Rentia te da la tecnología que necesitas para escalar.</p>`,
+  platformTitle: "Gestiona tus apartamentos turísticos en España desde una sola plataforma",
+  platformContent: `<p>Con Hola Rentia, todas tus propiedades —en Barcelona, Madrid, Mallorca o la Costa del Sol— viven en un único dashboard. <strong>Sin cambiar de pestaña, sin duplicar trabajo</strong>, sin perder información. Visualiza la ocupación, gestiona precios, responde a huéspedes y controla tus ingresos desde un solo lugar, tanto si tienes 2 apartamentos como si gestionas una cartera de 30 propiedades.</p>
+  <p>Nuestro sistema automatiza además el <strong>Registro de Viajeros</strong>, recopilando datos de documentos de identidad online y enviándolos automáticamente al sistema de la Policía Nacional o Guardia Civil. Sin plantillas manuales, sin errores, sin sustos con la administración.</p>`,
+  channelContent: `<p>El mayor riesgo del anfitrión profesional en España es el <strong>overbooking</strong>: dos reservas para la misma noche en la misma propiedad. Un solo error así puede destruir meses de reseñas positivas y generarte penalizaciones graves en Airbnb o Booking.</p>
+  <p>El channel manager de Hola Rentia sincroniza tus calendarios en <strong>milisegundos</strong> en todas las plataformas donde publicas. Cuando alguien reserva en Airbnb, el sistema bloquea automáticamente esa disponibilidad en Booking.com, VRBO, Expedia y el resto. Además, puedes gestionar precios diferenciados por plataforma y aplicar <strong>reglas de temporada</strong> adaptadas al mercado español (Semana Santa, verano, Navidad, puentes).</p>`,
+  automationContent: `<p>El mercado español es exigente: los huéspedes esperan <strong>respuestas en minutos</strong>, check-in autónomo disponible a cualquier hora y una experiencia perfecta desde el primer mensaje hasta el check-out. Hola Rentia automatiza toda esta operación para que tú solo tengas que revisar los resultados.</p>`,
+  destinations: [
+    { icon: "🏙️", name: "Barcelona", desc: "Capital del turismo urbano y one of Europe's most visited cities. Alta competencia, alta demanda." },
+    { icon: "👑", name: "Madrid", desc: "Capital de España y destino business y cultural. Ocupación estable durante todo el año." },
+    { icon: "☀️", name: "Málaga y Costa del Sol", desc: "El destino de sol y playa más popular de Europa con turismo internacional premium." },
+    { icon: "🌴", name: "Canarias", desc: "Tenerife, Gran Canaria, Lanzarote. Temporada alta de 12 meses gracias al clima atlántico." },
+    { icon: "🏝️", name: "Baleares", desc: "Mallorca, Ibiza y Menorca concentran los precios más altos del mercado vacacional español." },
+    { icon: "🌊", name: "Valencia y costa levantina", desc: "En auge como destino de nómadas digitales y turismo de larga estancia." },
+  ],
+  faq: [
+    { q: "¿Hola Rentia gestiona el Registro de Viajeros en España?", a: "Sí. Hola Rentia automatiza la recogida de datos del DNI o pasaporte del huésped de forma online y envía la información automáticamente al sistema de la Fuerzas y Cuerpos de Seguridad del Estado (Policía Nacional o Guardia Civil). No necesitas hacer nada manualmente. Cumples con la normativa sin esfuerzo adicional." },
+    { q: "¿Funciona con la normativa de alquiler turístico de cada comunidad autónoma?", a: "Hola Rentia está diseñado para adaptarse a la normativa vigente de cada comunidad autónoma. Puedes incluir el número de licencia turística en tus anuncios, gestionar los datos de huéspedes según los requisitos legales y mantener un histórico completo de todas las estancias para posibles inspecciones o requerimientos administrativos." },
+    { q: "¿Puedo gestionar propiedades en distintas comunidades autónomas desde el mismo sistema?", a: "Absolutamente. Hola Rentia es una plataforma centralizada que te permite gestionar propiedades en cualquier punto de España desde un único dashboard. Calendarios, precios, mensajes y reportes de todas tus propiedades, sin importar si están en Cataluña, Andalucía o las Islas Canarias." },
+  ],
+  ctaText: "Empieza hoy a rentabilizar tus propiedades en España con <em>Hola Rentia</em>",
+};
+---
+<CountryPage {...props} />

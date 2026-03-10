@@ -1,0 +1,41 @@
+---
+import CountryPage from '../../components/CountryPage.astro';
+
+const props = {
+  country: "Chile",
+  slug: "chile",
+  flag: "🇨🇱",
+  locale: "es_CL",
+  metaTitle: "Software de Alquiler Vacacional en Chile | Gestión Airbnb | Hola Rentia",
+  metaDesc: "Software de alquiler vacacional en Chile. Gestiona tus propiedades en Santiago, Valparaíso, San Pedro de Atacama y la Patagonia chilena. Channel manager y automatización. Desde $99/mes.",
+  ogTitle: "Software Alquiler Vacacional Chile | Hola Rentia",
+  ogDesc: "Gestiona tu Airbnb en Chile con IA. Sin comisiones, tarifa fija mensual. Para anfitriones en Santiago, Valparaíso, Atacama y Patagonia.",
+  twitterTitle: "Software Airbnb Chile | Hola Rentia",
+  twitterDesc: "Automatiza tu alquiler vacacional en Chile. Channel manager, precios dinámicos y automatización. Desde $99/mes.",
+  canonicalUrl: "https://holarentia.com/es/chile",
+  schemaDesc: "Software de alquiler vacacional en Chile. Gestión integral de propiedades turísticas con IA para Property Managers y anfitriones en Santiago, Valparaíso, Atacama y la Patagonia chilena.",
+  intro: `<p>Chile es uno de los mercados de alquiler vacacional con mayor sofisticación de Sudamérica. <strong>Santiago</strong> consolida su posición como hub de negocios y turismo regional, mientras que destinos como <strong>San Pedro de Atacama, Torres del Paine y Valparaíso</strong> reciben un turismo internacional de alto poder adquisitivo que exige excelencia en cada detalle de la experiencia.</p>
+  <p>El sector vacacional chileno está creciendo a doble dígito, especialmente impulsado por el turismo de aventura y el ecoturismo. Los anfitriones que quieren competir en este mercado ya no pueden depender de la gestión manual: la automatización y los precios dinámicos son una necesidad.</p>`,
+  platformTitle: "Gestiona tus propiedades en Chile desde una sola plataforma",
+  platformContent: `<p>Con Hola Rentia, puedes gestionar desde un departamento en Vitacura hasta una cabaña en Torres del Paine desde el mismo panel de control. <strong>Calendarios unificados, gestión de huéspedes centralizada y reportes financieros</strong> para todas tus propiedades en un único lugar.</p>
+  <p>El sistema permite definir tarifas en pesos chilenos, gestionar las comisiones de servicio que cobras a los huéspedes y mantener un control total de la rentabilidad de cada propiedad con reportes mensuales. Todo sin intermediarios: <strong>los pagos llegan directamente de Airbnb o Booking a tu cuenta bancaria</strong>.</p>`,
+  channelContent: `<p>El mercado chileno tiene una estacionalidad muy marcada: alta demanda en verano austral (diciembre a febrero), en el período de esquí en Portillo y Valle Nevado (julio-agosto) y durante feriados largos ampliamente aprovechados por el turismo interno. Gestionar manualmente calendarios de múltiples propiedades durante estos picos es una fuente constante de errores.</p>
+  <p>Hola Rentia sincroniza en tiempo real tu disponibilidad con Airbnb, Booking.com, VRBO y otros canales. Cuando llega una reserva en cualquier plataforma, <strong>todos los calendarios se actualizan automáticamente en milisegundos</strong>. Sin overbooking, sin errores manuales, sin estrés.</p>`,
+  automationContent: `<p>Chile recibe un flujo importante de turistas internacionales, especialmente europeos y norteamericanos atraídos por la Patagonia y el Atacama. Hola Rentia automatiza la comunicación en múltiples idiomas y garantiza que cada huésped reciba la información correcta en el momento adecuado, independientemente de la zona horaria de origen.</p>`,
+  destinations: [
+    { icon: "🏙️", name: "Santiago", desc: "Barrios como Vitacura, Las Condes y Lastarria concentran la mayor demanda de alquiler turístico urbano." },
+    { icon: "🎨", name: "Valparaíso", desc: "Ciudad patrimonio UNESCO con un mercado de alquiler vacacional creativo y en pleno crecimiento." },
+    { icon: "🌋", name: "San Pedro de Atacama", desc: "Astroturismo, geiseres y paisajes únicos. Alta demanda y precios premium todo el año." },
+    { icon: "🏔️", name: "Torres del Paine y Patagonia", desc: "El sueño del turismo de aventura. Ocupación record durante la temporada de trekking." },
+    { icon: "⛷️", name: "Portillo y Valle Nevado", desc: "Estaciones de esquí de clase mundial que atraen turismo internacional de alto nivel." },
+    { icon: "🌊", name: "Viña del Mar", desc: "El balneario más popular de Chile. Alta demanda en verano y eventos musicales internacionales." },
+  ],
+  faq: [
+    { q: "¿Hola Rentia funciona para propiedades en destinos remotos como Torres del Paine?", a: "Sí. Hola Rentia funciona 100% online y te permite gestionar propiedades en cualquier ubicación de Chile desde tu teléfono o computador. El check-in autónomo mediante cerraduras inteligentes o cajitas de llaves, los mensajes automáticos y la coordinación remota del equipo de limpieza te permiten operar sin necesidad de estar presente en la propiedad." },
+    { q: "¿El sistema gestiona la comunicación con turistas internacionales en inglés?", a: "Absolutamente. Hola Rentia permite configurar mensajes automáticos a huéspedes en múltiples idiomas: español, inglés, francés, alemán, portugués y más. El sistema detecta el idioma del huésped según su perfil en la plataforma y le envía la información en su idioma, mejorando la experiencia y reduciendo las preguntas repetitivas." },
+    { q: "¿Cómo ajusta Hola Rentia los precios según la temporada en Chile?", a: "El sistema de precios dinámicos de Hola Rentia analiza la demanda local del mercado y ajusta automáticamente tus tarifas para maximizar ingresos. Puedes configurar reglas específicas para temporada alta de verano (diciembre-febrero), temporada de esquí (julio-agosto) y feriados largos chilenos, garantizando que nunca vendas por debajo del mercado ni pierdas reservas por precios fuera de rango." },
+  ],
+  ctaText: "Empieza a rentabilizar tus propiedades en Chile con <em>Hola Rentia</em>",
+};
+---
+<CountryPage {...props} />

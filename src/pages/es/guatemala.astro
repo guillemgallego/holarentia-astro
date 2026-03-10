@@ -1,0 +1,41 @@
+---
+import CountryPage from '../../components/CountryPage.astro';
+
+const props = {
+  country: "Guatemala",
+  slug: "guatemala",
+  flag: "🇬🇹",
+  locale: "es_GT",
+  metaTitle: "Software de Alquiler Vacacional en Guatemala | Gestión Airbnb | Hola Rentia",
+  metaDesc: "Software de alquiler vacacional en Guatemala. Gestiona tus propiedades en Antigua, Lago Atitlán, Ciudad de Guatemala y Tikal. Channel manager y automatización. Desde $99/mes.",
+  ogTitle: "Software Alquiler Vacacional Guatemala | Hola Rentia",
+  ogDesc: "Gestiona tu Airbnb en Guatemala con IA. Sin comisiones, tarifa fija mensual. Para anfitriones en Antigua, Lago Atitlán y Guatemala City.",
+  twitterTitle: "Software Airbnb Guatemala | Hola Rentia",
+  twitterDesc: "Automatiza tu alquiler vacacional en Guatemala. Antigua, Atitlán, Guatemala City. Desde $99/mes.",
+  canonicalUrl: "https://holarentia.com/es/guatemala",
+  schemaDesc: "Software de alquiler vacacional en Guatemala. Gestión integral de propiedades turísticas para Property Managers y anfitriones en Antigua Guatemala, Lago Atitlán, Ciudad de Guatemala y Tikal.",
+  intro: `<p>Guatemala es uno de los destinos más auténticos y fascinantes de Centroamérica, con un turismo en fuerte crecimiento impulsado por su <strong>patrimonio maya, colonial y natural</strong>. <strong>Antigua Guatemala</strong>, declarada Patrimonio de la Humanidad por la UNESCO, es uno de los destinos más fotogénicos y buscados del continente. El <strong>Lago Atitlán</strong>, rodeado de volcanes y pueblos indígenas, es considerado por muchos viajeros uno de los lagos más hermosos del mundo.</p>
+  <p>El mercado de alquiler vacacional en Guatemala está en plena expansión, especialmente entre un turismo europeo y norteamericano que busca experiencias auténticas más allá del turismo masivo. Los anfitriones que quieren captar a este viajero exigente necesitan <strong>tecnología de gestión que garantice la experiencia que merece</strong>.</p>`,
+  platformTitle: "Gestiona tus propiedades en Guatemala desde una sola plataforma",
+  platformContent: `<p>Con Hola Rentia, puedes centralizar la gestión de tus propiedades en Guatemala —desde una casa colonial en Antigua hasta un bungalow frente al Lago Atitlán— en un único panel de control. <strong>Sin herramientas dispersas, sin gestión fragmentada</strong>. Todo en un solo lugar, desde tu teléfono.</p>
+  <p>El mercado guatemalteco es mayoritariamente de turismo receptivo internacional: americanos, europeos y viajeros de larga distancia que esperan una experiencia profesional desde la reserva hasta el check-out. Hola Rentia te proporciona las herramientas para ofrecer ese nivel de servicio sin que requiera tu atención constante.</p>`,
+  channelContent: `<p>El turismo en Guatemala tiene una estacionalidad particular: la temporada alta coincide con el verano del hemisferio norte (junio-agosto) y con diciembre-enero, cuando los viajeros europeos y norteamericanos aprovechan sus vacaciones para explorar Centroamérica. Gestionar calendarios en múltiples plataformas durante estos picos es imposible de forma manual sin cometer errores.</p>
+  <p>Hola Rentia sincroniza tu disponibilidad en tiempo real en Airbnb, Booking.com y todas las plataformas donde publiques. <strong>Sin overbookings, sin errores</strong>. Además, los precios dinámicos se adaptan automáticamente a la demanda del mercado guatemalteco para que maximizes ingresos en cada temporada.</p>`,
+  automationContent: `<p>El viajero que llega a Guatemala es, en su mayoría, internacional: mochileros de Europa, nómadas digitales de América del Norte y turistas latinoamericanos que buscan experiencias culturales auténticas. Hola Rentia automatiza la comunicación en múltiples idiomas y gestiona el proceso completo de cada reserva de principio a fin.</p>`,
+  destinations: [
+    { icon: "🏛️", name: "Antigua Guatemala", desc: "Ciudad colonial patrimonio UNESCO. El destino turístico más demandado del país." },
+    { icon: "🌋", name: "Lago Atitlán", desc: "Panajachel, San Pedro y San Marcos. Considerado uno de los lagos más bellos del mundo." },
+    { icon: "🏙️", name: "Ciudad de Guatemala", desc: "Capital con creciente turismo de negocios y gastronómico en zonas como Zona Viva." },
+    { icon: "🌿", name: "Tikal y El Petén", desc: "Las ruinas mayas más imponentes de Mesoamérica. Turismo de aventura y arqueológico." },
+    { icon: "☕", name: "Quetzaltenango (Xela)", desc: "La segunda ciudad más importante. Turismo cultural y de immersión en la cultura maya-quiché." },
+    { icon: "🌊", name: "Livingston y el Caribe", desc: "Costa caribeña con cultura garífuna. Un destino auténtico en pleno crecimiento." },
+  ],
+  faq: [
+    { q: "¿Hola Rentia funciona para propiedades en zonas rurales como el Lago Atitlán?", a: "Sí. Hola Rentia funciona 100% online y solo requiere conexión a internet para operar. El sistema de check-in autónomo mediante códigos de acceso, los mensajes automáticos a huéspedes y la coordinación remota del equipo de limpieza te permiten gestionar propiedades en cualquier ubicación de Guatemala, incluyendo los pueblos del Lago Atitlán." },
+    { q: "¿El sistema ayuda a comunicarse con turistas internacionales en inglés?", a: "Absolutamente. Hola Rentia permite configurar mensajes automáticos en inglés, español, francés, alemán y otros idiomas. El sistema detecta el idioma del huésped según su perfil y le envía toda la información en ese idioma: instrucciones de llegada, guía del entorno, recomendaciones de restaurantes y actividades locales, y solicitud de reseña al final de la estancia." },
+    { q: "¿Cómo puede Hola Rentia ayudar a aumentar las reservas internacionales en Guatemala?", a: "Hola Rentia optimiza tus anuncios en Airbnb y Booking para maximizar la visibilidad ante el turismo internacional. Los mensajes automáticos multilingüe, el check-in profesional y las guías personalizadas del destino generan reseñas de 5 estrellas que mejoran tu posicionamiento orgánico en las plataformas. Un mejor posicionamiento se traduce directamente en más reservas sin necesidad de pagar comisiones adicionales." },
+  ],
+  ctaText: "Empieza a rentabilizar tus propiedades en Guatemala con <em>Hola Rentia</em>",
+};
+---
+<CountryPage {...props} />
