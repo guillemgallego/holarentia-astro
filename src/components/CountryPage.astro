@@ -47,9 +47,25 @@ const {
   destinations, ctaText, parentPage
 } = Astro.props;
 
-const schemaFaq = JSON.stringify({
+const schemaGraph = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://holarentia.com/#org",
+      "name": "Hola Rentia",
+      "url": "https://holarentia.com",
+      "logo": "https://holarentia.com/images/hola-rentia-logo-gestion-airbnb-ia.webp",
+      "sameAs": [
+        "https://wa.me/34642017089"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "hola@holarentia.com",
+        "availableLanguage": "Spanish"
+      }
+    },
     {
       "@type": "SoftwareApplication",
       "@id": "https://holarentia.com/#app",
@@ -70,6 +86,29 @@ const schemaFaq = JSON.stringify({
         "name": f.q,
         "acceptedAnswer": {"@type": "Answer", "text": f.a}
       }))
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Hola Rentia",
+          "item": "https://holarentia.com/"
+        },
+        ...(parentPage ? [{
+          "@type": "ListItem",
+          "position": 2,
+          "name": parentPage.name,
+          "item": `https://holarentia.com${parentPage.href}`
+        }] : []),
+        {
+          "@type": "ListItem",
+          "position": parentPage ? 3 : 2,
+          "name": country,
+          "item": canonicalUrl
+        }
+      ]
     }
   ]
 });
@@ -99,7 +138,7 @@ const schemaFaq = JSON.stringify({
 <meta name="twitter:image" content="https://holarentia.com/images/hola-rentia-resultados-airbnb-ia-espana.webp"/>
 <link rel="preload" as="image" href="/images/hola-rentia-logo-gestion-airbnb-ia.webp" fetchpriority="high"/>
 
-<script type="application/ld+json" set:html={schemaFaq}/>
+<script type="application/ld+json" set:html={schemaGraph}/>
 
 <!-- ══ FONTS ══ -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -162,10 +201,12 @@ nav.nl a:hover{color:var(--text)}
 .eyebrow::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0;animation:pulse3 2s ease infinite}
 
 /* Breadcrumb */
-.breadcrumb{padding:100px 0 0;font-size:.8rem;color:var(--muted2)}
-.breadcrumb a{color:var(--muted2);transition:color .18s}
-.breadcrumb a:hover{color:var(--red)}
-.breadcrumb span{margin:0 6px}
+.breadcrumb{padding:106px 0 0;font-size:.78rem;font-weight:500}
+.breadcrumb-inner{display:flex;align-items:center;gap:8px;color:var(--muted2)}
+.breadcrumb a{color:var(--muted2);transition:color .18s;display:flex;align-items:center}
+.breadcrumb a:hover{color:var(--text)}
+.breadcrumb .sep{font-size:.7rem;opacity:.5;font-weight:400}
+.breadcrumb .curr{color:var(--muted);font-weight:600}
 
 /* Hero */
 #hero{padding:48px 0 80px;background:var(--bg);position:relative;overflow:hidden}
@@ -309,14 +350,16 @@ p strong{color:var(--text2);font-weight:700}
 </nav>
 
 <!-- BREADCRUMB -->
-<div class="breadcrumb">
+<nav class="breadcrumb" aria-label="Migas de pan">
   <div class="wrap">
-    <a href="/">Hola Rentia</a>
-    {parentPage && <><span>›</span><a href={parentPage.href}>{parentPage.name}</a></>}
-    <span>›</span>
-    <span>{country}</span>
+    <div class="breadcrumb-inner">
+      <a href="/">Hola Rentia</a>
+      {parentPage && <><span class="sep">/</span><a href={parentPage.href}>{parentPage.name}</a></>}
+      <span class="sep">/</span>
+      <span class="curr">{country}</span>
+    </div>
   </div>
-</div>
+</nav>
 
 <!-- HERO -->
 <section id="hero" aria-labelledby="hero-heading">

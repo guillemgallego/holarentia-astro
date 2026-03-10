@@ -33,6 +33,14 @@ import WhatsApp from '../../components/WhatsApp.astro';
   "@context":"https://schema.org",
   "@graph":[
     {
+      "@type":"Organization",
+      "@id":"https://holarentia.com/#org",
+      "name":"Hola Rentia",
+      "url":"https://holarentia.com",
+      "logo":"https://holarentia.com/images/hola-rentia-logo-gestion-airbnb-ia.webp",
+      "contactPoint":{"@type":"ContactPoint","contactType":"customer service","email":"hola@holarentia.com","availableLanguage":"Spanish"}
+    },
+    {
       "@type":"SoftwareApplication",
       "@id":"https://holarentia.com/#app",
       "name":"Hola Rentia",
@@ -51,17 +59,34 @@ import WhatsApp from '../../components/WhatsApp.astro';
         {
           "@type":"Question",
           "name":"¿Hola Rentia ayuda con el Registro Nacional de Turismo (RNT) en Colombia?",
-          "acceptedAnswer":{"@type":"Answer","text":"Sí. Hola Rentia automatiza la recopilación de datos de huéspedes (nombre, documento, nacionalidad) y los organiza para que puedas cumplir con el reporte al RNT de forma sencilla. Aunque el registro ante el Ministerio de Comercio es responsabilidad del propietario, nuestro software te da toda la información lista para su presentación."}
+          "acceptedAnswer":{"@type":"Answer","text":"Sí. Hola Rentia automatiza la recopilación de datos de huéspedes (nombre, documento, nacionalidad) y los organiza para que puedas cumplir con el reporte al RNT de forma sencilla."}
         },
         {
           "@type":"Question",
           "name":"¿Puedo gestionar propiedades en Medellín y Cartagena desde la misma plataforma?",
-          "acceptedAnswer":{"@type":"Answer","text":"Absolutamente. Hola Rentia es una plataforma centralizada que te permite gestionar propiedades en distintas ciudades y departamentos de Colombia desde un único dashboard. Calendarios, precios, mensajes y reportes de todas tus propiedades en un solo lugar, sin importar si están en El Poblado, Bocagrande o el Centro Histórico."}
+          "acceptedAnswer":{"@type":"Answer","text":"Absolutamente. Hola Rentia es una plataforma centralizada que te permite gestionar propiedades en distintas ciudades y departamentos de Colombia desde un único dashboard."}
         },
         {
           "@type":"Question",
           "name":"¿Cómo maneja Hola Rentia las reservas internacionales en pesos colombianos?",
-          "acceptedAnswer":{"@type":"Answer","text":"Hola Rentia sincroniza tus propiedades con Airbnb, Booking.com, VRBO y otras plataformas internacionales en tiempo real. Las plataformas gestionan la conversión de divisas y el pago llega directamente a tu cuenta bancaria. Nuestro sistema te permite definir tarifas base, reglas de temporada y ajustes por demanda de forma automática."}
+          "acceptedAnswer":{"@type":"Answer","text":"Hola Rentia sincroniza tus propiedades con Airbnb, Booking.com, VRBO y otras plataformas internacionales en tiempo real."}
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Hola Rentia",
+          "item": "https://holarentia.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Colombia",
+          "item": "https://holarentia.com/colombia/"
         }
       ]
     }
