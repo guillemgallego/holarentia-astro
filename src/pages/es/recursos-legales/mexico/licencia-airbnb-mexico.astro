@@ -1,0 +1,49 @@
+---
+// src/pages/es/recursos-legales/mexico/licencia-airbnb-mexico.astro
+import LegalArticle from '../../../../components/LegalArticle.astro';
+
+const props = {
+  title: "Cómo obtener el RNT y Licencias para Airbnb en México (2026)",
+  country: "México",
+  countryHref: "/es/recursos-legales/mexico",
+  metaTitle: "RNT México Airbnb | Trámites y Registros Estatales | Hola Rentia",
+  metaDesc: "Guía completa para registrar tu alojamiento en el Registro Nacional de Turismo (RNT) de México y cumplir con los registros estatales como el RET en Quintana Roo.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/mexico/licencia-airbnb-mexico",
+  intro: `
+    <p>Operar un alojamiento turístico en México ya no es una actividad 'informal'. La Ley General de Turismo exige que cualquier prestador de servicios de hospedaje cuente con el **Registro Nacional de Turismo (RNT)**.</p>
+    <p>Además de la regulación federal, estados turísticos como **Quintana Roo o Jalisco** han implementado sus propios registros para garantizar que los anfitriones paguen impuestos locales y cumplan con normas de protección civil.</p>
+  `,
+  steps: [
+    { name: "Verificar tu RFC", text: "Asegúrate de tener tu Registro Federal de Contribuyentes (RFC) activo. Sin él, no podrás iniciar ningún trámite oficial de turismo." },
+    { name: "Solicitar el RNT Federal", text: "Entra al portal de la Secretaría de Turismo (SECTUR). Deberás llenar el formato único de inscripción con los datos de tu propiedad y capacidad de hospedaje." },
+    { name: "Cumplir con el registro estatal (si aplica)", text: "Si estás en Playa del Carmen, Cancún o Tulum, regístrate en el RET de Quintana Roo. Si estás en CDMX, inscríbete en el nuevo Padrón de Anfitriones." },
+    { name: "Obtener Visto Bueno de Protección Civil", text: "Dependiendo del municipio, pueden pedirte que la propiedad cuente con extintores, señalización de salida y un plan básico de emergencia." },
+    { name: "Cargar los números en tus plataformas", text: "Una vez obtenidos, añade tu número de RNT y licencia estatal a tu perfil de Airbnb y Booking para evitar problemas de cumplimiento." }
+  ],
+  checklist: [
+    "RFC con actividad de hospedaje",
+    "Identificación oficial (INE o Pasaporte)",
+    "Comprobante de domicilio de la propiedad",
+    "Fotografías del interior y exterior del alojamiento",
+    "Cédula de inscripción al RNT"
+  ],
+  mistakes: [
+    "Pensar que solo los hoteles necesitan RNT (la ley incluye departamentos y casas).",
+    "No renovar los vistos buenos de protección civil anualmente.",
+    "Usar un RFC que no coincide con el dueño de la propiedad.",
+    "Omitir el registro estatal en zonas de alta densidad turística para evitar cobros de impuestos locales."
+  ],
+  documentation: [
+    "Constancia de Situación Fiscal",
+    "Escritura pública o contrato de arrendamiento",
+    "INE o Pasaporte vigente",
+    "Certificado de seguridad (según municipio)"
+  ],
+  faq: [
+    { q: "¿Qué es el RET en Quintana Roo?", a: "Es el Registro Estatal de Turismo. Es obligatorio para todos los que rentan propiedades vacacionales en el estado y es requisito previo para tramitar licencias municipales." },
+    { q: "¿Cuánto cuesta el RNT federal?", a: "El trámite ante la SECTUR es gratuito, aunque algunos gestores cobran por realizar el proceso si prefieres no hacerlo tú mismo." },
+    { q: "¿Me pueden clausurar por no tener registro?", a: "Sí, las autoridades locales pueden realizar inspecciones y, si no cuentas con los registros vigentes, pueden imponer sellos de clausura y multas administrativas." }
+  ]
+};
+---
+<LegalArticle {...props} />

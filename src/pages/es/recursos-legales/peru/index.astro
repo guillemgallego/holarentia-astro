@@ -1,0 +1,20 @@
+---
+// src/pages/es/recursos-legales/peru/index.astro
+import LegalHub from '../../../components/LegalHub.astro';
+const props={
+  country:"Perú",flag:"🇵🇪",slug:"peru",
+  metaTitle:"Guía Legal Alquiler Vacacional Perú | Mincetur y Sunat | Hola Rentia",
+  metaDesc:"Normativa legal para Airbnb en Perú. Clasificación de establecimientos, impuestos Sunat y requisitos para anfitriones.",
+  canonicalUrl:"https://holarentia.com/es/recursos-legales/peru",
+  intro:"<p>En Perú, el sector de departamentos turísticos se rige por el Reglamento de Establecimientos de Hospedaje bajo la supervisión de <strong>Mincetur</strong>.</p>",
+  licensesContent:"<p>Es necesario obtener la clasificación como Establecimiento de Hospedaje ante la Dircetur correspondiente y contar con licencia de funcionamiento municipal.</p>",
+  taxesContent:"<p>Los ingresos deben declararse ante la <strong>Sunat</strong> como rentas de primera categoría. Las empresas gestoras tributan en el régimen general.</p>",
+  legalObligations:"<p>Obligación de llevar el Libro de Registro de Huéspedes y contar con un Libro de Reclamaciones visible.</p>",
+  citiesContent:"<p>Lima (Miraflores, Barranco) y Cusco tienen regulaciones locales muy estrictas debido a la alta carga turística.</p>",
+  complianceContent:"<p>La emisión de boletas de venta electrónicas es el estándar para cumplir con las obligaciones fiscales en Perú.</p>",
+  toolsContent:"<p>Sistemas integrados permiten gestionar el flujo de caja y los reportes mensuales para la declaración jurada ante Sunat.</p>",
+  faq:[{q:"¿Necesito licencia de funcionamiento?",a:"Sí, para operar legalmente como hospedaje turistico el municipio exige una licencia de funcionamiento específica."}],
+  articles:[]
+};
+---
+<LegalHub {...props} />

@@ -1,0 +1,49 @@
+---
+// src/pages/es/recursos-legales/colombia/registro-huespedes-colombia.astro
+import LegalArticle from '../../../../components/LegalArticle.astro';
+
+const props = {
+  title: "Registro de Huéspedes en Colombia: SIRE y Migración (Guía 2026)",
+  country: "Colombia",
+  countryHref: "/es/recursos-legales/colombia",
+  metaTitle: "Registro de Huéspedes SIRE Colombia | Migración y SIRE | Hola Rentia",
+  metaDesc: "Cómo reportar correctamente a tus huéspedes extranjeros en el SIRE de Migración Colombia. Obligaciones legales para anfitriones y gestores de alojamiento.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/colombia/registro-huespedes-colombia",
+  intro: `
+    <p>En Colombia, la seguridad y el control migratorio son prioridades para el sector turístico. Todo anfitrión que aloje a **extranjeros** tiene la obligación legal de reportarlos ante **Migración Colombia** a través de la plataforma SIRE.</p>
+    <p>El incumplimiento de este reporte puede acarrear multas muy gravosas por cada huésped no registrado. Aquí te explicamos el proceso para cumplir con la normativa de forma eficiente.</p>
+  `,
+  steps: [
+    { name: "Registrar el inmueble en el SIRE", text: "Primero debes crear una cuenta de 'Establecimiento de Hospedaje' en el portal SIRE de Migración Colombia usando tu RNT." },
+    { name: "Recopilar documentos de identidad", text: "Al momento del check-in, debes solicitar el pasaporte o cédula de extranjería de todos los huéspedes internacionales. Es recomendable solicitar una foto del sello de entrada al país." },
+    { name: "Realizar el reporte en las primeras 24 horas", text: "Ingresa al SIRE y registra el ingreso del huésped colocando sus datos personales, fecha de entrada y duración estimada de la estancia." },
+    { name: "Reportar la salida (Check-out)", text: "Una vez el huésped deja la propiedad, debes marcar la novedad de salida en el sistema para cerrar el reporte migratorio." },
+    { name: "Diligenciar la Tarjeta de Registro de Alojamiento (TRA)", text: "Independientemente del SIRE, debes llevar un registro digital o físico (TRA) de todos los huéspedes, incluyendo los nacionales." }
+  ],
+  checklist: [
+    "Usuario activo en SIRE Migración",
+    "Fotocopia o foto clara del documento de identidad",
+    "Fecha exacta de check-in y check-out",
+    "Número de RNT vigente",
+    "Archivo digital de registros de los últimos 2 años"
+  ],
+  mistakes: [
+    "No reportar el ingreso del extranjero a tiempo (tienes un límite de 24 horas).",
+    "Confundir el SIRE con el RNT. Son sistemas distintos de entidades diferentes.",
+    "Omitir el reporte de menores de edad que viajan con sus padres.",
+    "No reportar la salida del huésped, dejando el cupo 'abierto' en el sistema."
+  ],
+  documentation: [
+    "Pasaporte vigente",
+    "Cédula de extranjería (si aplica)",
+    "Sello de entrada de Migración Colombia",
+    "Tarjeta de Registro de Alojamiento (TRA)"
+  ],
+  faq: [
+    { q: "¿Qué pasa si mis huéspedes son colombianos?", a: "Para nacionales no es necesario reportar al SIRE de Migración, pero sí es obligatorio llenar la Tarjeta de Registro de Alojamiento (TRA) por temas estadísticos y de policía local." },
+    { q: "¿Puedo automatizar este proceso?", a: "Sí, existen softwares como Hola Rentia que ayudan a capturar los datos de identidad de forma digital para facilitar el reporte manual o automático según la integración disponible." },
+    { q: "¿Cuál es la multa por no reportar?", a: "Las multas de Migración Colombia por falta de reporte pueden oscilar entre 1 y varios salarios mínimos por cada infracción cometida." }
+  ]
+};
+---
+<LegalArticle {...props} />

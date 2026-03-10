@@ -1,0 +1,61 @@
+---
+// src/pages/es/recursos-legales/colombia/index.astro
+import LegalHub from '../../../components/LegalHub.astro';
+
+const props = {
+  country: "Colombia",
+  flag: "🇨🇴",
+  slug: "colombia",
+  metaTitle: "Guía Legal Alquiler Vacacional Colombia | Licencias y RNT | Hola Rentia",
+  metaDesc: "Toda la normativa legal sobre alquiler vacacional en Colombia. Cómo obtener el RNT, impuestos Airbnb, tarjetas de registro y normativas locales en Medellín y Cartagena.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/colombia",
+  intro: `
+    <p>El mercado de alquiler vacacional en Colombia ha experimentado una profesionalización masiva en los últimos años. Con el auge de ciudades como <strong>Medellín, Cartagena y Bogotá</strong>, el gobierno ha establecido un marco legal claro bajo la Ley 2068 de 2020 para garantizar la calidad y seguridad del turismo.</p>
+    <p>Para operar legalmente un Airbnb o apartamento turístico en Colombia, no basta con publicar en las plataformas; es obligatorio cumplir con el <strong>Registro Nacional de Turismo (RNT)</strong> y las obligaciones fiscales ante la DIAN. Esta guía resume todo lo que necesitas saber como gestor o propietario.</p>
+  `,
+  licensesContent: `
+    <p>En Colombia, cualquier inmueble destinado a la prestación de servicios turísticos (alquiler de corta estancia) debe contar obligatoriamente con el <strong>Registro Nacional de Turismo (RNT)</strong>. Este registro es gratuito, se realiza en línea ante la Cámara de Comercio y debe renovarse anualmente antes del 31 de marzo.</p>
+    <p><strong>Requisito clave:</strong> Antes de solicitar el RNT, debes verificar que el uso de suelo de la propiedad permita la actividad turística y, si se trata de una propiedad en régimen de propiedad horizontal (edificio o conjunto), el reglamento interno debe permitir explícitamente el alquiler vacacional.</p>
+  `,
+  taxesContent: `
+    <p>Los ingresos por alquiler vacacional en Colombia están sujetos a varias obligaciones fiscales:</p>
+    <ul>
+      <li><strong>Impuesto sobre la Renta:</strong> Debes declarar los ingresos obtenidos como anfitrión en tu declaración anual.</li>
+      <li><strong>IVA:</strong> Los servicios de alojamiento están gravados con un IVA del 19%, aunque existen exenciones temporales o beneficios según el tipo de propiedad y ubicación.</li>
+      <li><strong>Impuesto de Industria y Comercio (ICA):</strong> Es un impuesto municipal que varía según la ciudad (Medellín, Cartagena, etc.) y la actividad comercial.</li>
+    </ul>
+  `,
+  legalObligations: `
+    <p>Los anfitriones en Colombia tienen la obligación legal de reportar la información de sus huéspedes nacionales y extranjeros:</p>
+    <ul>
+      <li><strong>Tarjeta de Registro de Alojamiento (TRA):</strong> Es obligatorio diligenciar la TRA para cada huésped. Estos datos deben ser reportados al SIRE (Sistema de Información para el Reporte de Extranjeros) de Migración Colombia en el caso de turistas de otros países.</li>
+      <li><strong>Contribución Parafiscal:</strong> Los prestadores de servicios turísticos deben pagar una contribución destinada a Fontur, equivalente al 2.5 por mil de los ingresos operacionales.</li>
+    </ul>
+  `,
+  citiesContent: `
+    <p>Cada ciudad en Colombia aplica la norma nacional con matices locales:</p>
+    <ul>
+      <li><strong>Medellín:</strong> Ciudad con alta inspección en El Poblado y Laureles. Se exige estrictamente el RNT visible en las publicaciones.</li>
+      <li><strong>Cartagena:</strong> Regulación estricta sobre el uso de suelo en la Ciudad Amurallada y Bocagrande.</li>
+      <li><strong>Santa Marta:</strong> Enfoque en la sostenibilidad y permisos específicos para zonas de playa.</li>
+    </ul>
+  `,
+  complianceContent: `
+    <p>Si gestionas múltiples apartamentos (Property Manager), la complejidad aumenta. Debes tener un <strong>RNT independiente para cada unidad de vivienda</strong>, aunque se gestionen bajo la misma empresa. La automatización es clave aquí para no perder fechas de renovación ni incurrir en multas de hasta 50 salarios mínimos.</p>
+  `,
+  toolsContent: `
+    <p>Para operar de forma legal y profesional, los gestores utilizan software que centralice la recopilación de datos de identidad para la Tarjeta de Registro y la generación de reportes para Fontur y la DIAN.</p>
+  `,
+  faq: [
+    { q: "¿Es obligatorio el RNT para alquilar una habitación por Airbnb?", a: "Sí, en Colombia la ley no distingue entre alquilar una propiedad completa o una habitación; cualquier servicio de alojamiento turístico requiere RNT." },
+    { q: "¿Qué pasa si mi edificio prohíbe Airbnb?", a: "La Ley de Propiedad Horizontal permite que las copropiedades prohíban el alquiler turístico en su reglamento. Si lo haces sin permiso, te arriesgas a multas de la administración y a la cancelación de tu RNT por parte de las autoridades." },
+    { q: "¿Cuánto cuesta sacar el RNT?", a: "El trámite de inscripción en el Registro Nacional de Turismo es totalmente gratuito en Colombia." }
+  ],
+  articles: [
+    { title: "Cómo obtener el RNT paso a paso", href: "/es/recursos-legales/colombia/rnt-colombia" },
+    { title: "Guía de impuestos para Airbnb en Colombia", href: "/es/recursos-legales/colombia/impuestos-airbnb-colombia" },
+    { title: "Requisitos de registro de huéspedes (SIRE)", href: "/es/recursos-legales/colombia/registro-huespedes-colombia" }
+  ]
+};
+---
+<LegalHub {...props} />

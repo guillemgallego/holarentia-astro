@@ -1,0 +1,20 @@
+---
+// src/pages/es/recursos-legales/uruguay/index.astro
+import LegalHub from '../../../components/LegalHub.astro';
+const props={
+  country:"Uruguay",flag:"🇺🇾",slug:"uruguay",
+  metaTitle:"Guía Legal Alquiler Vacacional Uruguay | Mintur y DGI | Hola Rentia",
+  metaDesc:"Normativa legal para Airbnb en Uruguay. Registro en Mintur, beneficios fiscales e impuestos DGI para anfitriones.",
+  canonicalUrl:"https://holarentia.com/es/recursos-legales/uruguay",
+  intro:"<p>Uruguay tiene un mercado vacacional maduro liderado por <strong>Punta del Este</strong>, con controles a través del <strong>Ministerio de Turismo (Mintur)</strong>.</p>",
+  licensesContent:"<p>Debe registrarse en el Registro de Establecimientos Turísticos de Mintur y haber obtenido habilitación técnica municipal.</p>",
+  taxesContent:"<p>Los ingresos están sujetos al IRPF o IRAE según el régimen elegido ante la <strong>DGI</strong>. Existen beneficios de devolución de IVA para turistas extranjeros.</p>",
+  legalObligations:"<p>Obligación de emitir facturación electrónica uruguaya y mantener el registro de pasajeros para temas de seguridad.</p>",
+  citiesContent:"<p>Punta del Este, Colonia del Sacramento y Montevideo tienen dinámicas regulatorias centradas en la estacionalidad.</p>",
+  complianceContent:"<p>Para administradores de propiedades, es vital la transparencia fiscal para garantizar los beneficios a los turistas extranjeros.</p>",
+  toolsContent:"<p>Software de property management ayuda a llevar el control exacto de las comisiones y los impuestos uruguayos (DGI).</p>",
+  faq:[{q:"¿Hay beneficios fiscales?",a:"Sí, Uruguay suele ofrecer beneficios de exención o devolución de IVA para servicios turísticos pagados con tarjetas de crédito extranjeras."}],
+  articles:[]
+};
+---
+<LegalHub {...props} />

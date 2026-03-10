@@ -1,0 +1,49 @@
+---
+// src/pages/es/recursos-legales/colombia/rnt-colombia.astro
+import LegalArticle from '../../../../components/LegalArticle.astro';
+
+const props = {
+  title: "Cómo obtener el RNT en Colombia paso a paso (2026)",
+  country: "Colombia",
+  countryHref: "/es/recursos-legales/colombia",
+  metaTitle: "Cómo obtener el RNT en Colombia | Guía Paso a Paso | Hola Rentia",
+  metaDesc: "Guía completa para tramitar el Registro Nacional de Turismo (RNT) en Colombia. Requisitos, documentos y proceso online gratuito para anfitriones Airbnb.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/colombia/rnt-colombia",
+  intro: `
+    <p>El <strong>Registro Nacional de Turismo (RNT)</strong> es el documento más importante para cualquier anfitrión en Colombia. Sin él, las plataformas como Airbnb o Booking.com pueden suspender tu anuncio y las autoridades pueden imponer multas que superan los varios millones de pesos.</p>
+    <p>Afortunadamente, el proceso es <strong>100% digital y gratuito</strong>. En esta guía te explicamos exactamente cómo hacerlo para que no pierdas tiempo ni cometas errores en la solicitud.</p>
+  `,
+  steps: [
+    { name: "Verificar el Reglamento de Propiedad Horizontal", text: "Si tu apartamento está en un edificio, solicita el reglamento de administración. Debe permitir explícitamente el uso de 'servicio de hostelería' o 'alojamiento turístico'. Sin esto, te denegarán el RNT." },
+    { name: "Inscribirse en el Registro Único Tributario (RUT)", text: "Tu RUT debe tener registrados los códigos de actividad económica relacionados con el turismo (como el código 5511 o 5519). Asegúrate de que los datos de contacto coincidan con los que usarás en el RNT." },
+    { name: "Acceder a la plataforma de Confecámaras", text: "Ingresa al portal oficial de RNT Colombia. Deberás crear un usuario usando el correo electrónico que tienes registrado en tu Cámara de Comercio local." },
+    { name: "Diligenciar la información de la propiedad", text: "Sube los datos exactos del inmueble: dirección, matrícula inmobiliaria y capacidad máxima de huéspedes. La información debe ser veraz." },
+    { name: "Adjuntar certificación de cumplimiento", text: "Deberás declarar bajo gravedad de juramento que cumples con las normas de sostenibilidad y los requisitos de seguridad exigidos por el Ministerio de Comercio." }
+  ],
+  checklist: [
+    "Copia del RUT con actividad turística",
+    "Matrícula inmobiliaria del inmueble",
+    "Reglamento de Propiedad Horizontal (si aplica)",
+    "Correo electrónico actualizado",
+    "Certificado de existencia (si eres persona jurídica)"
+  ],
+  mistakes: [
+    "No renovar el RNT antes del 31 de marzo cada año (esto causa la suspensión automática).",
+    "Poner una capacidad de huéspedes superior a la permitida por seguridad.",
+    "Intentar sacar el RNT en un edificio donde la administración lo tiene prohibido.",
+    "No reportar cambios de dirección o de representante legal."
+  ],
+  documentation: [
+    "Certificado de Tradición y Libertad",
+    "Registro Único Tributario (RUT)",
+    "Documento de identidad del propietario",
+    "Acta de asamblea que permite el uso turístico (en algunos casos)"
+  ],
+  faq: [
+    { q: "¿Cuánto tarda el proceso de aprobación?", a: "Normalmente, la Cámara de Comercio tarda entre 5 y 15 días hábiles en revisar y aprobar la solicitud si no hay errores en los documentos." },
+    { q: "¿Tengo que pagar algo por el trámite?", a: "No. El registro nacional es gratuito, aunque debes tener tu matrícula mercantil al día ante la Cámara de Comercio local." },
+    { q: "¿Qué pasa si alquilo sin RNT?", a: "Te arriesgas al cierre inmediato del establecimiento y multas económicas severas por parte de la Superintendencia de Industria y Comercio." }
+  ]
+};
+---
+<LegalArticle {...props} />

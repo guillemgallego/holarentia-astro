@@ -1,0 +1,49 @@
+---
+// src/pages/es/recursos-legales/colombia/impuestos-airbnb-colombia.astro
+import LegalArticle from '../../../../components/LegalArticle.astro';
+
+const props = {
+  title: "Impuestos para anfitriones de Airbnb en Colombia (Dian 2026)",
+  country: "Colombia",
+  countryHref: "/es/recursos-legales/colombia",
+  metaTitle: "Impuestos Airbnb Colombia | DIAN y Obligaciones Fiscales | Hola Rentia",
+  metaDesc: "Guía completa de impuestos para alquiler vacacional en Colombia. IVA, Impuesto a la Renta, ICA y contribuciones parafiscales para anfitriones profesionales.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/colombia/impuestos-airbnb-colombia",
+  intro: `
+    <p>Gestionar un alquiler vacacional en Colombia conlleva responsabilidades tributarias que no deben ignorarse. La **DIAN** ha incrementado la vigilancia sobre los ingresos reportados por plataformas digitales, por lo que es vital entender qué impuestos debes pagar para evitar sanciones.</p>
+    <p>Desde el Impuesto sobre la Renta hasta el IVA y el ICA municipal, aquí desglosamos la estructura fiscal para un anfitrión o property manager en Colombia.</p>
+  `,
+  steps: [
+    { name: "Identificar tu régimen fiscal", text: "Determina si actúas como Persona Natural o Persona Jurídica. Esto definirá los topes de ingresos a partir de los cuales estás obligado a declarar IVA o Renta." },
+    { name: "Reportar ingresos en la Declaración de Renta", text: "Todos los ingresos que recibes de Airbnb o Booking deben sumarse a tus rentas de capital. Guarda los extractos bancarios como prueba del ingreso neto recibido." },
+    { name: "Gestionar el IVA (19%)", text: "Verifica si estás exento bajo alguna ley de fomento turístico. En muchos casos, los servicios de alojamiento turístico en Colombia requieren cobrar y reportar el 19% de IVA a los huéspedes nacionales." },
+    { name: "Pagar la Contribución Parafiscal", text: "Es un pago trimestral al Fontur (Fondo Nacional de Turismo). Se calcula como el 2.5 x 1000 de tus ingresos operacionales." },
+    { name: "Declarar el ICA", text: "Debes inscribirte en el RIT (Registro de Información Tributaria) de tu municipio (ej. Medellín) y pagar el impuesto de Industria y Comercio según tus ingresos anuales." }
+  ],
+  checklist: [
+    "Rut actualizado con responsabilidades tributarias",
+    "Registro de ingresos mensuales detallado",
+    "Liquidación trimestral de Fontur",
+    "Archivador de facturas de gastos deducibles",
+    "Certificados de retención en la fuente (si aplica)"
+  ],
+  mistakes: [
+    "No declarar los ingresos creyendo que la DIAN no conoce los pagos de plataformas internacionales.",
+    "Olvidar el pago al Fontur, lo cual puede bloquear la renovación de tu RNT.",
+    "No diferenciar entre ingresos brutos (lo que paga el huésped) e ingresos netos (lo que recibes).",
+    "No cobrar IVA cuando la ley lo exige para huéspedes residentes en Colombia."
+  ],
+  documentation: [
+    "Extractos bancarios",
+    "Certificados de la DIAN",
+    "Facturas de mantenimiento y gestión (deducibles)",
+    "Comprobantes de pago de Fontur"
+  ],
+  faq: [
+    { q: "¿Tengo que pagar IVA si mis huéspedes son extranjeros?", a: "Los extranjeros residentes en el exterior están exentos de IVA en servicios turísticos en Colombia siempre que se cumplan ciertos requisitos de documentación (sello de migracion)." },
+    { q: "¿Qué gastos puedo deducir?", a: "Puedes deducir comisiones de la plataforma, gastos de administración, servicios públicos, seguros y mantenimiento de la propiedad." },
+    { q: "¿Cuándo se paga Fontur?", a: "Es una obligación trimestral. Tienes 25 días calendario después de que termine el trimestre para pagar." }
+  ]
+};
+---
+<LegalArticle {...props} />

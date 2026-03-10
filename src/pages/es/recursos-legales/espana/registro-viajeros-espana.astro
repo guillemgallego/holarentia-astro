@@ -1,0 +1,49 @@
+---
+// src/pages/es/recursos-legales/espana/registro-viajeros-espana.astro
+import LegalArticle from '../../../../components/LegalArticle.astro';
+
+const props = {
+  title: "Registro de Viajeros en España: Cómo cumplir la Ley de Seguridad",
+  country: "España",
+  countryHref: "/es/recursos-legales/espana",
+  metaTitle: "Registro de Viajeros España | Partes de Entrada y Policía | Hola Rentia",
+  metaDesc: "Guía para el registro de viajeros en viviendas turísticas en España. Cómo enviar los partes de entrada a Policía, Guardia Civil o Mossos en 24h.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/espana/registro-viajeros-espana",
+  intro: `
+    <p>En España, por razones de seguridad ciudadana, todos los anfitriones están obligados a identificar a sus huéspedes y comunicar sus datos a las autoridades. Es lo que se conoce como el **Registro de Viajeros** o el envío de los **Partes de Entrada**.</p>
+    <p>No realizar este trámite en el plazo de 24 horas desde la llegada de los huéspedes puede acarrear multas graves que van desde los 600€ hasta los 30.000€.</p>
+  `,
+  steps: [
+    { name: "Registrarse en la aplicación de seguridad", text: "Dependiendo de tu zona, deberás darte de alta presencialmente en el puesto de la Policía Nacional (Webpol) o Guardia Civil (Hospedajes) aportando tu licencia VUT." },
+    { name: "Solicitar el documento de identidad", text: "Al llegar, debes pedir el DNI, Pasaporte o Tarjeta de Identidad de todos los huéspedes mayores de 14 años." },
+    { name: "Cumplimentar el Parte de Entrada", text: "Rellena el formulario con: nombre, apellidos, tipo de documento, número, fecha de expedición, sexo, fecha de nacimiento, nacionalidad y fecha de entrada." },
+    { name: "Enviar los datos en 24 horas", text: "Sube la información de forma digital a la plataforma correspondiente de las Fuerzas y Cuerpos de Seguridad del Estado." },
+    { name: "Custodiar el Libro-Registro", text: "Imprime los partes firmados por los huéspedes y encuadérnalos en tomos de 100 a 500 páginas. Debes guardarlos durante 3 años." }
+  ],
+  checklist: [
+    "Claves de acceso a Webpol o Hospedajes",
+    "Partes de entrada físicos (para firma)",
+    "DNI o pasaporte de cada huésped (>14 años)",
+    "Libro-Registro debidamente custodiado",
+    "Conexión a internet para envío telemático"
+  ],
+  mistakes: [
+    "No registrar a todos los acompañantes (solo registrar al que hizo la reserva).",
+    "Enviar los datos tarde (tienes un máximo de 24 horas desde la entrada).",
+    "No guardar los partes firmados físicamente (es obligatorio aunque el envío sea digital).",
+    "Usar nombres o datos incompletos."
+  ],
+  documentation: [
+    "DNI, Pasaporte o Tarjeta de Residencia",
+    "Licencia turística (VUT)",
+    "Contrato de alquiler vacacional (opcional pero recomendado)",
+    "Parte de entrada firmado"
+  ],
+  faq: [
+    { q: "¿Tengo que registrar a los niños?", a: "Solo es obligatorio para los mayores de 14 años. No obstante, se recomienda tener constancia de todos los ocupantes por temas de seguro y capacidad." },
+    { q: "¿Qué pasa con la nueva ley de registro (Real Decreto 933/2021)?", a: "Esta ley amplía los datos a recoger y ha generado mucha controversia. Asegúrate de estar al día con las últimas circulares de Interior, ya que los requerimientos de datos pueden aumentar." },
+    { q: "¿Puedo hacer el registro de forma digital?", a: "Sí, puedes usar apps que escaneen el DNI y envíen automáticamente los datos a la Policía para ahorrar tiempo." }
+  ]
+};
+---
+<LegalArticle {...props} />

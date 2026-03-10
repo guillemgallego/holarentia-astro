@@ -1,0 +1,20 @@
+---
+// src/pages/es/recursos-legales/guatemala/index.astro
+import LegalHub from '../../../components/LegalHub.astro';
+const props={
+  country:"Guatemala",flag:"🇬🇪",slug:"guatemala",
+  metaTitle:"Guía Legal Alquiler Vacacional Guatemala | Inguat y SAT | Hola Rentia",
+  metaDesc:"Normativa legal para Airbnb en Guatemala. Registro en Inguat, impuestos al turismo e ingresos SAT.",
+  canonicalUrl:"https://holarentia.com/es/recursos-legales/guatemala",
+  intro:"<p>En Guatemala, el desarrollo del sector vacacional está bajo la supervisión del <strong>Inguat (Instituto Guatemalteco de Turismo)</strong>.</p>",
+  licensesContent:"<p>Requiere registro como prestador de servicios de hospedaje ante Inguat, bajo la Ley Orgánica del Inguat.</p>",
+  taxesContent:"<p>El alquiler turístico está sujeto al <strong>10% de impuesto al turismo</strong> y declaración de renta ante la <strong>SAT</strong>.</p>",
+  legalObligations:"<p>Llevar el libro de registro de huéspedes y emitir facturación electrónica FEL de Guatemala.</p>",
+  citiesContent:"<p>Antigua Guatemala, Lago Atitlán y Ciudad de Guatemala tienen dinámicas turísticas muy activas y reguladas.</p>",
+  complianceContent:"<p>La facturación electrónica FEL de la SAT es indispensable para el reporte de ingresos como anfitrión profesional.</p>",
+  toolsContent:"<p>Específicos para el mercado chapín, el software ayuda a separar el impuesto de turismo de las comisiones de plataforma.</p>",
+  faq:[{q:"¿Cuánto es el impuesto al turismo?",a:"Guatemala aplica un impuesto específico del 10% sobre los ingresos brutas del hospedaje."}],
+  articles:[]
+};
+---
+<LegalHub {...props} />

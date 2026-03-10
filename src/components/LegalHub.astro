@@ -1,0 +1,237 @@
+---
+// src/components/LegalHub.astro — Hola Rentia · Legal Country Hub Template
+import Footer from './Footer.astro';
+import WhatsApp from './WhatsApp.astro';
+
+export interface ArticleLink {
+  title: string;
+  href: string;
+}
+
+export interface FAQ {
+  q: string;
+  a: string;
+}
+
+export interface Props {
+  country: string;
+  flag: string;
+  slug: string;
+  metaTitle: string;
+  metaDesc: string;
+  canonicalUrl: string;
+  intro: string;
+  licensesContent: string;
+  taxesContent: string;
+  legalObligations: string;
+  citiesContent: string;
+  complianceContent: string;
+  toolsContent: string;
+  faq: FAQ[];
+  articles: ArticleLink[];
+}
+
+const {
+  country, flag, metaTitle, metaDesc, canonicalUrl, intro,
+  licensesContent, taxesContent, legalObligations, citiesContent,
+  complianceContent, toolsContent, faq, articles
+} = Astro.props;
+
+const schemaGraph = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://holarentia.com/#org",
+      "name": "Hola Rentia",
+      "url": "https://holarentia.com",
+      "logo": "https://holarentia.com/images/hola-rentia-logo-gestion-airbnb-ia.webp"
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      "url": canonicalUrl,
+      "name": metaTitle,
+      "description": metaDesc,
+      "breadcrumb": { "@id": `${canonicalUrl}#breadcrumb` }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Hola Rentia", "item": "https://holarentia.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Recursos Legales", "item": "https://holarentia.com/es/recursos-legales" },
+        { "@type": "ListItem", "position": 3, "name": country, "item": canonicalUrl }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faq.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a }
+      }))
+    }
+  ]
+});
+---
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>{metaTitle}</title>
+  <meta name="description" content={metaDesc}/>
+  <link rel="canonical" href={canonicalUrl}/>
+  <link rel="icon" type="image/webp" href="/images/favicon.webp"/>
+  
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content={metaTitle}/>
+  <meta property="og:description" content={metaDesc}/>
+  <meta property="og:url" content={canonicalUrl}/>
+  <meta property="og:site_name" content="Hola Rentia"/>
+  
+  <script type="application/ld+json" set:html={schemaGraph}/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --primary: #ff3b30;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e5e8ef;
+      --bg: #ffffff;
+      --bg2: #f8f9fb;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.6; margin: 0; }
+    h1, h2, h3 { font-family: 'Bricolage Grotesque', sans-serif; letter-spacing: -0.02em; }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    
+    /* Nav */
+    .nav { padding: 16px 0; border-bottom: 1px solid var(--border); }
+    .nav-inner { display: flex; align-items:center; justify-content: space-between; max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    .logo { height: 40px; }
+
+    /* Breadcrumbs */
+    .breadcrumbs { padding: 24px 0; font-size: 0.8rem; color: var(--muted); }
+    .breadcrumbs a { color: var(--muted); text-decoration: none; }
+    .breadcrumbs a:hover { color: var(--primary); }
+    .sep { margin: 0 8px; opacity: 0.5; }
+
+    /* Hero */
+    .hero { padding: 48px 0; }
+    h1 { font-size: 3rem; margin-bottom: 24px; line-height: 1.1; }
+    .intro { font-size: 1.1rem; color: var(--muted); max-width: 750px; }
+
+    /* Content */
+    article section { padding: 40px 0; border-top: 1px solid var(--border); }
+    h2 { font-size: 2rem; margin-bottom: 20px; color: var(--text); }
+    .content-box { background: var(--bg2); padding: 32px; border-radius: 16px; border: 1px solid var(--border); margin: 24px 0; }
+    
+    /* Articles Grid */
+    .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin: 32px 0; }
+    .article-card { padding: 24px; border: 1px solid var(--border); border-radius: 12px; transition: all 0.2s; background: white; }
+    .article-card:hover { border-color: var(--primary); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+    .article-card h3 { margin: 0 0 12px; font-size: 1.15rem; }
+    .article-card a { color: var(--text); text-decoration: none; font-weight: 700; display: block; }
+    .article-card .read-more { color: var(--primary); font-size: 0.85rem; margin-top: 12px; display: inline-block; }
+
+    /* CTA */
+    .cta { background: var(--text); color: white; padding: 64px 0; border-radius: 24px; text-align: center; margin: 64px 0; }
+    .cta h2 { color: white; }
+    .btn { background: #ff3b30; color: white; padding: 14px 32px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-block; margin-top: 16px; }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/"><img src="/images/hola-rentia-logo-gestion-airbnb-ia.webp" alt="Hola Rentia" class="logo"/></a>
+      <a href="/#formulario" class="btn" style="padding: 8px 16px; font-size: 0.8rem; margin: 0;">Analizar ahora</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <nav class="breadcrumbs">
+        <a href="/">Inicio</a> <span class="sep">/</span> 
+        <a href="/es/recursos-legales">Recursos Legales</a> <span class="sep">/</span>
+        <span style="color:var(--text)">{country}</span>
+      </nav>
+
+      <section class="hero">
+        <span style="font-size: 2.5rem; margin-bottom: 16px; display: block;">{flag}</span>
+        <h1>Guía legal del alquiler vacacional en {country}</h1>
+        <div class="intro" set:html={intro} />
+      </section>
+
+      <article>
+        <section id="licencias">
+          <h2>Licencias necesarias para alquilar en {country}</h2>
+          <div set:html={licensesContent} />
+        </section>
+
+        <section id="impuestos">
+          <h2>Impuestos del alquiler vacacional en {country}</h2>
+          <div set:html={taxesContent} />
+        </section>
+
+        <section id="articulos">
+          <h2>Guías específicas por tema</h2>
+          <p>Explora nuestras guías detalladas sobre los aspectos legales más importantes del mercado vacacional en {country}.</p>
+          <div class="articles-grid">
+            {articles.map(art => (
+              <div class="article-card">
+                <h3>{art.title}</h3>
+                <a href={art.href} class="read-more">Leer guía completa →</a>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="obligaciones">
+          <h2>Registro de huéspedes y obligaciones legales</h2>
+          <div set:html={legalObligations} />
+        </section>
+
+        <section id="ciudades">
+          <h2>Principales ciudades con regulación turística</h2>
+          <div set:html={citiesContent} />
+        </section>
+
+        <section id="cumplimiento">
+          <h2>Cómo cumplir la normativa con varios apartamentos</h2>
+          <div set:html={complianceContent} />
+        </section>
+
+        <section id="herramientas" class="content-box">
+          <h2>Herramientas para gestionar legalmente</h2>
+          <div set:html={toolsContent} />
+          <p style="margin-top:20px;">
+            <strong>HOLA RENTIA</strong> ayuda a los gestores a cumplir con las normativas locales mediante la automatización del registro de viajeros y la exportación de reportes financieros.
+          </p>
+        </section>
+
+        <div class="cta">
+          <h2>Gestiona tus alquileres en {country} cumpliendo la ley</h2>
+          <p>Automatiza el registro de huéspedes y quédate con el 100% de tus ingresos. Sin comisiones.</p>
+          <a href="/#formulario" class="btn">Empieza Gratis Ahora</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <WhatsApp />
+  <Footer />
+
+</body>
+</html>

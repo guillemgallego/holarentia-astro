@@ -1,0 +1,20 @@
+---
+// src/pages/es/recursos-legales/chile/index.astro
+import LegalHub from '../../../components/LegalHub.astro';
+const props={
+  country:"Chile",flag:"🇨🇱",slug:"chile",
+  metaTitle:"Guía Legal Alquiler Vacacional Chile | SII e Impuestos | Hola Rentia",
+  metaDesc:"Normativa legal para Airbnb en Chile. Declaración ante el SII, impuestos y regulaciones municipales para anfitriones.",
+  canonicalUrl:"https://holarentia.com/es/recursos-legales/chile",
+  intro:"<p>Chile regula el alquiler vacacional principalmente a través del **SII (Servicio de Impuestos Internos)**, exigiendo el inicio de actividades para el arrendamiento amoblado.</p>",
+  licensesContent:"<p>Debes contar con patente comercial municipal en algunas comunas y registrarte como prestador de servicios turísticos ante <strong>Sernatur</strong>.</p>",
+  taxesContent:"<p>El arrendamiento de inmuebles amoblados está gravado con <strong>IVA (19%)</strong>. Los ingresos deben declararse como rentas de primera categoría.</p>",
+  legalObligations:"<p>Obligación de mantener un registro de pasajeros y cumplir con las normas de seguridad y copropiedad del edificio.</p>",
+  citiesContent:"<p>Santiago, Viña del Mar y Pucón tienen normativas locales específicas sobre la operación de departamentos turísticos.</p>",
+  complianceContent:"<p>La facturación electrónica es obligatoria para el reporte de ingresos por servicios de alojamiento amoblado.</p>",
+  toolsContent:"<p>El software de gestión ayuda a automatizar el cálculo del IVA y la gestión de calendarios para evitar multas del SII.</p>",
+  faq:[{q:"¿Debo pagar IVA en Chile?",a:"Sí, el alquiler de viviendas amobladas por periodos cortos está sujeto al pago del 19% de IVA."}],
+  articles:[]
+};
+---
+<LegalHub {...props} />

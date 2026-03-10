@@ -1,0 +1,49 @@
+---
+// src/pages/es/recursos-legales/mexico/registro-huespedes-mexico.astro
+import LegalArticle from '../../../../components/LegalArticle.astro';
+
+const props = {
+  title: "Regulación de Anfitriones en CDMX y Seguridad (Guía 2026)",
+  country: "México",
+  countryHref: "/es/recursos-legales/mexico",
+  metaTitle: "Regulación Airbnb CDMX | Padrón de Anfitriones | Hola Rentia",
+  metaDesc: "Conoce las nuevas leyes para Airbnb en la Ciudad de México. Límites de ocupación, registro obligatorio en el padrón de anfitriones y seguridad.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/mexico/registro-huespedes-mexico",
+  intro: `
+    <p>La Ciudad de México ha implementado cambios históricos en 2024 y 2025 para regular el alojamiento temporal por plataformas. El objetivo es equilibrar el mercado con la vivienda de larga estancia y profesionalizar a los anfitriones.</p>
+    <p>Si tienes un Airbnb en colonias como **Roma, Condesa o Polanco**, debes cumplir con el nuevo Padrón de Anfitriones y los límites de noches anuales para no perder tu permiso de operación.</p>
+  `,
+  steps: [
+    { name: "Registrarse en el Padrón de Anfitriones de la CDMX", text: "Es obligatorio inscribir tus inmuebles en el sistema digital del gobierno capitalino. Deberás proporcionar datos del dueño e incluir fotos del lugar." },
+    { name: "Vigilar el límite de noches (50%)", text: "La nueva ley establece un límite de ocupación máxima del 50% anual para propiedades vacacionales en ciertas zonas. Si lo superas, podrías ser reclasificado como establecimiento hotelero." },
+    { name: "Informar a la comunidad / vecinos", text: "Es una buena práctica (y en algunos casos requisito) informar a la asamblea de condóminos sobre la explotación turística del inmueble." },
+    { name: "Mantener medidas de Protección Civil", text: "Debes contar con un kit de seguridad básico: extintor vigente, detector de humo y botiquín de primeros auxilios." },
+    { name: "Controlar el ruido y convivencia", text: "Como anfitrión, eres responsable de que tus huéspedes no alteren el orden público. Instala sensores de ruido si es necesario." }
+  ],
+  checklist: [
+    "Folio de registro en el Padrón de Anfitriones",
+    "Extintor de CO2 o Polvo ABC vigente",
+    "Cartel con números de emergencia (911)",
+    "Contrato de arrendamiento (si no eres el dueño)",
+    "Seguro de responsabilidad civil para huéspedes"
+  ],
+  mistakes: [
+    "No registrarse en el padrón pensando que el registro del SAT es suficiente.",
+    "Exceder el límite de noches permitidas sin cambiar el uso del suelo a hotelero.",
+    "Omitir el pago del Impuesto Sobre Hospedaje (ISH) del 5% en la CDMX.",
+    "No tener un Aviso de Privacidad visible para proteger los datos de tus huéspedes."
+  ],
+  documentation: [
+    "Identificación Oficial",
+    "Comprobante de pago de Predial",
+    "Certificado de Uso de Suelo",
+    "Aviso de Privacidad actualizado"
+  ],
+  faq: [
+    { q: "¿Qué pasa si supero el 50% de noches ocupadas al año?", a: "La regulación de CDMX busca evitar la gentrificación. Si superas ese límite, el inmueble no podrá anunciarse como vacacional el resto del año o deberá pagar impuestos como hotel comercial." },
+    { q: "¿Es obligatorio el extintor?", a: "Sí, Protección Civil municipal exige medidas mínimas de seguridad para cualquier inmueble que reciba público o turistas." },
+    { q: "¿Me pueden denunciar los vecinos?", a: "Sí. Si los vecinos demuestran que la actividad turística afecta la paz o seguridad del edificio, pueden solicitar la revocación de tu permiso ante las autoridades capitalinas." }
+  ]
+};
+---
+<LegalArticle {...props} />

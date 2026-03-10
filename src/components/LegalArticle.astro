@@ -1,0 +1,262 @@
+---
+// src/components/LegalArticle.astro — Hola Rentia · Legal Article Template
+import Footer from './Footer.astro';
+import WhatsApp from './WhatsApp.astro';
+
+export interface Step {
+  name: string;
+  text: string;
+}
+
+export interface FAQ {
+  q: string;
+  a: string;
+}
+
+export interface Props {
+  title: string;
+  country: string;
+  countryHref: string;
+  metaTitle: string;
+  metaDesc: string;
+  canonicalUrl: string;
+  intro: string;
+  steps: Step[];
+  checklist: string[];
+  mistakes: string[];
+  documentation: string[];
+  faq: FAQ[];
+}
+
+const {
+  title, country, countryHref, metaTitle, metaDesc, canonicalUrl, intro,
+  steps, checklist, mistakes, documentation, faq
+} = Astro.props;
+
+const schemaGraph = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://holarentia.com/#org",
+      "name": "Hola Rentia",
+      "url": "https://holarentia.com",
+      "logo": "https://holarentia.com/images/hola-rentia-logo-gestion-airbnb-ia.webp"
+    },
+    {
+      "@type": "Article",
+      "headline": title,
+      "description": metaDesc,
+      "author": { "@type": "Organization", "name": "Hola Rentia Legal Team" },
+      "publisher": { "@id": "https://holarentia.com/#org" },
+      "image": "https://holarentia.com/images/hola-rentia-resultados-airbnb-ia-espana.webp"
+    },
+    {
+      "@type": "HowTo",
+      "name": title,
+      "description": metaDesc,
+      "step": steps.map((s, i) => ({
+        "@type": "HowToStep",
+        "position": i + 1,
+        "name": s.name,
+        "itemListElement": [{ "@type": "HowToDirection", "text": s.text }]
+      }))
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Hola Rentia", "item": "https://holarentia.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Recursos Legales", "item": "https://holarentia.com/es/recursos-legales" },
+        { "@type": "ListItem", "position": 3, "name": country, "item": `https://holarentia.com${countryHref}` },
+        { "@type": "ListItem", "position": 4, "name": title, "item": canonicalUrl }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faq.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a }
+      }))
+    }
+  ]
+});
+---
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>{metaTitle}</title>
+  <meta name="description" content={metaDesc}/>
+  <link rel="canonical" href={canonicalUrl}/>
+  <link rel="icon" type="image/webp" href="/images/favicon.webp"/>
+  
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content={metaTitle}/>
+  <meta property="og:description" content={metaDesc}/>
+  <meta property="og:url" content={canonicalUrl}/>
+  <meta property="og:site_name" content="Hola Rentia"/>
+  
+  <script type="application/ld+json" set:html={schemaGraph}/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --primary: #ff3b30;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e5e8ef;
+      --bg: #ffffff;
+      --bg2: #f8f9fb;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.6; margin: 0; }
+    h1, h2, h3 { font-family: 'Bricolage Grotesque', sans-serif; letter-spacing: -0.02em; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 300px; gap: 64px; }
+    
+    /* Nav */
+    .nav { padding: 16px 0; border-bottom: 1px solid var(--border); margin-bottom: 0; }
+    .nav-inner { display: flex; align-items:center; justify-content: space-between; max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    .logo { height: 40px; }
+
+    /* Breadcrumbs */
+    .bc-container { border-bottom: 1px solid var(--border); background: var(--bg2); }
+    .breadcrumbs { padding: 16px 24px; font-size: 0.75rem; color: var(--muted); max-width: 1120px; margin: 0 auto; }
+    .breadcrumbs a { color: var(--muted); text-decoration: none; }
+    .breadcrumbs a:hover { color: var(--primary); }
+    .sep { margin: 0 6px; opacity: 0.4; }
+
+    /* Content */
+    article { padding: 48px 0; }
+    h1 { font-size: 2.8rem; margin-bottom: 24px; line-height: 1.1; }
+    .article-intro { font-size: 1.15rem; color: var(--text); margin-bottom: 40px; border-left: 4px solid var(--primary); padding-left: 24px; }
+    
+    h2 { font-size: 1.8rem; margin-top: 48px; margin-bottom: 24px; }
+    
+    /* Steps */
+    .step-item { margin-bottom: 32px; padding-left: 56px; position: relative; }
+    .step-num { position: absolute; left: 0; top: 0; width: 40px; height: 40px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; }
+    .step-item h3 { margin-top: 0; margin-bottom: 8px; font-size: 1.2rem; }
+
+    /* Boxes */
+    .box-green { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 16px; padding: 32px; margin: 32px 0; }
+    .box-red { background: #fef2f2; border: 1px solid #fecaca; border-radius: 16px; padding: 32px; margin: 32px 0; }
+    .box-title { display: flex; align-items: center; gap: 10px; font-weight: 800; margin-bottom: 16px; font-family: 'Bricolage Grotesque'; }
+
+    /* Sidebar */
+    aside { padding: 48px 0; position: sticky; top: 20px; align-self: start; }
+    .sidebar-block { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
+    .sidebar-block h4 { font-family: 'Bricolage Grotesque'; margin-top: 0; margin-bottom: 12px; }
+    .sidebar-links { list-style: none; padding: 0; margin: 0; }
+    .sidebar-links li { margin-bottom: 10px; font-size: 0.85rem; }
+    .sidebar-links a { color: var(--text); text-decoration: none; font-weight: 600; }
+    .sidebar-links a:hover { color: var(--primary); }
+
+    .cta-side { background: var(--text); color: white; padding: 24px; border-radius: 12px; text-align: center; }
+    .btn-sm { background: var(--primary); color: white; padding: 10px 20px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-block; font-size: 0.8rem; margin-top: 12px; }
+
+    @media (max-width: 900px) {
+      .wrap { grid-template-columns: 1fr; gap: 32px; }
+      aside { position: static; padding-top: 0; }
+      h1 { font-size: 2.22rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/"><img src="/images/hola-rentia-logo-gestion-airbnb-ia.webp" alt="Hola Rentia" class="logo"/></a>
+      <a href="/#formulario" class="btn-sm" style="margin: 0;">Analizar ahora</a>
+    </div>
+  </header>
+
+  <div class="bc-container">
+    <nav class="breadcrumbs">
+      <a href="/">Hola Rentia</a> <span class="sep">/</span> 
+      <a href="/es/recursos-legales">Recursos Legales</a> <span class="sep">/</span>
+      <a href={countryHref}>{country}</a> <span class="sep">/</span>
+      <span style="color:var(--text); font-weight: 600;">{title}</span>
+    </nav>
+  </div>
+
+  <div class="wrap">
+    <article>
+      <h1>{title}</h1>
+      <div class="article-intro" set:html={intro} />
+
+      <section id="guia">
+        <h2>Guía paso a paso</h2>
+        <div class="steps-container">
+          {steps.map((s, i) => (
+            <div class="step-item">
+              <div class="step-num">{i + 1}</div>
+              <h3>{s.name}</h3>
+              <p>{s.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div class="box-green">
+        <div class="box-title">✅ Checklist de cumplimiento legal</div>
+        <ul style="padding-left: 20px; margin: 0;">
+          {checklist.map(item => <li style="margin-bottom: 8px;">{item}</li>)}
+        </ul>
+      </div>
+
+      <section id="errores">
+        <h2>Errores legales comunes que cometen los anfitriones</h2>
+        <div class="box-red">
+          <ul style="padding-left: 20px; margin: 0;">
+            {mistakes.map(m => <li style="margin-bottom: 8px;">{m}</li>)}
+          </ul>
+        </div>
+      </section>
+
+      <section id="documentacion">
+        <h2>Documentación necesaria</h2>
+        <ul style="list-style: none; padding: 0;">
+          {documentation.map(doc => <li style="padding: 12px; border-bottom: 1px solid var(--border); font-weight: 500;">📄 {doc}</li>)}
+        </ul>
+      </section>
+
+      <section id="faq">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-container">
+          {faq.map(f => (
+            <div style="margin-bottom: 24px;">
+              <h3 style="font-size: 1.1rem; margin-bottom: 8px;">{f.q}</h3>
+              <p style="font-size: 0.95rem; color: var(--muted);">{f.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </article>
+
+    <aside>
+      <div class="sidebar-block">
+        <h4>Más en {country}</h4>
+        <ul class="sidebar-links">
+          <li><a href={countryHref}>Guía Legal {country} →</a></li>
+          <li><a href={`/es/${country.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-')}`}>Software Alquiler Vacacional {country} →</a></li>
+        </ul>
+      </div>
+
+      <div class="cta-side">
+        <h4 style="margin:0 0 8px; font-family:'Bricolage Grotesque';">¿Gestionas varios apartamentos?</h4>
+        <p style="font-size: 0.8rem; opacity: 0.8; margin-bottom: 12px;">Automatiza el cumplimiento legal y ahorra 10h/semana.</p>
+        <a href="/#formulario" class="btn-sm">Probar Hola Rentia</a>
+      </div>
+    </aside>
+  </div>
+
+  <WhatsApp />
+  <Footer />
+
+</body>
+</html>
