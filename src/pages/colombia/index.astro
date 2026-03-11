@@ -209,10 +209,11 @@ p strong{color:var(--text2);font-weight:700}
 .cta-pill{font-size:.78rem;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:5px}
 
 /* Breadcrumb */
-.breadcrumb{padding:100px 0 0;font-size:.8rem;color:var(--muted2)}
-.breadcrumb a{color:var(--muted2);transition:color .18s}
+.breadcrumb{padding:106px 0 0;font-size:.8rem;font-weight:600;color:var(--muted)}
+.breadcrumb a{color:var(--muted);transition:color .18s;text-decoration:none}
 .breadcrumb a:hover{color:var(--red)}
-.breadcrumb span{margin:0 6px}
+.breadcrumb span{margin:0 6px;opacity:.8;font-weight:700}
+.breadcrumb .curr{color:var(--text);font-weight:700}
 
 
 
@@ -256,12 +257,11 @@ p strong{color:var(--text2);font-weight:700}
   <a href="/#formulario" onclick="closeMob()" class="btn btn-fire" style="margin-top:8px">🔍 Analizar mi propiedad</a>
 </nav>
 
-<!-- BREADCRUMB -->
 <div class="breadcrumb">
   <div class="wrap">
     <a href="/">Hola Rentia</a>
-    <span>›</span>
-    <span>Colombia</span>
+    <span>/</span>
+    <span class="curr">Colombia</span>
   </div>
 </div>
 
