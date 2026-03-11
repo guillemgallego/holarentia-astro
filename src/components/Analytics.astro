@@ -1,0 +1,26 @@
+---
+// src/components/Analytics.astro
+// Este componente centraliza los tags de Google Analytics y Search Console.
+// Reemplaza los placeholders con tus IDs reales.
+
+const GA_MEASUREMENT_ID = 'G-VF8S9R8VBF'; // Tu ID de Google Analytics (ej: G-123456)
+const GOOGLE_SITE_VERIFICATION = ''; // Tu código de Google Search Console
+---
+
+<!-- Google Search Console Verification -->
+{GOOGLE_SITE_VERIFICATION && (
+  <meta name="google-site-verification" content={GOOGLE_SITE_VERIFICATION} />
+)}
+
+<!-- Google Analytics (gtag.js) -->
+{GA_MEASUREMENT_ID && (
+  <>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
+    <script is:inline define:vars={{ GA_MEASUREMENT_ID }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', GA_MEASUREMENT_ID);
+    </script>
+  </>
+)}

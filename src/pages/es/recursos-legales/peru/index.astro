@@ -13,8 +13,16 @@ const props={
   citiesContent:"<p>Lima (Miraflores, Barranco) y Cusco tienen regulaciones locales muy estrictas debido a la alta carga turística.</p>",
   complianceContent:"<p>La emisión de boletas de venta electrónicas es el estándar para cumplir con las obligaciones fiscales en Perú.</p>",
   toolsContent:"<p>Sistemas integrados permiten gestionar el flujo de caja y los reportes mensuales para la declaración jurada ante Sunat.</p>",
-  faq:[{q:"¿Necesito licencia de funcionamiento?",a:"Sí, para operar legalmente como hospedaje turistico el municipio exige una licencia de funcionamiento específica."}],
-  articles:[]
+  faq:[
+    {q:"¿Necesito licencia de funcionamiento para Airbnb en Perú?",a:"Sí. Para operar legalmente como establecimiento de hospedaje turístico, el municipio exige una Licencia de Funcionamiento específica, previa a la clasificación ante Mincetur."},
+    {q:"¿Cuánto impuesto paga un anfitrión de Airbnb en Perú?",a:"Las personas naturales pagan el 5% efectivo sobre el monto bruto del alquiler como Renta de Primera Categoría, uno de los más bajos de Latinoamérica."},
+    {q:"¿Hola Rentia genera el Registro de Huéspedes exigido por Mincetur en Perú?",a:"Sí. Hola Rentia registra automáticamente los datos de cada huésped al momento del booking y los organiza en un registro exportable compatible con los requisitos del Reglamento de Establecimientos de Hospedaje."}
+  ],
+  articles:[
+    { title: "Clasificación Mincetur para Hospedaje en Perú", href: "/es/recursos-legales/peru/clasificacion-mincetur-peru" },
+    { title: "Impuestos Sunat Airbnb Perú: Renta e IGV", href: "/es/recursos-legales/peru/impuestos-sunat-peru" },
+    { title: "Libro de Reclamaciones y Registro de Huéspedes en Perú", href: "/es/recursos-legales/peru/libro-reclamaciones-peru" }
+  ]
 };
 ---
 <LegalHub {...props} />

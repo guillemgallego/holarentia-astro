@@ -1,0 +1,48 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Impuestos SAT Guatemala para Airbnb: ISR e Impuesto al Turismo",
+  country: "Guatemala",
+  countryHref: "/es/recursos-legales/guatemala",
+  metaTitle: "Impuestos SAT Airbnb Guatemala 2026: ISR e Impuesto al Turismo 10% | Hola Rentia",
+  metaDesc: "Guía fiscal para anfitriones de Airbnb en Guatemala. Impuesto al turismo del 10%, Impuesto Sobre la Renta (ISR) y la facturación electrónica FEL ante la SAT.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/guatemala/impuestos-sat-guatemala",
+  intro: `<p>Guatemala aplica a los anfitriones de Airbnb dos impuestos principales: el <strong>Impuesto al Turismo (10%)</strong> —específico del sector— y el <strong>Impuesto Sobre la Renta (ISR)</strong> sobre los ingresos netos, gestionados por la <strong>Superintendencia de Administración Tributaria (SAT)</strong>.</p>
+  <p>La facturación electrónica obligatoria (FEL) de Guatemala es el sistema que centraliza toda la emisión de comprobantes fiscales. Sin FEL activo, el anfitrión no puede operar legalmente ni declarar sus ingresos correctamente.</p>`,
+  steps: [
+    { name: "Activa tu NIT y el régimen de ISR en el SAT", text: "Con tu NIT activo en el SAT (portal.sat.gob.gt), selecciona el régimen de ISR correspondiente. Guatemala ofrece el Régimen Sobre las Utilidades (tasa del 25% sobre renta neta) o el Régimen Opcional Simplificado (7% sobre los ingresos brutos hasta Q 30,000 mensuales, 5% sobre el exceso)." },
+    { name: "Configura la facturación electrónica FEL", text: "FEL (Factura Electrónica en Línea) es el sistema central del SAT. Necesitas un Certificador autorizado (hay varios disponibles: Infile, FeleGT, Megaprint) para emitir Documentos Tributarios Electrónicos (DTE) por cada reserva." },
+    { name: "Calcula y declara el Impuesto al Turismo", text: "El Impuesto al Turismo del 10% aplica sobre los ingresos brutos por servicios de hospedaje. Se declara y paga mensualmente ante el SAT. Es adicional al ISR y a cualquier otro impuesto aplicable." },
+    { name: "Aprovecha los gastos deducibles para el ISR", text: "Si eliges el Régimen Sobre Utilidades (25%), puedes deducir: comisiones de plataformas, gastos de limpieza, mantenimiento, seguros, internet y servicios. Si eliges el Régimen Simplificado (7%), no hay deducción pero el proceso es más sencillo." },
+    { name: "Presenta las declaraciones en los plazos del SAT", text: "Impuesto al Turismo: mensual, dentro de los 15 días del mes siguiente. ISR régimen sobre utilidades: trimestral (31 de julio, 31 de octubre, 31 de enero y 31 de julio). ISR régimen simplificado: mensual. Declara en el portal SAT usando tu NIT." }
+  ],
+  checklist: [
+    "NIT activo en el SAT con actividad de hospedaje",
+    "Elección de régimen ISR formalizada",
+    "Certificador FEL configurado para emisión de DTE",
+    "Declaración mensual del Impuesto al Turismo (10%)",
+    "Declaraciones ISR en plazo según régimen elegido",
+    "Archivo de gastos deducibles si aplica régimen de utilidades"
+  ],
+  mistakes: [
+    "No elegir el régimen de ISR correcto desde el inicio (el cambio de régimen tiene requisitos y plazos).",
+    "No configurar la FEL antes de operar: el SAT puede multar por falta de documentación.",
+    "Olvidar que el 10% de Impuesto al Turismo es ADICIONAL al ISR (no es el ISR).",
+    "No presentar la declaración mensual del Impuesto al Turismo aunque no haya reservas (hay que presentarla en cero si aplica)."
+  ],
+  documentation: [
+    "NIT activo con actividad de hospedaje en SAT",
+    "DTE emitidos por FEL por cada reserva",
+    "Declaraciones del Impuesto al Turismo presentadas",
+    "Declaraciones de ISR presentadas según régimen",
+    "Facturas de gastos deducibles (si aplica)"
+  ],
+  faq: [
+    { q: "¿Cuántos impuestos paga un anfitrión de Airbnb en Guatemala?", a: "Principalmente dos: Impuesto al Turismo (10% sobre ingresos brutos) + ISR (7% sobre ingresos brutos en régimen simplificado, o 25% sobre renta neta en régimen de utilidades). Con el régimen simplificado, la carga efectiva total puede rondar el 17% de los ingresos brutos." },
+    { q: "¿Airbnb recauda el Impuesto al Turismo en Guatemala?", a: "Airbnb tiene acuerdos de recaudación de impuestos con varias jurisdicciones, pero en Guatemala el avance de estos acuerdos es limitado. El anfitrión suele ser responsable de declarar y pagar el Impuesto al Turismo directamente ante el SAT." },
+    { q: "¿Hola Rentia genera facturas FEL para Guatemala?", a: "Hola Rentia se puede integrar con certificadores FEL autorizados en Guatemala para generar automáticamente los DTE por cada reserva, eliminando el trabajo manual de facturación y reduciendo el riesgo de errores ante el SAT." }
+  ]
+};
+---
+<LegalArticle {...props} />

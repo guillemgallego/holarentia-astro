@@ -1,0 +1,48 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Impuestos Airbnb Argentina: AFIP, IIBB y Monotributo para Anfitriones",
+  country: "Argentina",
+  countryHref: "/es/recursos-legales/argentina",
+  metaTitle: "Impuestos Airbnb Argentina 2026: AFIP, Monotributo e IIBB | Hola Rentia",
+  metaDesc: "Guía fiscal completa para anfitriones de Airbnb en Argentina. Cómo declarar ingresos en AFIP, qué categoría de Monotributo corresponde y cómo funciona el convenio de IIBB.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/argentina/impuestos-airbnb-argentina",
+  intro: `<p>El sistema fiscal argentino para el alquiler vacacional es uno de los más complejos de Latinoamérica. La combinación de <strong>AFIP (nacional), AGIP/IIBB (provincial)</strong> y los convenios directos que Airbnb tiene con la AGIP hacen que la planificación tributaria sea fundamental para no perder rentabilidad.</p>
+  <p>Esta guía te explica exactamente cuántos impuestos pagas, cómo evitar retenciones automáticas de Airbnb y cómo Hola Rentia te ayuda a gestionar la facturación sin errores.</p>`,
+  steps: [
+    { name: "Determina tu régimen fiscal en AFIP", text: "Si tus ingresos anuales por Airbnb no superan el tope de la categoría más alta del Monotributo (~$15M ARS en 2025), puedes mantenerte como Monotributista. Si los superas, debes migrar a Responsable Inscripto (IVA + Ganancias + IIBB en régimen general)." },
+    { name: "Inscríbete en Ingresos Brutos (IIBB)", text: "En CABA se gestiona ante la AGIP. La alícuota para alojamientos turísticos es del 3,5%. Airbnb retiene hasta el 9% de IIBB si NO estás inscrito, lo que hace que la inscripción sea imprescindible para maximizar tus ingresos netos." },
+    { name: "Comprende el Convenio Multilateral", text: "Si alquilas propiedades en más de una provincia argentina, debes tributar bajo el Convenio Multilateral, distribuyendo tus ingresos brutos entre las distintas jurisdicciones de acuerdo con coeficientes de atribución." },
+    { name: "Gestiona la facturación electrónica", text: "Como Monotributista debes emitir facturas de tipo C. Como Responsable Inscripto, facturas A. El comprobante debe emitirse por cada estancia o de forma periódica (mensual) por las reservas del periodo." },
+    { name: "Declara trimestralmente o en la fecha de vencimiento", text: "El Monotributo se paga mensualmente (cuota fija). Si eres RI, presentas DDJJ de IVA mensual, Ganancias cuatrimestral y el anticipo de Bienes Personales si aplica." }
+  ],
+  checklist: [
+    "Alta en AFIP con categoría de Monotributo correcta",
+    "Inscripción activa en Ingresos Brutos (IIBB)",
+    "Facturación electrónica emitida por cada reserva",
+    "Archivo de recibos de pago del Monotributo mensual",
+    "Reporte de ingresos anuales para declaración AFIP",
+    "Convenio multilateral si operas en varias provincias"
+  ],
+  mistakes: [
+    "No inscribirse en IIBB: la retención de Airbnb puede llegar al 9% sobre tus ingresos brutos.",
+    "Subestimar los ingresos y quedar en categoría baja del Monotributo (AFIP puede recategorizar retroactivamente).",
+    "No emitir factura por cada reserva: la falta de comprobantes es infracción ante AFIP.",
+    "Confundir el número CUIT con CUIL: para iniciar actividad comercial necesitas el CUIT."
+  ],
+  documentation: [
+    "Constancia de inscripción en AFIP (con actividad 681099)",
+    "Constancia de inscripción en AGIP/IIBB",
+    "Facturas C emitidas o comprobantes de Monotributo",
+    "Estados de cuenta de Airbnb (disponibles en el panel de host)",
+    "Recibos de pago mensual del Monotributo"
+  ],
+  faq: [
+    { q: "¿Airbnb me retiene impuestos en Argentina?", a: "Sí. Airbnb tiene convenios con AGIP (CABA) y otras jurisdicciones. Si estás inscripto en IIBB, la retención es del 1,5%. Si no estás inscripto, sube al 9%. Por eso inscribirse es rentable desde el primer alquiler." },
+    { q: "¿Puedo deducir gastos de mantenimiento de los impuestos?", a: "Como Monotributista, no. En el Monotributo pagas una cuota fija sin importar los gastos. Si eres Responsable Inscripto, sí puedes deducir gastos vinculados como comisiones, suministros, mobiliario y mantenimiento." },
+    { q: "¿Qué pasa si no declaro mis ingresos de Airbnb?", a: "Airbnb reporta los ingresos de los anfitriones directamente a la AFIP y a la AGIP. El fisco puede detectar la omisión y aplicar multas que van del 50% al 100% del impuesto omitido, más intereses resarcitorios." }
+  ]
+};
+---
+<LegalArticle {...props} />

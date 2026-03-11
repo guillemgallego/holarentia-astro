@@ -13,8 +13,16 @@ const props={
   citiesContent:"<p>Santiago, Viña del Mar y Pucón tienen normativas locales específicas sobre la operación de departamentos turísticos.</p>",
   complianceContent:"<p>La facturación electrónica es obligatoria para el reporte de ingresos por servicios de alojamiento amoblado.</p>",
   toolsContent:"<p>El software de gestión ayuda a automatizar el cálculo del IVA y la gestión de calendarios para evitar multas del SII.</p>",
-  faq:[{q:"¿Debo pagar IVA en Chile?",a:"Sí, el alquiler de viviendas amobladas por periodos cortos está sujeto al pago del 19% de IVA."}],
-  articles:[]
+  faq:[
+    {q:"¿Debo pagar IVA en Chile por Airbnb?",a:"Sí. El arrendamiento de viviendas amobladas por periodos cortos está sujeto al 19% de IVA directamente con el SII. Debes emitir factura o boleta electrónica por cada reserva."},
+    {q:"¿Necesito inicio de actividades en el SII para Airbnb?",a:"Sí. Debes realizar el inicio de actividades ante el SII con el código 5510 (hospedaje) antes de tu primera reserva pagada. El SII cruza información bancaria y de plataformas para detectar ingresos no declarados."},
+    {q:"¿Hola Rentia genera reportes para la declaración del SII en Chile?",a:"Sí. Hola Rentia produce reportes mensuales de ingresos por propiedad y reserva, compatibles con las declaraciones F29 (IVA) y F22 (renta anual) del SII."}
+  ],
+  articles:[
+    { title: "Declaración SII para Airbnb en Chile: Guía Paso a Paso", href: "/es/recursos-legales/chile/declaracion-sii-chile" },
+    { title: "Impuestos Airbnb Chile: IVA 19% y Renta Primera Categoría", href: "/es/recursos-legales/chile/impuestos-airbnb-chile" },
+    { title: "Contrato de Arriendo Turístico en Chile: Requisitos Legales", href: "/es/recursos-legales/chile/contrato-arriendo-chile" }
+  ]
 };
 ---
 <LegalHub {...props} />

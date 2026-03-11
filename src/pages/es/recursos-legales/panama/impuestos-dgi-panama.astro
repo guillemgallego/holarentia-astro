@@ -1,0 +1,48 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Impuestos DGI Panamá: ITBMS y Renta para Anfitriones de Airbnb",
+  country: "Panamá",
+  countryHref: "/es/recursos-legales/panama",
+  metaTitle: "Impuestos Airbnb Panamá 2026: ITBMS 7% y Renta DGI | Hola Rentia",
+  metaDesc: "Guía fiscal para anfitriones de Airbnb en Panamá. ITBMS del 7%, impuesto sobre la renta, incentivos Zona Libre de Turismo y cómo declarar ante la DGI.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/panama/impuestos-dgi-panama",
+  intro: `<p>Panamá es uno de los países con menor presión fiscal de Latinoamérica gracias a su sistema tributario territorial: solo tributan los ingresos generados <em>dentro</em> de Panamá. Para el alquiler vacacional, esto significa pagar el <strong>ITBMS (7%)</strong> sobre el valor del servicio y el impuesto sobre la renta según los tramos correspondientes, gestionados por la <strong>Dirección General de Ingresos (DGI)</strong>.</p>
+  <p>Adicionalmente, existen incentivos fiscales significativos para desarrollos turísticos en el interior del país bajo la Ley de Turismo panameña.</p>`,
+  steps: [
+    { name: "Inscríbete en la DGI con el RUC correcto", text: "Obtén o verifica tu Registro Único de Contribuyentes (RUC) en la DGI (dgi.mef.gob.pa). Para personas naturales, el RUC es tu número de cédula o pasaporte. Para empresas, el RUC de la sociedad anónima. La actividad a registrar es la de hospedaje turístico." },
+    { name: "Configura el cobro y declaración del ITBMS", text: "El ITBMS (Impuesto de Transferencia de Bienes Corporales Muebles y la Prestación de Servicios) es del 7% y grava los servicios de alojamiento. Debes incluirlo en el precio de la noche o añadirlo como cargo separado. La declaración es mensual ante la DGI." },
+    { name: "Declara el Impuesto sobre la Renta anualmente", text: "Personas naturales: tasas del 0% (hasta $11,000), 15% (de $11,001 a $50,000) y 25% sobre el exceso. Personas jurídicas: 25% flat sobre la renta neta. La declaración se presenta en marzo de cada año." },
+    { name: "Evalúa los incentivos del interior del país", text: "La Ley 8 de 1994 y sus modificaciones ofrecen exenciones de hasta 20 años para inversiones turísticas en zonas priorizadas (Bocas del Toro, Chiriquí, Veraguas, Archipiélago de Las Perlas). Si tu propiedad califica, la exoneración puede cubrir el ITBMS y el impuesto sobre la renta." },
+    { name: "Emite facturas electrónicas de acuerdo al DGI", text: "La DGI exige factura o recibo oficial por cada transacción. Panafactura (sistema de facturación electrónica de la DGI) es la plataforma oficial. Emite el comprobante por cada estadía, incluyendo el ITBMS desglosado." }
+  ],
+  checklist: [
+    "RUC activo en DGI con actividad de hospedaje",
+    "ITBMS configurado y declarado mensualmente",
+    "Facturas electrónicas emitidas por cada reserva",
+    "Declaración de ISR anual presentada en marzo",
+    "Evaluación de incentivos Ley 8/1994 si aplica",
+    "Paz y Salvo de la DGI al día para renovación de licencia ATP"
+  ],
+  mistakes: [
+    "No cobrar el ITBMS del 7% al huésped y absorberlo de los ingresos propios.",
+    "Asumir que los ingresos de Airbnb no están sujetos a renta (sí están sujetos a renta territorial panameña).",
+    "No presentar la declaración mensual del ITBMS: genera recargos automáticos.",
+    "Perder la oportunidad de acceder a incentivos fiscales del interior por no formalizarse."
+  ],
+  documentation: [
+    "RUC activo en DGI",
+    "Facturas electrónicas Panafactura emitidas",
+    "Declaraciones mensuales ITBMS presentadas",
+    "Declaración anual ISR presentada",
+    "Paz y Salvo de la DGI"
+  ],
+  faq: [
+    { q: "¿Cuánto ITBMS paga un anfitrión de Airbnb en Panamá?", a: "El 7% sobre el monto total del alojamiento (sin incluir tarifas de limpieza si se cobran por separado, que pueden tener tratamiento distinto). Es uno de los IVA más bajos de Latinoamérica." },
+    { q: "¿Airbnb recoge el ITBMS en nombre de los anfitriones en Panamá?", a: "Airbnb tiene acuerdos con la DGI para recaudar el ITBMS en ciertas condiciones. Sin embargo, el anfitrión sigue siendo el responsable final de declararlo. Verifica en tu cuenta de Airbnb si para tu caso Airbnb lo recauda automáticamente." },
+    { q: "¿Hola Rentia gestiona propiedades en Bocas del Toro y Boquete?", a: "Sí. Hola Rentia funciona en cualquier zona geográfica de Panamá. Su panel centraliza la gestión de propiedades en la capital y en el interior, con reportes en USD y funciones de automatización adaptadas al mercado panameño." }
+  ]
+};
+---
+<LegalArticle {...props} />

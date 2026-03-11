@@ -1,0 +1,50 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Licencia Inguat Guatemala: Cómo Registrar tu Airbnb Legalmente",
+  country: "Guatemala",
+  countryHref: "/es/recursos-legales/guatemala",
+  metaTitle: "Licencia Inguat Guatemala 2026: Registro Airbnb Antigua y Atitlán | Hola Rentia",
+  metaDesc: "Cómo obtener la licencia del Instituto Guatemalteco de Turismo (Inguat) para operar en Airbnb. Requisitos, proceso de registro y zonas con más demanda turística en Guatemala.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/guatemala/licencia-inguat-guatemala",
+  intro: `<p>Guatemala es uno de los destinos turísticos más ricos y variados de Centroamérica, con <strong>Antigua Guatemala (Patrimonio UNESCO), el Lago de Atitlán y los circuitos mayas</strong> como atractores principales. El <strong>Instituto Guatemalteco de Turismo (Inguat)</strong> regula y promueve el sector bajo la Ley Orgánica del Inguat (Decreto 1701).</p>
+  <p>Los anfitriones de Airbnb en Guatemala que no se registran ante el Inguat pierden acceso a los canales de promoción turística oficial y se exponen a sanciones administrativas en las zonas de mayor control, como Antigua y Panajachel.</p>`,
+  steps: [
+    { name: "Inscríbete en el SAT (Superintendencia de Administración Tributaria)", text: "Antes del registro Inguat, debes tener un NIT (Número de Identificación Tributaria) activo en el SAT con la actividad de hospedaje. Esto es el equivalente al RFC mexicano o el RUC peruano. Sin NIT activo, el Inguat no procesará tu solicitud." },
+    { name: "Obtén la licencia sanitaria del MSPAS", text: "El Ministerio de Salud Pública y Asistencia Social (MSPAS) emite la habilitación sanitaria de establecimientos de hospedaje. Verifica que el inmueble cumple con condiciones de agua potable, manejo de residuos y ventilación según el Código de Salud." },
+    { name: "Presenta la solicitud de registro ante el Inguat", text: "En el portal del Inguat (inguat.gob.gt), completa el formulario de registro de establecimiento de hospedaje. Adjunta: NIT activo, habilitación sanitaria, certificado de bomberos, planos del inmueble, cédula o pasaporte del titular y fotografías." },
+    { name: "Supera la inspección del Inguat", text: "El Inguat verificará condiciones de habitabilidad, equipamiento (sanitarios privados, agua caliente, camas adecuadas), seguridad y señalización. Los establecimientos en Antigua Guatemala tienen estándares adicionales por tratarse de Patrimonio UNESCO." },
+    { name: "Obtén el número de registro y la placa oficial Inguat", text: "Con el registro aprobado, el Inguat emite el certificado y la placa oficial que identifica al establecimiento como prestador de servicios de hospedaje registrado. La placa debe colocarse en un lugar visible del inmueble." }
+  ],
+  checklist: [
+    "NIT activo en SAT con actividad de hospedaje",
+    "Habilitación sanitaria del MSPAS",
+    "Certificado de Bomberos vigente",
+    "Formulario de solicitud Inguat completado",
+    "Inspección Inguat superada",
+    "Placa oficial Inguat colocada en el inmueble",
+    "Número de registro Inguat publicado en anuncios"
+  ],
+  mistakes: [
+    "No activar el NIT en el SAT antes de solicitar el registro Inguat.",
+    "No cumplir con los estándares de Patrimonio UNESCO en Antigua (pueden ser más estrictos).",
+    "No renovar el registro Inguat según los plazos establecidos.",
+    "No colocar la placa oficial Inguat en lugar visible del establecimiento."
+  ],
+  documentation: [
+    "Cédula de vecindad o pasaporte del titular",
+    "NIT activo en SAT",
+    "Habilitación sanitaria MSPAS",
+    "Certificado de Bomberos",
+    "Planos del inmueble",
+    "Fotografías interior y exterior del establecimiento"
+  ],
+  faq: [
+    { q: "¿Es obligatorio registrarse en el Inguat para alquilar en Airbnb en Guatemala?", a: "Sí. La Ley Orgánica del Inguat obliga a todos los prestadores de servicios turísticos, incluidos los establecimientos de hospedaje (aunque sean apartamentos en Airbnb), a registrarse ante el Inguat." },
+    { q: "¿Qué zonas de Guatemala tienen más demanda en Airbnb?", a: "Antigua Guatemala es el destino número 1, con alta demanda todo el año por turistas norteamericanos y europeos. El lago de Atitlán (San Pedro, San Marcos, Panajachel) tiene alta demanda entre viajeros alternativos y nómadas digitales. Ciudad de Guatemala tiene demanda de viajeros de negocios." },
+    { q: "¿Hola Rentia funciona en Guatemala?", a: "Sí. Hola Rentia gestiona propiedades en Guatemala con reportes en quetzales (GTQ) y dólares. La plataforma integra calendarios de Airbnb y Booking, automatiza mensajes en español e inglés, y genera reportes de ingresos para las declaraciones del SAT." }
+  ]
+};
+---
+<LegalArticle {...props} />

@@ -1,0 +1,48 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Impuestos DGII para Airbnb en Rep. Dominicana: ITBIS y Renta Turística",
+  country: "República Dominicana",
+  countryHref: "/es/recursos-legales/republica-dominicana",
+  metaTitle: "Impuestos DGII Airbnb Rep. Dominicana 2026: ITBIS y ISR | Hola Rentia",
+  metaDesc: "Guía fiscal para anfitriones de Airbnb en República Dominicana. ITBIS (18%), Impuesto sobre la Renta y el sistema de la DGII para declarar ingresos por hospedaje turístico.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/republica-dominicana/impuestos-dgii",
+  intro: `<p>En República Dominicana, los ingresos por alquiler vacacional están sujetos al <strong>ITBIS (18%)</strong> —el equivalente al IVA— y al <strong>Impuesto Sobre la Renta (ISR)</strong> gestionado por la Dirección General de Impuestos Internos (DGII). La DGII ha incrementado su cruce de información con plataformas como Airbnb y Booking.</p>
+  <p>La buena noticia: el régimen <strong>Confotur</strong> puede exonerar a los anfitriones elegibles hasta por 10 años del ISR y el ITBIS, lo que convierte la formalización en una oportunidad fiscal única en el Caribe.</p>`,
+  steps: [
+    { name: "Regístrate como contribuyente en la DGII", text: "Obtén tu NCF (Número de Comprobante Fiscal) activo en la DGII (dgii.gov.do). Este número es indispensable para emitir facturas electrónicas y para que Airbnb pueda realizar el reporte de tus ingresos correctamente." },
+    { name: "Determina si estás sujeto al ITBIS", text: "Los prestadores de servicios de hospedaje están sujetos al ITBIS del 18% si sus ingresos anuales superan el umbral para pequeños contribuyentes. Consulta con tu contador dominicano la categoría que te corresponde según volumen anual." },
+    { name: "Emite Comprobantes Fiscales (NCF) por cada reserva", text: "La DGII exige que por cada servicio prestado se emita un Comprobante Fiscal con NCF válido. Existen diferentes tipos: Factura con valor fiscal, Factura para consumidor final (B02), y para las plataformas digitales, Comprobante de Compras Electrónicas." },
+    { name: "Declara el ITBIS mensualmente", text: "Si estás sujeto al ITBIS, presenta la Declaración Mensual de ITBIS (IT-1) en la DGII antes del día 20 de cada mes. El ITBIS crédito de tus compras relacionadas reduce el débito." },
+    { name: "Presenta la Declaración de ISR anual", text: "En marzo de cada año, presenta la Declaración Jurada del Impuesto sobre la Renta (IR-1 para personas físicas o IR-2 para empresas). La tasa efectiva para personas físicas es progresiva del 0% al 25%." }
+  ],
+  checklist: [
+    "NCF activo en el sistema de la DGII",
+    "Comprobantes Fiscales emitidos por cada reserva",
+    "Declaración mensual IT-1 (ITBIS) si aplica",
+    "Declaración anual IR-1 o IR-2 del ISR",
+    "Verificación de elegibilidad para Confotur",
+    "Archivo de facturas de gastos con ITBIS crédito"
+  ],
+  mistakes: [
+    "No obtener el NCF antes de iniciar operaciones: imposibilita la facturación legal.",
+    "Confundir el Confotur con una exoneración automática: debe solicitarse y aprobarse.",
+    "No declarar el ITBIS mensualmente porque 'Airbnb lo paga': el anfitrión sigue siendo responsable.",
+    "No guardar los comprobantes de gastos y perder el ITBIS crédito que reduces."
+  ],
+  documentation: [
+    "RNC o cédula con NCF activo en DGII",
+    "Comprobantes Fiscales emitidos por períodos",
+    "Declaraciones IT-1 mensuales presentadas",
+    "Declaración IR-1 anual presentada",
+    "Certificado Confotur si aplica"
+  ],
+  faq: [
+    { q: "¿Cuánto paga de impuestos un anfitrión de Airbnb en República Dominicana?", a: "Sin Confotur: ITBIS del 18% sobre los ingresos brutos (si supera umbral de pequeño contribuyente) más ISR progresivo del 0% al 25% sobre la renta neta. Con Confotur elegible: posible exoneración total de ambos impuestos por hasta 10 años." },
+    { q: "¿Cómo sé si mi propiedad califica para Confotur?", a: "Confotur aplica principalmente a nuevos proyectos de inversión turística en zonas priorizadas por el Mitur. Si ya tienes la propiedad operando sin Confotur, generalmente es difícil acceder retroactivamente. Consúltalo con un abogado especializado en derecho turístico dominicano." },
+    { q: "¿Hola Rentia genera los reportes para la DGII?", a: "Sí. Hola Rentia exporta reportes mensuales de ingresos desglosados por propiedad y reserva en formato compatible con los requerimientos contables de la DGII, ahorrando horas de trabajo administrativo a los gestores dominicanos." }
+  ]
+};
+---
+<LegalArticle {...props} />

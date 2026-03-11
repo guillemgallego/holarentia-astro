@@ -1,0 +1,49 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Clasificación Mincetur para Alquiler Vacacional en Perú: Guía Paso a Paso",
+  country: "Perú",
+  countryHref: "/es/recursos-legales/peru",
+  metaTitle: "Clasificación Mincetur Perú: Registro de Hospedaje para Airbnb 2026 | Hola Rentia",
+  metaDesc: "Cómo clasificar tu establecimiento de hospedaje ante Mincetur en Perú. Requisitos, tipos de clasificación y licencia de funcionamiento municipal para operar en Airbnb.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/peru/clasificacion-mincetur-peru",
+  intro: `<p>En Perú, el marco legal para el alquiler vacacional se estructura bajo el <strong>Reglamento de Establecimientos de Hospedaje (DS 001-2015-MINCETUR)</strong>, que clasifica y categoriza todos los inmuebles destinados a prestar alojamiento. Tanto si tienes un apartamento en Miraflores como una villa en Cusco, debes obtener la clasificación correspondiente.</p>
+  <p>Operar sin este registro expone al anfitrión a multas desde la Dircetur local y al cierre forzoso del inmueble como establecimiento de hospedaje.</p>`,
+  steps: [
+    { name: "Obtén la Licencia de Funcionamiento Municipal", text: "Antes de la clasificación Mincetur, el municipio de tu distrito debe otorgar la Licencia de Funcionamiento. En Lima, el trámite es ante la Municipalidad de tu distrito (ej. Miraflores, San Isidro). Presenta memoria descriptiva del inmueble, planos y certificado de Defensa Civil." },
+    { name: "Solicita la Clasificación ante la Dircetur", text: "La Dirección Regional de Comercio Exterior y Turismo (Dircetur) de tu región clasifica los establecimientos de hospedaje. Para apartamentos turísticos, la categoría más común es 'Apart-Hotel' o 'Albergue'. Presenta la solicitud con el formulario correspondiente y adjunta planos, licencia y aforos." },
+    { name: "Supera la inspección técnica", text: "Un inspector de Dircetur visitará el inmueble para verificar que cumple con los requisitos de habitabilidad, seguridad (extintor, señalización, botiquín) y servicios mínimos (agua caliente, WiFi, ropa de cama). Prepara el inmueble antes de solicitar la inspección." },
+    { name: "Obtén el certificado de clasificación", text: "Tras la inspección favorable, Dircetur emite el Certificado de Clasificación y Categorización. Este documento debe estar visible en el inmueble y su número debe incluirse en los anuncios de Airbnb." },
+    { name: "Registra el Libro de Registro de Huéspedes", text: "El Reglamento obliga a llevar un Libro de Registro de Huéspedes donde se anoten nombre, número de documento, fecha de ingreso y salida de cada huésped. Puede ser físico o digital con validez legal." }
+  ],
+  checklist: [
+    "Licencia de Funcionamiento Municipal vigente",
+    "Certificado de Defensa Civil aprobado",
+    "Certificado de Clasificación Dircetur",
+    "Libro de Registro de Huéspedes activo",
+    "Libro de Reclamaciones visible en el inmueble",
+    "Número de clasificación publicado en anuncios de Airbnb"
+  ],
+  mistakes: [
+    "Operar sin la Licencia de Funcionamiento municipal (es la base de todos los demás trámites).",
+    "No tener el Libro de Reclamaciones: es obligatorio y su ausencia es una infracción sancionable por INDECOPI.",
+    "No cumplir con los requisitos mínimos de seguridad antes de la inspección de Dircetur.",
+    "Alquilar por temporada sin la clasificación pensando que 'solo es por unos meses'."
+  ],
+  documentation: [
+    "DNI o RUC del titular",
+    "Escritura del inmueble o contrato de arrendamiento",
+    "Planos del inmueble a escala",
+    "Certificado de Defensa Civil vigente",
+    "Licencia de Funcionamiento Municipal",
+    "Póliza de seguros del establecimiento"
+  ],
+  faq: [
+    { q: "¿Todos los apartamentos de Airbnb en Perú necesitan clasificación Mincetur?", a: "Sí, si se ofrecen de forma habitual como establecimiento de hospedaje. El reglamento aplica a cualquier inmueble que preste alojamiento a cambio de una contraprestación económica de forma regular, independientemente del canal (Airbnb, Booking, etc.)." },
+    { q: "¿Cuánto tiempo demora la clasificación Mincetur?", a: "El proceso completo (licencia municipal + trámite Dircetur + inspección + emisión del certificado) puede tardar entre 30 y 90 días hábiles dependiendo de la carga de la Dircetur de tu región." },
+    { q: "¿Hola Rentia me ayuda a gestionar el Libro de Registro de Huéspedes?", a: "Sí. Hola Rentia recopila automáticamente los datos de los huéspedes en el momento de la reserva y los organiza en un registro digital exportable, que cumple con los requisitos del Reglamento de Establecimientos de Hospedaje." }
+  ]
+};
+---
+<LegalArticle {...props} />

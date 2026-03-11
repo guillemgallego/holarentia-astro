@@ -1,0 +1,48 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Licencia CTPR Puerto Rico: Cómo Registrar tu Airbnb con la Compañía de Turismo",
+  country: "Puerto Rico",
+  countryHref: "/es/recursos-legales/puerto-rico",
+  metaTitle: "Licencia CTPR Puerto Rico: Registro Airbnb en San Juan y Rincón | Hola Rentia",
+  metaDesc: "Cómo obtener la licencia de la Compañía de Turismo de Puerto Rico (CTPR) para operar en Airbnb. Room Tax 7%, requisitos municipales y registro federal como negocio.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/puerto-rico/licencia-ctpr-puerto-rico",
+  intro: `<p>Puerto Rico opera bajo un sistema dual: las leyes estatales (como territorio de EE.UU.) y las ordenanzas municipales. La <strong>Compañía de Turismo de Puerto Rico (CTPR)</strong> regula y formaliza los establecimientos de alojamiento de corta estancia bajo la Ley 329 de 2004 y sus enmiendas.</p>
+  <p>El mercado de Airbnb en Puerto Rico es uno de los más activos del Caribe, con <strong>San Juan, Rincón, Vieques y Culebra</strong> como destinos de alta demanda. La formalización ante la CTPR es obligatoria y permite acceder a protecciones legales ante conflictos con los municipios.</p>`,
+  steps: [
+    { name: "Registra tu negocio en el DDEC", text: "El Departamento de Desarrollo Económico y Comercio (DDEC) de Puerto Rico exige el registro de cualquier negocio en la isla. Si operas como empresa (LLC o Corp.), también necesitas el Registro de Corporaciones. Este paso es previo a la licencia CTPR." },
+    { name: "Solicita el número de SURI en Hacienda", text: "El Sistema Unificado de Rentas Internas (SURI) es la plataforma fiscal de Puerto Rico. Necesitas un número de Merchant Registration activo para recaudar el Room Tax y declarar los ingresos ante Hacienda PR." },
+    { name: "Presenta la solicitud de licencia a la CTPR", text: "En el portal de la CTPR (tourism.pr.gov), completa la solicitud de registro como Rental Property (Propiedad de Alquiler a Corto Plazo). Adjunta: prueba de propiedad o contrato de arrendamiento, número de negocio del DDEC y número SURI activo." },
+    { name: "Cumple con los requisitos municipales", text: "Cada municipio de Puerto Rico puede tener sus propias ordenanzas sobre alquileres de corta estancia (STR). San Juan, Rincón y Aguadilla tienen reglamentación específica. Verifica con el municipio si existen restricciones de zonificación o permisos adicionales." },
+    { name: "Configura el cobro del Room Tax", text: "El Room Tax (7% estatal + posible recargo municipal) debe cobrarse de los huéspedes y remitirse a Hacienda PR. Airbnb cobra y remite el Room Tax en nombre de los anfitriones en Puerto Rico según el acuerdo con CTPR. Verifica en tu dashboard de Airbnb si aplica para tu propiedad." }
+  ],
+  checklist: [
+    "Negocio registrado en el DDEC",
+    "Número SURI activo en Hacienda PR",
+    "Licencia CTPR obtenida y publicada en anuncios",
+    "Verificación de ordenanzas municipales (STR)",
+    "Room Tax configurado correctamente (7%+)",
+    "Seguro de responsabilidad civil del establecimiento"
+  ],
+  mistakes: [
+    "No registrarse en el DDEC pensando que Airbnb lo hace automáticamente (son procesos independientes).",
+    "No verificar las ordenanzas municipales (algunos municipios han impuesto moratorias de STR).",
+    "No publicar el número de licencia CTPR en el anuncio de Airbnb.",
+    "Omitir el Room Tax pensando que Airbnb siempre lo recauda (depende de la configuración de tu cuenta)."
+  ],
+  documentation: [
+    "Certificado de Incorporación o registro DDEC",
+    "Número de Merchant Registration SURI",
+    "Licencia CTPR vigente",
+    "Certificado de uso conforme del municipio",
+    "Póliza de seguro de RC del establecimiento"
+  ],
+  faq: [
+    { q: "¿Es obligatorio registrarse en la CTPR para Airbnb en Puerto Rico?", a: "Sí. La Ley 329 establece que todos los establecimientos de alojamiento de corta estancia deben registrarse ante la CTPR. Operar sin registro puede resultar en multas y en la retirada del anuncio por parte de Airbnb." },
+    { q: "¿Airbnb recauda el Room Tax por mí en Puerto Rico?", a: "Sí, Airbnb tiene un acuerdo con la CTPR para recaudar el 7% de Room Tax estatal en nombre de los anfitriones en Puerto Rico. Sin embargo, algunos municipios pueden tener recargos adicionales que el anfitrión debe gestionar por separado. Verifica en tu panel de Airbnb." },
+    { q: "¿Cuánto puedo ganar con Airbnb en San Juan?", a: "Las propiedades en el Viejo San Juan tienen un ADR (Average Daily Rate) de entre USD 150-400 por noche según tamaño y ubicación. En Condado y Miramar el rango es USD 100-250. Hola Rentia permite optimizar los precios con análisis dinámico de mercado." }
+  ]
+};
+---
+<LegalArticle {...props} />

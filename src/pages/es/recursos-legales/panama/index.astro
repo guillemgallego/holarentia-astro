@@ -13,8 +13,16 @@ const props={
   citiesContent:"<p>Ciudad de Panamá (restricciones fuertes), Coronado, Pedasí y Boquete (zonas de alta actividad vacacional legal).</p>",
   complianceContent:"<p>El uso de factura electrónica panameña es el estándar vigente para el reporte de ingresos a la DGI.</p>",
   toolsContent:"<p>El software de gestión permite a los administradores en Panamá separar las rentas largas y cortas de forma eficiente.</p>",
-  faq:[{q:"¿Se puede alquilar por Airbnb en Ciudad de Panamá?",a:"Legalmente, los contratos de alquiler en la capital deben ser de mínimo 45 días según la normativa vigente de la ATP."}],
-  articles:[]
+  faq:[
+    {q:"¿Se puede alquilar por Airbnb en Ciudad de Panamá?",a:"Legalmente, la Ley 80 prohíbe contratos de menos de 45 días en edificios residenciales de la capital. Sin embargo, en zonas turísticas del interior como Coronado, Boquete y Bocas del Toro sí está permitido con licencia ATP."},
+    {q:"¿Cuánto es el ITBMS para el hospedaje turístico en Panamá?",a:"El ITBMS (equivalente al IVA) para hospedaje turístico en Panamá es del 7%, uno de los más bajos de Latinoamérica. Se declara mensualmente ante la DGI."},
+    {q:"¿Hola Rentia gestiona propiedades en Bocas del Toro y Boquete?",a:"Sí. Hola Rentia gestiona propiedades en toda Panamá, con reportes en dólares (USD), integración con Airbnb y Booking, y precios dinámicos para optimizar la rentabilidad en cada destino."}
+  ],
+  articles:[
+    { title: "Licencia ATP Panamá: Airbnb Legal Fuera de la Capital", href: "/es/recursos-legales/panama/licencia-atp-panama" },
+    { title: "Impuestos DGI Panamá: ITBMS 7% y Renta para Anfitriones", href: "/es/recursos-legales/panama/impuestos-dgi-panama" },
+    { title: "Registro de Huéspedes en Panamá: Obligaciones del Anfitrión", href: "/es/recursos-legales/panama/registro-huespedes-panama" }
+  ]
 };
 ---
 <LegalHub {...props} />

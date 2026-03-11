@@ -1,0 +1,49 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Registro Mintur Uruguay: Cómo Formalizar tu Airbnb en Punta del Este",
+  country: "Uruguay",
+  countryHref: "/es/recursos-legales/uruguay",
+  metaTitle: "Registro Mintur Uruguay: Airbnb Legal en Punta del Este y Colonia | Hola Rentia",
+  metaDesc: "Cómo registrar tu establecimiento de alojamiento turístico ante el Ministerio de Turismo de Uruguay (Mintur). Requisitos, inspección y número de habilitación para Airbnb.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/uruguay/registro-mintur-uruguay",
+  intro: `<p>Uruguay tiene un mercado de alquiler vacacional maduro y bien regulado, liderado por el polo turístico de <strong>Punta del Este</strong> y la histórica <strong>Colonia del Sacramento</strong>. El <strong>Ministerio de Turismo (Mintur)</strong> regula todos los establecimientos de alojamiento bajo la Ley 19.253 y normativas sectoriales específicas.</p>
+  <p>La formalización ante Mintur no solo es obligatoria, sino que abre el acceso al régimen de devolución de IVA a turistas extranjeros, uno de los beneficios más competitivos del mercado uruguayo.</p>`,
+  steps: [
+    { name: "Solicita la habilitación técnica municipal", text: "Antes del registro Mintur, el municipio de tu departamento debe habilitar el local. En Maldonado (Punta del Este), solicítala en la Intendencia Departamental. El proceso verifica condiciones de habitabilidad, seguridad y plano aprobado." },
+    { name: "Inscríbete en BPS y DGI", text: "El Banco de Previsión Social (BPS) y la Dirección General Impositiva (DGI) son los organismos fiscales. Debes estar activo en ambos como prestador de servicios de alojamiento antes de solicitar el registro Mintur." },
+    { name: "Presenta la solicitud al Mintur", text: "En el portal turismo.gub.uy, completa el formulario de solicitud de habilitación de establecimiento turístico. Adjunta: habilitación municipal, planos, constancia BPS y DGI, certificado de bomberos y fotografías." },
+    { name: "Supera la inspección técnica del Mintur", text: "El Mintur evaluará: superficie mínima por huésped, equipamiento (cama, baño, calefacción/refrigeración), señalización de emergencia, acceso a agua caliente y conectividad. Los apart-hoteles tienen requisitos más estrictos que las residencias turísticas." },
+    { name: "Obtén el número de habilitación Mintur", text: "Con la habilitación aprobada, el Mintur emite el número de registro oficial. Inclúyelo en todos tus anuncios de plataformas digitales y en la cartelería del establecimiento. La habilitación se renueva periódicamente." }
+  ],
+  checklist: [
+    "Habilitación técnica de la Intendencia Departamental",
+    "Inscripción activa en DGI con actividad de hospedaje",
+    "Inscripción en BPS (si hay personal contratado)",
+    "Certificado de bomberos vigente",
+    "Formulario de solicitud Mintur completado",
+    "Número de habilitación Mintur publicado en anuncios"
+  ],
+  mistakes: [
+    "No tramitar primero la habilitación municipal antes del Mintur.",
+    "No inscribirse en DGI antes de recibir ingresos (aun sin empleados).",
+    "No renovar la habilitación Mintur en los plazos establecidos.",
+    "Omitir el número de habilitación en los anuncios de Airbnb y Booking."
+  ],
+  documentation: [
+    "Cédula de identidad uruguaya o pasaporte del titular",
+    "Habilitación de la Intendencia Departamental",
+    "Número de RUT activo en DGI",
+    "Certificado de Bomberos",
+    "Planos del inmueble aprobados",
+    "Fotografías del establecimiento"
+  ],
+  faq: [
+    { q: "¿Es obligatorio el registro Mintur para alquilar en Airbnb en Uruguay?", a: "Sí. La Ley 19.253 y la normativa del Mintur obligan a todos los establecimientos que prestan servicios de alojamiento a registrarse y habilitarse. Operar sin habilitación puede resultar en clausura y multas." },
+    { q: "¿Qué beneficio tiene el registro Mintur para los turistas extranjeros?", a: "Los establecimientos habilitados por Mintur pueden acceder al régimen de devolución del IVA para turistas extranjeros que pagan con tarjetas de crédito o débito del exterior. Esto hace que tu propiedad sea más competitiva frente a viajeros internacionales en Punta del Este." },
+    { q: "¿Funciona Hola Rentia en Uruguay?", a: "Sí. Hola Rentia gestiona propiedades en Uruguay con reportes en pesos uruguayos (UYU) y dólares (USD). Integra el calendario con Airbnb, Booking y VRBO, y genera los reportes de ingresos compatibles con las declaraciones de la DGI." }
+  ]
+};
+---
+<LegalArticle {...props} />

@@ -1,5 +1,6 @@
 ---
 // src/components/LegalArticle.astro — Hola Rentia · Legal Article Template
+import Layout from '../layouts/Layout.astro';
 import Footer from './Footer.astro';
 import WhatsApp from './WhatsApp.astro';
 
@@ -82,30 +83,17 @@ const schemaGraph = JSON.stringify({
   ]
 });
 ---
+<Layout
+  title={metaTitle}
+  description={metaDesc}
+  canonicalUrl={canonicalUrl}
+>
+  <Fragment slot="schema">
+    <script type="application/ld+json" set:html={schemaGraph}/>
+  </Fragment>
 
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>{metaTitle}</title>
-  <meta name="description" content={metaDesc}/>
-  <link rel="canonical" href={canonicalUrl}/>
-  <link rel="icon" type="image/webp" href="/images/favicon.webp"/>
-  
-  <meta property="og:type" content="article"/>
-  <meta property="og:title" content={metaTitle}/>
-  <meta property="og:description" content={metaDesc}/>
-  <meta property="og:url" content={canonicalUrl}/>
-  <meta property="og:site_name" content="Hola Rentia"/>
-  
-  <script type="application/ld+json" set:html={schemaGraph}/>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet"/>
-
-  <style>
+  <Fragment slot="head">
+    <style>
     :root {
       --primary: #ff3b30;
       --text: #0f172a;
@@ -165,8 +153,8 @@ const schemaGraph = JSON.stringify({
       h1 { font-size: 2.22rem; }
     }
   </style>
-</head>
-<body>
+  </Fragment>
+
 
   <header class="nav">
     <div class="nav-inner">
@@ -258,5 +246,4 @@ const schemaGraph = JSON.stringify({
   <WhatsApp />
   <Footer />
 
-</body>
-</html>
+</Layout>

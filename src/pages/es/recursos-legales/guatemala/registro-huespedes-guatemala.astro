@@ -1,0 +1,47 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Registro de Huéspedes en Guatemala: Libro de Visitantes e Inguat",
+  country: "Guatemala",
+  countryHref: "/es/recursos-legales/guatemala",
+  metaTitle: "Registro Huéspedes Airbnb Guatemala: Obligaciones del Anfitrión | Hola Rentia",
+  metaDesc: "Obligaciones de registro de huéspedes para anfitriones de Airbnb en Guatemala. Libro de registro Inguat, identificación de extranjeros y coordinación con Migración.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/guatemala/registro-huespedes-guatemala",
+  intro: `<p>En Guatemala, los establecimientos de hospedaje turístico registrados ante el <strong>Inguat</strong> tienen la obligación de llevar un Libro de Registro de Visitantes con los datos de identificación de cada huésped. Esta obligación aplica a todos los anfitriones de Airbnb que operan bajo licencia Inguat, en especial en destinos de alto control como <strong>Antigua Guatemala y el Lago de Atitlán</strong>.</p>
+  <p>La identificación correcta de visitantes extranjeros también es relevante para la coordinación con el <strong>Instituto Guatemalteco de Migración (IGM)</strong> en operativos de control migratorio.</p>`,
+  steps: [
+    { name: "Instala el Libro de Registro de Visitantes Inguat", text: "El Inguat exige un registro de todos los huéspedes con: nombre completo, número de pasaporte o DPI (cédula guatemalteca), nacionalidad, fecha de ingreso y salida, y número de habitación. Puede ser en formato físico (libro foliado) o digital con respaldo imprimible." },
+    { name: "Solicita identificación a todos los huéspedes al check-in", text: "Solicita el DPI (guatemaltecos) o pasaporte (extranjeros) y fotocopia o escanéalo para el registro. En Antigua, donde hay muchos turistas extranjeros, el pasaporte es el documento más frecuente." },
+    { name: "Coordina con el Instituto Guatemalteco de Migración", text: "Durante operativos especiales, el IGM puede solicitar el acceso a los registros de huéspedes del establecimiento. Tener el libro al día y disponible es la única manera de colaborar efectivamente y evitar sanciones." },
+    { name: "Conserva los registros durante el tiempo mínimo exigido", text: "El Inguat y el ordenamiento fiscal guatemalteco exigen conservar los registros de huéspedes durante al menos 4 años. Esto es coherente con los plazos de prescripción fiscal del SAT." },
+    { name: "Aplica la protección de datos de tus huéspedes", text: "Aunque Guatemala no tiene una ley de protección de datos tan detallada como la GDPR europea, las buenas prácticas internacionales aplican: informa a los huéspedes del uso de sus datos, almacénalos de forma segura y no los compartas sin consentimiento." }
+  ],
+  checklist: [
+    "Libro de Registro de Visitantes Inguat activo",
+    "Proceso de identificación al check-in documentado",
+    "Copias de documentos de identidad guardadas de forma segura",
+    "Protocolo de cooperación con IGM disponible",
+    "Registros conservados mínimo 4 años",
+    "Información al huésped sobre uso de sus datos"
+  ],
+  mistakes: [
+    "Llevar el libro de registro incompleto o con datos incorrectos.",
+    "No tener el libro disponible durante una inspección del Inguat.",
+    "Almacenar copias de pasaportes sin ninguna medida de seguridad.",
+    "No conservar los registros el tiempo mínimo exigido (4 años)."
+  ],
+  documentation: [
+    "Libro de Registro de Visitantes (foliado o digital con respaldo)",
+    "Copias de DPI/pasaportes de huéspedes (almacenadas de forma segura)",
+    "Licencia Inguat vigente",
+    "Certificado de registro activo en Inguat"
+  ],
+  faq: [
+    { q: "¿Tengo que registrar los datos de todos los huéspedes de Airbnb en Guatemala?", a: "Sí. La normativa del Inguat aplica a todos los huéspedes que se alojen en el establecimiento registrado, independientemente de si la reserva se hizo por Airbnb, Booking o directamente." },
+    { q: "¿Puedo hacer el check-in remoto en Guatemala?", a: "Sí, funcionalmente el check-in remoto es posible mediante cajas de seguridad con claves o llaves electrónicas. Pero el registro de identidad del huésped debe realizarse antes del acceso: pídele al huésped que envíe una foto de su pasaporte o DPI antes de que llegue." },
+    { q: "¿Hola Rentia guarda automáticamente los datos de huéspedes para el registro Inguat?", a: "Sí. Hola Rentia registra y almacena los datos de cada huésped desde el momento del booking. Puedes exportar el registro completo de un período en formato PDF o Excel, listo para presentar ante el Inguat en caso de inspección." }
+  ]
+};
+---
+<LegalArticle {...props} />

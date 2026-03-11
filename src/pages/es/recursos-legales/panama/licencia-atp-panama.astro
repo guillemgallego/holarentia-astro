@@ -1,0 +1,51 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Licencia ATP Panamá: Cómo Registrar tu Airbnb Legalmente fuera de la Capital",
+  country: "Panamá",
+  countryHref: "/es/recursos-legales/panama",
+  metaTitle: "Licencia ATP Panamá: Registro Airbnb en Coronado, Boquete y Pedasí | Hola Rentia",
+  metaDesc: "Cómo obtener la licencia ATP para Airbnb en Panamá. Reglas de la Ley 80, zonas donde sí se puede alquilar a corto plazo y requisitos para el registro turístico.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/panama/licencia-atp-panama",
+  intro: `<p>Panamá tiene una de las regulaciones más peculiares de América Latina para el alquiler vacacional: la <strong>Ley 80 de 2012</strong> prohíbe los alquileres de menos de 45 días en la Ciudad de Panamá, mientras que en destinos turísticos del interior (Coronado, Boquete, Pedasí, Bocas del Toro) el alquiler vacacional está permitido y regulado por la <strong>Autoridad de Turismo de Panamá (ATP)</strong>.</p>
+  <p>Entender cuándo y dónde puedes operar es el primer paso para no incurrir en sanciones administrativas y para acceder a los incentivos fiscales turísticos panameños.</p>`,
+  steps: [
+    { name: "Verifica si tu propiedad está en zona prohibida", text: "La prohibición de alquileres de menos de 45 días aplica específicamente a la edificios residenciales en la Ciudad de Panamá. En zonas como Casco Viejo (ciudad turística) puede haber régimen especial. Fuera de la capital (Coronado, Boquete, Bocas, Pedasí, San Blas), el alquiler turístico corto está permitido con licencia ATP." },
+    { name: "Constituye tu actividad ante el MEF (Ministerio de Economía y Finanzas)", text: "Debes estar inscrito en el Registro Único del Contribuyente (RUC) del MEF con la actividad de hospedaje turístico. Si operas a través de empresa, registra la sociedad anónima en el Registro Público de Panamá." },
+    { name: "Solicita la licencia turística ante la ATP", text: "En la web de la ATP (atp.gob.pa), presenta la solicitud de licencia de establecimiento de alojamiento turístico. Adjunta: copia de escritura o contrato de arrendamiento, Paz y Salvo municipal, certificado de Bomberos, certificado sanitario y fotos del inmueble." },
+    { name: "Supera la inspección de la ATP", text: "La ATP verifica: condiciones de habitabilidad, seguridad contra incendios, equipamiento básico (agua caliente, WiFi, ropa de cama), y que la propiedad esté dentro de las zonas habilitadas para alquiler turístico de corta estancia." },
+    { name: "Obtén el certificado y el número ATP", text: "Con el certificado emitido, incluye el número ATP en todos tus anuncios de plataformas digitales. La licencia tiene vigencia de 2 años y debe renovarse. La ATP puede realizar inspecciones de seguimiento." }
+  ],
+  checklist: [
+    "Verificación de zona permitida (fuera de Ciudad de Panamá para corta estancia)",
+    "RUC activo en MEF con actividad de hospedaje",
+    "Paz y Salvo municipal al día",
+    "Certificado de Bomberos vigente",
+    "Certificado sanitario del Ministerio de Salud",
+    "Licencia ATP obtenida y publicada en anuncios",
+    "Seguro de RC del establecimiento"
+  ],
+  mistakes: [
+    "Alquilar por menos de 45 días en edificios residenciales de Ciudad de Panamá (infracción grave).",
+    "Confundir las zonas turísticas del interior con la capital: la Ley 80 es específica para la ciudad.",
+    "No renovar la licencia ATP cada 2 años.",
+    "Operar sin el Paz y Salvo municipal (es el primer requisito del trámite ATP)."
+  ],
+  documentation: [
+    "Cédula panameña o pasaporte del titular",
+    "Escritura o contrato de arrendamiento notariado",
+    "Paz y Salvo municipal al día",
+    "Certificado de Bomberos",
+    "Certificado sanitario",
+    "Fotografías interior y exterior del inmueble",
+    "Licencia ATP vigente"
+  ],
+  faq: [
+    { q: "¿Puedo alquilar mi apartamento en Casco Viejo de Panamá por Airbnb?", a: "Casco Viejo es una zona turística designada con régimen especial. Aunque está dentro de la Ciudad de Panamá, las autoridades aplican criterios distintos. Se recomienda consultar directamente con la ATP y el municipio antes de operar." },
+    { q: "¿Qué zonas de Panamá tienen más demanda en Airbnb?", a: "Coronado (playas del Pacífico, alta demanda de panameños y expats), Boquete (montaña, pensionados extranjeros), Pedasí (ecoturismo) y Bocas del Toro (turismo de playa internacional) son los mercados más activos y con regulación clara." },
+    { q: "¿Hola Rentia funciona en Panamá?", a: "Sí. Hola Rentia gestiona propiedades en toda Latinoamérica incluido Panamá. Centraliza la gestión de calendarios, mensajería con huéspedes y reportes de ingresos en dólares americanos (USD), la moneda oficial de Panamá." }
+  ]
+};
+---
+<LegalArticle {...props} />

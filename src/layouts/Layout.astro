@@ -1,0 +1,128 @@
+---
+// src/layouts/Layout.astro
+import Analytics from '../components/Analytics.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonicalUrl?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  locale?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
+}
+
+const {
+  title,
+  description,
+  canonicalUrl = "https://holarentia.com/",
+  ogTitle = title,
+  ogDescription = description,
+  ogImage = "https://holarentia.com/images/hola-rentia-resultados-airbnb-ia-espana.webp",
+  locale = "es_ES",
+  twitterTitle = title,
+  twitterDescription = description,
+} = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  
+  <!-- ══ SEO ══ -->
+  <title>{title}</title>
+  <meta name="description" content={description}/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href={canonicalUrl}/>
+  <link rel="icon" type="image/webp" href="/images/favicon.webp"/>
+  <link rel="apple-touch-icon" href="/images/favicon.webp"/>
+  
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content={canonicalUrl}/>
+  <meta property="og:title" content={ogTitle}/>
+  <meta property="og:description" content={ogDescription}/>
+  <meta property="og:image" content={ogImage}/>
+  <meta property="og:locale" content={locale}/>
+  <meta property="og:site_name" content="Hola Rentia"/>
+  
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content={twitterTitle}/>
+  <meta name="twitter:description" content={twitterDescription}/>
+  <meta name="twitter:image" content={ogImage}/>
+  
+  <link rel="preload" as="image" href="/images/hola-rentia-logo-gestion-airbnb-ia.webp" fetchpriority="high"/>
+
+  <!-- Schema Block -->
+  <slot name="schema" />
+
+  <!-- ══ FONTS ══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800;12..96,900&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800;12..96,900&display=swap" media="print" onload="this.media='all'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800;12..96,900&display=swap"/></noscript>
+
+  <style is:global>
+    :root {
+      /* Brand */
+      --red:       #ff3b30;
+      --red-d:     #d62e24;
+      --red-l:     #ff6a5a;
+      --orange:    #ff7a00;
+      --violet:    #7c3aed;
+      --blue:      #2563eb;
+      --cyan:      #06b6d4;
+
+      /* AI Gradients */
+      --g-ai:      linear-gradient(135deg,#ff3b30,#ff7a00,#7c3aed);
+      --g-ai-h:    linear-gradient(135deg,#ff3b30,#ff7a00,#2563eb);
+      --g-ai-s:    linear-gradient(135deg,#ff3b30 0%,#ff6a5a 100%);
+
+      /* Neutrals */
+      --white:     #ffffff;
+      --bg:        #ffffff;
+      --bg2:       #f8f9fb;
+      --bg3:       #f1f4f8;
+      --border:    #e5e8ef;
+      --text:      #0f172a;
+      --text2:     #334155;
+      --muted:     #64748b;
+      --muted2:    #94a3b8;
+
+      /* Type */
+      --font-d:    'Bricolage Grotesque',system-ui,sans-serif;
+      --font-b:    'Inter',system-ui,sans-serif;
+
+      /* Radius */
+      --r-sm:  8px;
+      --r-md:  14px;
+      --r-lg:  20px;
+      --r-xl:  28px;
+      --r-2xl: 40px;
+
+      /* Shadow */
+      --sh-sm: 0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.05);
+      --sh-md: 0 4px 16px rgba(0,0,0,.08),0 2px 6px rgba(0,0,0,.04);
+      --sh-lg: 0 16px 48px rgba(0,0,0,.1),0 4px 16px rgba(0,0,0,.06);
+      --sh-red:0 8px 28px rgba(255,59,48,.28);
+    }
+
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;font-size:16px}
+    body{background:var(--bg);color:var(--text);font-family:var(--font-b);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    button{font-family:var(--font-b);cursor:pointer}
+    @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  </style>
+
+  <Analytics />
+  <slot name="head" />
+</head>
+<body>
+  <slot />
+</body>
+</html>

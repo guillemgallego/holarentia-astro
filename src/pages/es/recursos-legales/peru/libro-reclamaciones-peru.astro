@@ -1,0 +1,48 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Libro de Reclamaciones y Registro de Huéspedes en Perú: Obligaciones del Anfitrión",
+  country: "Perú",
+  countryHref: "/es/recursos-legales/peru",
+  metaTitle: "Libro de Reclamaciones Perú y Registro Huéspedes Airbnb: Guía Legal | Hola Rentia",
+  metaDesc: "Obligaciones legales del anfitrión en Perú: Libro de Reclamaciones (INDECOPI), Libro de Registro de Huéspedes (Mincetur) y formulario de control migratorio.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/peru/libro-reclamaciones-peru",
+  intro: `<p>En Perú, los establecimientos de hospedaje tienen dos obligaciones documentales clave que van más allá del aspecto fiscal: el <strong>Libro de Reclamaciones</strong> (exigido por INDECOPI bajo el Decreto Supremo 011-2011-PCM) y el <strong>Libro de Registro de Huéspedes</strong> (Mincetur). El incumplimiento genera multas automáticas.</p>
+  <p>Además, en algunos casos el anfitrión debe coordinar con la Superintendencia Nacional de Migraciones (MIGRACIONES) el reporte de huéspedes extranjeros.</p>`,
+  steps: [
+    { name: "Instala el Libro de Reclamaciones físico o virtual", text: "Debes contar con el Libro de Reclamaciones en el local (o en formato electrónico si el inmueble es de acceso remoto). Debe estar señalizado con un cartel visible. En Perú, INDECOPI puede inspeccionarte sin previo aviso." },
+    { name: "Responde las reclamaciones en máximo 30 días", text: "Cuando un huésped registra una queja, tienes 30 días calendarios para responder por escrito al consumidor, explicando tu posición. Si no respondes en plazo, INDECOPI puede sancionar automáticamente con multas de hasta 50 UIT." },
+    { name: "Lleva el Libro de Registro de Huéspedes al día", text: "Por cada huésped mayor de edad, registra: nombre completo, tipo y número de documento de identidad, país de procedencia, fecha y hora de ingreso y salida, y número de habitación o unidad. Conserva los registros mínimo 3 años." },
+    { name: "Reporta huéspedes extranjeros a Migraciones", text: "Los establecimientos de hospedaje deben reportar el ingreso de turistas extranjeros a la Superintendencia Nacional de Migraciones (MIGRACIONES) mediante el sistema de registro de hospedaje en línea. Este reporte es diario y automático en hoteles, pero también aplica a apartamentos turísticos clasificados." },
+    { name: "Digitaliza los registros con tu software", text: "La ley permite el Libro de Registro de Huéspedes en formato digital si puedes emitirlo en papel cuando el inspector lo solicite. Hola Rentia guarda automáticamente todos los datos de cada huésped al momento del check-in." }
+  ],
+  checklist: [
+    "Libro de Reclamaciones físico o virtual en el inmueble",
+    "Cartel de señalización del Libro de Reclamaciones",
+    "Protocolo de respuesta a reclamaciones en 30 días",
+    "Libro de Registro de Huéspedes activo (físico o digital)",
+    "Sistema de reporte a Migraciones para huéspedes extranjeros",
+    "Archivo de registros por 3 años mínimo"
+  ],
+  mistakes: [
+    "No tener el Libro de Reclamaciones: multa automática de INDECOPI de entre 1 y 10 UIT.",
+    "No responder a las reclamaciones en el plazo de 30 días.",
+    "Registrar solo el nombre del huésped sin los datos completos del documento de identidad.",
+    "No reportar a Migraciones huéspedes extranjeros (puede causar problemas de seguridad y multas)."
+  ],
+  documentation: [
+    "Libro de Reclamaciones (físico o electrónico acreditado)",
+    "Cartel de señalización INDECOPI",
+    "Registro de huéspedes completo por estadía",
+    "Comprobantes de reportes a Migraciones (si aplica)",
+    "Respuestas documentadas a reclamaciones anteriores"
+  ],
+  faq: [
+    { q: "¿Es obligatorio el Libro de Reclamaciones en Airbnb Perú?", a: "Sí. Todo establecimiento de hospedaje en Perú, incluidos los gestionados mediante plataformas digitales como Airbnb, está obligado a contar con el Libro de Reclamaciones según el D.S. 011-2011-PCM de INDECOPI." },
+    { q: "¿Puedo llevar el Libro de Registro de Huéspedes en Excel?", a: "Sí, el soporte digital es aceptado siempre y cuando puedas imprimirlo o mostrarlo en formato estandarizado cuando el inspector de la Dircetur o la Municipalidad lo solicite durante una inspección." },
+    { q: "¿Hola Rentia registra automáticamente los datos de huéspedes?", a: "Sí. Hola Rentia recopila y almacena los datos de cada huésped desde el momento del booking: nombre, documento, fechas de estancia y contacto. Puedes exportar el registro completo en cualquier momento con un clic." }
+  ]
+};
+---
+<LegalArticle {...props} />

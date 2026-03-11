@@ -1,0 +1,48 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Impuestos Sunat para Airbnb en Perú: Renta de Primera Categoría e IGV",
+  country: "Perú",
+  countryHref: "/es/recursos-legales/peru",
+  metaTitle: "Impuestos Sunat Airbnb Perú 2026: Renta Primera Categoría e IGV | Hola Rentia",
+  metaDesc: "Guía fiscal completa para anfitriones de Airbnb en Perú. Rentas de primera categoría, IGV en hospedalje, régimen MYPE y cómo declarar ante la Sunat correctamente.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/peru/impuestos-sunat-peru",
+  intro: `<p>En Perú, los ingresos por alquiler vacacional se clasifican como <strong>Rentas de Primera Categoría</strong> para personas naturales, o como rentas de tercera categoría si se opera a través de una empresa. La <strong>Sunat</strong> tiene mecanismos de cruce de información con plataformas como Airbnb para detectar ingresos no declarados.</p>
+  <p>La tasa efectiva de impuesto es del 5% sobre el valor del alquiler bruto para personas naturales (renta de primera categoría), lo que convierte al mercado peruano en uno de los más favorables fiscalmente de la región.</p>`,
+  steps: [
+    { name: "Identifica tu tipo de renta", text: "Si eres persona natural y el inmueble es tuyo, los ingresos son Renta de Primera Categoría. Si operas a través de una empresa (EIRL, SAC), los ingresos son de Tercera Categoría, sujetos al régimen general o MYPE." },
+    { name: "Calcula el impuesto de primera categoría", text: "El impuesto se calcula sobre el 100% del monto del alquiler (no hay deducción por gastos). La tasa efectiva es 6,25% sobre la renta neta (que el SII define como el 80% del alquiler bruto), lo que resulta en una tasa efectiva del 5% sobre el alquiler total." },
+    { name: "Paga el impuesto mensualmente con el formulario 1683", text: "Debes realizar el pago mensual del impuesto de primera categoría mediante el Formulario Virtual 1683 en SOL (Sunat Operaciones en Línea). El plazo vence según el último dígito de tu RUC al mes siguiente del devengo." },
+    { name: "Verifica si debes pagar IGV", text: "Las personas naturales que alquilan inmuebles como Renta de Primera Categoría generalmente NO están afectas al IGV. Sin embargo, si operas bajo tercera categoría con empresa y superas el tope de exoneración (~S/37,600 anuales en el RUS), el IGV (18%) aplica." },
+    { name: "Presenta la declaración anual de renta", text: "En marzo de cada año, presenta la Declaración Anual de Impuesto a la Renta como persona natural. Incluye todos los ingresos de Renta de Primera Categoría y verifica si hay saldo a favor o deuda adicional respecto a los pagos mensuales realizados." }
+  ],
+  checklist: [
+    "RUC activo en Sunat con actividad de arrendamiento",
+    "Pago mensual F.1683 de Renta de Primera Categoría",
+    "Declaración Anual de Renta (marzo de cada año)",
+    "Boletas de venta o recibos de arrendamiento emitidos",
+    "Registro de pagos en SOL (Sunat Operaciones en Línea)",
+    "Verificación de afectación al IGV según régimen"
+  ],
+  mistakes: [
+    "Confundir Renta de Primera Categoría (5% efectivo) con el régimen de tercera categoría (más complejo y costoso).",
+    "No pagar el mensual F.1683 y acumular deuda con intereses moratorios de la Sunat.",
+    "Asumir que Sunat no sabe de tus ingresos por Airbnb: la plataforma reporta automáticamente.",
+    "No emitir boleta de venta por cada estadía (obligatorio para personas con RUC activo)."
+  ],
+  documentation: [
+    "RUC con actividad de arrendamiento activa",
+    "Formularios 1683 pagados mensualmente",
+    "Declaración Anual PDT o Declarafácil",
+    "Boletas de venta emitidas o recibos de arrendamiento",
+    "Estados de cuenta de Airbnb (para el cruce de información)"
+  ],
+  faq: [
+    { q: "¿Cuánto impuesto pago por Airbnb en Perú como persona natural?", a: "El 5% efectivo sobre el monto bruto del alquiler mensual. Es decir, si recibes S/3,000 al mes por alquiler, pagas S/150 de impuesto a la Renta de Primera Categoría. Es uno de los impuestos más bajos de la región para alquiler vacacional." },
+    { q: "¿Debo emitir factura o boleta por cada huésped de Airbnb?", a: "Sí. Aunque Airbnb emite un comprobante de transacción, como anfitrión con RUC activo debes emitir tu propio comprobante de pago (boleta o factura electrónica) por cada servicio de alojamiento prestado." },
+    { q: "¿Cómo me ayuda Hola Rentia con la Sunat?", a: "Hola Rentia registra automáticamente cada reserva con los datos de importe, fechas y huésped. Genera reportes mensuales que facilitan el cálculo del F.1683 y la declaración anual, reduciendo el tiempo de tu contador al mínimo." }
+  ]
+};
+---
+<LegalArticle {...props} />
