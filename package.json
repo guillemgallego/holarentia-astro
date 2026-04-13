@@ -10,6 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.17.1"
+    "astro": "^5.17.1",
+    "@astrojs/cloudflare": "^12.2.0",
+    "@google/generative-ai": "^0.21.0"
   }
 }
