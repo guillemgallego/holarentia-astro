@@ -1,0 +1,210 @@
+---
+---
+<div id="chat-widget" class="fixed bottom-6 right-6 z-50 font-body">
+  <!-- Debug text to confirm rendering -->
+  <span class="sr-only">Chat Widget Rendered</span>
+  
+  <!-- Botón Flotante -->
+  <button id="chat-toggle" aria-label="Abrir chat" class="bg-brand-coral hover:bg-[#E5482C] text-brand-light w-14 h-14 rounded-full flex items-center justify-center shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-transform hover:scale-105 active:scale-95 focus:outline-none border-2 border-brand-coral/20 hover:border-transparent cursor-pointer ring-2 ring-brand-coral/10">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path id="chat-icon-path" stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+    </svg>
+  </button>
+
+  <!-- Ventana de Chat (Oculta por defecto) -->
+  <div id="chat-window" class="hidden absolute bottom-20 right-0 w-[calc(100vw-3rem)] sm:w-[380px] h-[75vh] max-h-[600px] min-h-[400px] flex-col bg-brand-navy border border-brand-border rounded-2xl shadow-2xl transition-all origin-bottom-right z-50 overflow-hidden backdrop-blur-sm bg-brand-navy/95">
+    
+    <!-- Cabecera -->
+    <div class="bg-brand-deep p-4 border-b border-brand-border flex justify-between items-center relative overflow-hidden shrink-0">
+      <div class="absolute inset-0 bg-hero-glow pointer-events-none opacity-50"></div>
+      <div class="flex items-center gap-3 relative z-10 text-brand-light">
+        <div class="w-10 h-10 rounded-full bg-brand-coral/20 flex items-center justify-center border border-brand-coral/30">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-brand-coral" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 8V4H8"></path>
+            <rect width="16" height="12" x="4" y="8" rx="2"></rect>
+            <path d="M2 14h2"></path>
+            <path d="M20 14h2"></path>
+            <path d="M15 13v2"></path>
+            <path d="M9 13v2"></path>
+          </svg>
+        </div>
+        <div>
+          <h3 class="font-display font-semibold text-base m-0 leading-tight">Asistente IA</h3>
+          <p class="text-brand-muted text-xs m-0 mt-0.5 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+            En línea
+          </p>
+        </div>
+      </div>
+      <button id="chat-close" aria-label="Cerrar chat" class="text-brand-muted hover:text-brand-light transition-colors focus:outline-none relative z-10 cursor-pointer p-1 rounded-md hover:bg-brand-border">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Área de Mensajes -->
+    <div id="chat-messages" class="flex-1 p-4 overflow-y-auto flex flex-col gap-4 scroll-smooth">
+      <!-- Mensaje Inicial del Bot -->
+      <div class="flex justify-start animate-fade-up">
+        <div class="bg-brand-card border border-brand-border text-brand-light text-sm px-4 py-3 rounded-2xl rounded-tl-sm max-w-[85%] shadow-sm leading-relaxed">
+          ¡Hola! Soy la IA de Hola Rentia 👋<br><br>¿Tienes dudas sobre cómo gestionamos tu alojamiento turístico sin comisiones?
+        </div>
+      </div>
+    </div>
+
+    <!-- Área de Entrada de Texto -->
+    <div class="p-3 bg-brand-deep border-t border-brand-border shrink-0">
+      <form id="chat-form" class="relative flex items-center">
+        <input 
+          type="text" 
+          id="chat-input" 
+          placeholder="Escribe tu mensaje..." 
+          class="w-full bg-brand-card border border-brand-border text-brand-light text-sm rounded-full pl-4 pr-12 py-3 focus:outline-none focus:border-brand-coral/50 focus:ring-1 focus:ring-brand-coral/50 transition-all placeholder:text-brand-muted m-0"
+          autocomplete="off"
+        >
+        <button 
+          type="submit" 
+          id="chat-submit"
+          class="absolute right-1.5 p-2 bg-brand-coral hover:bg-[#E5482C] text-white rounded-full transition-transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed group focus:outline-none cursor-pointer border-none flex items-center justify-center"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  let isChatOpen = false;
+  // Historial de la sesión para enviar a Gemini
+  let chatHistory = [];
+  
+  const toggleBtn = document.getElementById('chat-toggle');
+  const closeBtn  = document.getElementById('chat-close');
+  const chatWindow= document.getElementById('chat-window');
+  const chatIconPath = document.getElementById('chat-icon-path');
+  const chatForm  = document.getElementById('chat-form');
+  const chatInput = document.getElementById('chat-input');
+  const chatMessages = document.getElementById('chat-messages');
+  const submitBtn = document.getElementById('chat-submit');
+
+  const ICON_CHAT  = "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z";
+  const ICON_CLOSE = "M6 18L18 6M6 6l12 12";
+
+  function toggleChat() {
+    isChatOpen = !isChatOpen;
+    if (isChatOpen) {
+      chatWindow.classList.remove('hidden');
+      chatWindow.classList.add('flex', 'opacity-0', 'translate-y-4');
+      
+      // Small timeout to allow display block to apply before animating opacity/transform
+      setTimeout(() => {
+        chatWindow.classList.remove('opacity-0', 'translate-y-4');
+        chatWindow.classList.add('opacity-100', 'translate-y-0');
+      }, 10);
+      
+      chatIconPath.setAttribute('d', ICON_CLOSE);
+      setTimeout(() => chatInput.focus(), 300);
+    } else {
+      chatWindow.classList.remove('opacity-100', 'translate-y-0');
+      chatWindow.classList.add('opacity-0', 'translate-y-4');
+      
+      setTimeout(() => {
+        chatWindow.classList.add('hidden');
+        chatWindow.classList.remove('flex');
+      }, 200); // match transition duration roughly
+      
+      chatIconPath.setAttribute('d', ICON_CHAT);
+    }
+  }
+
+  toggleBtn.addEventListener('click', toggleChat);
+  closeBtn.addEventListener('click', toggleChat);
+
+  function appendMessage(text, isUser) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = `flex animate-fade-in ${isUser ? 'justify-end' : 'justify-start'}`;
+    
+    msgDiv.innerHTML = `
+      <div class="text-sm px-4 py-3 shadow-sm max-w-[85%] leading-relaxed ${
+        isUser 
+          ? 'bg-brand-coral text-white rounded-2xl rounded-tr-sm' 
+          : 'bg-brand-card border border-brand-border text-brand-light rounded-2xl rounded-tl-sm'
+      }">
+        ${text.replace(/\n/g, '<br>')}
+      </div>
+    `;
+    
+    chatMessages.appendChild(msgDiv);
+    chatMessages.scrollTo({ top: chatMessages.scrollHeight, behavior: 'smooth' });
+  }
+
+  function appendLoading() {
+    const msgDiv = document.createElement('div');
+    msgDiv.id = 'chat-loading';
+    msgDiv.className = 'flex justify-start animate-fade-in';
+    msgDiv.innerHTML = `
+      <div class="bg-brand-card border border-brand-border px-4 py-3.5 rounded-2xl rounded-tl-sm max-w-[85%] shadow-sm">
+        <div class="flex gap-1.5 items-center">
+          <div class="w-2 h-2 bg-brand-muted/70 rounded-full animate-bounce" style="animation-delay: 0ms"></div>
+          <div class="w-2 h-2 bg-brand-muted/70 rounded-full animate-bounce" style="animation-delay: 150ms"></div>
+          <div class="w-2 h-2 bg-brand-muted/70 rounded-full animate-bounce" style="animation-delay: 300ms"></div>
+        </div>
+      </div>
+    `;
+    chatMessages.appendChild(msgDiv);
+    chatMessages.scrollTo({ top: chatMessages.scrollHeight, behavior: 'smooth' });
+  }
+
+  function removeLoading() {
+    const loading = document.getElementById('chat-loading');
+    if (loading) loading.remove();
+  }
+
+  chatForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const message = chatInput.value.trim();
+    if (!message) return;
+
+    // UI Updates
+    chatInput.value = '';
+    appendMessage(message, true);
+    appendLoading();
+    submitBtn.setAttribute('disabled', 'true');
+    chatInput.setAttribute('disabled', 'true');
+
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message, history: chatHistory })
+      });
+
+      const data = await response.json();
+      removeLoading();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Error en la respuesta del servidor');
+      }
+
+      // Añadir la respuesta al UI
+      appendMessage(data.response, false);
+
+      // Actualizar el historial internamente
+      chatHistory.push({ role: 'user', parts: [{ text: message }] });
+      chatHistory.push({ role: 'model', parts: [{ text: data.response }] });
+
+    } catch (error) {
+      console.error(error);
+      removeLoading();
+      appendMessage("Lo siento, estoy teniendo problemas de conexión. Por favor, asegúrate de que la API key está configurada en .env", false);
+    } finally {
+      submitBtn.removeAttribute('disabled');
+      chatInput.removeAttribute('disabled');
+      chatInput.focus();
+    }
+  });
+</script>

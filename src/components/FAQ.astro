@@ -1,0 +1,86 @@
+---
+// FAQ.astro
+const faqs = [
+  {
+    q: '¿Gestionan propiedades en mi país?',
+    a: 'Sí. Nuestro sistema funciona 100% online. Para la logística trabajamos con tu equipo local o te ayudamos a crearlo. Operamos en España, México, Panamá, Colombia, Costa Rica, Portugal, EE.UU. y más de 20 países.',
+  },
+  {
+    q: '¿Cómo recibo el dinero?',
+    a: 'Directamente de Airbnb o Booking a tu cuenta bancaria. Nosotros nunca tocamos tu dinero. Total transparencia en cada cobro.',
+  },
+  {
+    q: '¿Quién paga la limpieza?',
+    a: 'El huésped paga la tarifa de limpieza al hacer la reserva. En el Plan 360, nosotros coordinamos al equipo de limpieza sin coste adicional para ti.',
+  },
+  {
+    q: '¿Hay permanencia o contrato mínimo?',
+    a: 'No. Puedes cancelar en cualquier momento, sin penalizaciones. También ofrecemos garantía de devolución de 30 días si no estás satisfecho.',
+  },
+  {
+    q: '¿Qué pasa si tengo más de una propiedad?',
+    a: 'Tenemos descuentos por volumen para inversores con 3 o más propiedades. Contáctanos para un plan personalizado.',
+  },
+  {
+    q: '¿Cómo funciona el Registro de Viajeros para España?',
+    a: 'Automatizamos la recogida de DNI/pasaporte de forma online y el envío automático a la Policía o Guardia Civil, cumpliendo la normativa española vigente sin que tú hagas nada.',
+  },
+];
+---
+
+<section class="py-24 px-5 bg-brand-deep/40">
+  <div class="max-w-3xl mx-auto">
+
+    <div class="text-center mb-12">
+      <span class="inline-block text-xs text-brand-coral uppercase tracking-[0.2em] font-semibold mb-4">FAQ</span>
+      <h2 class="font-display font-bold text-4xl text-white">Preguntas frecuentes</h2>
+    </div>
+
+    <div class="space-y-3" id="faq-list">
+      {faqs.map((faq, i) => (
+        <div
+          class="faq-item bg-brand-card border border-brand-border rounded-2xl overflow-hidden"
+          data-index={i}
+        >
+          <button
+            class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-white/5 transition-colors duration-200 gap-4"
+            aria-expanded="false"
+          >
+            <span class="font-semibold text-white text-sm sm:text-base">{faq.q}</span>
+            <svg class="faq-icon w-5 h-5 text-brand-coral flex-shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+            </svg>
+          </button>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+            <p class="px-6 pb-5 text-brand-muted text-sm leading-relaxed">{faq.a}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item   = btn.parentElement!;
+      const answer = item.querySelector<HTMLElement>('.faq-answer')!;
+      const icon   = btn.querySelector<SVGElement>('.faq-icon')!;
+      const open   = btn.getAttribute('aria-expanded') === 'true';
+
+      // Close all
+      document.querySelectorAll('.faq-trigger').forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+        const a = b.parentElement!.querySelector<HTMLElement>('.faq-answer')!;
+        a.style.maxHeight = '0';
+        b.parentElement!.querySelector<SVGElement>('.faq-icon')!.style.transform = '';
+      });
+
+      if (!open) {
+        btn.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        icon.style.transform = 'rotate(45deg)';
+      }
+    });
+  });
+</script>
