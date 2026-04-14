@@ -6,7 +6,7 @@ export const prerender = false;
 // Inicializar Gemini
 // Asegúrate de definir GEMINI_API_KEY en .env o en Cloudflare
 const genAI = new GoogleGenerativeAI(import.meta.env.GEMINI_API_KEY || '');
-const model = genAI.getGenerativeModel({ model: "gemini-3.5-flash" });
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 const SYSTEM_INSTRUCTION = `Eres el asistente virtual IA exclusivo de "Hola Rentia", experto en gestión de alquileres vacacionales en España (Airbnb, Booking, etc.).
 Tu tono es amable, profesional y directo. Tu meta es resolver dudas de propietarios y convencerlos de que Hola Rentia es su mejor aliado.`;
