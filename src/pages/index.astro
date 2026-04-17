@@ -3,9 +3,6 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import WhatsApp from '../components/WhatsApp.astro';
-import { Image } from 'astro:assets';
-import logoImg from '../assets/images/hola-rentia-logo-gestion-airbnb-ia.webp';
-import heroImg from '../assets/images/hola-rentia-resultados-airbnb-ia-espana.webp';
 ---
 <Layout
   title="Gestión Airbnb con IA desde €99/mes | Sin Comisiones | Hola Rentia"
@@ -698,16 +695,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 <header id="nav" role="banner">
   <div class="nav-inner">
     <a href="/" aria-label="Hola Rentia – Inicio">
-      <Image 
-        src={logoImg} 
-        alt="Hola Rentia – Gestión Airbnb con IA" 
-        class="nav-logo-img" 
-        width={200} 
-        height={51} 
-        loading="eager" 
-        decoding="async" 
-        fetchpriority="high"
-      />
+      <img src="/images/hola-rentia-logo-gestion-airbnb-ia.webp" alt="Hola Rentia – Gestión Airbnb con IA" class="nav-logo-img" width="350" height="90" loading="eager" decoding="async" fetchpriority="high"/>
     </a>
     <nav class="nl" aria-label="Navegación principal">
       <a href="#funciona">Cómo funciona</a>
@@ -777,16 +765,11 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 
       <!-- Right: Hero image -->
       <div class="hero-img-wrap" style="animation:fadeIn .8s .28s both">
-        <Image
-          src={heroImg}
+        <img
+          src="/images/hola-rentia-resultados-airbnb-ia-espana.webp"
           alt="Hola Rentia – Resultados reales: +35% rentabilidad, ahorro mensual de €401 y +30% nuevas reservas"
-          width={580} 
-          height={580}
-          widths={[400, 580, 800]}
-          sizes="(max-width: 768px) 100vw, 580px"
-          loading="eager" 
-          decoding="async" 
-          fetchpriority="high"
+          width="580" height="580"
+          loading="eager" decoding="async" fetchpriority="high"
         />
         <div class="dash-saving" style="position:absolute;bottom:-14px;left:-14px">
           <span style="font-size:1.3rem">💸</span>
