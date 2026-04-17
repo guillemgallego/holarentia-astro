@@ -3,6 +3,9 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import WhatsApp from '../components/WhatsApp.astro';
+import { Image } from 'astro:assets';
+import logoImg from '../assets/images/hola-rentia-logo-gestion-airbnb-ia.webp';
+import heroImg from '../assets/images/hola-rentia-resultados-airbnb-ia-espana.webp';
 ---
 <Layout
   title="Gestión Airbnb con IA desde €99/mes | Sin Comisiones | Hola Rentia"
@@ -53,8 +56,8 @@ import WhatsApp from '../components/WhatsApp.astro';
   --border2:   rgba(255,59,48,.15);
   --text:      #0f172a;
   --text2:     #334155;
-  --muted:     #64748b;
-  --muted2:    #94a3b8;
+  --muted:     #4b5563; /* Oscurecido para contraste */
+  --muted2:    #334155; /* Oscurecido para contraste */
 
   /* Type */
   --font-d:    'Bricolage Grotesque',system-ui,sans-serif;
@@ -277,9 +280,9 @@ h1 .sub-line{
 .avatars{display:flex}
 .av{width:34px;height:34px;border-radius:50%;border:2px solid #fff;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.63rem;font-weight:700;margin-left:-8px;flex-shrink:0;box-shadow:0 1px 4px rgba(0,0,0,.12)}
 .av:first-child{margin-left:0}
-.proof-txt{font-size:.82rem;color:var(--muted)}
+.proof-txt{font-size:.82rem;color:var(--text2)} /* Mejor contraste */
 .proof-txt strong{color:var(--text)}
-.proof-txt .hl{color:var(--red);font-weight:700}
+.proof-txt .hl{color:var(--red-d);font-weight:700} /* Rojo más oscuro */
 
 /* Hero image */
 .hero-img-wrap{
@@ -298,8 +301,8 @@ h1 .sub-line{
   padding:10px 16px;display:flex;align-items:center;gap:9px;box-shadow:var(--sh-md);
   animation:slideL .7s 1s both;
 }
-.saving-val{font-family:var(--font-d);font-weight:800;font-size:1rem;color:#16a34a;display:block;line-height:1}
-.saving-lbl{font-size:.62rem;color:var(--muted2);display:block;margin-top:1px}
+.saving-val{font-family:var(--font-d);font-weight:800;font-size:1rem;color:#15803d;display:block;line-height:1} /* Verde más oscuro WCAG */
+.saving-lbl{font-size:.62rem;color:var(--text2);display:block;margin-top:1px}
 
 /* ══════════════════════════════════════════════
    LOGO BAR — Platform logos
@@ -695,7 +698,16 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 <header id="nav" role="banner">
   <div class="nav-inner">
     <a href="/" aria-label="Hola Rentia – Inicio">
-      <img src="/images/hola-rentia-logo-gestion-airbnb-ia.webp" alt="Hola Rentia – Gestión Airbnb con IA" class="nav-logo-img" width="350" height="90" loading="eager" decoding="async" fetchpriority="high"/>
+      <Image 
+        src={logoImg} 
+        alt="Hola Rentia – Gestión Airbnb con IA" 
+        class="nav-logo-img" 
+        width={200} 
+        height={51} 
+        loading="eager" 
+        decoding="async" 
+        fetchpriority="high"
+      />
     </a>
     <nav class="nl" aria-label="Navegación principal">
       <a href="#funciona">Cómo funciona</a>
@@ -765,11 +777,16 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 
       <!-- Right: Hero image -->
       <div class="hero-img-wrap" style="animation:fadeIn .8s .28s both">
-        <img
-          src="/images/hola-rentia-resultados-airbnb-ia-espana.webp"
+        <Image
+          src={heroImg}
           alt="Hola Rentia – Resultados reales: +35% rentabilidad, ahorro mensual de €401 y +30% nuevas reservas"
-          width="580" height="580"
-          loading="eager" decoding="async" fetchpriority="high"
+          width={580} 
+          height={580}
+          widths={[400, 580, 800]}
+          sizes="(max-width: 768px) 100vw, 580px"
+          loading="eager" 
+          decoding="async" 
+          fetchpriority="high"
         />
         <div class="dash-saving" style="position:absolute;bottom:-14px;left:-14px">
           <span style="font-size:1.3rem">💸</span>
