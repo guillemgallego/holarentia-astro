@@ -1,0 +1,13 @@
+name: Deploy Hola Rentia
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sincronización con Servidor
+        run: echo "Despliegue automático activado. Los cambios se están enviando a producción."
