@@ -1,0 +1,50 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Declaración ICT Costa Rica: Registro Turístico para Airbnb Paso a Paso",
+  country: "Costa Rica",
+  countryHref: "/es/recursos-legales/costa-rica",
+  metaTitle: "Registro ICT Costa Rica: Cómo Declarar tu Airbnb ante el Instituto de Turismo | Hola Rentia",
+  metaDesc: "Guía completa para registrar tu Airbnb ante el Instituto Costarricense de Turismo (ICT). Requisitos, declaración jurada, inspección y beneficios del registro oficial.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/costa-rica/declaracion-ict-costa-rica",
+  intro: `<p>En Costa Rica, el <strong>Instituto Costarricense de Turismo (ICT)</strong> regula la prestación de servicios de hospedaje bajo la Ley 6990 (Ley de Incentivos para el Desarrollo Turístico). El registro ante el ICT es el primer paso para operar legalmente y acceder a posibles incentivos fiscales.</p>
+  <p>La Ley de Alquileres de Corta Estancia (en discusión legislativa) y las disposiciones del ICT obligan a los anfitriones a declarar su actividad y cumplir con estándares de calidad y seguridad verificables.</p>`,
+  steps: [
+    { name: "Obtén la habilitación de tu empresa o como persona física", text: "Debes constituir una actividad económica ante la Caja Costarricense de Seguro Social (CCSS) y el Ministerio de Hacienda. Si operas como persona física, tramita el número de contribuyente. Si es una empresa, constituye la sociedad y obtén la personería jurídica." },
+    { name: "Presenta la Declaración Jurada de Actividades Turísticas al ICT", text: "Completa el formulario de Declaración Jurada disponible en la web del ICT (ict.go.cr). Debes declarar el tipo de establecimiento (apart-hotel, villa, cabina), la capacidad, los servicios que ofreces y la ubicación geográfica exacta." },
+    { name: "Supera la inspección del ICT", text: "El ICT enviará un inspector para verificar: seguridad contra incendios (sistema de extinción), señalización de emergencia, habilitación sanitaria del MINSA, servicios básicos (agua potable, electricidad) y accesibilidad. Prepara el inmueble con antelación." },
+    { name: "Obtén el Certificado de Declaración Turística", text: "Tras la inspección favorable, el ICT emite el Certificado de Declaración Turística con un número de registro. Publícalo en el inmueble y en todos tus anuncios de Airbnb y Booking." },
+    { name: "Renueva el registro anualmente", text: "El registro ICT debe renovarse cada año. El ICT puede realizar inspecciones de seguimiento sin previo aviso. Mantener el inmueble en las condiciones declaradas es obligatorio durante todo el periodo de registro." }
+  ],
+  checklist: [
+    "Número de contribuyente activo en Hacienda",
+    "Inscripción patronal en CCSS (si contratas personal)",
+    "Declaración Jurada presentada al ICT",
+    "Habilitación sanitaria del MINSA vigente",
+    "Sistema de extinción de incendios instalado",
+    "Certificado de Declaración Turística ICT publicado",
+    "Póliza de seguros del INS vigente"
+  ],
+  mistakes: [
+    "Operar sin habilitación del MINSA (Ministerio de Salud): es un requisito previo al ICT.",
+    "No renovar el registro ICT anualmente (pierde vigencia y obliga a reiniciar el proceso).",
+    "No incluir el número de registro ICT en los anuncios de plataformas (es obligatorio).",
+    "Superar la capacidad declarada ante el ICT (puede causar la pérdida del registro)."
+  ],
+  documentation: [
+    "Cédula jurídica de la empresa o cédula personal del titular",
+    "Personería jurídica vigente (si aplica empresa)",
+    "Declaración Jurada ICT completada",
+    "Habilitación sanitaria MINSA",
+    "Certificado de extinción de incendios",
+    "Póliza INS del inmueble"
+  ],
+  faq: [
+    { q: "¿Es obligatorio registrarse ante el ICT para alquilar en Airbnb en Costa Rica?", a: "Sí. La Ley 6990 obliga a todos los prestadores de servicios de hospedaje a registrarse ante el ICT. Operar sin registro puede resultar en clausura del establecimiento y multas administrativas." },
+    { q: "¿Qué beneficios tiene registrarse ante el ICT?", a: "Además del cumplimiento legal, el registro ICT permite acceder al régimen de Zone Franca Turística (beneficios fiscales en zonas declaradas), aparecer en el directorio oficial de turismo de Costa Rica y generar mayor confianza en los huéspedes." },
+    { q: "¿Hola Rentia funciona con el mercado de Costa Rica?", a: "Sí. Hola Rentia gestiona la comunicación con huéspedes, calendarios y reportes de ingresos para propiedades en Costa Rica. Sus reportes financieros son compatibles con los requerimientos de declaración ante el Ministerio de Hacienda." }
+  ]
+};
+---
+<LegalArticle {...props} />

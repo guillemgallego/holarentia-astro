@@ -1,0 +1,48 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Impuestos DGI Uruguay para Airbnb: IRPF, IRAE e IVA Turístico",
+  country: "Uruguay",
+  countryHref: "/es/recursos-legales/uruguay",
+  metaTitle: "Impuestos Airbnb Uruguay 2026: IRPF, IRAE e IVA Turístico | Hola Rentia",
+  metaDesc: "Guía fiscal para anfitriones de Airbnb en Uruguay. IRPF o IRAE sobre ingresos de alquiler, régimen de pequeños contribuyentes y el IVA turístico para extranjeros.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/uruguay/impuestos-dgi-uruguay",
+  intro: `<p>Uruguay ofrece un sistema fiscal relativamente estructurado para el alquiler vacacional. Dependiendo de la entidad que opera (persona física o empresa), los ingresos tributan bajo el <strong>IRPF (Impuesto a la Renta de Personas Físicas)</strong> o el <strong>IRAE (Impuesto a las Rentas de las Actividades Económicas)</strong>, gestionados por la Dirección General Impositiva (DGI).</p>
+  <p>Un beneficio único del mercado uruguayo es el régimen de <strong>devolución del IVA para turistas extranjeros</strong>, que incentiva a los viajeros internacionales a elegir establecimientos formalizados ante el Mintur.</p>`,
+  steps: [
+    { name: "Determina tu régimen: IRPF o IRAE", text: "Si eres persona física que arrienda inmuebles (sin otros servicios adicionales como desayuno o limpieza frecuente), puedes tributar por IRPF categoría I (rentas de capital). Si ofreces servicios adicionales o tienes empresa, tributas en IRAE a la tasa del 25% sobre la renta neta." },
+    { name: "Evalúa el régimen de pequeños contribuyentes (Monotributo)", text: "Uruguay tiene el régimen de Monotributo para quienes tienen ingresos bajos. Si tus ingresos anuales por alquiler son inferiores al umbral (~$195,000 UYU mensuales en 2025), puedes optar por este régimen simplificado con pago mensual fijo." },
+    { name: "Gestiona el IVA de los servicios de alojamiento", text: "El alojamiento turístico está gravado con IVA del 22% (tasa básica) o 10% (tasa mínima para ciertos servicios de turismo). Los establecimientos habilitados por el Mintur que atiendan a turistas extranjeros pueden recuperar el IVA a través del régimen de devolución." },
+    { name: "Aprovecha el régimen de devolución del IVA turístico", text: "Los turistas extranjeros que pagan con tarjeta del exterior en establecimientos habilitados por el Mintur pueden recuperar el IVA de sus gastos de alojamiento. Como anfitrión, esto te posiciona mejor frente a la competencia no formalizada." },
+    { name: "Declara ante la DGI en los plazos correspondientes", text: "IRPF: declaración anual en junio. IRAE: declaración anual en marzo-abril según el cierre del ejercicio. Monotributo: pago mensual fijo. Todos los trámites se realizan en el portal web de la DGI (dgi.gub.uy)." }
+  ],
+  checklist: [
+    "RUT activo en DGI con actividad de hospedaje",
+    "Elección de régimen: IRPF Cat I, IRAE o Monotributo",
+    "Declaraciones presentadas en plazos DGI",
+    "Facturas o tiquetes emitidos por cada estadía",
+    "Registro habilitado Mintur para acceder a IVA turístico",
+    "Inscripcion activa en BPS si hay empleados"
+  ],
+  mistakes: [
+    "No elegir el régimen más conveniente desde el inicio (cambiar de régimen tiene costos).",
+    "No aprovechar el régimen de devolución del IVA turístico por no estar formalizado en Mintur.",
+    "No emitir recibos o facturas por cada estadía (obligatorio con RUT activo).",
+    "Superar el umbral del Monotributo sin cambiar de régimen (genera deuda retroactiva)."
+  ],
+  documentation: [
+    "RUT activo DGI con actividad correspondiente",
+    "Declaraciones IRPF o IRAE presentadas",
+    "Comprobantes de pago Monotributo (si aplica)",
+    "Facturas emitidas por estadías",
+    "Habilitación Mintur vigente"
+  ],
+  faq: [
+    { q: "¿Cuántos impuestos paga un anfitrión de Airbnb en Uruguay?", a: "Depende del régimen. En Monotributo (umbral ~$195K UYU/mes): cuota fija que incluye DGI y BPS. En IRPF categoría I: 12% sobre las rentas de capital por arrendamiento. En IRAE: 25% sobre la renta neta de la empresa." },
+    { q: "¿Cómo funciona el IVA turístico para extranjeros en Uruguay?", a: "Los turistas extranjeros que pagan con tarjeta del exterior en alojamientos habilitados por Mintur pueden reclamar la devolución del IVA incluido en sus facturas. El establecimiento actúa como agente de retención facilitar este proceso con su terminal de punto de venta." },
+    { q: "¿Hola Rentia genera reportes compatibles con la DGI de Uruguay?", a: "Sí. Hola Rentia produce reportes mensuales de ingresos desglosados por propiedad y reserva, exportables en formato Excel y PDF, compatibles con los requerimientos de la DGI para las declaraciones de IRPF e IRAE." }
+  ]
+};
+---
+<LegalArticle {...props} />

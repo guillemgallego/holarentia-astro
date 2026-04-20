@@ -1,0 +1,50 @@
+---
+// src/pages/es/recursos-legales/espana/licencia-turistica-espana.astro
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Cómo obtener la Licencia Turística en España (Guía VUT 2026)",
+  country: "España",
+  countryHref: "/es/recursos-legales/espana",
+  metaTitle: "Cómo sacar la Licencia Turística en España | VUT Paso a Paso | Hola Rentia",
+  metaDesc: "Guía completa para registrar tu vivienda de uso turístico (VUT) en España. Pasos, requisitos municipales y declaración responsable por comunidades.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/espana/licencia-turistica-espana",
+  intro: `
+    <p>Para alquilar legalmente tu propiedad en plataformas como Airbnb en España, es imprescindible contar con un <strong>Número de Registro Turístico</strong>. Este trámite, aunque varía según la comunidad autónoma, tiene una estructura común que todo anfitrión debe conocer.</p>
+    <p>Operar sin esta licencia se considera una infracción grave que puede acarrear multas de miles de euros y el cierre inmediato de tu anuncio digital.</p>
+  `,
+  steps: [
+    { name: "Obtener la Cédula de Habitabilidad", text: "Asegúrate de que tu vivienda tiene la Licencia de Primera o Segunda Ocupación vigente. Es la garantía de que el espacio es apto para vivir." },
+    { name: "Consultar la normativa municipal", text: "Antes de nada, ve a tu ayuntamiento. Ciudades como Madrid o Barcelona tienen planes especiales que pueden prohibir nuevas licencias en tu calle o exigir requisitos como un acceso independiente desde la calle." },
+    { name: "Presentar la Declaración Responsable", text: "Se realiza ante la Consejería de Turismo de tu Comunidad Autónoma. Es un documento donde afirmas que cumples con todos los requisitos de mobiliario, seguridad y seguros." },
+    { name: "Obtener el número de registro", text: "Una vez presentada la declaración, se te asignará un código (ej. VT-45678-M) que deberás incluir obligatoriamente en todos tus anuncios online." },
+    { name: "Contratar Seguro de Responsabilidad Civil", text: "Es obligatorio disponer de un seguro que cubra posibles daños a terceros y a los propios huéspedes durante su estancia." }
+  ],
+  checklist: [
+    "Cédula de habitabilidad o licencia de ocupación",
+    "Seguro de RC específico para alquiler vacacional",
+    "Certificado de idoneidad técnica (en algunas regiones)",
+    "Hojas de reclamaciones oficiales",
+    "Cartel identificativo de vivienda turística"
+  ],
+  mistakes: [
+    "Alquilar antes de tener el número de registro definitivo.",
+    "No informar a la comunidad de propietarios (algunos estatutos pueden prohibirlo legalmente).",
+    "Superar la capacidad de huéspedes permitida en la cédula de habitabilidad.",
+    "Omitir el número de registro en el anuncio de Airbnb o Booking."
+  ],
+  documentation: [
+    "Escritura de la propiedad",
+    "DNI o NIE del titular",
+    "Licencia de primera ocupación",
+    "Póliza de seguro de RC",
+    "Formulario de Declaración Responsable"
+  ],
+  faq: [
+    { q: "¿Puedo sacar la licencia si mi comunidad de vecinos dice que no?", a: "Si los estatutos del edificio prohíben explícitamente el alquiler vacacional y están registrados en el Registro de la Propiedad, no podrás obtener la licencia de forma legal." },
+    { q: "¿Cuánto cuesta la tasa de registro?", a: "Depende de la comunidad. En algunas es gratuito y en otras como Baleares o Cataluña puede tener un coste por plaza o por tramitación." },
+    { q: "¿Tengo que renovar la licencia?", a: "Generalmente la licencia VUT no caduca, pero debes informar de cualquier cambio de titularidad o si decides dejar de alquilar la vivienda." }
+  ]
+};
+---
+<LegalArticle {...props} />

@@ -1,0 +1,49 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Contrato de Arriendo Turístico en Chile: Requisitos Legales 2026",
+  country: "Chile",
+  countryHref: "/es/recursos-legales/chile",
+  metaTitle: "Contrato de Arriendo Turístico Chile: Qué Debe Incluir y Cómo Protegerte | Hola Rentia",
+  metaDesc: "Requisitos legales del contrato de arriendo turístico en Chile. Cláusulas obligatorias, diferencias con el arrendamiento residencial y cómo protegerte ante el SII y ante los huéspedes.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/chile/contrato-arriendo-chile",
+  intro: `<p>En Chile, el contrato de arriendo turístico es el documento que formaliza la prestación del servicio de alojamiento de corta estancia. Aunque Airbnb actúa como intermediario, <strong>el contrato entre anfitrión y huésped tiene validez legal</strong> y es la herramienta principal para protegerse ante daños, cancelaciones y disputas fiscales.</p>
+  <p>Un contrato bien redactado también es útil para demostrar ante el SII la naturaleza comercial de la actividad y la correcta emisión de documentos tributarios.</p>`,
+  steps: [
+    { name: "Define claramente las partes y el inmueble", text: "El contrato debe identificar plenamente al arrendador (nombre, RUT, domicilio), al arrendatario (huésped: nombre, RUT o pasaporte), y la descripción completa del inmueble (dirección, número de habitaciones, capacidad máxima)." },
+    { name: "Establece el periodo y el precio con IVA incluido", text: "Indica las fechas exactas de check-in y check-out, el precio total de la estadía y si el IVA está incluido o añadido. En Chile, el precio publicado en plataformas turísticas debe incluir todos los impuestos." },
+    { name: "Incluye las políticas de cancelación y depósito", text: "Especifica tu política de cancelación (flexible, moderada o estricta) y el monto del depósito de garantía (si lo cobras). Indica en qué condiciones se devuelve o se retiene el depósito." },
+    { name: "Define las normas de uso de la propiedad", text: "Número máximo de huéspedes, política de mascotas, de ruidos (horarios), de visitas externas, de fumadores. Estas condiciones son vinculantes y te protegen ante reclamaciones de terceros o del edificio." },
+    { name: "Formaliza con firma digital o email de confirmación", text: "Para mayor seguridad, utiliza firma electrónica simple (válida en Chile según la Ley 19.799). El intercambio de emails con la aceptación explícita de las condiciones también tiene valor legal ante un tribunal." }
+  ],
+  checklist: [
+    "Partes identificadas con RUT o pasaporte",
+    "Descripción completa del inmueble",
+    "Precio total con IVA incluido",
+    "Fechas exactas de check-in y check-out",
+    "Políticas de cancelación precisas",
+    "Depósito de garantía y condiciones de devolución",
+    "Normas de uso de la propiedad",
+    "Firma o confirmación digital documentada"
+  ],
+  mistakes: [
+    "No tener ningún contrato y depender solo de los términos de Airbnb (insuficiente ante el SII o tribunal).",
+    "No incluir el IVA en el precio descrito en el contrato.",
+    "No especificar el número máximo de huéspedes (puede causar problemas con el edificio o el seguro).",
+    "Omitir la cláusula de depósito de garantía (dificulta el reclamo por daños)."
+  ],
+  documentation: [
+    "Contrato de arriendo turístico firmado (o confirmación digital)",
+    "Factura electrónica del SII emitida por la estadía",
+    "Comprobante del depósito de garantía (si aplica)",
+    "Póliza de seguro de RC vigente"
+  ],
+  faq: [
+    { q: "¿Es obligatorio tener un contrato escrito en Chile para Airbnb?", a: "No es obligatorio por ley, pero es altamente recomendable. El contrato es la única herramienta para defender tus derechos ante daños, disputas de depósito o inspecciones del SII." },
+    { q: "¿El contrato de Airbnb me protege como anfitrión en Chile?", a: "Parcialmente. Los términos de Airbnb regulan la relación con la plataforma, pero no reemplazan las obligaciones legales chilenas (IVA, renta, normas municipales). Un contrato propio en español y según la ley chilena refuerza tu protección." },
+    { q: "¿Puedo usar el mismo contrato para todas mis propiedades?", a: "Sí, con adaptaciones por propiedad (dirección, capacidad, reglas específicas). Hola Rentia te permite gestionar plantillas de comunicación y condiciones personalizadas por propiedad, enviándolas automáticamente a cada huésped al confirmar la reserva." }
+  ]
+};
+---
+<LegalArticle {...props} />

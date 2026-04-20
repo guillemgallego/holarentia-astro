@@ -1,0 +1,61 @@
+---
+// src/pages/es/recursos-legales/mexico/index.astro
+import LegalHub from '../../../../components/LegalHub.astro';
+
+const props = {
+  country: "México",
+  flag: "🇲🇽",
+  slug: "mexico",
+  metaTitle: "Guía Legal Alquiler Vacacional México | Registro y SAT | Hola Rentia",
+  metaDesc: "Normativa legal para Airbnb en México. Registro Nacional de Turismo, RFC, impuestos federales y locales, y leyes de hospitalidad en CDMX, Cancún y más.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/mexico",
+  intro: `
+    <p>México se ha consolidado como un gigante del turismo vacacional, con mercados maduros como la **Riviera Maya, Los Cabos y la CDMX**. Esto ha llevado a una regulación más estricta por parte del SAT y de los gobiernos estatales para formalizar la actividad.</p>
+    <p>Operar un Airbnb en México requiere hoy en día una gestión fiscal profesional (RFC) y, en muchos casos, el cumplimiento del **Registro Nacional de Turismo (RNT)**. Esta guía ayuda a propietarios y administradores a navegar la ley mexicana con éxito.</p>
+  `,
+  licensesContent: `
+    <p>A nivel federal, la Secretaría de Turismo exige que los prestadores de servicios de alojamiento se inscriban en el <strong>Registro Nacional de Turismo (RNT)</strong>. Es una herramienta de identificación que brinda certeza jurídica al huésped.</p>
+    <p>En estados como <strong>Quintana Roo</strong>, existe además el registro RET (Registro Estatal de Turismo), obligatorio para operar en Cancún, Playa del Carmen y Tulum. No contar con él puede resultar en la clausura del inmueble.</p>
+  `,
+  taxesContent: `
+    <p>Desde 2020, México aplica un régimen específico para plataformas digitales:</p>
+    <ul>
+      <li><strong>IVA:</strong> Se aplica el 16% sobre el valor del servicio. Si tienes tu RFC cargado en Airbnb, la plataforma retiene el 50% del IVA.</li>
+      <li><strong>ISR (Impuesto sobre la Renta):</strong> Retención según el nivel de ingresos mensuales.</li>
+      <li><strong>ISH (Impuesto Sobre Hospedaje):</strong> Impuesto estatal que suele rondar el 3% al 6% (dependiendo del estado, ej. CDMX es el 5%).</li>
+    </ul>
+  `,
+  legalObligations: `
+    <p>Aunque no existe un sistema de partes de policía tan rígido como en España, los anfitriones mexicanos tienen obligaciones de seguridad y protección civil:</p>
+    <ul>
+      <li><strong>Contrato de Hospedaje:</strong> Se recomienda tener términos y condiciones claros aceptados por el huésped.</li>
+      <li><strong>Protección de Datos:</strong> Es obligatorio contar con un Aviso de Privacidad si recolectas datos personales de los huéspedes.</li>
+    </ul>
+  `,
+  citiesContent: `
+    <p>Regulaciones destacadas por zona:</p>
+    <ul>
+      <li><strong>CDMX:</strong> Nueva regulación en 2024 que limita el porcentaje de noches al año y exige registro en el padrón de anfitriones.</li>
+      <li><strong>Tulum / Playa del Carmen:</strong> Exigen licencias de funcionamiento municipales y anuencia de Protección Civil.</li>
+      <li><strong>Puerto Vallarta:</strong> Fuerte enfoque en el pago del ISH estatal.</li>
+    </ul>
+  `,
+  complianceContent: `
+    <p>Para los Property Managers que manejan carteras de inversión, es vital la facturación electrónica (CFDI 4.0). Debes poder emitir facturas a tus clientes por los servicios de gestión y a los huéspedes que las soliciten.</p>
+  `,
+  toolsContent: `
+    <p>El software de gestión permite a los administradores en México automatizar la emisión de facturas y llevar un control riguroso de las retenciones fiscales de las plataformas para facilitar el trabajo del contador.</p>
+  `,
+  faq: [
+    { q: "¿Es necesario estar dado de alta en el SAT?", a: "Sí. Para operar legalmente y que Airbnb no te retenga el porcentaje máximo de impuestos (hasta el 36%), debes tener un RFC activo y cargado en la plataforma." },
+    { q: "¿Qué es el RNT?", a: "Es el Registro Nacional de Turismo, obligatorio por ley para todos los alojamientos, incluidos los que se rentan por plataformas digitales." },
+    { q: "¿Cuánto es el Impuesto sobre Hospedaje en Cancún?", a: "En el estado de Quintana Roo, el ISH es actualmente del 6%, uno de los más altos de México." }
+  ],
+  articles: [
+    { title: "Cómo sacar el RNT y registros estatales", href: "/es/recursos-legales/mexico/licencia-airbnb-mexico" },
+    { title: "Impuestos SAT y facturación CFDI", href: "/es/recursos-legales/mexico/impuestos-airbnb-mexico" },
+    { title: "Nuevas reglas de anfitriones en CDMX", href: "/es/recursos-legales/mexico/registro-huespedes-mexico" }
+  ]
+};
+---
+<LegalHub {...props} />

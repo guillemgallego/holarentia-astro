@@ -1,5 +1,5 @@
 ---
-// src/layouts/Layout.astro (Versión de GitHub Sincronizada)
+// src/layouts/Layout.astro
 import Analytics from '../components/Analytics.astro';
 import ChatWidget from '../components/ChatWidget.astro';
 
@@ -32,7 +32,7 @@ const {
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-
+  
   <!-- ══ SEO ══ -->
   <title>{title}</title>
   <meta name="description" content={description}/>
@@ -40,7 +40,7 @@ const {
   <link rel="canonical" href={canonicalUrl}/>
   <link rel="icon" type="image/webp" href="/images/favicon.webp"/>
   <link rel="apple-touch-icon" href="/images/favicon.webp"/>
-
+  
   <meta property="og:type" content="website"/>
   <meta property="og:url" content={canonicalUrl}/>
   <meta property="og:title" content={ogTitle}/>
@@ -48,12 +48,12 @@ const {
   <meta property="og:image" content={ogImage}/>
   <meta property="og:locale" content={locale}/>
   <meta property="og:site_name" content="Hola Rentia"/>
-
+  
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content={twitterTitle}/>
   <meta name="twitter:description" content={twitterDescription}/>
   <meta name="twitter:image" content={ogImage}/>
-
+  
   <link rel="preload" as="image" href="/images/hola-rentia-logo-gestion-airbnb-ia.webp" fetchpriority="high"/>
 
   <!-- Schema Block -->
@@ -69,47 +69,48 @@ const {
   <style is:global>
     :root {
       /* Brand */
-      --red: #ff3b30;
-      --red-d: #d62e24;
-      --red-l: #ff6a5a;
-      --orange: #ff7a00;
-      --violet: #7c3aed;
-      --blue: #2563eb;
-      --cyan: #06b6d4;
+      --red:       #ff3b30;
+      --red-d:     #d62e24;
+      --red-l:     #ff6a5a;
+      --orange:    #ff7a00;
+      --violet:    #7c3aed;
+      --blue:      #2563eb;
+      --cyan:      #06b6d4;
 
       /* AI Gradients */
-      --g-ai: linear-gradient(135deg,#ff3b30,#ff7a00,#7c3aed);
-      --g-ai-h: linear-gradient(135deg,#ff3b30,#ff7a00,#2563eb);
-      --g-ai-s: linear-gradient(135deg,#ff3b30 0%,#ff6a5a 100%);
+      --g-ai:      linear-gradient(135deg,#ff3b30,#ff7a00,#7c3aed);
+      --g-ai-h:    linear-gradient(135deg,#ff3b30,#ff7a00,#2563eb);
+      --g-ai-s:    linear-gradient(135deg,#ff3b30 0%,#ff6a5a 100%);
 
       /* Neutrals */
-      --white: #ffffff;
-      --bg: #ffffff;
-      --bg2: #f8f9fb;
-      --bg3: #f1f4f8;
-      --border: #e5e8ef;
-      --text: #0f172a;
-      --text2: #334155;
-      --muted: #64748b;
-      --muted2: #94a3b8;
+      --white:     #ffffff;
+      --bg:        #ffffff;
+      --bg2:       #f8f9fb;
+      --bg3:       #f1f4f8;
+      --border:    #e5e8ef;
+      --text:      #0f172a;
+      --text2:     #334155;
+      --muted:     #64748b;
+      --muted2:    #94a3b8;
 
       /* Type */
-      --font-d: 'Bricolage Grotesque',system-ui,sans-serif;
-      --font-b: 'Inter',system-ui,sans-serif;
+      --font-d:    'Bricolage Grotesque',system-ui,sans-serif;
+      --font-b:    'Inter',system-ui,sans-serif;
 
       /* Radius */
-      --r-sm: 8px;
-      --r-md: 14px;
-      --r-lg: 20px;
-      --r-xl: 28px;
+      --r-sm:  8px;
+      --r-md:  14px;
+      --r-lg:  20px;
+      --r-xl:  28px;
       --r-2xl: 40px;
 
       /* Shadow */
       --sh-sm: 0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.05);
       --sh-md: 0 4px 16px rgba(0,0,0,.08),0 2px 6px rgba(0,0,0,.04);
       --sh-lg: 0 16px 48px rgba(0,0,0,.1),0 4px 16px rgba(0,0,0,.06);
-      --sh-red: 0 8px 28px rgba(255,59,48,.28);
+      --sh-red:0 8px 28px rgba(255,59,48,.28);
     }
+
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth;font-size:16px}
     body{background:var(--bg);color:var(--text);font-family:var(--font-b);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
@@ -120,8 +121,7 @@ const {
   </style>
 
   <Analytics />
-
-<slot name="head" />
+  <slot name="head" />
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->

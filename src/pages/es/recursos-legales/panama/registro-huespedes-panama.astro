@@ -1,0 +1,47 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Registro de Huéspedes en Panamá: Obligaciones del Anfitrión ante el SNM",
+  country: "Panamá",
+  countryHref: "/es/recursos-legales/panama",
+  metaTitle: "Registro Huéspedes Airbnb Panamá: SNM y ATP para Anfitriones | Hola Rentia",
+  metaDesc: "Obligaciones de registro de huéspedes en Panamá para anfitriones de Airbnb. Servicio Nacional de Migración (SNM), libro de hospedaje ATP y protección de datos personales.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/panama/registro-huespedes-panama",
+  intro: `<p>En Panamá, los establecimientos de hospedaje turístico deben cumplir con el registro de huéspedes conforme a los requisitos de la <strong>Autoridad de Turismo de Panamá (ATP)</strong> y el <strong>Servicio Nacional de Migración (SNM)</strong>. La identificación correcta de cada huésped no solo es una obligación legal sino también una medida de seguridad ciudadana.</p>
+  <p>El incumplimiento puede resultar en la suspensión de la licencia ATP y en sanciones del SNM aplicables tanto al anfitrión como a la propiedad.</p>`,
+  steps: [
+    { name: "Establece el proceso de check-in con identificación", text: "Al momento del check-in, solicita a todos los huéspedes adultos la presentación de su documento de identidad (cédula panameña o pasaporte para extranjeros). Fotocopia o digitaliza el documento para el registro." },
+    { name: "Lleva el Libro de Registro de Huéspedes ATP", text: "La ATP exige un registro con: nombre completo, número de pasaporte o cédula, nacionalidad, fecha de ingreso y salida, y número de unidad habitacional. Puede ser en formato físico o digital validado." },
+    { name: "Reporta huéspedes al SNM si se solicita", text: "El Servicio Nacional de Migración puede requerir el reporte de huéspedes extranjeros durante operativos de control. Los establecimientos formalizados ante la ATP tienen acceso al sistema de reporte electrónico." },
+    { name: "Protege los datos personales de los huéspedes", text: "Panamá cuenta con la Ley 81 de 2019 de Protección de Datos Personales. Informa a tus huéspedes cómo usas sus datos, almacénalos de forma segura, no los compartas con terceros sin consentimiento y elimínalos cuando ya no sean necesarios." },
+    { name: "Conserva los registros durante el tiempo exigido", text: "La normativa de la ATP recomienda conservar los registros de huéspedes durante mínimo 5 años. Esto es fundamental para auditorías del SNM y para la renovación bienal de la licencia ATP." }
+  ],
+  checklist: [
+    "Proceso de identificación de huéspedes al check-in documentado",
+    "Libro de Registro de Huéspedes ATP activo (físico o digital)",
+    "Protocolo de reporte al SNM si se requiere",
+    "Política de privacidad (Ley 81/2019) comunicada al huésped",
+    "Almacenamiento seguro de copias de documentos",
+    "Registros conservados mínimo 5 años"
+  ],
+  mistakes: [
+    "No registrar los datos completos de los huéspedes (solo el nombre no es suficiente).",
+    "Almacenar copias de pasaportes sin protección de contraseña.",
+    "No informar a los huéspedes del tratamiento de sus datos (violación de Ley 81/2019).",
+    "No colaborar con el SNM durante operativos (puede causar cierre temporal del establecimiento)."
+  ],
+  documentation: [
+    "Libro de Registro de Huéspedes ATP (físico o digital)",
+    "Copias de documentos de identidad (almacenadas de forma segura)",
+    "Política de privacidad (Ley 81/2019) del establecimiento",
+    "Licencia ATP vigente"
+  ],
+  faq: [
+    { q: "¿Es obligatorio el registro de huéspedes en alquileres vacacionales en Panamá?", a: "Sí. La normativa de la ATP exige el registro de todos los huéspedes en los establecimientos de alojamiento turístico con licencia. El registro debe estar disponible para inspección en cualquier momento." },
+    { q: "¿Puedo hacer el check-in de huéspedes de forma remota en Panamá?", a: "Sí, el check-in remoto es válido siempre que captures los datos de identificación del huésped de forma digital (fotografía del pasaporte o cédula enviada por el huésped) antes del acceso al inmueble." },
+    { q: "¿Hola Rentia cumple con la Ley 81 de Protección de Datos de Panamá?", a: "Hola Rentia aplica estándares de seguridad de datos empresariales: cifrado de datos en tránsito y en reposo, acceso segmentado por roles, y política de retención de datos compatible con la Ley 81 de Panamá. Los datos de huéspedes solo son accesibles por el anfitrión autorizado." }
+  ]
+};
+---
+<LegalArticle {...props} />

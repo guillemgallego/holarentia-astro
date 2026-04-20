@@ -1,10 +1,30 @@
 ---
 // src/components/Analytics.astro
+// Integración de Google Tag Manager (GTM)
+const GTM_ID = 'GTM-WCBHGCLC';
 ---
-<!-- Google Tag Manager -->
-<script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WCBHGCLC');</script>
+
+<!-- Google Tag Manager (Delayed) -->
+<script is:inline define:vars={{ GTM_ID }}>
+  // Función para cargar GTM
+  function loadGTM() {
+    if (window.gtmLoaded) return;
+    window.gtmLoaded = true;
+
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer',GTM_ID);
+  }
+
+  // Cargar GTM tras la primera interacción o tras 4 segundos (fallback)
+  const activityEvents = ['mousedown', 'mousemove', 'keydown', 'scroll', 'touchstart'];
+  activityEvents.forEach(event => {
+    window.addEventListener(event, loadGTM, { once: true, passive: true });
+  });
+
+  // Fallback para bots o usuarios sin interacción inmediata
+  setTimeout(loadGTM, 4000);
+</script>
 <!-- End Google Tag Manager -->

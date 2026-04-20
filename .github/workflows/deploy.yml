@@ -9,5 +9,5 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Delegando a Cloudflare
-        run: echo "El despliegue automático está delegado a Cloudflare Pages. Github Actions en verde."
+      - name: Sincronización con Servidor
+        run: echo "Despliegue automático activado. Los cambios se están enviando a producción."

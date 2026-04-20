@@ -1,0 +1,48 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Impuestos ICT y Hacienda para Airbnb en Costa Rica: IVA 13% y Renta",
+  country: "Costa Rica",
+  countryHref: "/es/recursos-legales/costa-rica",
+  metaTitle: "Impuestos Airbnb Costa Rica 2026: IVA 13% y Hacienda | Hola Rentia",
+  metaDesc: "Guía fiscal completa para anfitriones de Airbnb en Costa Rica. IVA del 13% en hospedaje, impuesto sobre la renta y cómo declarar correctamente ante el Ministerio de Hacienda.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/costa-rica/impuestos-ict-costa-rica",
+  intro: `<p>Costa Rica aplica un <strong>IVA del 13%</strong> sobre los servicios de hospedaje, uno de los más altos de Centroamérica. Adicionalmente, los ingresos por arrendamiento vacacional están sujetos al Impuesto sobre la Renta. El sistema de facturación electrónica costarricense (Ministerio de Hacienda) es obligatorio desde 2019.</p>
+  <p>La correcta gestión fiscal es fundamental, especialmente para los anfitriones que gestionan múltiples propiedades en zonas turísticas como <strong>Guanacaste, Jacó y La Fortuna</strong>.</p>`,
+  steps: [
+    { name: "Inscríbete ante el Ministerio de Hacienda", text: "Activa tu cuenta en el portal ATV (Administración Tributaria Virtual) con tu número de cédula. Registra la actividad económica 5510 (Servicios de alojamiento en establecimientos de hospedaje) para el IVA." },
+    { name: "Configura la facturación electrónica", text: "Costa Rica exige factura electrónica para todas las transacciones comerciales. Necesitas un proveedor de facturación electrónica autorizado por Hacienda (ej. Sage, Tico Bill, Softland). Cada reserva debe generar una factura electrónica o tiquete." },
+    { name: "Calcula y declara el IVA mensualmente", text: "El IVA débito es el 13% del valor de cada reserva. Puedes recuperar el IVA crédito de tus compras relacionadas con el inmueble. El saldo neto se declara y paga entre el 1 y el 15 de cada mes mediante el Formulario D-104." },
+    { name: "Calcula el Impuesto sobre la Renta", text: "Las personas físicas declaran los ingresos de alquiler como rentas de actividades lucrativas (Formulario D-101). La tasa marginal va del 10% al 25% según el tramo de ingresos. Las empresas pagan una tasa corporativa del 30% sobre la renta neta." },
+    { name: "Aprovecha las deducciones permitidas", text: "Puedes deducir: seguros del inmueble, comisiones de plataformas (Airbnb descuenta el 3%), gastos de limpieza, mantenimiento, intereses bancarios si el inmueble tiene hipoteca, y la depreciación del mobiliario y equipo." }
+  ],
+  checklist: [
+    "Alta en ATV (Ministerio de Hacienda) con actividad 5510",
+    "Proveedor de facturación electrónica configurado",
+    "Declaración D-104 (IVA) presentada mensualmente",
+    "Declaración D-101 (Renta) anual en marzo",
+    "Facturas electrónicas emitidas por cada reserva",
+    "Archivo de créditos de IVA por gastos del inmueble"
+  ],
+  mistakes: [
+    "No cobrar el 13% de IVA a los huéspedes y absorberlo de tus propios ingresos.",
+    "No configurar la facturación electrónica antes de recibir la primera reserva.",
+    "Olvidar la declaración D-104 mensual: genera multas e intereses automáticos.",
+    "No deducir el IVA crédito de los gastos del inmueble (es dinero recuperable)."
+  ],
+  documentation: [
+    "Cédula jurídica o cédula personal activa en ATV",
+    "Facturas electrónicas emitidas (disponibles en ATV)",
+    "Formularios D-104 presentados mensualmente",
+    "Formulario D-101 anual presentado",
+    "Comprobantes de gastos deducibles"
+  ],
+  faq: [
+    { q: "¿Debo cobrar el 13% de IVA a mis huéspedes de Airbnb en Costa Rica?", a: "Sí. Como prestador del servicio de hospedaje, eres el responsable del IVA. Debes incluirlo en el precio de la noche o añadirlo como cargo separado. Airbnb Costa Rica puede recaudarlo en nombre del anfitrión según el acuerdo vigente con Hacienda." },
+    { q: "¿Cuánto impuesto sobre la renta paga un anfitrión en Costa Rica?", a: "Para personas físicas, la tasa marginal es progresiva: 0% hasta ¢4,091,000 anuales, 10% hasta ¢6,122,000, 15% hasta ¢10,203,000, 20% hasta ¢20,406,000 y 25% sobre el exceso. La mayoría de anfitriones medianos tributan en la franja del 15-20%." },
+    { q: "¿Hola Rentia genera las facturas electrónicas requeridas en Costa Rica?", a: "Hola Rentia se integra con proveedores de facturación electrónica compatibles con el sistema de Hacienda costarricense, generando automáticamente el tiquete por cada reserva confirmada sin que el anfitrión tenga que hacerlo manualmente." }
+  ]
+};
+---
+<LegalArticle {...props} />

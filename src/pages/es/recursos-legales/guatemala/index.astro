@@ -1,0 +1,28 @@
+---
+// src/pages/es/recursos-legales/guatemala/index.astro
+import LegalHub from '../../../../components/LegalHub.astro';
+const props={
+  country:"Guatemala",flag:"🇬🇹",slug:"guatemala",
+  metaTitle:"Guía Legal Alquiler Vacacional Guatemala | Inguat y SAT | Hola Rentia",
+  metaDesc:"Normativa legal para Airbnb en Guatemala. Registro en Inguat, impuesto al turismo 10% e ingresos SAT para anfitriones en Antigua, Atitlán y Ciudad de Guatemala.",
+  canonicalUrl:"https://holarentia.com/es/recursos-legales/guatemala",
+  intro:"<p>En Guatemala, el desarrollo del sector vacacional está bajo la supervisión del <strong>Inguat (Instituto Guatemalteco de Turismo)</strong>. Antigua Guatemala, el Lago de Atitlán y los circuitos mayas concentran la mayor demanda de Airbnb del país.</p>",
+  licensesContent:"<p>Requiere registro como prestador de servicios de hospedaje ante Inguat, bajo la Ley Orgánica del Inguat. Previamente necesitas el NIT activo en el SAT y la habilitación sanitaria del MSPAS.</p>",
+  taxesContent:"<p>El alquiler turístico está sujeto al <strong>10% de impuesto al turismo</strong> y declaración de renta ante la <strong>SAT</strong>. La facturación electrónica FEL es obligatoria desde 2019 para todos los contribuyentes activos.</p>",
+  legalObligations:"<p>Llevar el Libro de Registro de Huéspedes y emitir facturación electrónica FEL de Guatemala por cada estadía.</p>",
+  citiesContent:"<p>Antigua Guatemala, Lago Atitlán y Ciudad de Guatemala tienen dinámicas turísticas muy activas y reguladas. Antigua tiene estándares adicionales por ser Patrimonio UNESCO.</p>",
+  complianceContent:"<p>La facturación electrónica FEL de la SAT es indispensable para el reporte de ingresos como anfitrión profesional. Usa un certificador FEL autorizado para automatizar la emisión de documentos tributarios.</p>",
+  toolsContent:"<p>Software especializado ayuda a separar el impuesto de turismo de las comisiones de plataforma y genera reportes compatibles con las declaraciones del SAT, reduciendo el tiempo de gestión fiscal.</p>",
+  faq:[
+    {q:"¿Cuánto es el impuesto al turismo en Guatemala?",a:"Guatemala aplica un impuesto específico del 10% sobre los ingresos brutos por hospedaje, adicional al ISR sobre la renta neta."},
+    {q:"¿Cuáles son las zonas de mayor demanda de Airbnb en Guatemala?",a:"Antigua Guatemala es el destino número 1 por su riqueza histórica. El Lago de Atitlán concentra turismo alternativo y nómadas digitales. Ciudad de Guatemala tiene demanda de viajeros de negocios y tránsito."},
+    {q:"¿Hola Rentia funciona en Guatemala con facturación FEL?",a:"Sí. Hola Rentia puede integrarse con certificadores FEL autorizados en Guatemala para generar automáticamente los documentos tributarios electrónicos por cada reserva, eliminando el trabajo manual ante el SAT."}
+  ],
+  articles:[
+    { title: "Licencia Inguat Guatemala: Registro Airbnb Paso a Paso", href: "/es/recursos-legales/guatemala/licencia-inguat-guatemala" },
+    { title: "Impuestos SAT Guatemala: ISR e Impuesto al Turismo 10%", href: "/es/recursos-legales/guatemala/impuestos-sat-guatemala" },
+    { title: "Registro de Huéspedes Guatemala: Obligaciones Inguat", href: "/es/recursos-legales/guatemala/registro-huespedes-guatemala" }
+  ]
+};
+---
+<LegalHub {...props} />

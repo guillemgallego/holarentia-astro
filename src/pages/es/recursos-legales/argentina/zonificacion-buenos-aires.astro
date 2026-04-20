@@ -1,0 +1,48 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Zonificación y Restricciones para Airbnb en Buenos Aires (CABA 2026)",
+  country: "Argentina",
+  countryHref: "/es/recursos-legales/argentina",
+  metaTitle: "Zonificación Airbnb Buenos Aires: Barrios Permitidos y Restricciones CABA | Hola Rentia",
+  metaDesc: "Mapa de zonificación para alquiler vacacional en Buenos Aires. Restricciones por barrio en CABA, Ley 6223 y qué zonas tienen más demanda turística para Airbnb.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/argentina/zonificacion-buenos-aires",
+  intro: `<p>Buenos Aires es la ciudad con más propiedades listadas en Airbnb de toda América Latina. La <strong>Ley 6223 de CABA</strong> regula qué inmuebles pueden utilizarse para alquiler temporal de corto plazo y establece restricciones según el tipo de uso del suelo, la cantidad de unidades y la frecuencia de alquiler.</p>
+  <p>Conocer las zonas con mayor demanda y las restricciones por barrio es clave antes de invertir o de ampliarte como property manager profesional en el mercado porteño.</p>`,
+  steps: [
+    { name: "Consulta el Código Urbanístico de CABA", text: "El Código de Planeamiento Urbano determina el uso permitido del suelo. Los edificios residenciales catalogados como R1 o R2 pueden destinarse al alquiler turístico en condiciones específicas. Consúltalo en el Geoportal de CABA antes de comprar o reformar." },
+    { name: "Verifica el reglamento de copropiedad del edificio", text: "El consorcio de propietarios puede votar (y aprobar por mayoría) la prohibición del alquiler vacacional. Si los estatutos del edificio lo prohíben y están inscriptos en el registro de la propiedad, la restricción es legalmente vinculante." },
+    { name: "Identifica si tu inmueble es 'uso habitual'", text: "Si alquilas más de 3 unidades en el mismo edificio o superas las 90 noches/año por unidad, la ley considera uso habitual y exige habilitación como establecimiento hotelero ante el Gobierno de la Ciudad." },
+    { name: "Analiza la demanda por barrio", text: "Palermo, San Telmo, Puerto Madero y Recoleta concentran el 60% de las reservas de Airbnb en CABA. Estos barrios tienen alta demanda y precios medios superiores a los $80 USD/noche, pero también mayor competencia y mayor control de cumplimiento." },
+    { name: "Notifica a los vecinos y administrador", text: "Aunque no siempre es un requisito legal explícito, notificar formalmente al administrador del edificio y a los vecinos directos evita conflictos y potenciales denuncias ante la Defensa del Consumidor o a la propia Airbnb." }
+  ],
+  checklist: [
+    "Verificar uso del suelo en Geoportal CABA",
+    "Revisar reglamento de copropiedad del edificio",
+    "Determinar si el uso es habitual o no habitual",
+    "Habilitación como establecimiento hotelero si supera los umbrales",
+    "Registro de VUT activo en el portal BA Turismo",
+    "Seguro de RC por daños a terceros vigente"
+  ],
+  mistakes: [
+    "Comprar en un edificio sin revisar el reglamento de copropiedad (puede luego prohibir Airbnb).",
+    "Asumir que en todos los barrios de CABA se puede alquilar sin restricciones.",
+    "No declarar la cantidad real de noches alquiladas (queda registro en AFIP por los convenios de Airbnb).",
+    "Desconocer que Mendoza y Bariloche tienen normativas propias diferentes a las de CABA."
+  ],
+  documentation: [
+    "Plano de uso del suelo del inmueble (Geoportal CABA)",
+    "Copia del reglamento de copropiedad",
+    "Escritura de la propiedad o contrato de alquiler",
+    "Habilitación municipal (si aplica uso habitual)",
+    "Número de Registro VUT"
+  ],
+  faq: [
+    { q: "¿Hay barrios de CABA donde Airbnb esté prohibido?", a: "No existe una prohibición explícita por barrio como en Barcelona o Madrid. La restricción es por tipo de uso del suelo (habitacional de uso habitual) y por los reglamentos internos de cada edificio." },
+    { q: "¿Cuáles son los barrios más rentables para Airbnb en Buenos Aires?", a: "Palermo (especialmente Palermo Hollywood y Soho), Recoleta, San Telmo y Puerto Madero son los de mayor rentabilidad y demanda sostenida. El precio medio supera los USD 80-120 por noche en temporada alta." },
+    { q: "¿Hola Rentia me ayuda a gestionar múltiples propiedades en CABA?", a: "Sí. Hola Rentia centraliza el calendario, la comunicación con huéspedes y la facturación de todas tus propiedades en CABA en un único panel. Genera reportes de ingresos por unidad listos para AFIP." }
+  ]
+};
+---
+<LegalArticle {...props} />

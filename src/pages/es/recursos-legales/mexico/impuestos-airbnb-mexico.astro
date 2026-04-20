@@ -1,0 +1,49 @@
+---
+// src/pages/es/recursos-legales/mexico/impuestos-airbnb-mexico.astro
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Guía de Impuestos SAT para Airbnb en México (CFDI 4.0)",
+  country: "México",
+  countryHref: "/es/recursos-legales/mexico",
+  metaTitle: "Impuestos Airbnb México SAT | Retenciones y RFC | Hola Rentia",
+  metaDesc: "Guía fiscal para anfitriones en México. Cómo funcionan las retenciones de ISR e IVA en plataformas digitales y cómo facturar correctamente (CFDI 4.0).",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/mexico/impuestos-airbnb-mexico",
+  intro: `
+    <p>Desde el 1 de junio de 2020, el **SAT** implementó un régimen de retenciones para plataformas digitales que cambió las reglas del juego para los anfitriones de Airbnb en México.</p>
+    <p>Entender cómo el SAT percibe tus ingresos y cómo aplicar las deducciones autorizadas es clave para que tu negocio de rentas cortas sea rentable y legal al 100%.</p>
+  `,
+  steps: [
+    { name: "Cargar tu RFC en la plataforma", text: "Es el paso más importante. Si no tienes RFC cargado, Airbnb te retendrá el 20% de ISR y el 16% de IVA (el total del impuesto), lo que destruirá tu margen de ganancia." },
+    { name: "Entender las retenciones (con RFC)", text: "Si tienes RFC, la plataforma retendrá solo el 4% de ISR y el 8% de IVA (el 50% de la tasa general). El resto lo declaras tú mensualmente." },
+    { name: "Emitir facturas CFDI 4.0", text: "Los huéspedes pueden pedirte factura. Debes estar preparado para emitir Comprobantes Fiscales Digitales por Internet (CFDI) con la versión 4.0 vigente." },
+    { name: "Declarar de forma mensual", text: "Tu contador debe presentar tus declaraciones de IVA e ISR cada mes, acreditando las retenciones que ya te hizo la plataforma." },
+    { name: "Pagar el Impuesto Sobre Hospedaje (ISH)", text: "Este no lo cobra el SAT, sino tu gobierno estatal. En estados turísticos, Airbnb suele recaudarlo directamente, pero en otros debes declararlo tú por fuera." }
+  ],
+  checklist: [
+    "RFC actualizado con régimen de Plataformas Digitales",
+    "e.firma (Firma electrónica) vigente",
+    "Certificados de Sello Digital (CSD) para facturar",
+    "Cuentas bancarias separadas para el negocio",
+    "Contador especializado en plataformas"
+  ],
+  mistakes: [
+    "No subir el RFC a Airbnb (pagas el doble de impuestos).",
+    "No considerar el Impuesto Sobre Hospedaje (ISH) en tu precio final.",
+    "Creer que el depósito que llega al banco ya es libre de impuestos (faltan tus declaraciones mensuales).",
+    "No pedir facturas a tus proveedores (limpieza, mantenimiento) para poder deducirlos."
+  ],
+  documentation: [
+    "Constancia de Situación Fiscal",
+    "Facturas (CFDI) emitidas y recibidas",
+    "Estados de cuenta bancarios",
+    "Reportes de ingresos descargados de Airbnb"
+  ],
+  faq: [
+    { q: "¿Puedo deducir gastos?", a: "Sí, si optas por el esquema de pago provisional, puedes deducir gastos como mantenimiento, luz, internet, artículos de limpieza y comisiones de la plataforma." },
+    { q: "¿Qué pasa si mis ingresos son menores a 300,000 MXN al año?", a: "Puedes optar por que las retenciones sean 'pagos definitivos', lo que simplifica mucho tu contabilidad pero te impide hacer deducciones." },
+    { q: "¿Quién paga el 16% de IVA?", a: "El IVA lo paga siempre el huésped. Tú solo eres el intermediario que lo recauda y se lo entrega al SAT (o la plataforma lo hace por ti)." }
+  ]
+};
+---
+<LegalArticle {...props} />

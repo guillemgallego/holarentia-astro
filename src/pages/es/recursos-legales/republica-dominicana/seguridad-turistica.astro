@@ -1,0 +1,50 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Seguridad Turística en Rep. Dominicana: Requisitos para Airbnb y Hospedajes",
+  country: "República Dominicana",
+  countryHref: "/es/recursos-legales/republica-dominicana",
+  metaTitle: "Seguridad Turística Airbnb Rep. Dominicana: Normas de Bomberos y Salud | Hola Rentia",
+  metaDesc: "Requisitos de seguridad turística para operar en Airbnb en República Dominicana. Certificado de bomberos, habilitación sanitaria y normativas del Mitur para proteger a tus huéspedes.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/republica-dominicana/seguridad-turistica",
+  intro: `<p>En República Dominicana, la seguridad de los huéspedes es una prioridad regulatoria. Los establecimientos de hospedaje deben cumplir con estándares establecidos por el <strong>Cuerpo de Bomberos, el Ministerio de Salud Pública y el Mitur</strong>. El incumplimiento no solo genera sanciones administrativas, sino que puede resultar en responsabilidad civil ante accidentes.</p>
+  <p>Para los anfitriones de Airbnb en zonas de alta demanda como <strong>Punta Cana, Bávaro o Santo Domingo</strong>, las inspecciones de seguridad son cada vez más frecuentes.</p>`,
+  steps: [
+    { name: "Obtén el Certificado de Seguridad de Bomberos", text: "El Cuerpo de Bomberos de la RD inspecciona que el inmueble cuente con: extintores en zonas accesibles y vigentes, señalización de emergencia, detector de humo y al menos una salida de emergencia bien señalizada. Solicita la inspección en la estación de bomberos de tu municipio." },
+    { name: "Tramita la Habilitación Sanitaria del Ministerio de Salud", text: "El MISPAS (Ministerio de Salud Pública) otorga la habilitación sanitaria que certifica que el inmueble cumple con condiciones de higiene, agua potable, manejo de residuos y ventilación adecuada para alojar huéspedes." },
+    { name: "Instala equipamiento mínimo de seguridad", text: "La normativa del Mitur exige para el hospedaje turístico: botiquín de primeros auxilios, instrucciones de emergencia en cada unidad, cerrojo de seguridad en las puertas, caja fuerte (recomendada) y agua potable garantizada 24 horas." },
+    { name: "Asegura la privacidad y seguridad digital del huésped", text: "Implementa WiFi con contraseña única por estadía, no compartas claves de acceso entre huéspedes, y asegura las cámaras de seguridad externas (nunca en el interior de las unidades). Airbnb prohíbe estrictamente las cámaras de interior." },
+    { name: "Mantén un seguro de responsabilidad civil actualizado", text: "El Mitur recomienda (y en algunas categorías exige) una póliza de Responsabilidad Civil que cubra daños a huéspedes durante su estadía. Contacta a tu correduría de seguros para obtener una póliza específica para hospedaje turístico." }
+  ],
+  checklist: [
+    "Certificado de Seguridad de Bomberos vigente",
+    "Habilitación sanitaria MISPAS activa",
+    "Extintores en zonas accesibles y con carga vigente",
+    "Señalización de emergencia instalada",
+    "Detector de humo en cada unidad",
+    "Botiquín de primeros auxilios equipado",
+    "Póliza de Responsabilidad Civil vigente",
+    "WiFi con contraseña renovada entre huéspedes"
+  ],
+  mistakes: [
+    "No contar con el certificado de bomberos: es el primer documento que solicita el Mitur.",
+    "Instalar cámaras de seguridad en el interior de las unidades (violación de políticas de Airbnb y privacidad del huésped).",
+    "Extintores vencidos o mal ubicados: generan la pérdida automática del certificado de bomberos.",
+    "No renovar la habilitación sanitaria anualmente."
+  ],
+  documentation: [
+    "Certificado de Seguridad de Bomberos vigente",
+    "Habilitación sanitaria MISPAS activa",
+    "Póliza de RC del establecimiento",
+    "Inventario de extintores y fechas de recarga",
+    "Constancia de mantenimiento de detector de humos"
+  ],
+  faq: [
+    { q: "¿Las cámaras de seguridad está permitidas en mi Airbnb en Rep. Dominicana?", a: "Las cámaras exteriores (entrada, parking, zonas comunes del edificio) están permitidas si se declaran en el anuncio de Airbnb. Está terminantemente prohibido instalar cámaras dentro de la unidad de alojamiento (dormitorios, baños, sala)." },
+    { q: "¿Cuánto cuesta el certificado de bomberos en Rep. Dominicana?", a: "La inspección y certificación de bomberos tiene un costo que varía según el municipio y el tipo de establecimiento, generalmente entre RD$500 y RD$3,000. La renovación anual suele tener un costo inferior a la primera emisión." },
+    { q: "¿Hola Rentia me ayuda a gestionar la seguridad de mis propiedades?", a: "Hola Rentia permite configurar alertas de vencimiento para documentos críticos como el certificado de bomberos, la habilitación sanitaria y las pólizas de seguro, evitando que operes con documentación vencida." }
+  ]
+};
+---
+<LegalArticle {...props} />

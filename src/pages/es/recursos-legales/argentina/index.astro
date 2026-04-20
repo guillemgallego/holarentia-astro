@@ -1,0 +1,29 @@
+---
+// src/pages/es/recursos-legales/argentina/index.astro
+import LegalHub from '../../../../components/LegalHub.astro';
+
+const props = {
+  country: "Argentina", flag: "🇦🇷", slug: "argentina",
+  metaTitle: "Guía Legal Alquiler Vacacional Argentina | VUT y AFIP | Hola Rentia",
+  metaDesc: "Normativa legal para Airbnb en Argentina. Cómo registrar una Vivienda de Uso Turístico (VUT), impuestos AFIP, contratos y regulaciones en Buenos Aires.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/argentina",
+  intro: "<p>Argentina, liderada por destinos como <strong>Buenos Aires, Bariloche y Mendoza</strong>, ha formalizado el registro de Viviendas de Uso Turístico para regular la competencia y garantizar la seguridad.</p>",
+  licensesContent: "<p>En Ciudad de Buenos Aires es obligatorio registrarse en el <strong>Registro de Viviendas de Uso Turístico</strong>. El trámite es digital y requiere documentación que acredite la propiedad y seguros de responsabilidad civil.</p>",
+  taxesContent: "<p>Debes estar inscrito ante la <strong>AFIP</strong> como Monotributista o Responsable Inscripto. Los ingresos por alquiler temporal se consideran rentas de alquiler y están sujetos a impuestos nacionales y locales (Ingresos Brutos).</p>",
+  legalObligations: "<p>Es obligatorio llevar un registro de los huéspedes y, en algunas jurisdicciones, reportar los contratos de alquiler temporario a las autoridades fiscales.</p>",
+  citiesContent: "<p>Buenos Aires cuenta con la normativa más clara (Ley 6223), mientras que en el interior del país las regulaciones dependen de los códigos municipales de cada destino.</p>",
+  complianceContent: "<p>Para gestores profesionales con varias unidades, es vital la automatización de la facturación electrónica para cumplir con los requerimientos de la AFIP de forma eficiente.</p>",
+  toolsContent: "<p>Utilizar software de gestión facilita el control de ingresos y la elaboración de los reportes necesarios para las declaraciones tributarias.</p>",
+  faq: [
+    { q: "¿Es obligatorio el registro VUT en CABA para Airbnb?", a: "Sí, es obligatorio para todas las unidades destinadas a turismo por periodos de hasta 3 meses. Sin el número de registro publicado en el anuncio, Airbnb puede suspender el listing." },
+    { q: "¿Qué pasa si no me inscribo en Ingresos Brutos (IIBB) en Argentina?", a: "Airbnb retiene hasta el 9% de IIBB de tus pagos si no estás inscripto en el organismo provincial. Inscribirse reduce esa retención al 1,5%, lo que representa un ahorro directo importante en cada cobro." },
+    { q: "¿Hola Rentia genera reportes para la AFIP en Argentina?", a: "Sí. Hola Rentia produce reportes mensuales de ingresos desglosados por propiedad y período, listos para tu contador y compatibles con las declaraciones de AFIP e IIBB." }
+  ],
+  articles: [
+    { title: "Cómo registrar tu VUT en Argentina (Ley 6223 CABA)", href: "/es/recursos-legales/argentina/vut-argentina" },
+    { title: "Impuestos Airbnb Argentina: AFIP, IIBB y Monotributo", href: "/es/recursos-legales/argentina/impuestos-airbnb-argentina" },
+    { title: "Zonificación y restricciones Airbnb en Buenos Aires", href: "/es/recursos-legales/argentina/zonificacion-buenos-aires" }
+  ]
+};
+---
+<LegalHub {...props} />

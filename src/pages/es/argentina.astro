@@ -1,0 +1,41 @@
+---
+import CountryPage from '../../components/CountryPage.astro';
+
+const props = {
+  country: "Argentina",
+  slug: "argentina",
+  flag: "🇦🇷",
+  locale: "es_AR",
+  metaTitle: "Software de Alquiler Vacacional en Argentina | Gestión Airbnb | Hola Rentia",
+  metaDesc: "Software de alquiler vacacional en Argentina. Gestiona tus propiedades en Buenos Aires, Bariloche, Mendoza y la Patagonia. Channel manager, automatización y precios dinámicos. Desde $99/mes.",
+  ogTitle: "Software Alquiler Vacacional Argentina | Hola Rentia",
+  ogDesc: "Gestiona tu Airbnb en Argentina con IA. Sin comisiones, tarifa fija mensual. Para anfitriones en Buenos Aires, Bariloche, Mendoza y toda Argentina.",
+  twitterTitle: "Software Airbnb Argentina | Hola Rentia",
+  twitterDesc: "Automatiza tu alquiler vacacional en Argentina. Channel manager, precios dinámicos y automatización. Desde $99/mes.",
+  canonicalUrl: "https://holarentia.com/es/argentina",
+  schemaDesc: "Software de alquiler vacacional en Argentina. Gestión integral de propiedades turísticas con IA para Property Managers y anfitriones en Buenos Aires, Bariloche, Mendoza y la Patagonia.",
+  intro: `<p>Argentina vive un momento único para el alquiler vacacional. El <strong>turismo receptivo internacional</strong> disparado por el tipo de cambio favorable ha convertido a Buenos Aires en uno de los destinos más buscados de Airbnb en toda América Latina. Simultáneamente, destinos como <strong>Bariloche, Mendoza y el norte argentino</strong> registran ocupaciones récord impulsadas tanto por el turismo interno como por visitantes de Brasil, Chile, Uruguay y Europa.</p>
+  <p>En este contexto, los propietarios y gestores que operan con sistemas manuales pierden competitividad cada día. La velocidad de respuesta, los precios dinámicos y la sincronización entre plataformas ya son el estándar del mercado.</p>`,
+  platformTitle: "Gestiona tus propiedades en Argentina desde una sola plataforma",
+  platformContent: `<p>Con Hola Rentia, centraliza la gestión de todos tus departamentos o casas en alquiler temporal en un único panel de control. <strong>Desde un departamento en Palermo SoHo hasta una cabaña en San Martín de los Andes</strong>, todas tus propiedades en un mismo lugar.</p>
+  <p>El sistema te permite gestionar tarifas en diferentes divisas, una realidad fundamental en Argentina, donde los precios de alquiler turístico suelen manejarse en dólares para preservar el valor frente a la inflación, mientras que los pagos locales ocurren en pesos. Hola Rentia se adapta a esta realidad con total flexibilidad.</p>`,
+  channelContent: `<p>El alquiler temporal en Argentina tiene una dinámica muy particular: <strong>alta demanda en temporada alta de verano</strong> (diciembre a febrero), en Semana Santa, en temporada de esquí en Bariloche (julio) y en la vendimia mendocina (marzo). Sincronizar los calendarios manualmente entre Airbnb, Booking.com y otras plataformas durante estos picos de demanda es prácticamente imposible sin tecnología.</p>
+  <p>El channel manager de Hola Rentia sincroniza tu disponibilidad en tiempo real, bloquea fechas automáticamente cuando se produce una reserva y aplica <strong>precios dinámicos adaptados a la estacionalidad argentina</strong>. Maximiza tus ingresos en temporada alta y mantén ocupación en temporada baja con tarifas competitivas.</p>`,
+  automationContent: `<p>El turismo en Argentina es cada vez más internacional: brasileños, europeos y norteamericanos esperan comunicación ágil y en múltiples idiomas. Hola Rentia automatiza todos los mensajes —en español, inglés o portugués— y gestiona el check-in de forma autónoma para que no tengas que estar disponible las 24 horas.</p>`,
+  destinations: [
+    { icon: "🏙️", name: "Buenos Aires", desc: "Palermo, Recoleta y San Telmo lideran el turismo urbano con alta demanda internacional." },
+    { icon: "⛷️", name: "Bariloche y Patagonia", desc: "Esquí en invierno, trekking en verano. Ocupación récord todo el año en la región andina." },
+    { icon: "🍷", name: "Mendoza", desc: "Capital mundial del malbec. Bodegas, alta montaña y turismo gastronómico en auge." },
+    { icon: "🌊", name: "Mar del Plata", desc: "El balneario más popular de Argentina con millones de turistas nacionales cada verano." },
+    { icon: "🦅", name: "Salta y el norte", desc: "Los Valles Calchaquíes, Cafayate y Jujuy atraen cada vez más turismo internacional." },
+    { icon: "🐧", name: "Ushuaia y el sur", desc: "Fin del mundo en auge. Turismo de aventura y cruceros que convierte la ciudad en un hub." },
+  ],
+  faq: [
+    { q: "¿Cómo maneja Hola Rentia los precios en dólares y pesos en Argentina?", a: "Hola Rentia te permite definir tus tarifas en la divisa que prefieras y configurar reglas de precios dinámicos. Las plataformas como Airbnb gestionan la conversión de divisas y el pago llega directamente a tu cuenta bancaria. El sistema se adapta a la realidad del mercado argentino, donde es habitual publicar tarifas en dólares para mantener el valor de referencia." },
+    { q: "¿Funciona bien para propiedades en destinos remotos como la Patagonia o el norte argentino?", a: "Sí. Hola Rentia funciona 100% online y no depende de la presencia física del gestor. Puedes gestionar una cabaña en El Calafate desde Buenos Aires con el mismo nivel de control que tendrías si estuvieras allí. El check-in autónomo, la coordinación de limpieza remota y los mensajes automáticos a huéspedes te permiten operar propiedades en cualquier punto de Argentina." },
+    { q: "¿Hola Rentia ayuda a atraer más turistas internacionales a mis propiedades en Argentina?", a: "Nuestro sistema optimiza tus anuncios en Airbnb y Booking.com para maximizar la visibilidad ante turistas internacionales. Los mensajes automáticos multilingüe (español, inglés, portugués), las guías personalizadas del barrio y el proceso de check-in profesional generan reseñas de 5 estrellas que mejoran tu posicionamiento orgánico en las plataformas." },
+  ],
+  ctaText: "Empieza a rentabilizar tus propiedades en Argentina con <em>Hola Rentia</em>",
+};
+---
+<CountryPage {...props} />

@@ -1,0 +1,41 @@
+---
+import CountryPage from '../../components/CountryPage.astro';
+
+const props = {
+  country: "Panamá",
+  slug: "panama",
+  flag: "🇵🇦",
+  locale: "es_PA",
+  metaTitle: "Software de Alquiler Vacacional en Panamá | Gestión Airbnb | Hola Rentia",
+  metaDesc: "Software de alquiler vacacional en Panamá. Gestiona tus propiedades en Ciudad de Panamá, Bocas del Toro, Boquete y las Islas. Channel manager y automatización. Desde $99/mes.",
+  ogTitle: "Software Alquiler Vacacional Panamá | Hola Rentia",
+  ogDesc: "Gestiona tu Airbnb en Panamá con IA. Sin comisiones, tarifa fija mensual. Para anfitriones en Ciudad de Panamá, Bocas del Toro y Boquete.",
+  twitterTitle: "Software Airbnb Panamá | Hola Rentia",
+  twitterDesc: "Automatiza tu alquiler vacacional en Panamá. Ciudad de Panamá, Bocas del Toro. Desde $99/mes.",
+  canonicalUrl: "https://holarentia.com/es/panama",
+  schemaDesc: "Software de alquiler vacacional en Panamá. Gestión integral de propiedades turísticas para Property Managers y anfitriones en Ciudad de Panamá, Bocas del Toro, Boquete y las Islas del Caribe panameño.",
+  intro: `<p>Panamá ocupa una posición única en el mapa del turismo regional: es el <strong>hub de tránsito más importante de América</strong>, con turismo de negocios constante hacia Ciudad de Panamá, y al mismo tiempo alberga algunos de los destinos de naturaleza más espectaculares del continente, como <strong>Bocas del Toro, Boquete y las Islas del Caribe panameño</strong>.</p>
+  <p>Este doble mercado —turismo urbano/ejecutivo en la ciudad y ecoturismo de alta calidad en el interior y las islas— hace de Panamá un destino especialmente atractivo para los inversores en alquiler vacacional. Los gestores de propiedades que operan en ambos mercados necesitan tecnología que se adapte a ambas realidades.</p>`,
+  platformTitle: "Gestiona tus propiedades en Panamá desde una sola plataforma",
+  platformContent: `<p>Con Hola Rentia, puedes gestionar desde un apartamento en Casco Viejo hasta una casa de playa en Bocas del Toro en el mismo panel de control. <strong>Calendarios sincronizados, gestión de pagos en dólares</strong> —la moneda oficial panameña— y reportes financieros detallados para cada propiedad en tiempo real.</p>
+  <p>El mercado panameño opera en dólares estadounidenses, lo que elimina la complejidad de la gestión de divisas y facilita la captación de turistas internacionales. Hola Rentia se adapta perfectamente a esta realidad y te permite maximizar la rentabilidad de cada propiedad con precios dinámicos calibrados para el mercado local.</p>`,
+  channelContent: `<p>El turismo en Panamá combina la demanda estable del turismo de negocios en Ciudad de Panamá —activa durante todo el año— con los picos estacionales de Bocas del Toro y los destinos de naturaleza, que concentran su mayor afluencia en la temporada seca (diciembre a abril). Gestionar ambos mercados simultáneamente requiere un channel manager robusto.</p>
+  <p>Hola Rentia sincroniza tu disponibilidad en tiempo real en Airbnb, Booking.com, VRBO y otras plataformas. Cuando llega una reserva en cualquier canal, todos los calendarios se actualizan al instante. Además, puedes <strong>personalizar las reglas de precios</strong> para el mercado ejecutivo de la ciudad y el mercado de aventura en la naturaleza.</p>`,
+  automationContent: `<p>Los viajeros que llegan a Panamá son principalmente internacionales: norteamericanos en tránsito o de negocios, europeos en busca de naturaleza y turistas latinoamericanos que aprovechan la conectividad aérea de Panama City. Hola Rentia automatiza la comunicación multilingüe y gestiona el proceso completo de la reserva sin intervención manual.</p>`,
+  destinations: [
+    { icon: "🏙️", name: "Ciudad de Panamá", desc: "Hub financiero con turismo de negocios estable. Casco Viejo es el barrio más demandado para el alquiler turístico." },
+    { icon: "🌺", name: "Bocas del Toro", desc: "Archipiélago caribeño de aguas turquesas. El destino de naturaleza más demandado del país." },
+    { icon: "🌄", name: "Boquete", desc: "Las tierras altas de Chiriquí. Cafetales, aventura y el microclima más agradable de Centroamérica." },
+    { icon: "🏖️", name: "Playa Blanca y Coronado", desc: "Las playas del Pacífico. Destino de fin de semana para residentes y turistas de la región." },
+    { icon: "⛵", name: "Las Perlas", desc: "Archipiélago exclusivo del Pacífico. Turismo de lujo y avistamiento de fauna marina." },
+    { icon: "🌿", name: "El Valle y Santa Fe", desc: "Turismo de naturaleza y aventura en el interior. En crecimiento entre viajeros europeos." },
+  ],
+  faq: [
+    { q: "¿Hola Rentia es útil para propiedades dirigidas al turismo de negocios en Ciudad de Panamá?", a: "Sí, y está especialmente adaptado para este perfil. El turismo de negocios exige tiempos de respuesta muy cortos, proceso de check-in eficiente y comunicación profesional. Hola Rentia automatiza todos estos procesos y garantiza que los ejecutivos y viajeros de negocios reciban una experiencia impecable sin que tengas que estar disponible en todo momento." },
+    { q: "¿El sistema funciona bien para propiedades en islas como Bocas del Toro?", a: "Absolutamente. Hola Rentia funciona 100% online y no requiere presencia física del gestor. Las propiedades en islas como Bocas del Toro se benefician especialmente del check-in autónomo —mediante códigos de acceso o cerraduras inteligentes— y de la coordinación remota del equipo de limpieza, eliminando la dependencia de tener a alguien físicamente disponible en todo momento." },
+    { q: "¿Cómo gestiona Hola Rentia las reservas internacionales en dólares en Panamá?", a: "Panamá opera en dólares estadounidenses, lo que simplifica enormemente la gestión financiera. Hola Rentia trabaja directamente con las plataformas en dólares y los pagos llegan directamente a tu cuenta bancaria panameña. El sistema te da transparencia total sobre los ingresos de cada propiedad sin ningún intermediario que se quede con un porcentaje." },
+  ],
+  ctaText: "Empieza a rentabilizar tus propiedades en Panamá con <em>Hola Rentia</em>",
+};
+---
+<CountryPage {...props} />

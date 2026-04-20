@@ -1,0 +1,50 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Registro Mitur República Dominicana: Cómo Formalizar tu Airbnb",
+  country: "República Dominicana",
+  countryHref: "/es/recursos-legales/republica-dominicana",
+  metaTitle: "Registro Mitur Rep. Dominicana: Airbnb Legal en Punta Cana y Santo Domingo | Hola Rentia",
+  metaDesc: "Cómo registrar tu propiedad ante el Ministerio de Turismo (Mitur) en República Dominicana. Requisitos, clasificación de hospedaje y número de registro para Airbnb.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/republica-dominicana/registro-mitur",
+  intro: `<p>República Dominicana tiene uno de los sectores turísticos más desarrollados del Caribe, y el <strong>Ministerio de Turismo (Mitur)</strong> regula activamente los establecimientos de alojamiento bajo la Ley General de Turismo 541-14. El registro formal ante Mitur no solo es obligatorio, sino que abre las puertas a beneficios fiscales extraordinarios bajo la Ley Confotur.</p>
+  <p>Tanto en <strong>Punta Cana, Cap Cana, Samaná o Las Terrenas</strong>, los anfitriones que operan en Airbnb sin registro se exponen a sanciones del Mitur y al cierre de sus anuncios.</p>`,
+  steps: [
+    { name: "Clasifica tu tipo de establecimiento", text: "El Mitur clasifica los establecimientos en categorías: hotel, apart-hotel, villa turística, casa de huéspedes y alojamiento turístico no convencional. Los apartamentos de Airbnb suelen clasificarse como 'Alojamiento Turístico No Convencional' o 'Apart-Hotel'." },
+    { name: "Presenta la solicitud de clasificación ante Mitur", text: "Descarga el formulario de solicitud en turismo.gob.do. Adjunta: escritura del inmueble o contrato de arrendamiento, planos del inmueble, copia de cédula del titular, certificado de bomberos, certificado sanitario del Ministerio de Salud y fotografías del inmueble." },
+    { name: "Supera la inspección del Mitur", text: "Un inspector del Mitur visitará el inmueble para verificar: condiciones de habitabilidad, seguridad, equipamiento mínimo (aire acondicionado, agua caliente, WiFi) y señalización. Prepara el inmueble con estándares de calidad turística." },
+    { name: "Obtén el Certificado de Clasificación y el número Mitur", text: "Tras la aprobación, Mitur emite el Certificado de Clasificación y un número de registro oficial. Este número debe aparecer en todos tus anuncios de Airbnb, Booking y VRBO." },
+    { name: "Evalúa si aplicas para el régimen Confotur", text: "La Ley 158-01 (Confotur) ofrece exenciones fiscales de hasta 10 años para nuevos proyectos de inversión turística. Si tu propiedad es parte de un desarrollo inmobiliario en una zona turística priorizada, puede calificar para estos incentivos." }
+  ],
+  checklist: [
+    "Escritura del inmueble o contrato de arrendamiento notariado",
+    "Certificado de Bomberos vigente",
+    "Certificado sanitario del Ministerio de Salud",
+    "Formulario de solicitud Mitur completado",
+    "Certificado de Clasificación Mitur obtenido",
+    "Número de registro Mitur publicado en anuncios",
+    "Evaluación de aplicabilidad del régimen Confotur"
+  ],
+  mistakes: [
+    "Operar sin clasificación Mitur en zonas de alta vigilancia como Punta Cana o Cap Cana.",
+    "No renovar el Certificado Mitur cuando expira (generalmente cada 2 años).",
+    "No incluir el número Mitur en los anuncios de plataformas digitales.",
+    "Perder la oportunidad de aplicar a Confotur por no formalizarse a tiempo."
+  ],
+  documentation: [
+    "Cédula dominicana o pasaporte del titular",
+    "Escritura de la propiedad o contrato notariado",
+    "Certificado de Bomberos",
+    "Certificado sanitario del Ministerio de Salud",
+    "Fotografías del establecimiento (interior y exterior)",
+    "Planos del inmueble"
+  ],
+  faq: [
+    { q: "¿Es obligatorio el registro Mitur para alquilar en Airbnb en Rep. Dominicana?", a: "Sí. La Ley General de Turismo 541-14 obliga a todos los prestadores de servicios de alojamiento a registrarse ante Mitur, independientemente del canal de venta (Airbnb, Booking, directo, etc.)." },
+    { q: "¿Qué es el régimen Confotur y cómo me beneficia?", a: "Confotur (Ley 158-01) ofrece exenciones fiscales de hasta 10 años para proyectos de inversión turística en zonas priorizadas. Incluye exención de impuesto sobre la renta, ITBIS y aranceles de importación para el equipamiento. Es especialmente relevante para nuevos desarrollos en Punta Cana, Samaná o el norte del país." },
+    { q: "¿Hola Rentia funciona para el mercado de Rep. Dominicana?", a: "Sí. Hola Rentia gestiona propiedades en toda la región del Caribe hispano. Para República Dominicana, el sistema adapta los reportes financieros a los requerimientos de la DGII y genera el registro de huéspedes compatible con los estándares del Mitur." }
+  ]
+};
+---
+<LegalArticle {...props} />

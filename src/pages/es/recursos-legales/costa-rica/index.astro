@@ -1,0 +1,28 @@
+---
+// src/pages/es/recursos-legales/costa-rica/index.astro
+import LegalHub from '../../../../components/LegalHub.astro';
+const props={
+  country:"Costa Rica",flag:"🇨🇷",slug:"costa-rica",
+  metaTitle:"Guía Legal Alquiler Vacacional Costa Rica | ICT e Impuestos | Hola Rentia",
+  metaDesc:"Normativa legal para Airbnb en Costa Rica. Registro ante el ICT, impuestos del 13% y regulaciones turísticas para anfitriones.",
+  canonicalUrl:"https://holarentia.com/es/recursos-legales/costa-rica",
+  intro:"<p>Costa Rica, el paraíso del ecoturismo, exige a los anfitriones registrarse ante el <strong>ICT (Instituto Costarricense de Turismo)</strong> bajo la Ley de Alquileres de Corta estancia.</p>",
+  licensesContent:"<p>Los propietarios deben presentar una declaración jurada de actividades turísticas y obtener el registro como prestador de servicios de alojamiento.</p>",
+  taxesContent:"<p>El alquiler vacacional está sujeto al <strong>13% de IVA</strong>. Además, los anfitriones deben pagar el impuesto sobre la renta sobre sus utilidades netas.</p>",
+  legalObligations:"<p>Obligación de emitir facturación electrónica costarricense y mantener registros de seguridad para los visitantes.</p>",
+  citiesContent:"<p>Zonas como Tamarindo, Jacó y San José tienen dinámicas legales enfocadas en la protección del turista y la sostenibilidad.</p>",
+  complianceContent:"<p>Para empresas de Property Management es indispensable contar con sistemas que se integren con la plataforma de Hacienda para facturación automática.</p>",
+  toolsContent:"<p>Software especializado ayuda a separar el cobro del IVA y preparar los reportes tributarios exigidos por ley.</p>",
+  faq:[
+    {q:"¿Cuánto es el impuesto en Costa Rica para Airbnb?",a:"El IVA para alquileres turísticos en Costa Rica es del 13%, uno de los más altos de Centroamérica. Adicionalmente, pagas el impuesto sobre la renta sobre las utilidades netas."},
+    {q:"¿Es obligatorio registrarse ante el ICT para Airbnb en Costa Rica?",a:"Sí. La Ley 6990 obliga a todos los prestadores de servicios de hospedaje turístico a registrarse ante el Instituto Costarricense de Turismo (ICT), independientemente del canal de venta."},
+    {q:"¿Hola Rentia funciona para el mercado de Costa Rica?",a:"Sí. Hola Rentia gestiona propiedades en Costa Rica con reportes en colones y dólares, integración con Airbnb y Booking, y mensajes automáticos para huéspedes en español e inglés."}
+  ],
+  articles:[
+    { title: "Registro ICT Costa Rica: Declaración Turística Paso a Paso", href: "/es/recursos-legales/costa-rica/declaracion-ict-costa-rica" },
+    { title: "Impuestos ICT y Hacienda para Airbnb en Costa Rica", href: "/es/recursos-legales/costa-rica/impuestos-ict-costa-rica" },
+    { title: "Registro de Huéspedes y Protección de Datos en Costa Rica", href: "/es/recursos-legales/costa-rica/registro-huespedes-costa-rica" }
+  ]
+};
+---
+<LegalHub {...props} />

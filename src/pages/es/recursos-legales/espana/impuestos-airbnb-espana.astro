@@ -1,0 +1,49 @@
+---
+// src/pages/es/recursos-legales/espana/impuestos-airbnb-espana.astro
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Impuestos para anfitriones de Airbnb en España (Hacienda 2026)",
+  country: "España",
+  countryHref: "/es/recursos-legales/espana",
+  metaTitle: "Impuestos Airbnb España | Hacienda e IRPF | Hola Rentia",
+  metaDesc: "Guía completa de impuestos para alquiler vacacional en España. Cómo declarar en el IRPF, deducciones permitidas y gestión del IVA para anfitriones.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/espana/impuestos-airbnb-espana",
+  intro: `
+    <p>Declarar los ingresos por alquiler vacacional en España es una obligación que Hacienda vigila cada vez más de cerca gracias al **Modelo 179**. No hacerlo puede conllevar multas que duplican la cantidad no declarada.</p>
+    <p>Sin embargo, declarar correctamente también te permite deducir muchos gastos, reduciendo la base imponible y el pago final de impuestos. Aquí te explicamos cómo hacerlo bien.</p>
+  `,
+  steps: [
+    { name: "Saber si eres Rendimiento de Capital o Actividad Económica", text: "Si solo alquilas, es Rendimiento de Capital Inmobiliario. Si tienes a alguien contratado con jornada completa para la gestión, se considera Actividad Económica (Autónomo)." },
+    { name: "Calcular los Ingresos Brutos", text: "Debes declarar el total de lo que paga el huésped, antes de restar la comisión de Airbnb. Esa comisión luego la deducirás como gasto." },
+    { name: "Identificar los Gastos Deducibles", text: "Puedes restar de los ingresos: IBI, seguros, comisiones, suministros (luz, agua) proporcionales a los días alquilados, reparaciones y publicidad." },
+    { name: "Aplicar la amortización", text: "Puedes deducir anualmente el 3% del valor de construcción del inmueble. Es una de las deducciones más potentes para anfitriones." },
+    { name: "Declarar en el IRPF", text: "Incluye los datos en la sección correspondiente de tu declaración anual de la renta (normalmente en los apartados de inmuebles arrendados)." }
+  ],
+  checklist: [
+    "Facturas de todas las comisiones de plataformas",
+    "Recibos de IBI y tasas de basura",
+    "Facturas de luz, agua e internet",
+    "Póliza del seguro de hogar y RC",
+    "Contrato de gestión (si usas agencia)"
+  ],
+  mistakes: [
+    "No declarar por pensar que los ingresos quedan en una 'cuenta virtual' de la plataforma.",
+    "Restar la comisión de Airbnb antes de declarar el ingreso bruto.",
+    "No aplicar la amortización del inmueble, perdiendo un ahorro fiscal importante.",
+    "No declarar el IVA si estás ofreciendo servicios de hostelería (limpieza diaria)."
+  ],
+  documentation: [
+    "Certificados de ingresos de Airbnb/Booking",
+    "Facturas de reparaciones y mobiliario",
+    "Recibos de suministros",
+    "Declaración del Modelo 179 (informativa)"
+  ],
+  faq: [
+    { q: "¿Tengo derecho a la reducción del 60% por alquiler?", a: "No. La reducción del 60% en el IRPF solo se aplica a alquileres de vivienda habitual (larga estancia). El alquiler vacacional tributa por el neto sin esa reducción." },
+    { q: "¿Cuándo tengo que cobrar IVA?", a: "Solo si ofreces servicios propios de la hotelería: recepción presencial 24h, limpieza durante la estancia, cambio de ropa de cama frecuente o restauración." },
+    { q: "¿Hacienda sabe que alquilo mi casa?", a: "Sí. Desde 2018, las plataformas están obligadas a informar a la AEAT trimestralmente sobre todos los anfitriones y sus ingresos mediante el Modelo 179." }
+  ]
+};
+---
+<LegalArticle {...props} />

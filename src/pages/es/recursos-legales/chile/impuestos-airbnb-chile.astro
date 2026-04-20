@@ -1,0 +1,48 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Impuestos Airbnb Chile: IVA, Renta y Patente Municipal para Anfitriones",
+  country: "Chile",
+  countryHref: "/es/recursos-legales/chile",
+  metaTitle: "Impuestos Airbnb Chile 2026: IVA 19%, Renta Primera Categoría | Hola Rentia",
+  metaDesc: "Cuántos impuestos paga un anfitrión de Airbnb en Chile. IVA del 19%, renta de primera categoría, patente municipal y cómo declarar ante el SII correctamente.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/chile/impuestos-airbnb-chile",
+  intro: `<p>El arrendamiento vacacional en Chile tiene una carga tributaria específica distinta a la del alquiler residencial tradicional. La combinación de <strong>IVA (19%), Impuesto a la Renta de Primera Categoría</strong> y potencialmente la patente municipal puede afectar hasta el 30-35% de tus ingresos brutos si no optimizas correctamente tu estructura fiscal.</p>
+  <p>Esta guía te muestra los impuestos exactos que corresponden, cómo minimizarlos legalmente y qué gastos puedes deducir como anfitrión profesional en Chile.</p>`,
+  steps: [
+    { name: "Calcula tu carga de IVA neto", text: "El IVA se paga sobre el valor del servicio (precio de la noche más servicios adicionales). Puedes rebajar el IVA crédito de tus compras asociadas al inmueble: artículos de limpieza, reparaciones, nuevo equipamiento. El IVA neto es la diferencia." },
+    { name: "Determina tu Impuesto a la Renta", text: "Como persona natural en régimen simplificado (14D N°3), tributas el 25% sobre la renta líquida imponible (ingresos menos gastos necesarios, con tope del 30% de los ingresos). Como empresa, aplica el 27% de primera categoría con saldo a favor de los socios." },
+    { name: "Verifica si debes pagar patente municipal", text: "Comunas como Santiago, Las Condes, Vitacura y Providencia exigen patente comercial para el arrendamiento turístico habitual. Su costo varía entre el 0,25% y el 0,5% del capital propio declarado, con monto mínimo." },
+    { name: "Aprovecha los gastos deducibles", text: "En régimen de primera categoría puedes deducir: comisiones de Airbnb (generalmente 3%), gastos de limpieza, intereses del crédito hipotecario si aplica, seguros, reparaciones, mobiliario y la proporción de suministros (luz, agua, internet)." },
+    { name: "Presenta las declaraciones en los plazos correctos", text: "F29 (IVA) se presenta mensualmente el día 20. F22 (Renta) se presenta en abril del año siguiente. El pago de impuesto de primera categoría puede fraccionarse en pagos provisionales mensuales (PPM) durante el año." }
+  ],
+  checklist: [
+    "Cálculo mensual del IVA débito y crédito (F29)",
+    "Archivo de todas las facturas de gastos con IVA crédito",
+    "Cálculo trimestral de pagos provisionales mensuales (PPM)",
+    "Declaración anual F22 en plazo (abril)",
+    "Revisión de patente municipal activa",
+    "Control de tope de ingresos para régimen simplificado"
+  ],
+  mistakes: [
+    "No descontar el IVA crédito de las compras del inmueble (es dinero que recuperas).",
+    "Olvidar los PPM (Pagos Provisionales Mensuales) y recibir una deuda anual inesperada en avril.",
+    "Pagar el 19% de IVA sin haber incluido el IVA en el precio de la noche del anuncio.",
+    "No revisar si la patente municipal de tu comuna está activa (puede generar multas del municipio)."
+  ],
+  documentation: [
+    "Facturas electrónicas emitidas por mes",
+    "Facturas de compras con IVA crédito",
+    "Formularios F29 presentados",
+    "Declaración F22 anual",
+    "Patente municipal vigente"
+  ],
+  faq: [
+    { q: "¿Puedo incluir el IVA en el precio de Airbnb Chile?", a: "Sí. Lo más común es añadir el IVA al precio de la noche directamente en la configuración de Airbnb (precio base + 19%). O puedes incorporarlo en el precio total visible al huésped. Lo importante es que el precio cobrado incluya el IVA que pagas al SII." },
+    { q: "¿Cuánto impuesto paga un anfitrión con 3 propiedades en Santiago?", a: "Aproximadamente: 19% IVA neto sobre la base imponible (tras descontar crédito fiscal), más 25% sobre la renta líquida (ingresos menos gastos). Con gastos bien documentados, la carga efectiva puede rondar el 12-18% de los ingresos brutos totales." },
+    { q: "¿Hola Rentia me ayuda a llevar la contabilidad para el SII?", a: "Hola Rentia genera reportes de ingresos mensuales por propiedad y reserva, con el desglose que necesita tu contador para las declaraciones del SII. Puedes exportar los datos en formato Excel o PDF." }
+  ]
+};
+---
+<LegalArticle {...props} />

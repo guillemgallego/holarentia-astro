@@ -1,0 +1,28 @@
+---
+// src/pages/es/recursos-legales/republica-dominicana/index.astro
+import LegalHub from '../../../../components/LegalHub.astro';
+const props={
+  country:"República Dominicana",flag:"🇩🇴",slug:"republica-dominicana",
+  metaTitle:"Guía Legal Alquiler Vacacional Rep. Dominicana | Mitur y DGII | Hola Rentia",
+  metaDesc:"Normativa legal para Airbnb en Rep. Dominicana. Registro en Mitur, impuestos DGII y seguridad turística.",
+  canonicalUrl:"https://holarentia.com/es/recursos-legales/republica-dominicana",
+  intro:"<p>República Dominicana regula el sector a través del <strong>Ministerio de Turismo (Mitur)</strong>, enfocándose en la formalidad para proteger su industria turística principal.</p>",
+  licensesContent:"<p>Se requiere registro en el sistema de clasificación de Mitur y licencia de operación para proyectos inmobiliarios con fines turísticos.</p>",
+  taxesContent:"<p>Sujeto al pago de ITBIS (IVA) y declaraciones de renta ante la <strong>DGII</strong>. Existen incentivos fiscales (Confotur) para nuevos desarrollos turísticos.</p>",
+  legalObligations:"<p>Reporte de información para estadísticas turísticas y cumplimiento de normas de seguridad física en las propiedades.</p>",
+  citiesContent:"<p>Punta Cana, Santo Domingo y Las Terrenas son las zonas con mayores controles de cumplimiento legal.</p>",
+  complianceContent:"<p>Los gestores deben asegurar la transparencia fiscal mediante facturación que cumpla con los estándares de la DGII.</p>",
+  toolsContent:"<p>Sistemas de property management facilitan la gestión de carteras bajo el régimen de Confotur y reportes financieros.</p>",
+  faq:[
+    {q:"¿Es obligatorio registrarse en Mitur para Airbnb en Rep. Dominicana?",a:"Sí, para operar formalmente bajo la Ley General de Turismo 541-14 y acceder a posibles beneficios fiscales como el régimen Confotur."},
+    {q:"¿Qué es el régimen Confotur y cómo beneficia a los anfitriones?",a:"Confotur (Ley 158-01) ofrece exenciones fiscales de hasta 10 años para proyectos turísticos en zonas priorizadas, incluyendo exención de ISR, ITBIS y aranceles para equipamiento. Es especialmente relevante en Punta Cana y Samaná."},
+    {q:"¿Hola Rentia gestiona propiedades en República Dominicana?",a:"Sí. Hola Rentia funciona en todo el Caribe hispano, con reportes en pesos dominicanos y dólares, y mensajes automáticos en español e inglés para los viajeros internacionales que visitan la isla."}
+  ],
+  articles:[
+    { title: "Registro Mitur Rep. Dominicana: Cómo Formalizar tu Airbnb", href: "/es/recursos-legales/republica-dominicana/registro-mitur" },
+    { title: "Impuestos DGII para Airbnb: ITBIS y Renta Turística", href: "/es/recursos-legales/republica-dominicana/impuestos-dgii" },
+    { title: "Seguridad Turística en Rep. Dominicana: Bomberos y Salud", href: "/es/recursos-legales/republica-dominicana/seguridad-turistica" }
+  ]
+};
+---
+<LegalHub {...props} />

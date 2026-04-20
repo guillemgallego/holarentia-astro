@@ -1,0 +1,48 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "COPI Puerto Rico: Certificado de Operación para Propiedades de Arrendamiento",
+  country: "Puerto Rico",
+  countryHref: "/es/recursos-legales/puerto-rico",
+  metaTitle: "COPI Puerto Rico: Certificado Propiedad de Inversión Airbnb | Hola Rentia",
+  metaDesc: "Qué es el COPI en Puerto Rico y cómo afecta a los anfitriones de Airbnb. Certificado de Operación de Propiedad de Inversión, exenciones fiscales y procedimiento de solicitud.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/puerto-rico/copi-puerto-rico",
+  intro: `<p>El <strong>Certificado de Operación de Propiedad de Inversión (COPI)</strong> es un instrumento fiscal creado bajo el Código de Incentivos de Puerto Rico (Ley 60-2019) que permite a los inversores en propiedades de alquiler vacacional acceder a tasas impositivas preferenciales del <strong>4% sobre los ingresos de alquiler</strong>.</p>
+  <p>Es especialmente relevante para inversores que han reubicado su residencia fiscal a Puerto Rico (Decreto Acto 22/Act 60) y para property managers profesionales con múltiples propiedades en la isla.</p>`,
+  steps: [
+    { name: "Verifica si cumples los requisitos de elegibilidad", text: "El COPI está disponible para individuos que sean residentes de Puerto Rico o que hayan establecido domicilio fiscal en Puerto Rico bajo el Act 60. También para entidades (LLC, Corp.) constituidas en PR. Los ingresos elegibles son los de arrendamiento de propiedades calificadas." },
+    { name: "Presenta la solicitud ante el DDEC", text: "La solicitud del COPI se presenta ante el Departamento de Desarrollo Económico y Comercio (DDEC). Adjunta: escritura de la propiedad, plan de negocio básico, declaración de residencia en PR (si aplica Act 60), y justificación del impacto económico positivo en Puerto Rico." },
+    { name: "Mantén el cumplimiento del decreto", text: "Una vez otorgado, el COPI tiene condiciones de cumplimiento: mantener la residencia fiscal en PR, presentar declaraciones anuales de cumplimiento, no incumplir con las obligaciones tributarias de Hacienda PR y reportar cambios en la actividad." },
+    { name: "Aprovecha la tasa del 4% sobre ingresos de alquiler", text: "Con el COPI vigente, los ingresos por arrendamiento tributan al 4% (frente a tasas marginales de hasta 33% sin el decreto). El ahorro fiscal puede ser enorme para inversores con múltiples propiedades en Rincón, San Juan o las islas." },
+    { name: "Combina el COPI con otras exenciones disponibles", text: "El Act 60 de Puerto Rico ofrece otras exenciones complementarias: exención del 100% de impuestos sobre dividendos y ganancias de capital para nuevos residentes (Capítulo 2). Consulta con un abogado fiscal especializado en Act 60." }
+  ],
+  checklist: [
+    "Residencia fiscal establecida en Puerto Rico (si aplica Act 60)",
+    "Solicitud COPI presentada ante DDEC",
+    "Decreto COPI otorgado y vigente",
+    "Declaraciones anuales de cumplimiento presentadas",
+    "Licencia CTPR vigente (obligatoria para operar con el COPI)",
+    "Consulta con abogado fiscal especializado en Act 60 realizada"
+  ],
+  mistakes: [
+    "Pensar que el COPI elimina todas las obligaciones tributarias (aún debes presentar declaraciones y cumplir con Hacienda PR).",
+    "No mantener la residencia fiscal en PR: si viajas más de 6 meses al año fuera de PR, puedes perder el decreto.",
+    "No consultar con un abogado fiscal especializado en Act 60 antes de solicitar el COPI.",
+    "Solicitar el COPI sin tener la licencia CTPR vigente (requisito previo indispensable)."
+  ],
+  documentation: [
+    "Escritura de la propiedad o propiedades calificadas",
+    "Prueba de residencia fiscal en Puerto Rico",
+    "Declaraciones de Hacienda PR de años anteriores",
+    "Licencia CTPR vigente",
+    "Decreto COPI otorgado por DDEC"
+  ],
+  faq: [
+    { q: "¿Cualquier anfitrión de Airbnb en Puerto Rico puede solicitar el COPI?", a: "No. El COPI está diseñado principalmente para inversores que establecen su residencia fiscal en Puerto Rico y que operan propiedades de inversión de forma profesional. Los anfitriones ocasionales sin residencia en PR generalmente no califican para este decreto." },
+    { q: "¿Cuánto me ahorraría con el COPI en impuestos?", a: "Sin COPI: ISR en PR sobre ingresos de alquiler puede llegar al 33% en los tramos superiores. Con COPI: tributas al 4% sobre los ingresos de arrendamiento calificado. Para un anfitrión con $100,000 anuales netos, el ahorro puede ser de $29,000+ al año." },
+    { q: "¿Hola Rentia tiene experiencia con propiedades bajo Act 60 en Puerto Rico?", a: "Sí. Hola Rentia trabaja con property managers profesionales en Puerto Rico, incluyendo inversores acogidos al Act 60. El sistema genera reportes detallados de ingresos por propiedad que son compatibles con los requerimientos de cumplimiento del COPI." }
+  ]
+};
+---
+<LegalArticle {...props} />

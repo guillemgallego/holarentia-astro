@@ -1,0 +1,28 @@
+---
+// src/pages/es/recursos-legales/puerto-rico/index.astro
+import LegalHub from '../../../../components/LegalHub.astro';
+const props={
+  country:"Puerto Rico",flag:"🇵🇷",slug:"puerto-rico",
+  metaTitle:"Guía Legal Alquiler Vacacional Puerto Rico | CTPR y Hacienda | Hola Rentia",
+  metaDesc:"Normativa legal para Airbnb en Puerto Rico. Registro en CTPR, Room Tax del 7% e impuestos de Hacienda PR.",
+  canonicalUrl:"https://holarentia.com/es/recursos-legales/puerto-rico",
+  intro:"<p>Puerto Rico es un mercado de alta demanda bajo la **Compañía de Turismo de Puerto Rico (CTPR)** y leyes federales de EE.UU.</p>",
+  licensesContent:"<p>Se requiere registro como 'Short-term Rental' ante la <strong>CTPR</strong> y el pago del Room Tax (7%).</p>",
+  taxesContent:"<p>Los anfitriones pagan un impuesto de ocupación del 7% y reportan ingresos a <strong>Hacienda Puerto Rico</strong>.</p>",
+  legalObligations:"<p>Obligación de cumplir con normas de seguridad, seguros comerciales y reglamentos de hospederías.</p>",
+  citiesContent:"<p>San Juan, Rincón, Vieques y Culebra son zonas con regulaciones locales enfocadas en la convivencia ciudadana.</p>",
+  complianceContent:"<p>El uso del sistema SURI de Hacienda es obligatorio para el reporte de impuestos locales y contribuciones.</p>",
+  toolsContent:"<p>Herramientas de automatización ayudan a recolectar el Room Tax de forma correcta para evitar multas de la CTPR.</p>",
+  faq:[
+    {q:"¿Cuánto es el Room Tax en Puerto Rico para Airbnb?",a:"El impuesto de ocupación de habitaciones (Room Tax) en Puerto Rico para alquileres cortos es del 7% estatal. Algunos municipios como San Juan añaden hasta un 1,5% adicional. Airbnb recauda y remite automaticamente el estatal."},
+    {q:"¿Qué es el COPI de Puerto Rico y cómo ayuda a los anfitriones?",a:"El COPI (Certificado de Operación de Propiedad de Inversión) del Act 60 permite a residentes fiscales de Puerto Rico tributar sus ingresos de alquiler al 4% en lugar del 25-33% estándar, generando un ahorro fiscal muy significativo para inversores con varias propiedades."},
+    {q:"¿Hola Rentia gestiona propiedades en San Juan, Rincón y las islas?",a:"Sí. Hola Rentia gestiona propiedades en toda la isla de Puerto Rico con reportes en USD, mensajes automáticos en inglés y español, y un sistema de precios dinámicos para maximizar ingresos en temporada alta (diciembre-abril)."}
+  ],
+  articles:[
+    { title: "Licencia CTPR Puerto Rico: Registro Airbnb Paso a Paso", href: "/es/recursos-legales/puerto-rico/licencia-ctpr-puerto-rico" },
+    { title: "Impuestos Hacienda PR: Room Tax, SUT e ISR para Airbnb", href: "/es/recursos-legales/puerto-rico/impuestos-hacienda-pr" },
+    { title: "COPI Puerto Rico: Tributar al 4% con Act 60", href: "/es/recursos-legales/puerto-rico/copi-puerto-rico" }
+  ]
+};
+---
+<LegalHub {...props} />

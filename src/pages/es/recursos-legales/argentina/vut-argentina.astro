@@ -1,0 +1,49 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Cómo registrar tu Vivienda de Uso Turístico (VUT) en Argentina",
+  country: "Argentina",
+  countryHref: "/es/recursos-legales/argentina",
+  metaTitle: "Registro VUT Argentina: Alquiler Turístico en CABA y Provincias | Hola Rentia",
+  metaDesc: "Guía completa para registrar tu Vivienda de Uso Turístico en Argentina. Pasos en CABA (Ley 6223), requisitos de AFIP y habilitación municipal.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/argentina/vut-argentina",
+  intro: `<p>En Argentina, el alquiler vacacional de corto plazo está regulado por la <strong>Ley 6223 en CABA</strong> y por normativas municipales en el interior. Plataformas como Airbnb están sujetas a convenios de recaudación con el gobierno porteño. Operar sin registro implica multas y el bloqueo del anuncio.</p>
+  <p>Esta guía te explica paso a paso cómo constitituirte legalmente como anfitrión en Argentina, con especial foco en <strong>Buenos Aires, Bariloche y Mendoza</strong>, los mercados con mayor actividad y control.</p>`,
+  steps: [
+    { name: "Verifica que tu propiedad es habitual de alquiler turístico", text: "La Ley 6223 de CABA distingue entre alquiler habitual (más de 3 unidades o más de 90 noches/año) que requiere habilitación como hotel, y el no habitual que tiene proceso simplificado. Ubica tu situación antes de iniciar." },
+    { name: "Inicio de actividad ante AFIP", text: "Darte de alta como Monotributista (categoría F o superior según ingresos proyectados) o Responsable Inscripto si gestionas varias unidades. El código de actividad AFIP es 681099 - Servicios inmobiliarios con bienes propios." },
+    { name: "Inscripción en Ingresos Brutos (IIBB)", text: "En CABA se gestiona ante AGIP. En otras provincias, ante el organismo provincial correspondiente. Es fundamental para evitar retenciones del 100% por parte de Airbnb en mercado argentino." },
+    { name: "Registro en la plataforma BA Turismo", text: "La Ciudad de Buenos Aires exige el alta en el Registro de Viviendas de Uso Turístico (VUT) en línea. Deberás adjuntar escritura o contrato de alquiler, constancias de habilitación de AFIP e IIBB y seguro de responsabilidad civil." },
+    { name: "Publicar el número de registro", text: "Una vez aprobado, incluye el número de registro VUT en todos tus anuncios de Airbnb, Booking y VRBO. La omisión es una infracción sancionable." }
+  ],
+  checklist: [
+    "Alta en AFIP (CUIT activo con actividad turística)",
+    "Inscripción en Ingresos Brutos (AGIP en CABA)",
+    "Seguro de Responsabilidad Civil para alquiler temporal",
+    "Registro VUT en la plataforma municipal correspondiente",
+    "Número de registro publicado en todos los anuncios",
+    "Convenio 2900/E de Airbnb inscripto en AGIP (si aplica)"
+  ],
+  mistakes: [
+    "No inscribirse en IIBB: Airbnb retiene el 100% de IVA y hasta el 9% de IIBB sin inscripción.",
+    "Superar el umbral del Monotributo sin cambiar de categoría (arriesga exclusión retroactiva).",
+    "Alquilar por más de 90 noches/año sin la habilitación de establecimiento hotelero.",
+    "No declarar el ingreso por Airbnb pensando que 'no te van a ver': Airbnb reporta automáticamente a AFIP."
+  ],
+  documentation: [
+    "DNI o CUIT del titular",
+    "Escritura o cesión del inmueble",
+    "Constancia de inscripción AFIP",
+    "Constancia de inscripción IIBB (AGIP)",
+    "Póliza de Seguro de RC vigente",
+    "Plano de habilitación municipal (si aplica)"
+  ],
+  faq: [
+    { q: "¿Cuánto paga de impuestos un anfitrión de Airbnb en Argentina?", a: "Un Monotributista paga una cuota fija mensual que incluye impuestos nacionales y jubilación. Adicionalmente, el 3,5% de IIBB en CABA. Si supera el tope del Monotributo, debe pasarse a Responsable Inscripto con IVA e IRPF." },
+    { q: "¿Es necesario el VUT si solo alquilo una habitación de mi casa?", a: "Si resides en el inmueble y alquilas habitaciones de forma esporádica (menos de 90 noches/año), la normativa es más laxa. Sin embargo, AFIP y AGIP requieren igual el alta impositiva desde el primer peso de ingreso." },
+    { q: "¿Cómo gestiona Hola Rentia el cumplimiento fiscal en Argentina?", a: "Hola Rentia genera reportes mensuales de ingresos por unidad que puedes usar directamente para tus declaraciones de monotributo e IIBB, ahorrando horas de trabajo administrativo." }
+  ]
+};
+---
+<LegalArticle {...props} />

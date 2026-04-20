@@ -1,0 +1,48 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Declaración SII para Airbnb en Chile: Inicio de Actividades y Tributación",
+  country: "Chile",
+  countryHref: "/es/recursos-legales/chile",
+  metaTitle: "Declaración SII Airbnb Chile 2026: Inicio de Actividades y Renta | Hola Rentia",
+  metaDesc: "Cómo declarar tu Airbnb ante el SII en Chile. Inicio de actividades, boletas de honorarios electrónicas, IVA del 19% en arrendamiento amoblado y renta de primera categoría.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/chile/declaracion-sii-chile",
+  intro: `<p>En Chile, el <strong>Servicio de Impuestos Internos (SII)</strong> clasifica el arrendamiento de inmuebles amoblados por periodos cortos como una actividad comercial sujeta a IVA (19%) y a renta de primera categoría. Esto supone obligaciones muy concretas para los anfitriones de Airbnb y Booking.</p>
+  <p>A diferencia del arrendamiento de largo plazo (exento de IVA), el alquiler vacacional se considera prestación de servicios de alojamiento, lo que cambia completamente el marco tributario aplicable.</p>`,
+  steps: [
+    { name: "Inicio de actividades en SII", text: "Ingresa al portal del SII (sii.cl) con tu Clave Única o contraseña SII y realiza el inicio de actividades para el código de actividad 5510 (hoteles, camping y otros tipos de hospedaje). Este paso es obligatorio antes de tu primera reserva." },
+    { name: "Autoriza la emisión de documentos electrónicos", text: "Solicita autorización para emitir Boletas Electrónicas de Honorarios o Facturas Electrónicas según tu régimen. Los documentos tributarios son obligatorios por cada estadía o de forma mensual consolidada." },
+    { name: "Determina tu régimen de renta", text: "Si eres persona natural y tus ingresos anuales son menores a $800 UF (~$29M CLP), puedes optar por el régimen de tributación simplificado (14D N°3). Si superas ese monto, debes tributar en primera categoría con contabilidad completa o simplificada." },
+    { name: "Declara y paga el IVA mensualmente", text: "El IVA debito se genera con cada factura o boleta emitida. El IVA crédito lo recuperas de tus compras asociadas (artículos de limpieza, reparaciones, equipamiento). El saldo neto se paga el día 20 del mes siguiente con el Formulario 29." },
+    { name: "Declara la renta anual en abril", text: "En abril de cada año, presenta el Formulario 22 de declaración anual de renta. Incluye todos los ingresos por arrendamiento del año anterior, descontando los gastos necesarios para producirlos (si tienes contabilidad)." }
+  ],
+  checklist: [
+    "Inicio de actividades en SII (código 5510 hospedaje)",
+    "Autorización para emitir documentos tributarios electrónicos",
+    "Elección de régimen de renta (simplificado o primera categoría)",
+    "Declaración mensual de IVA (F29) los días 20 de cada mes",
+    "Declaración anual de renta (F22) en abril",
+    "Patente comercial municipal en activo (si la comuna lo exige)"
+  ],
+  mistakes: [
+    "Considerar que el arrendamiento vacacional está exento de IVA como el arrendamiento residencial.",
+    "No iniciar actividades antes de la primera reserva (el SII puede detectar ingresos en cuentas bancarias).",
+    "Omitir la patente municipal: algunas comunas la exigen para el arrendamiento turístico.",
+    "No guardar las facturas de gastos asociados (artículos del hogar, reparaciones) para el crédito fiscal de IVA."
+  ],
+  documentation: [
+    "RUT activo en SII con actividad 5510",
+    "Autorización de documentos electrónicos (SII.cl)",
+    "Facturas o boletas emitidas por cada reserva",
+    "Facturas de gastos del inmueble (crédito IVA)",
+    "Formularios F29 presentados mensualmente"
+  ],
+  faq: [
+    { q: "¿El arrendamiento de inmuebles amoblados en Chile paga IVA?", a: "Sí. Si el inmueble está amoblado y se arrienda por periodos cortos de forma habitual, el SII lo clasifica como servicio de hospedaje, gravado con el 19% de IVA. El arrendamiento de largo plazo (más de 3 meses) sí está exento." },
+    { q: "¿Cuándo debo iniciar actividades en SII para Airbnb?", a: "Antes de recibir tu primera reserva pagada. El SII puede cruzar la información de Airbnb con tu RUT para detectar ingresos no declarados. Las multas por inicio tardío de actividades van de 1 UTM a 5 UTM." },
+    { q: "¿Hola Rentia me ayuda con la tributación en Chile?", a: "Hola Rentia genera reportes mensuales detallados de ingresos por propiedad y por reserva, en formato compatible con la declaración del F29 y el F22. Esto simplifica enormemente la colaboración con tu contador." }
+  ]
+};
+---
+<LegalArticle {...props} />

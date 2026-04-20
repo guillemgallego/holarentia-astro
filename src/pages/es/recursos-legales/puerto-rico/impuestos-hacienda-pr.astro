@@ -1,0 +1,48 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Impuestos Hacienda Puerto Rico para Airbnb: Room Tax, SUT y Renta",
+  country: "Puerto Rico",
+  countryHref: "/es/recursos-legales/puerto-rico",
+  metaTitle: "Impuestos Airbnb Puerto Rico 2026: Room Tax 7%, SUT e ISR | Hola Rentia",
+  metaDesc: "Guía fiscal para anfitriones de Airbnb en Puerto Rico. Room Tax del 7%, Impuesto sobre Ventas y Uso (SUT), Impuesto Sobre la Renta y cómo declarar en el sistema SURI.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/puerto-rico/impuestos-hacienda-pr",
+  intro: `<p>Puerto Rico tiene un sistema fiscal propio, distinto al del resto de EE.UU. Los anfitriones de Airbnb en la isla están sujetos al <strong>Room Tax (7%)</strong>, el <strong>Impuesto sobre Ventas y Uso (SUT)</strong> y el <strong>Impuesto sobre la Renta (ISR)</strong> de Puerto Rico, todos administrados por el <strong>Departamento de Hacienda de Puerto Rico</strong> a través del sistema SURI.</p>
+  <p>Importante: los residentes de Puerto Rico generalmente no presentan declaración federal de renta de EE.UU. por sus ingresos de fuente puertorriqueña, pero sí presentan la declaración ante Hacienda PR.</p>`,
+  steps: [
+    { name: "Activa tu cuenta en SURI", text: "El Sistema Unificado de Rentas Internas (hacienda.pr.gov) es la plataforma donde presentas todas tus declaraciones y pagas todos los impuestos. Activa tu cuenta con tu Número de Seguro Social o ITIN si eres no residente." },
+    { name: "Registra tu actividad de hospedaje en Hacienda", text: "Obtén el Merchant Registration (número de IVA local equivalente) para el código de actividad de hospedaje. Este registro te habilita para cobrar y remitir el Room Tax y el SUT." },
+    { name: "Entiende el Room Tax y el SUT", text: "Room Tax: 7% especial para hospedaje turístico. SUT: Impuesto sobre Ventas y Uso general del 11,5% aplicable a bienes y servicios en PR. Para el alojamiento turístico, el Room Tax (7%) reemplaza al SUT general. Los municipios pueden añadir hasta un 1,5% adicional al Room Tax." },
+    { name: "Declara y paga el Room Tax mensualmente", text: "Presenta la declaración de Room Tax mensual en SURI antes del día 20 del mes siguiente. Si Airbnb recauda el Room Tax en tu nombre, igualmente debes verificar y presentar la declaración informativa." },
+    { name: "Declara el Impuesto sobre la Renta (ISR) anualmente", text: "Los ingresos netos por alquiler vacacional se declaran en el Formulario SC 2770 (Declaración Informativa de Arrendamiento). La tasa efectiva de ISR en Puerto Rico varía del 7% al 33% según tramos de ingresos netos. El plazo es el 15 de abril." }
+  ],
+  checklist: [
+    "Cuenta SURI activa con Merchant Registration",
+    "Room Tax declarado y pagado mensualmente",
+    "Declaración informativa SC 2770 anual",
+    "Declaración de ISR en plazo (15 de abril)",
+    "Verificación de recaudación de Room Tax por Airbnb",
+    "Gastos deducibles documentados para ISR"
+  ],
+  mistakes: [
+    "Confundir el SUT (11,5%) con el Room Tax (7%): para hospedaje aplica el Room Tax, no el SUT general.",
+    "No verificar si Airbnb recauda el Room Tax correctamente y asumir que lo hace siempre.",
+    "No presentar la declaración mensual de Room Tax aunque Airbnb lo recaude (el anfitrión sigue siendo responsable de presentar).",
+    "Aplicar tasas de impuesto federal de EE.UU. a los ingresos de PR (son sistemas fiscales distintos)."
+  ],
+  documentation: [
+    "Número de Merchant Registration SURI activo",
+    "Declaraciones mensuales de Room Tax en SURI",
+    "Formulario SC 2770 presentado anualmente",
+    "Declaración de ISR anual Hacienda PR",
+    "Comprobantes de gastos deducibles"
+  ],
+  faq: [
+    { q: "¿Los ciudadanos americanos que alquilan en Puerto Rico pagan impuestos federales?", a: "Los ingresos generados en Puerto Rico por residentes de Puerto Rico están exentos de impuesto federal en la mayoría de los casos bajo la Sección 936 y las reglas de fuente boricua. Sin embargo, si el anfitrión reside en EE.UU. continental, esos ingresos sí van en la declaración federal." },
+    { q: "¿Airbnb me ayuda con los impuestos en Puerto Rico?", a: "Airbnb recauda automáticamente el Room Tax estatal del 7% para los anfitriones de Puerto Rico y lo remite a Hacienda PR. Para el ISR y las declaraciones informativas, el anfitrión es responsable individualmente ante Hacienda." },
+    { q: "¿Hola Rentia ayuda a gestionar propiedades en Puerto Rico?", a: "Sí. Hola Rentia gestiona propiedades en Puerto Rico con reportes en USD. Automatiza la comunicación con huéspedes en inglés y español, gestiona el calendario en Airbnb/VRBO, y genera reportes de ingresos compatibles con los requerimientos de Hacienda PR." }
+  ]
+};
+---
+<LegalArticle {...props} />

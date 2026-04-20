@@ -1,0 +1,47 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "Registro de Huéspedes en Costa Rica: Obligaciones Legales del Anfitrión Airbnb",
+  country: "Costa Rica",
+  countryHref: "/es/recursos-legales/costa-rica",
+  metaTitle: "Registro Huéspedes Airbnb Costa Rica: Libro de Hospedaje y Migraciones | Hola Rentia",
+  metaDesc: "Cómo cumplir con el registro de huéspedes en Costa Rica. Libro de hospedaje ICT, reporte a Migraciones de turistas extranjeros y protección de datos personales.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/costa-rica/registro-huespedes-costa-rica",
+  intro: `<p>En Costa Rica, el registro de huéspedes es una obligación doble: por un lado, el <strong>ICT</strong> exige llevar un Libro de Hospedaje con los datos de cada visitante. Por otro, la <strong>Dirección General de Migración y Extranjería</strong> puede requerir el reporte de huéspedes extranjeros para control migratorio.</p>
+  <p>Además, la Ley de Protección de Datos Personales (Ley 8968) regula cómo puedes almacenar y usar la información de tus huéspedes, lo que añade una capa de responsabilidad legal adicional para los property managers.</p>`,
+  steps: [
+    { name: "Instala el Libro de Hospedaje ICT", text: "El libro puede ser físico o digital. Debe registrar por cada huésped: nombre completo, número de pasaporte o cédula, nacionalidad, fecha y hora de ingreso y salida, y número de habitación o unidad. El ICT puede solicitar el libro durante las inspecciones." },
+    { name: "Recopila los documentos de identidad en el check-in", text: "Photocopia (o escaneo digital) del pasaporte o cédula es la práctica estándar. La Ley 8968 te obliga a informar al huésped para qué usarás sus datos y a conservarlos de forma segura, no más de lo necesario." },
+    { name: "Reporta huéspedes extranjeros si te lo solicita Migración", text: "Aunque no es un reporte masivo automático para todos los establecimientos pequeños, durante operativos especiales, Migración puede requerir los datos de los huéspedes extranjeros alojados en tu propiedad. Debes colaborar." },
+    { name: "Protege los datos de tus huéspedes", text: "La Ley 8968 exige que almacenes los datos personales con seguridad (no en documentos sin cifrar, no compartidos con terceros). Si usas un software de gestión, verifica que cumpla con los estándares de seguridad de datos." },
+    { name: "Conserva los registros el tiempo mínimo exigido", text: "El ICT recomienda conservar el Libro de Hospedaje durante al menos 5 años. Esto también es útil ante posibles disputas con huéspedes o reclamaciones de seguros." }
+  ],
+  checklist: [
+    "Libro de Hospedaje ICT activo (físico o digital)",
+    "Proceso de identificación de huéspedes al check-in",
+    "Política de privacidad de datos (Ley 8968) comunicada a huéspedes",
+    "Almacenamiento seguro de datos personales",
+    "Registro de estadías conservado mínimo 5 años",
+    "Protocolo de cooperación con Migración si se requiere"
+  ],
+  mistakes: [
+    "No llevar el Libro de Hospedaje o tenerlo incompleto durante una inspección ICT.",
+    "Almacenar copias de pasaportes en carpetas físicas sin protección (violación Ley 8968).",
+    "Compartir datos de huéspedes con terceros sin su consentimiento explícito.",
+    "No comunicar a los huéspedes el tratamiento de sus datos personales."
+  ],
+  documentation: [
+    "Libro de Hospedaje ICT (físico o archivo digital seguro)",
+    "Formulario de consentimiento de tratamiento de datos personales",
+    "Copias de documentos de identidad (almacenadas de forma segura)",
+    "Política de privacidad publicada en el anuncio o entregada al huésped"
+  ],
+  faq: [
+    { q: "¿Aibnb cumple con la Ley de Protección de Datos de Costa Rica para mis huéspedes?", a: "Airbnb gestiona los datos de las reservas bajo sus propias políticas de privacidad (GDPR y equivalentes). Sin embargo, como anfitrión, cuando almacenas o procesas datos adicionales de los huéspedes fuera de la plataforma, eres tú el responsable ante la Ley 8968." },
+    { q: "¿Puedo llevar el Libro de Hospedaje en Google Sheets?", a: "Sí, legalmente se permite el soporte digital siempre que el archivo esté protegido con contraseña, sea exportable en papel y mantenga los registros completos. Google Sheets con acceso restringido es una solución válida." },
+    { q: "¿Hola Rentia cumple con la Ley 8968 de Costa Rica?", a: "Hola Rentia aplica estándares de seguridad de datos de nivel empresarial (cifrado en tránsito y en reposo, acceso por roles). Los datos de huéspedes solo son accesibles por el anfitrión autorizado y no se comparten con terceros sin consentimiento." }
+  ]
+};
+---
+<LegalArticle {...props} />

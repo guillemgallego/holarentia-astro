@@ -1,0 +1,47 @@
+---
+import LegalArticle from '@/components/LegalArticle.astro';
+
+const props = {
+  title: "AFAM Uruguay: Arrendamiento con Fines de Alojamiento para Airbnb",
+  country: "Uruguay",
+  countryHref: "/es/recursos-legales/uruguay",
+  metaTitle: "AFAM Uruguay: Arrendamiento Alojamiento Airbnb y Regulación Mintur | Hola Rentia",
+  metaDesc: "Qué es el AFAM en Uruguay y cómo afecta al arrendamiento vacacional. Diferencia entre alquiler temporario turístico y arrendamiento residencial para anfitriones de Airbnb.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/uruguay/afam-uruguay",
+  intro: `<p>En Uruguay, el marco legal del arrendamiento vacacional se cruza con la regulación del <strong>Arrendamiento con Fines de Alojamiento y Manutención (AFAM)</strong>, que distingue el alojamiento turístico del arrendamiento residencial ordinario. Entender esta distinción es clave para determinar qué obligaciones fiscales y de habilitación te corresponden.</p>
+  <p>La Ley de Arrendamientos Urbanos y el decreto reglamentario del Mintur crean un marco específico para el alquiler de corta estancia que difiere significativamente del alquiler de largo plazo tradicional.</p>`,
+  steps: [
+    { name: "Entiende la diferencia entre alquiler turístico y residencial", text: "El alquiler turístico de corta estancia (menos de 60 días) se rige por la normativa del Mintur y no por la Ley de Arrendamientos Urbanos (LAU). Esto implica que no tienes las protecciones del inquilino residencial, pero sí mayor flexibilidad operativa." },
+    { name: "Define tu modalidad de operación", text: "¿Alquilas la propiedad completa o solo habitaciones? ¿Ofreces servicios adicionales (desayuno, limpieza frecuente)? La modalidad determina si eres un 'apart-hotel' (con servicios) o una 'residencia turística' (sin servicios adicionales), y cada categoría tiene requisitos Mintur distintos." },
+    { name: "Establece contratos de arrendamiento turístico adecuados", text: "El contrato de arrendamiento turístico debe especificar claramente la naturaleza turística del alquiler, los días incluidos, el precio total con impuestos, y las condiciones de cancelación. Plataformas como Airbnb generan sus propios contratos, pero es recomendable tener uno propio en español bajo ley uruguaya." },
+    { name: "Cumple con el registro de huéspedes del Mintur", text: "El Mintur exige el registro de todos los huéspedes con sus datos de identidad. En Punta del Este, durante temporada alta (diciembre-marzo), el cumplimiento es especialmente exigido." },
+    { name: "Optimiza temporadas con precios dinámicos", text: "Punta del Este tiene dos temporadas claramente distinguibles: temporada alta (enero-marzo: precios x3-5) y baja (resto del año). Una herramienta de precios dinámicos ajusta automáticamente las tarifas para maximizar los ingresos anuales." }
+  ],
+  checklist: [
+    "Modalidad de operación clara (apart-hotel vs. residencia turística)",
+    "Contrato de arrendamiento turístico en español",
+    "Precios diferenciados para temporada alta y baja",
+    "Registro de huéspedes Mintur al día",
+    "Habilitación categoría correcta ante Mintur",
+    "Sistema de precios dinámicos configurado"
+  ],
+  mistakes: [
+    "Usar el mismo contrato para alquiler turístico y residencial (marcos legales completamente distintos).",
+    "No aplicar precios dinámicos en Punta del Este: se pierde hasta el 40% de ingresos potenciales en temporada alta.",
+    "Registrar la categoría incorrecta en Mintur (apart-hotel con servicios vs. sin servicios).",
+    "No tener contratos en español y bajo ley uruguaya (los de Airbnb no son suficientes ante la DGI)."
+  ],
+  documentation: [
+    "Contrato de arrendamiento turístico (por tipo de estadía)",
+    "Habilitación Mintur de categoría correcta",
+    "Registro de huéspedes mensual",
+    "Facturas emitidas por DGI"
+  ],
+  faq: [
+    { q: "¿Qué diferencia hay entre alquiler turístico y residencial en Uruguay?", a: "El alquiler turístico (corta estancia, plataformas como Airbnb) se rige por la normativa del Mintur y no le aplica la Ley de Arrendamientos Urbanos. Esto significa que no tienes la protección del inquilino residente, pero tampoco sus restricciones (no puedes ser obligado a renovar por 1 año, etc.)." },
+    { q: "¿Cuánto puedo ganar en Punta del Este en temporada alta?", a: "Las propiedades bien ubicadas en La Barra, José Ignacio y el área central de Punta del Este pueden alcanzar tarifas de USD 200-800 por noche en enero y febrero. El ADR (Average Daily Rate) medio en Punta del Este en temporada alta supera los USD 180 según datos de Airbnb." },
+    { q: "¿Hola Rentia tiene precios dinámicos para el mercado uruguayo?", a: "Sí. Hola Rentia incluye un motor de precios dinámicos que ajusta automáticamente las tarifas según la demanda del mercado, la ocupación local y los precios de la competencia. Es especialmente útil para la alta estacionalidad del mercado de Punta del Este." }
+  ]
+};
+---
+<LegalArticle {...props} />

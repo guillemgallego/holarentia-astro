@@ -1,0 +1,60 @@
+---
+import LegalHub from '@/components/LegalHub.astro';
+
+const props = {
+  country: "España",
+  flag: "🇪🇸",
+  slug: "espana",
+  metaTitle: "Guía Legal Alquiler Vacacional España | Licencias VUT | Hola Rentia",
+  metaDesc: "Toda la normativa legal sobre Viviendas de Uso Turístico (VUT) en España. Licencias municipales, impuestos, registro de viajeros y normativas por comunidad autónoma.",
+  canonicalUrl: "https://holarentia.com/es/recursos-legales/espana",
+  intro: `
+    <p>España cuenta con una de las regulaciones más complejas del mundo en cuanto a alquiler vacacional. Al ser una competencia delegada a las **Comunidades Autónomas**, las reglas cambian drásticamente entre Madrid, Barcelona, Valencia o las Islas Canarias.</p>
+    <p>Sin embargo, existen pilares comunes como el **Registro de Viajeros**, la obligatoriedad de tener una **Licencia Turística (VUT)** y el cumplimiento fiscal ante la Agencia Tributaria. Esta guía es el punto de partida para que anfitriones y gestores operen con total seguridad legal en territorio español.</p>
+  `,
+  licensesContent: `
+    <p>En España, para alquilar un apartamento de forma turística necesitas obtener una licencia de <strong>Vivienda de Uso Turístico (VUT)</strong>. El proceso suele iniciarse con una Declaración Responsable ante la consejería de turismo de tu comunidad autónoma.</p>
+    <p><strong>Limitaciones municipales:</strong> Ciudades como Madrid (Plan de Hospedaje) o Barcelona (PEUAT) han impuesto restricciones severas, como la necesidad de accesos independientes o moratorias en ciertas zonas. Es vital consultar al ayuntamiento antes de realizar cualquier inversión.</p>
+  `,
+  taxesContent: `
+    <p>Como anfitrión en España, debes cumplir con Hacienda:</p>
+    <ul>
+      <li><strong>IRPF:</strong> Los ingresos deben declararse como Rendimiento del Capital Inmobiliario (si eres el dueño) o de Actividades Económicas (si ofreces servicios de hostelería como limpieza diaria).</li>
+      <li><strong>IVA:</strong> Por lo general, el alquiler vacacional está exento de IVA, a menos que ofrezcas servicios propios de la industria hotelera.</li>
+      <li><strong>Tasas Turísticas:</strong> Obligatorias en Cataluña y Baleares, donde el anfitrión debe recaudar un importe por noche de cada huésped y liquidarlo trimestralmente.</li>
+    </ul>
+  `,
+  legalObligations: `
+    <p>Es obligatorio identificar a todos los huéspedes mayores de 14 años:</p>
+    <ul>
+      <li><strong>Registro de Viajeros (Partes de entrada):</strong> Los datos del huésped deben enviarse a la Policía Nacional, Guardia Civil (Hospedajes) o Mossos d'Esquadra en las 24 horas siguientes al check-in.</li>
+      <li><strong>Libro-Registro:</strong> Debes conservar los partes de entrada firmados durante 3 años a disposición de las fuerzas de seguridad.</li>
+    </ul>
+  `,
+  citiesContent: `
+    <p>España es un mosaico de normativas locales:</p>
+    <ul>
+      <li><strong>Madrid:</strong> Exige licencia VUT con requisitos de habitabilidad específicos.</li>
+      <li><strong>Barcelona:</strong> Altamente restrictiva; actualmente no se conceden licencias nuevas en la mayoría de distritos.</li>
+      <li><strong>Málaga y Costa del Sol:</strong> Registro obligatorio en el RTA (Registro de Turismo de Andalucía).</li>
+    </ul>
+  `,
+  complianceContent: `
+    <p>Gestionar varias viviendas en España requiere una coordinación perfecta de los **Modelos 179** (declaración informativa de cesión de uso de viviendas con fines turísticos) que las plataformas como Airbnb envían directamente a Hacienda.</p>
+  `,
+  toolsContent: `
+    <p>Los property managers profesionales utilizan herramientas para automatizar el envío de los partes de viajeros a las autoridades y la generación de facturas rectificativas o reportes para el IRPF.</p>
+  `,
+  faq: [
+    { q: "¿Puedo alquilar mi casa sin licencia?", a: "No. Operar sin número de registro turístico conlleva multas que, dependiendo de la región, pueden ir de los 3.000€ hasta los 600.000€ en casos muy graves." },
+    { q: "¿Tengo que pagar IVA?", a: "Si solo alquilas la casa y limpias a la entrada/salida, no. Si ofreces limpieza durante la estancia, desayuno o cambio de sábanas frecuente, se considera servicio de hostelería y debes cobrar el 10% de IVA." },
+    { q: "¿Qué es el Modelo 179?", a: "Es una declaración informativa que obliga a las plataformas (Airbnb, Booking) a informar a Hacienda de quién es el anfitrión, cuántos días se alquila y cuánto dinero ha ganado." }
+  ],
+  articles: [
+    { title: "Cómo sacar la licencia turística en 2026", href: "/es/recursos-legales/espana/licencia-turistica-espana" },
+    { title: "Impuestos y Hacienda para Airbnb", href: "/es/recursos-legales/espana/impuestos-airbnb-espana" },
+    { title: "Registro de viajeros paso a paso", href: "/es/recursos-legales/espana/registro-viajeros-espana" }
+  ]
+};
+---
+<LegalHub {...props} />

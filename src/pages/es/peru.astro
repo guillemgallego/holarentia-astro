@@ -1,0 +1,41 @@
+---
+import CountryPage from '../../components/CountryPage.astro';
+
+const props = {
+  country: "Perú",
+  slug: "peru",
+  flag: "🇵🇪",
+  locale: "es_PE",
+  metaTitle: "Software de Alquiler Vacacional en Perú | Gestión Airbnb | Hola Rentia",
+  metaDesc: "Software de alquiler vacacional en Perú. Gestiona tus propiedades en Lima, Cusco, Machu Picchu y el Lago Titicaca. Channel manager, automatización y precios dinámicos. Desde $99/mes.",
+  ogTitle: "Software Alquiler Vacacional Perú | Hola Rentia",
+  ogDesc: "Gestiona tu Airbnb en Perú con IA. Sin comisiones, tarifa fija mensual. Para anfitriones en Lima, Cusco y toda la ruta inca.",
+  twitterTitle: "Software Airbnb Perú | Hola Rentia",
+  twitterDesc: "Automatiza tu alquiler vacacional en Lima, Cusco y Machu Picchu. Desde $99/mes. Sin comisiones.",
+  canonicalUrl: "https://holarentia.com/es/peru",
+  schemaDesc: "Software de alquiler vacacional en Perú. Gestión integral de propiedades turísticas para Property Managers y anfitriones en Lima, Cusco, Aguas Calientes y el Valle Sagrado.",
+  intro: `<p>Perú es uno de los destinos turísticos más fascinantes del mundo, y su mercado de alquiler vacacional está creciendo de forma acelerada. <strong>Machu Picchu y el Camino Inca</strong> atraen a más de 1,5 millones de visitantes al año, mientras que Lima se consolida como una de las capitales gastronómicas más reconocidas del mundo, generando un turismo urbano sofisticado y de alto valor.</p>
+  <p>Este crecimiento del turismo internacional implica <strong>estándares de servicio mucho más exigentes</strong>: los viajeros que llegan a Perú desde Europa, América del Norte o Asia esperan una experiencia profesional, check-in ágil y comunicación en múltiples idiomas. Los anfitriones que no automatizan su operación quedan fuera de esta oportunidad.</p>`,
+  platformTitle: "Gestiona tus propiedades en Perú desde una sola plataforma",
+  platformContent: `<p>Con Hola Rentia, puedes centralizar la gestión de todas tus propiedades en Perú —desde un departamento en Miraflores hasta una casa en el Valle Sagrado— en un único dashboard. <strong>Sin herramientas dispersas, sin gestión fragmentada</strong> por destino. Todo en un solo lugar.</p>
+  <p>El sistema te permite gestionar la comunicación con huéspedes internacionales en su propio idioma, configurar precios en soles peruanos o dólares, y generar reportes financieros mensuales detallados para cada propiedad. Los pagos llegan directamente de Airbnb y Booking a tu cuenta bancaria peruana.</p>`,
+  channelContent: `<p>El turismo en Perú tiene una marcada estacionalidad: la temporada seca (mayo-octubre) concentra la mayor demanda para el Camino Inca y Machu Picchu, mientras que Lima mantiene una demanda más estable durante todo el año. Gestionar los calendarios de múltiples propiedades en distintos destinos durante los picos de temporada alta es una tarea compleja sin la tecnología adecuada.</p>
+  <p>Hola Rentia sincroniza tu disponibilidad en tiempo real en Airbnb, Booking.com, VRBO y todas las plataformas donde publiques. Cuando se genera una reserva, <strong>el resto de plataformas se actualiza automáticamente</strong>. Además, puedes configurar tarifas especiales para la temporada Inca Trail y aplicar precios distintos para fines de semana y feriados peruanos.</p>`,
+  automationContent: `<p>Los turistas internacionales que visitan Perú esperan comunicación rápida y profesional. Hola Rentia automatiza todos los mensajes en múltiples idiomas —español, inglés, francés, alemán, portugués— y gestiona el proceso completo desde la reserva hasta el check-out, sin que tengas que estar disponible las 24 horas del día.</p>`,
+  destinations: [
+    { icon: "🏙️", name: "Lima", desc: "Miraflores, Barranco y San Isidro concentran la demanda urbana. Gastronomía de clase mundial." },
+    { icon: "🏔️", name: "Cusco", desc: "La capital del Imperio Inca. Puerta de entrada a Machu Picchu y el Camino Inca." },
+    { icon: "🌿", name: "Valle Sagrado", desc: "Urubamba, Ollantaytambo y Pisac. Experiencias auténticas con turismo de alta gama." },
+    { icon: "⚓", name: "Lago Titicaca", desc: "Puno y las islas flotantes. Uno de los destinos más únicos e Instagram-friendly del continente." },
+    { icon: "🌊", name: "Paracas y Nazca", desc: "Reserva natural y figuras milenarias. Turismo de aventura y naturaleza en la costa peruana." },
+    { icon: "🌳", name: "Iquitos y Amazonía", desc: "El turismo de selva tropical crece con fuerza. Experiencias únicas en uno de los pulmones del planeta." },
+  ],
+  faq: [
+    { q: "¿Hola Rentia funciona para propiedades cerca de Machu Picchu y Aguas Calientes?", a: "Absolutamente. Hola Rentia funciona 100% online y te permite gestionar propiedades en cualquier destino del Perú, incluyendo Aguas Calientes, Ollantaytambo o cualquier punto del Valle Sagrado. El check-in autónomo, la coordinación remota de limpieza y los mensajes automáticos a huéspedes internacionales funcionan perfectamente en todos los destinos." },
+    { q: "¿El sistema ayuda con la comunicación en inglés para turistas extranjeros?", a: "Sí. Hola Rentia permite configurar mensajes automáticos a huéspedes en múltiples idiomas: español, inglés, francés, portugués, alemán y más. El sistema detecta el idioma preferido del huésped y le envía toda la información en ese idioma. Esto es especialmente valioso en un destino turístico internacional como Perú, donde la mayoría de los huéspedes son extranjeros." },
+    { q: "¿Cómo gestiona Hola Rentia los precios durante la temporada alta de Machu Picchu?", a: "El sistema de precios dinámicos ajusta automáticamente tus tarifas según la demanda del mercado local. Puedes configurar reglas adicionales para la temporada seca (mayo-octubre), cuando la demanda para Machu Picchu y el Camino Inca se dispara, y garantizar así que maximizas tus ingresos en los momentos de mayor ocupación potencial." },
+  ],
+  ctaText: "Empieza a rentabilizar tus propiedades en Perú con <em>Hola Rentia</em>",
+};
+---
+<CountryPage {...props} />
