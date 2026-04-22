@@ -13,44 +13,58 @@ export async function onRequestPost({ request, env }) {
       });
     }
 
-    const apiKey = env.OPENAI_API_KEY;
+    const apiKey = env.GEMINI_API_KEY;
     if (!apiKey) {
-      return new Response(JSON.stringify({ error: 'OPENAI_API_KEY no configurada en Cloudflare.' }), {
+      return new Response(JSON.stringify({ error: 'GEMINI_API_KEY no configurada en Cloudflare.' }), {
         status: 500,
         headers: { 'Content-Type': 'application/json' },
       });
     }
 
-    const messages = [
-      { role: 'system', content: SYSTEM_INSTRUCTION },
-      ...history,
-      { role: 'user', content: message },
-    ];
+    // Construir historial en formato Gemini
+    const contents = [];
+    for (const msg of history) {
+      contents.push({
+        role: msg.role === 'user' ? 'user' : 'model',
+        parts: [{ text: msg.content }],
+      });
+    }
+    contents.push({
+      role: 'user',
+      parts: [{ text: message }],
+    });
 
-    const res = await fetch('https://api.openai.com/v1/chat/completions', {
+    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: 'gpt-4o-mini',
-        messages,
-        max_tokens: 500,
-        temperature: 0.7,
+        system: { parts: [{ text: SYSTEM_INSTRUCTION }] },
+        contents,
+        safetySettings: [
+          { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_NONE' },
+          { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_NONE' },
+          { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_NONE' },
+          { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_NONE' },
+        ],
+        generationConfig: {
+          max_output_tokens: 500,
+          temperature: 0.7,
+        },
       }),
     });
 
     if (!res.ok) {
       const errText = await res.text();
-      return new Response(JSON.stringify({ error: 'OpenAI error: ' + errText.slice(0, 200) }), {
+      return new Response(JSON.stringify({ error: 'Gemini error: ' + errText.slice(0, 200) }), {
         status: 502,
         headers: { 'Content-Type': 'application/json' },
       });
     }
 
     const data = await res.json();
-    const responseText = data.choices?.[0]?.message?.content ?? 'No se pudo obtener respuesta.';
+    const responseText = data.candidates?.[0]?.content?.parts?.[0]?.text ?? 'No se pudo obtener respuesta.';
 
     return new Response(JSON.stringify({ response: responseText }), {
       status: 200,
