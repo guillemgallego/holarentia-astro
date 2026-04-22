@@ -5,12 +5,9 @@ import path from 'path';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-import cloudflare from '@astrojs/cloudflare';
-
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  adapter: cloudflare(),
   site: 'https://holarentia.com',
   trailingSlash: 'ignore',
   vite: {

@@ -1,22 +1,24 @@
-interface Env {
-  OPENAI_API_KEY: string;
-}
-
 const SYSTEM_INSTRUCTION = "Eres el asistente virtual inteligente de Hola Rentia. Eres amable, sumamente profesional y tu objetivo es ayudar a los usuarios (propietarios de apartamentos) a resolver sus dudas sobre la gestión de su alquiler vacacional de Airbnb. El objetivo de Hola Rentia es ofrecer gestión automatizada con IA por tarifas fijas mensuales (Plan Digital 99€, Plan 360 199€) sin cobrar comisiones abusivas sobre sus ingresos. Tus respuestas deben ser concisas, naturales y persuasivas pero nunca insistentes.";
 
-export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
+export async function onRequestPost({ request, env }) {
   try {
-    const body = await request.json() as { message?: string; history?: { role: 'user' | 'assistant'; content: string }[] };
+    const body = await request.json();
     const history = body.history || [];
     const message = body.message;
 
     if (!message) {
-      return new Response(JSON.stringify({ error: 'El mensaje es requerido' }), { status: 400 });
+      return new Response(JSON.stringify({ error: 'El mensaje es requerido' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' },
+      });
     }
 
     const apiKey = env.OPENAI_API_KEY;
     if (!apiKey) {
-      return new Response(JSON.stringify({ error: 'La API Key de OpenAI no está configurada en Cloudflare.' }), { status: 500 });
+      return new Response(JSON.stringify({ error: 'OPENAI_API_KEY no configurada en Cloudflare.' }), {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' },
+      });
     }
 
     const messages = [
@@ -40,18 +42,25 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     });
 
     if (!res.ok) {
-      const err = await res.text();
-      return new Response(JSON.stringify({ error: 'OpenAI devolvió error: ' + err.slice(0, 200) }), { status: 502 });
+      const errText = await res.text();
+      return new Response(JSON.stringify({ error: 'OpenAI error: ' + errText.slice(0, 200) }), {
+        status: 502,
+        headers: { 'Content-Type': 'application/json' },
+      });
     }
 
-    const data = await res.json() as { choices?: { message?: { content?: string } }[] };
+    const data = await res.json();
     const responseText = data.choices?.[0]?.message?.content ?? 'No se pudo obtener respuesta.';
 
     return new Response(JSON.stringify({ response: responseText }), {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch (error: any) {
-    return new Response(JSON.stringify({ error: 'Error interno: ' + (error?.message || 'desconocido') }), { status: 500 });
+
+  } catch (err) {
+    return new Response(JSON.stringify({ error: 'Error interno: ' + (err.message || 'desconocido') }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
-};
+}
