@@ -703,7 +703,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
       <a href="#precios">Precios</a>
       <a href="#testimonios">Clientes</a>
     </nav>
-    <a href="#formulario" class="btn-nav">🔍 Analizar mi propiedad</a>
+    <a href="/analizar/" class="btn-nav">⚡ Analizador IA</a>
     <button class="mob-btn" id="mob-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mob-nav">
       <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
     </button>
@@ -979,7 +979,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
       <div class="form-card reveal">
         <h2 id="form-heading">🔍 Analiza tu propiedad gratis</h2>
         <p>Cuéntanos sobre tu alojamiento y te enviamos un análisis de ingresos personalizado en menos de 24 horas.</p>
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate id="lead-form">
+        <form novalidate id="lead-form">
           <div class="form-grid">
             <div class="fg"><label for="nombre">Nombre</label><input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="given-name"/></div>
             <div class="fg"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="tu@email.com" required autocomplete="email"/></div>
@@ -1192,8 +1192,15 @@ if(form){
     e.preventDefault();
     formSubmit.textContent='Enviando…';formSubmit.disabled=true;
     try{
-      const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
-      if(res.ok){form.style.display='none';formSuccess.style.display='block'}
+      const payload={
+        nombre:form.querySelector('#nombre')?.value||'',
+        email:form.querySelector('#email')?.value||'',
+        ciudad:form.querySelector('#ciudad')?.value||'',
+        ingresos:form.querySelector('#ingresos')?.value||''
+      };
+      const res=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+      const data=await res.json();
+      if(data.success){form.style.display='none';formSuccess.style.display='block'}
       else{formSubmit.textContent='Error, inténtalo de nuevo';formSubmit.disabled=false}
     }catch{formSubmit.textContent='Error de conexión';formSubmit.disabled=false}
   });
