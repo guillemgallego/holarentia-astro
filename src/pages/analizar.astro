@@ -5,13 +5,16 @@ import Layout from '../layouts/Layout.astro';
   title="Analizador de Propiedad IA | Potencial real en Airbnb | Hola Rentia"
   description="Descubre cuánto puede ganar tu propiedad en Airbnb con datos reales de mercado. Análisis gratuito con IA en segundos."
 >
-<style>
-  :root {
+<style is:global>
+  /* Dark theme override for /analizar — overrides Layout's white bg */
+  body { background: #060d1a !important; color: #e8edf8 !important; }
+  .analizar-page {
     --red: #FF5436; --bg: #060d1a; --card: #0f1f35;
     --border: rgba(255,255,255,.08); --text: #e8edf8; --muted: #6b7a99;
     --green: #22c55e;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+</style>
+<style>
 
   .hero { text-align: center; padding: 72px 24px 40px; max-width: 680px; margin: 0 auto; }
   .badge {
@@ -222,6 +225,7 @@ import Layout from '../layouts/Layout.astro';
   a { text-decoration: none; }
 </style>
 
+<div class="analizar-page">
 <!-- HERO -->
 <section class="hero">
   <div class="badge">🔍 Revenue Intelligence · Datos reales · IA</div>
@@ -414,6 +418,7 @@ import Layout from '../layouts/Layout.astro';
   </div>
 
 </div>
+</div><!-- /analizar-page -->
 
 <script>
 async function runAnalysis() {
