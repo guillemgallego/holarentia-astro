@@ -2,282 +2,234 @@
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout
-  title="Analizador de Propiedad IA | Calcula tu potencial en Airbnb | Hola Rentia"
-  description="Descubre cuánto puedes ganar con tu propiedad en Airbnb. Análisis gratuito con IA en segundos: ingresos potenciales, precio por noche, temporada alta y más."
+  title="Analizador de Propiedad IA | Potencial real en Airbnb | Hola Rentia"
+  description="Descubre cuánto puede ganar tu propiedad en Airbnb con datos reales de mercado. Análisis gratuito con IA en segundos."
 >
-
 <style>
   :root {
-    --red: #FF5436;
-    --bg: #060d1a;
-    --card: #0f1f35;
-    --border: rgba(255,255,255,.08);
-    --text: #e8edf8;
-    --muted: #6b7a99;
+    --red: #FF5436; --bg: #060d1a; --card: #0f1f35;
+    --border: rgba(255,255,255,.08); --text: #e8edf8; --muted: #6b7a99;
+    --green: #22c55e;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; }
 
-  .hero {
-    text-align: center;
-    padding: 80px 24px 48px;
-    max-width: 700px;
-    margin: 0 auto;
-  }
+  .hero { text-align: center; padding: 72px 24px 40px; max-width: 680px; margin: 0 auto; }
   .badge {
-    display: inline-block;
-    background: rgba(255,84,54,.12);
-    border: 1px solid rgba(255,84,54,.3);
-    color: var(--red);
-    font-size: .7rem;
-    font-weight: 700;
-    letter-spacing: .15em;
-    text-transform: uppercase;
-    padding: 5px 14px;
-    border-radius: 50px;
-    margin-bottom: 20px;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,84,54,.1); border: 1px solid rgba(255,84,54,.25);
+    color: var(--red); font-size: .7rem; font-weight: 700;
+    letter-spacing: .14em; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 50px; margin-bottom: 22px;
   }
-  h1 {
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    font-weight: 800;
-    line-height: 1.15;
-    margin-bottom: 16px;
-    color: #fff;
-  }
+  h1 { font-size: clamp(1.9rem, 5vw, 3rem); font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 14px; }
   h1 em { color: var(--red); font-style: normal; }
-  .sub { font-size: 1.05rem; color: var(--muted); line-height: 1.7; }
-
-  /* Form card */
-  .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px 80px; }
-
-  .form-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 24px;
-    padding: 40px;
+  .sub { font-size: 1rem; color: var(--muted); line-height: 1.7; }
+  .data-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: .72rem; color: #94a3b8; margin-top: 14px;
+    background: rgba(255,255,255,.04); border: 1px solid var(--border);
+    padding: 4px 12px; border-radius: 50px;
   }
-  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px; }
-  @media(max-width:600px){ .form-grid { grid-template-columns: 1fr; } .form-card { padding: 24px; } }
 
-  .fg { display: flex; flex-direction: column; gap: 8px; }
-  label { font-size: .8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* FORM */
+  .form-card { background: var(--card); border: 1px solid var(--border); border-radius: 24px; padding: 36px; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 24px; }
+  @media(max-width:600px){ .form-grid { grid-template-columns: 1fr; } .form-card { padding: 20px; } }
+  .fg { display: flex; flex-direction: column; gap: 7px; }
+  label { font-size: .75rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
   input, select {
-    background: rgba(255,255,255,.05);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 12px 16px;
-    color: var(--text);
-    font-size: .95rem;
-    outline: none;
-    transition: border-color .2s;
-    width: 100%;
+    background: rgba(255,255,255,.05); border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 16px; color: var(--text);
+    font-size: .95rem; outline: none; transition: border-color .2s; width: 100%;
   }
-  input:focus, select:focus { border-color: rgba(255,84,54,.5); }
+  input:focus, select:focus { border-color: rgba(255,84,54,.45); background: rgba(255,84,54,.03); }
   select option { background: #1e2a45; }
 
   .btn-analyze {
-    width: 100%;
-    background: var(--red);
-    color: #fff;
-    border: none;
-    border-radius: 14px;
-    padding: 16px;
-    font-size: 1.05rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all .25s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+    width: 100%; background: var(--red); color: #fff; border: none;
+    border-radius: 14px; padding: 16px; font-size: 1.05rem; font-weight: 700;
+    cursor: pointer; transition: all .25s;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
   }
   .btn-analyze:hover { background: #e84528; box-shadow: 0 8px 30px rgba(255,84,54,.4); transform: translateY(-1px); }
-  .btn-analyze:disabled { opacity: .6; cursor: not-allowed; transform: none; }
-
-  /* Loading */
-  #loading {
-    display: none;
-    text-align: center;
-    padding: 60px 24px;
-  }
-  .spinner {
-    width: 52px; height: 52px;
-    border: 3px solid rgba(255,84,54,.2);
-    border-top-color: var(--red);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin: 0 auto 20px;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  .loading-steps { list-style: none; display: flex; flex-direction: column; gap: 10px; max-width: 280px; margin: 20px auto 0; }
-  .loading-steps li { font-size: .85rem; color: var(--muted); display: flex; align-items: center; gap: 10px; }
-  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red); opacity: .3; animation: pulse 1.5s ease-in-out infinite; }
-  .loading-steps li:nth-child(2) .dot { animation-delay: .3s; }
-  .loading-steps li:nth-child(3) .dot { animation-delay: .6s; }
-  @keyframes pulse { 0%,100%{opacity:.3;transform:scale(1)} 50%{opacity:1;transform:scale(1.4)} }
-
-  /* Results */
-  #results { display: none; }
-
-  .result-header {
-    background: linear-gradient(135deg, rgba(255,84,54,.15), rgba(255,84,54,.03));
-    border: 1px solid rgba(255,84,54,.25);
-    border-radius: 20px;
-    padding: 32px;
-    margin-bottom: 24px;
-    text-align: center;
-  }
-  .result-header h2 { font-size: 1.4rem; color: #fff; margin-bottom: 8px; }
-  .income-range {
-    font-size: clamp(2.4rem, 6vw, 3.8rem);
-    font-weight: 800;
-    color: var(--red);
-    line-height: 1;
-    margin: 16px 0 8px;
-  }
-  .income-sub { color: var(--muted); font-size: .9rem; }
-
-  .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
-  @media(max-width:600px){ .stats-grid { grid-template-columns: 1fr 1fr; } }
-
-  .stat-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 20px;
-    text-align: center;
-  }
-  .stat-icon { font-size: 1.6rem; margin-bottom: 8px; }
-  .stat-value { font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 4px; }
-  .stat-label { font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
-
-  .section-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 24px;
-    margin-bottom: 16px;
-  }
-  .section-title {
-    font-size: .7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .12em;
-    color: var(--muted);
-    margin-bottom: 16px;
-  }
-  .mejora-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--border);
-    font-size: .9rem;
-    color: #c8d4e8;
-    line-height: 1.5;
-  }
-  .mejora-item:last-child { border-bottom: none; padding-bottom: 0; }
-  .mejora-num {
-    min-width: 26px;
-    height: 26px;
-    background: rgba(255,84,54,.15);
-    border: 1px solid rgba(255,84,54,.3);
-    color: var(--red);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: .75rem;
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-
-  .resumen-text { font-size: .95rem; color: #c8d4e8; line-height: 1.7; }
-
-  .saving-box {
-    background: rgba(34,197,94,.07);
-    border: 1px solid rgba(34,197,94,.2);
-    border-radius: 16px;
-    padding: 24px;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  .saving-box .amount { font-size: 2.2rem; font-weight: 800; color: #22c55e; white-space: nowrap; }
-  .saving-box p { font-size: .9rem; color: var(--muted); line-height: 1.6; }
-  .saving-box strong { color: #e8edf8; }
-
-  .cta-box {
-    background: linear-gradient(135deg, rgba(255,84,54,.15), var(--card));
-    border: 1px solid rgba(255,84,54,.3);
-    border-radius: 20px;
-    padding: 36px;
-    text-align: center;
-    margin-top: 8px;
-  }
-  .cta-box h3 { font-size: 1.4rem; color: #fff; margin-bottom: 10px; }
-  .cta-box p { color: var(--muted); margin-bottom: 24px; font-size: .95rem; }
-  .btn-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--red);
-    color: #fff;
-    font-weight: 700;
-    font-size: 1rem;
-    padding: 14px 32px;
-    border-radius: 12px;
-    text-decoration: none;
-    transition: all .25s;
-    border: none;
-    cursor: pointer;
-  }
-  .btn-cta:hover { background: #e84528; box-shadow: 0 8px 30px rgba(255,84,54,.45); transform: translateY(-1px); }
-  .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: transparent;
-    color: var(--muted);
-    font-size: .9rem;
-    padding: 12px 24px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    cursor: pointer;
-    transition: all .2s;
-    margin-top: 12px;
-  }
-  .btn-secondary:hover { color: var(--text); border-color: rgba(255,255,255,.2); }
+  .btn-analyze:disabled { opacity: .6; cursor: not-allowed; transform: none; box-shadow: none; }
 
   #error-msg {
-    display: none;
-    background: rgba(239,68,68,.08);
-    border: 1px solid rgba(239,68,68,.25);
-    border-radius: 10px;
-    padding: 14px 18px;
-    color: #fca5a5;
-    font-size: .9rem;
-    margin-top: 16px;
+    display: none; margin-top: 14px;
+    background: rgba(239,68,68,.07); border: 1px solid rgba(239,68,68,.2);
+    border-radius: 10px; padding: 12px 16px; color: #fca5a5; font-size: .88rem;
   }
 
-  .tag-row { display: flex; gap: 8px; flex-wrap: wrap; }
-  .tag {
-    font-size: .75rem;
-    background: rgba(255,255,255,.05);
-    border: 1px solid var(--border);
-    padding: 4px 12px;
-    border-radius: 50px;
-    color: var(--muted);
+  /* LOADING */
+  #loading { display: none; text-align: center; padding: 64px 24px; }
+  .spinner {
+    width: 52px; height: 52px; border: 3px solid rgba(255,84,54,.15);
+    border-top-color: var(--red); border-radius: 50%;
+    animation: spin 1s linear infinite; margin: 0 auto 22px;
   }
-  .tag.highlight { background: rgba(255,84,54,.1); border-color: rgba(255,84,54,.25); color: #ffb3a7; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .steps { display: flex; flex-direction: column; gap: 10px; max-width: 260px; margin: 18px auto 0; }
+  .step-item { display: flex; align-items: center; gap: 10px; font-size: .84rem; color: var(--muted); }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); opacity: .3; animation: pulse 1.4s ease-in-out infinite; }
+  .step-item:nth-child(2) .dot { animation-delay: .3s; }
+  .step-item:nth-child(3) .dot { animation-delay: .6s; }
+  @keyframes pulse { 0%,100%{opacity:.3;transform:scale(1)} 50%{opacity:1;transform:scale(1.5)} }
+
+  /* RESULTS */
+  #results { display: none; }
+
+  /* Veredicto header */
+  .verdict-header {
+    border-radius: 20px; padding: 30px 32px; margin-bottom: 20px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 16px;
+  }
+  .verdict-alto { background: linear-gradient(135deg,rgba(255,84,54,.18),rgba(255,84,54,.04)); border: 1px solid rgba(255,84,54,.3); }
+  .verdict-buen { background: linear-gradient(135deg,rgba(34,197,94,.12),rgba(34,197,94,.03)); border: 1px solid rgba(34,197,94,.25); }
+  .verdict-mod { background: linear-gradient(135deg,rgba(251,191,36,.1),rgba(251,191,36,.02)); border: 1px solid rgba(251,191,36,.2); }
+
+  .verdict-left h2 { font-size: 1.2rem; color: #fff; margin-bottom: 6px; }
+  .verdict-left p { font-size: .9rem; color: var(--muted); max-width: 420px; line-height: 1.6; }
+  .verdict-badge {
+    font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em;
+    padding: 5px 14px; border-radius: 50px; white-space: nowrap;
+  }
+  .vb-alto { background: rgba(255,84,54,.15); color: var(--red); border: 1px solid rgba(255,84,54,.3); }
+  .vb-buen { background: rgba(34,197,94,.12); color: #22c55e; border: 1px solid rgba(34,197,94,.25); }
+  .vb-mod  { background: rgba(251,191,36,.1); color: #fbbf24; border: 1px solid rgba(251,191,36,.2); }
+
+  /* Income */
+  .income-block {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 20px; padding: 28px 32px; margin-bottom: 20px; text-align: center;
+  }
+  .income-eyebrow { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 10px; }
+  .income-range { font-size: clamp(2.2rem, 6vw, 3.6rem); font-weight: 800; color: var(--red); line-height: 1; }
+  .income-sub { font-size: .9rem; color: var(--muted); margin-top: 8px; }
+
+  /* Pricing */
+  .pricing-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;
+  }
+  .price-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 22px; text-align: center;
+  }
+  .price-card .icon { font-size: 1.8rem; margin-bottom: 8px; }
+  .price-card .amount { font-size: 2rem; font-weight: 800; color: #fff; }
+  .price-card .label { font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-top: 4px; }
+
+  /* Stats */
+  .stats-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-bottom: 20px; }
+  @media(max-width:560px){ .stats-row { grid-template-columns: 1fr 1fr; } .pricing-row { grid-template-columns: 1fr 1fr; } }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px; text-align: center; }
+  .stat-val { font-size: 1.6rem; font-weight: 800; color: #fff; }
+  .stat-lbl { font-size: .68rem; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; margin-top: 4px; }
+
+  /* Savings */
+  .savings-card {
+    background: rgba(34,197,94,.06); border: 1px solid rgba(34,197,94,.18);
+    border-radius: 16px; padding: 22px 26px; margin-bottom: 20px;
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  }
+  .savings-card .big { font-size: 2rem; font-weight: 800; color: var(--green); white-space: nowrap; }
+  .savings-card p { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+  .savings-card strong { color: #e8edf8; }
+
+  /* Sections */
+  .sec { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin-bottom: 16px; }
+  .sec-title { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 16px; }
+
+  /* Mejoras */
+  .mejora {
+    display: flex; gap: 14px; padding: 14px 0;
+    border-bottom: 1px solid var(--border); align-items: flex-start;
+  }
+  .mejora:last-child { border-bottom: none; padding-bottom: 0; }
+  .mnum {
+    min-width: 28px; height: 28px; background: rgba(255,84,54,.12);
+    border: 1px solid rgba(255,84,54,.25); color: var(--red);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: .72rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  }
+  .mtext .mtitle { font-size: .9rem; color: #e8edf8; font-weight: 600; margin-bottom: 3px; }
+  .mtext .mdesc { font-size: .83rem; color: var(--muted); line-height: 1.5; }
+  .mimpact {
+    margin-left: auto; flex-shrink: 0; font-size: .72rem; font-weight: 700;
+    color: var(--green); background: rgba(34,197,94,.08);
+    border: 1px solid rgba(34,197,94,.2); padding: 3px 10px; border-radius: 50px;
+    white-space: nowrap;
+  }
+
+  /* Diagnóstico */
+  .diagnostico {
+    background: rgba(255,84,54,.06); border-left: 3px solid var(--red);
+    border-radius: 0 12px 12px 0; padding: 16px 20px; margin-bottom: 16px;
+    font-size: .95rem; color: #e8edf8; font-style: italic; line-height: 1.6;
+  }
+
+  /* KATIA */
+  .katia-card {
+    background: linear-gradient(135deg,rgba(255,84,54,.07),rgba(255,84,54,.02));
+    border: 1px solid rgba(255,84,54,.18); border-radius: 16px;
+    padding: 24px; margin-bottom: 16px;
+    display: flex; gap: 16px; align-items: flex-start;
+  }
+  .katia-avatar {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: linear-gradient(135deg,#FF5436,#ff8c7a);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; flex-shrink: 0;
+  }
+  .katia-name { font-size: .72rem; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 6px; }
+  .katia-text { font-size: .92rem; color: #c8d4e8; line-height: 1.7; }
+
+  /* Data source */
+  .data-source { font-size: .72rem; color: #4a5568; display: flex; align-items: center; gap: 6px; margin-bottom: 20px; }
+
+  /* CTA */
+  .cta-box {
+    background: linear-gradient(135deg,rgba(255,84,54,.12),var(--card));
+    border: 1px solid rgba(255,84,54,.25); border-radius: 20px;
+    padding: 36px; text-align: center;
+  }
+  .cta-box h3 { font-size: 1.5rem; color: #fff; margin-bottom: 10px; }
+  .cta-box p { color: var(--muted); margin-bottom: 24px; font-size: .95rem; line-height: 1.6; }
+  .btn-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--red); color: #fff; font-weight: 700; font-size: 1rem;
+    padding: 14px 32px; border-radius: 12px; text-decoration: none;
+    transition: all .25s;
+  }
+  .btn-cta:hover { background: #e84528; box-shadow: 0 8px 30px rgba(255,84,54,.45); transform: translateY(-1px); }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: transparent; border: 1px solid var(--border);
+    color: var(--muted); font-size: .88rem; padding: 11px 22px;
+    border-radius: 10px; cursor: pointer; transition: all .2s; margin-top: 12px;
+  }
+  .btn-ghost:hover { color: var(--text); border-color: rgba(255,255,255,.2); }
+
+  /* Competition indicator */
+  .comp-row { display: flex; align-items: center; gap: 10px; font-size: .85rem; color: var(--muted); }
+  .comp-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .comp-low { background: #22c55e; }
+  .comp-medium { background: #fbbf24; }
+  .comp-high { background: #f87171; }
+
+  a { text-decoration: none; }
 </style>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="badge">⚡ Análisis con IA · Gratuito · Instantáneo</div>
-  <h1>Descubre cuánto puede<br>ganar tu propiedad en <em>Airbnb</em></h1>
-  <p class="sub">Introduce los datos de tu piso y la IA analiza el mercado real de tu ciudad:<br>ingresos potenciales, precio óptimo por noche y qué mejorar.</p>
+  <div class="badge">🔍 Revenue Intelligence · Datos reales · IA</div>
+  <h1>Descubre el <em>potencial real</em><br>de tu propiedad en Airbnb</h1>
+  <p class="sub">Datos de mercado reales de +40 ciudades combinados con IA para darte un análisis accionable en segundos.</p>
+  <div class="data-badge">
+    📊 Fuente: Inside Airbnb · STR Global · Q1 2026
+  </div>
 </section>
 
 <div class="wrap">
@@ -287,48 +239,48 @@ import Layout from '../layouts/Layout.astro';
     <div class="form-grid">
       <div class="fg" style="grid-column: 1 / -1">
         <label>Ciudad de la propiedad *</label>
-        <input type="text" id="ciudad" placeholder="Ej. Barcelona, Cancún, Medellín…" autocomplete="off" />
+        <input type="text" id="ciudad" placeholder="Ej. Barcelona, Cancún, Medellín, Cartagena…" autocomplete="off"/>
       </div>
       <div class="fg">
         <label>Tipo de propiedad</label>
         <select id="tipo">
           <option value="Apartamento">Apartamento</option>
-          <option value="Casa">Casa / Chalet</option>
+          <option value="Casa / Chalet">Casa / Chalet</option>
           <option value="Estudio">Estudio</option>
-          <option value="Villa">Villa / Finca</option>
+          <option value="Villa / Finca">Villa / Finca</option>
           <option value="Habitación privada">Habitación privada</option>
         </select>
       </div>
       <div class="fg">
-        <label>Número de habitaciones</label>
+        <label>Habitaciones</label>
         <select id="habitaciones">
-          <option value="Estudio">Estudio (sin hab.)</option>
+          <option value="Estudio">Estudio</option>
           <option value="1 habitación">1 habitación</option>
           <option value="2 habitaciones" selected>2 habitaciones</option>
           <option value="3 habitaciones">3 habitaciones</option>
           <option value="4 habitaciones">4 habitaciones</option>
-          <option value="5 o más habitaciones">5 o más habitaciones</option>
+          <option value="5+ habitaciones">5+ habitaciones</option>
         </select>
       </div>
       <div class="fg">
         <label>Estado actual</label>
         <select id="estado">
           <option value="No está en Airbnb aún">No está en Airbnb aún</option>
-          <option value="Recién publicada en Airbnb">Recién publicada en Airbnb</option>
+          <option value="Recién publicada">Recién publicada en Airbnb</option>
           <option value="Ya en Airbnb con reservas">Ya en Airbnb con reservas</option>
           <option value="Gestionada por otra empresa">Gestionada por otra empresa</option>
-          <option value="Alquiler de larga duración actualmente">Alquiler de larga duración</option>
+          <option value="Alquiler larga duración">Alquiler de larga duración</option>
         </select>
       </div>
       <div class="fg">
-        <label>Ingresos mensuales actuales (aprox.)</label>
-        <select id="ingresos_actuales">
-          <option value="Ninguno (no está en Airbnb)">Ninguno (no en Airbnb)</option>
-          <option value="Menos de €500/mes">Menos de €500/mes</option>
-          <option value="€500 – €1.000/mes">€500 – €1.000/mes</option>
-          <option value="€1.000 – €2.000/mes">€1.000 – €2.000/mes</option>
-          <option value="€2.000 – €3.500/mes">€2.000 – €3.500/mes</option>
-          <option value="Más de €3.500/mes">Más de €3.500/mes</option>
+        <label>Ingresos actuales / mes</label>
+        <select id="ingresos">
+          <option value="Ninguno">Ninguno (no en Airbnb)</option>
+          <option value="Menos de 500">Menos de 500€/mes</option>
+          <option value="500–1000">500 – 1.000€/mes</option>
+          <option value="1000–2000">1.000 – 2.000€/mes</option>
+          <option value="2000–3500">2.000 – 3.500€/mes</option>
+          <option value="Más de 3500">Más de 3.500€/mes</option>
         </select>
       </div>
     </div>
@@ -337,7 +289,7 @@ import Layout from '../layouts/Layout.astro';
       <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
       </svg>
-      Analizar mi propiedad con IA
+      Analizar con datos reales
     </button>
     <div id="error-msg"></div>
   </div>
@@ -345,80 +297,119 @@ import Layout from '../layouts/Layout.astro';
   <!-- LOADING -->
   <div id="loading">
     <div class="spinner"></div>
-    <p style="color:#e8edf8;font-weight:600;font-size:1.05rem;margin-bottom:8px">Analizando el mercado…</p>
-    <p style="color:var(--muted);font-size:.85rem;margin-bottom:20px">La IA está procesando datos reales de Airbnb</p>
-    <ul class="loading-steps">
-      <li><span class="dot"></span>Consultando precios en tu ciudad</li>
-      <li><span class="dot"></span>Calculando ocupación estimada</li>
-      <li><span class="dot"></span>Generando recomendaciones personalizadas</li>
-    </ul>
+    <p style="color:#e8edf8;font-weight:600;font-size:1.05rem;margin-bottom:6px">Consultando datos de mercado…</p>
+    <p style="color:var(--muted);font-size:.84rem">Cruzando datos reales con inteligencia artificial</p>
+    <div class="steps">
+      <div class="step-item"><span class="dot"></span> Buscando datos de tu ciudad</div>
+      <div class="step-item"><span class="dot"></span> Analizando competencia y precios</div>
+      <div class="step-item"><span class="dot"></span> Generando informe personalizado</div>
+    </div>
   </div>
 
   <!-- RESULTS -->
   <div id="results">
+
+    <!-- Data source -->
+    <div class="data-source" id="data-source-row">
+      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <span id="data-source-text"></span>
+    </div>
+
+    <!-- Veredicto -->
+    <div class="verdict-header" id="verdict-header">
+      <div class="verdict-left">
+        <h2 id="verdict-title"></h2>
+        <p id="verdict-desc"></p>
+      </div>
+      <span class="verdict-badge" id="verdict-badge"></span>
+    </div>
+
+    <!-- Diagnóstico principal -->
+    <div class="diagnostico" id="diagnostico"></div>
+
+    <!-- KATIA análisis -->
+    <div class="katia-card">
+      <div class="katia-avatar">🤖</div>
+      <div>
+        <div class="katia-name">Análisis de KATIA · Revenue Manager IA</div>
+        <div class="katia-text" id="katia-text"></div>
+      </div>
+    </div>
+
     <!-- Ingresos potenciales -->
-    <div class="result-header">
-      <h2>📊 Análisis de tu propiedad en <span id="res-ciudad"></span></h2>
-      <p class="income-sub" style="margin-bottom:8px">Ingreso potencial mensual estimado</p>
-      <div class="income-range" id="res-income">—</div>
-      <p class="income-sub">con gestión optimizada en Airbnb</p>
+    <div class="income-block">
+      <div class="income-eyebrow">Ingreso potencial mensual estimado</div>
+      <div class="income-range" id="income-range"></div>
+      <div class="income-sub" id="income-sub"></div>
+    </div>
+
+    <!-- Pricing weekday/weekend -->
+    <div class="pricing-row">
+      <div class="price-card">
+        <div class="icon">🌙</div>
+        <div class="amount" id="price-weekday"></div>
+        <div class="label">Precio / noche · Entre semana</div>
+      </div>
+      <div class="price-card">
+        <div class="icon">🎉</div>
+        <div class="amount" id="price-weekend"></div>
+        <div class="label">Precio / noche · Fin de semana</div>
+      </div>
     </div>
 
     <!-- Stats -->
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-icon">🌙</div>
-        <div class="stat-value" id="res-precio">—</div>
-        <div class="stat-label">Precio/noche recomendado</div>
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat-val" id="stat-ocupacion"></div>
+        <div class="stat-lbl">Ocupación anual</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-icon">📅</div>
-        <div class="stat-value" id="res-ocupacion">—</div>
-        <div class="stat-label">Ocupación estimada</div>
+      <div class="stat">
+        <div class="stat-val" id="stat-pico"></div>
+        <div class="stat-lbl">Pico temporada alta</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-icon">📈</div>
-        <div class="stat-value" id="res-roi">—</div>
-        <div class="stat-label">Mejora potencial</div>
+      <div class="stat" id="stat-roi-block">
+        <div class="stat-val" id="stat-roi"></div>
+        <div class="stat-lbl">Mejora potencial</div>
       </div>
     </div>
 
-    <!-- Ahorro vs gestor -->
-    <div class="saving-box">
-      <div class="amount" id="res-ahorro">—</div>
-      <p><strong>de ahorro mensual</strong> vs un gestor tradicional que te cobra el 20%.<br>
-      Con Hola Rentia pagas solo €199/mes y te quedas con el resto.</p>
+    <!-- Ahorro -->
+    <div class="savings-card">
+      <div>
+        <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--green);margin-bottom:4px">💸 Ahorro vs gestor tradicional (20%)</div>
+        <div class="big" id="savings-month"></div>
+      </div>
+      <p><strong>al mes</strong> que dejarías de pagar en comisiones.<br>Con Hola Rentia pagas tarifa fija y te quedas con todo lo demás.<br>Eso son <strong id="savings-year"></strong> al año en tu bolsillo.</p>
     </div>
 
     <!-- Mejoras -->
-    <div class="section-card">
-      <div class="section-title">🔧 Top 3 mejoras para maximizar ingresos</div>
-      <div id="res-mejoras"></div>
+    <div class="sec">
+      <div class="sec-title">🔧 Top 3 mejoras para maximizar ingresos</div>
+      <div id="mejoras-list"></div>
     </div>
 
-    <!-- Mercado y temporada -->
-    <div class="section-card">
-      <div class="section-title">🌍 Mercado y temporada</div>
-      <p class="resumen-text" id="res-competencia" style="margin-bottom:12px"></p>
-      <div class="tag-row">
-        <span class="tag">📆 Temporada alta:</span>
-        <span class="tag highlight" id="res-temporada">—</span>
+    <!-- Mercado -->
+    <div class="sec">
+      <div class="sec-title">📊 Datos de mercado</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;justify-content:space-between;align-items:center;font-size:.88rem;padding:8px 0;border-bottom:1px solid var(--border)">
+          <span style="color:var(--muted)">Temporada alta</span>
+          <span style="color:#e8edf8;font-weight:600" id="temporada"></span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;font-size:.88rem;padding:8px 0">
+          <span style="color:var(--muted)">Nivel de competencia</span>
+          <div class="comp-row" id="competencia"></div>
+        </div>
       </div>
-    </div>
-
-    <!-- Resumen IA -->
-    <div class="section-card">
-      <div class="section-title">🤖 Análisis de KATIA</div>
-      <p class="resumen-text" id="res-resumen"></p>
     </div>
 
     <!-- CTA -->
     <div class="cta-box">
-      <h3>🚀 ¿Listo para ganar este potencial?</h3>
-      <p>Hola Rentia gestiona tu propiedad con IA desde €99/mes.<br>Sin comisiones. Sin permanencia. Resultados en 30 días.</p>
-      <a href="/#formulario" class="btn-cta">Empezar ahora — Gratis →</a>
+      <h3>🚀 Tu propiedad tiene potencial real.<br>¿Lo aprovechamos juntos?</h3>
+      <p>Hola Rentia gestiona tu Airbnb con IA desde €99/mes.<br>Sin comisiones. Sin permanencia. Primeros resultados en 30 días.</p>
+      <a href="/#formulario" class="btn-cta">Empezar ahora — Gratis</a>
       <br>
-      <button class="btn-secondary" onclick="resetAnalysis()">← Analizar otra propiedad</button>
+      <button class="btn-ghost" onclick="resetAnalysis()">← Analizar otra propiedad</button>
     </div>
   </div>
 
@@ -427,17 +418,12 @@ import Layout from '../layouts/Layout.astro';
 <script>
 async function runAnalysis() {
   const ciudad = document.getElementById('ciudad').value.trim();
-  if (!ciudad) {
-    showError('Por favor introduce la ciudad de tu propiedad.');
-    return;
-  }
+  if (!ciudad) { showError('Introduce la ciudad de tu propiedad.'); return; }
 
   const btn = document.getElementById('btn-analyze');
-  const errDiv = document.getElementById('error-msg');
-  errDiv.style.display = 'none';
+  document.getElementById('error-msg').style.display = 'none';
   btn.disabled = true;
-  btn.innerHTML = '<div style="width:20px;height:20px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin 1s linear infinite"></div> Analizando…';
-
+  btn.innerHTML = '<div style="width:18px;height:18px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin 1s linear infinite"></div> Analizando…';
   document.getElementById('form-section').style.display = 'none';
   document.getElementById('loading').style.display = 'block';
 
@@ -450,53 +436,124 @@ async function runAnalysis() {
         tipo: document.getElementById('tipo').value,
         habitaciones: document.getElementById('habitaciones').value,
         estado: document.getElementById('estado').value,
-        ingresos_actuales: document.getElementById('ingresos_actuales').value,
+        ingresos_actuales: document.getElementById('ingresos').value,
       }),
     });
-
     const data = await res.json();
     document.getElementById('loading').style.display = 'none';
-
     if (data.error) {
       document.getElementById('form-section').style.display = 'block';
       showError('Error: ' + data.error);
-      btn.disabled = false;
-      btn.innerHTML = '⚡ Analizar mi propiedad con IA';
+      resetBtn();
       return;
     }
-
-    renderResults(ciudad, data.analysis);
-
-  } catch (err) {
+    render(data.analysis);
+  } catch (e) {
     document.getElementById('loading').style.display = 'none';
     document.getElementById('form-section').style.display = 'block';
     showError('Error de conexión. Inténtalo de nuevo.');
-    btn.disabled = false;
-    btn.innerHTML = '⚡ Analizar mi propiedad con IA';
+    resetBtn();
   }
 }
 
-function renderResults(ciudad, a) {
-  document.getElementById('res-ciudad').textContent = ciudad;
-  document.getElementById('res-income').textContent = `€${Number(a.ingreso_potencial_min).toLocaleString('es')} – €${Number(a.ingreso_potencial_max).toLocaleString('es')}`;
-  document.getElementById('res-precio').textContent = `€${Number(a.precio_noche_recomendado).toLocaleString('es')}`;
-  document.getElementById('res-ocupacion').textContent = `${a.ocupacion_estimada}%`;
-  document.getElementById('res-roi').textContent = `+${a.roi_anual}%`;
-  document.getElementById('res-ahorro').textContent = `€${Number(a.ahorro_vs_gestor).toLocaleString('es')}/mes`;
-  document.getElementById('res-competencia').textContent = a.competencia || '';
-  document.getElementById('res-temporada').textContent = a.temporada_alta || '—';
-  document.getElementById('res-resumen').textContent = a.resumen || '';
+function render(a) {
+  const sym = a.currency_symbol || '€';
+  const fmt = (n) => sym + Number(n).toLocaleString('es');
 
-  const mejorasEl = document.getElementById('res-mejoras');
-  mejorasEl.innerHTML = '';
+  // Data source
+  if (a.has_real_data && a.data_source) {
+    document.getElementById('data-source-text').textContent = '✓ Datos verificados: ' + a.data_source;
+    document.getElementById('data-source-row').style.display = 'flex';
+  }
+
+  // Veredicto
+  const vEl = document.getElementById('verdict-header');
+  const badgeEl = document.getElementById('verdict-badge');
+  const v = a.veredicto || 'buen_potencial';
+  if (v === 'alto_potencial') {
+    vEl.className = 'verdict-header verdict-alto';
+    document.getElementById('verdict-title').textContent = '🔥 Alto potencial detectado';
+    document.getElementById('verdict-desc').textContent = 'Esta propiedad tiene características para estar entre el top 20% de su mercado.';
+    badgeEl.className = 'verdict-badge vb-alto';
+    badgeEl.textContent = '🔥 Alto potencial';
+  } else if (v === 'potencial_moderado') {
+    vEl.className = 'verdict-header verdict-mod';
+    document.getElementById('verdict-title').textContent = '💡 Potencial con margen de mejora';
+    document.getElementById('verdict-desc').textContent = 'Con las mejoras correctas, esta propiedad puede aumentar ingresos significativamente.';
+    badgeEl.className = 'verdict-badge vb-mod';
+    badgeEl.textContent = '💡 Potencial moderado';
+  } else {
+    vEl.className = 'verdict-header verdict-buen';
+    document.getElementById('verdict-title').textContent = '✅ Buen potencial confirmado';
+    document.getElementById('verdict-desc').textContent = 'El mercado de tu ciudad muestra demanda sólida para esta propiedad.';
+    badgeEl.className = 'verdict-badge vb-buen';
+    badgeEl.textContent = '✅ Buen potencial';
+  }
+
+  // Diagnóstico
+  document.getElementById('diagnostico').textContent = '"' + (a.diagnostico_principal || '') + '"';
+
+  // KATIA
+  document.getElementById('katia-text').textContent = a.analisis_katia || '';
+
+  // Ingresos
+  document.getElementById('income-range').textContent = fmt(a.ingreso_potencial_min) + ' – ' + fmt(a.ingreso_potencial_max);
+  document.getElementById('income-sub').textContent = 'rango mensual con gestión optimizada en ' + (a.ciudad || '');
+
+  // Pricing
+  document.getElementById('price-weekday').textContent = fmt(a.precio_noche_weekday);
+  document.getElementById('price-weekend').textContent = fmt(a.precio_noche_weekend);
+
+  // Stats
+  document.getElementById('stat-ocupacion').textContent = (a.ocupacion_anual || '—') + '%';
+  document.getElementById('stat-pico').textContent = (a.ocupacion_temporada_alta || '—') + '%';
+  if (a.roi_mejora_pct) {
+    document.getElementById('stat-roi').textContent = '+' + a.roi_mejora_pct + '%';
+  } else {
+    document.getElementById('stat-roi-block').style.display = 'none';
+  }
+
+  // Savings
+  document.getElementById('savings-month').textContent = fmt(a.ahorro_vs_gestor_tradicional) + '/mes';
+  document.getElementById('savings-year').textContent = fmt(a.ahorro_anual);
+
+  // Mejoras
+  const mejEl = document.getElementById('mejoras-list');
+  mejEl.innerHTML = '';
   (a.top3_mejoras || []).forEach((m, i) => {
-    const div = document.createElement('div');
-    div.className = 'mejora-item';
-    div.innerHTML = `<span class="mejora-num">${i + 1}</span><span>${m}</span>`;
-    mejorasEl.appendChild(div);
+    mejEl.innerHTML += `
+      <div class="mejora">
+        <span class="mnum">${i+1}</span>
+        <div class="mtext">
+          <div class="mtitle">${m.titulo || ''}</div>
+          <div class="mdesc">${m.descripcion || ''}</div>
+        </div>
+        ${m.impacto ? `<span class="mimpact">${m.impacto}</span>` : ''}
+      </div>`;
   });
 
+  // Mercado
+  document.getElementById('temporada').textContent = a.temporada_alta || '—';
+  const compEl = document.getElementById('competencia');
+  const comp = a.nivel_competencia || 'medium';
+  const compLabel = comp === 'high' ? 'Alta' : comp === 'low' ? 'Baja' : 'Media';
+  compEl.innerHTML = `<span class="comp-dot comp-${comp}"></span><span style="color:#e8edf8;font-weight:600">${compLabel}</span>`;
+
   document.getElementById('results').style.display = 'block';
+  document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function resetBtn() {
+  const btn = document.getElementById('btn-analyze');
+  btn.disabled = false;
+  btn.innerHTML = `<svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg> Analizar con datos reales`;
+}
+
+function resetAnalysis() {
+  document.getElementById('results').style.display = 'none';
+  document.getElementById('form-section').style.display = 'block';
+  resetBtn();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function showError(msg) {
@@ -504,14 +561,5 @@ function showError(msg) {
   el.textContent = msg;
   el.style.display = 'block';
 }
-
-function resetAnalysis() {
-  document.getElementById('results').style.display = 'none';
-  document.getElementById('form-section').style.display = 'block';
-  const btn = document.getElementById('btn-analyze');
-  btn.disabled = false;
-  btn.innerHTML = `<svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg> Analizar mi propiedad con IA`;
-}
 </script>
-
 </Layout>
