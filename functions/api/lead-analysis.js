@@ -130,7 +130,7 @@ export async function onRequestPost({ request, env }) {
         'Authorization': `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        from: 'Hola Rentia Analizador <leads@holarentia.com>',
+        from: 'Hola Rentia <onboarding@resend.dev>',
         to: ['hola@holarentia.com'],
         subject: `🔥 Lead analizador: ${nombre} · ${ciudad} · Score ${analysis?.score || '?'}/100`,
         html: htmlBody,

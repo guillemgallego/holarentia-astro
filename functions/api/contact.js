@@ -42,7 +42,7 @@ export async function onRequestPost({ request, env }) {
         'Authorization': `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        from: 'Hola Rentia <leads@holarentia.com>',
+        from: 'Hola Rentia <onboarding@resend.dev>',
         to: ['hola@holarentia.com'],
         subject: `🔍 Nuevo lead: ${nombre} — ${ciudad || 'Sin ciudad'}`,
         html: htmlBody,
