@@ -60,6 +60,8 @@ PROPIEDAD A ANALIZAR:
 TAREA: Analiza esta propiedad específica usando los datos de mercado y genera un informe de Revenue Intelligence. Devuelve SOLO el siguiente JSON válido sin markdown ni texto extra:
 
 {
+  "score": <número 0-100 que representa el potencial global de esta propiedad específica. 0-40 bajo, 40-60 moderado, 60-80 bueno, 80-100 excelente. Tenaz pero realista basado en ubicación+tipo+estado>,
+  "score_label": "<una palabra: 'Bajo', 'Moderado', 'Bueno', 'Excelente'>",
   "ingreso_potencial_min": <mínimo mensual en ${currency}, entero, siendo conservador>,
   "ingreso_potencial_max": <máximo mensual en ${currency}, entero, siendo optimista pero realista>,
   "precio_noche_weekday": <precio por noche entre semana recomendado en ${currency}, entero>,
@@ -70,6 +72,7 @@ TAREA: Analiza esta propiedad específica usando los datos de mercado y genera u
   "potencial_infraexplotado_pct": <porcentaje del potencial que actualmente no se está captando, entero>,
   "ahorro_vs_gestor_tradicional": <ahorro mensual en ${currency} vs gestor al 20%, entero>,
   "ahorro_anual": <ahorro anual en ${currency}, entero>,
+  "vs_mercado_pct": <diferencia porcentual estimada vs propiedad media del mercado. +15 significa 15% por encima de la media. Puede ser negativo. Entero>,
   "temporada_alta": "${market?.peak_months?.join(', ') || 'según mercado local'}",
   "nivel_competencia": "${market?.competition || 'medium'}",
   "top3_mejoras": [
