@@ -95,7 +95,7 @@ TAREA: Analiza esta propiedad específica usando los datos de mercado y genera u
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           contents: [{ role: 'user', parts: [{ text: prompt }] }],
-          generationConfig: { maxOutputTokens: 1200, temperature: 0.3 },
+          generationConfig: { maxOutputTokens: 2500, temperature: 0.3 },
         }),
       }
     );
