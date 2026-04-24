@@ -512,7 +512,7 @@ import Layout from '../layouts/Layout.astro';
 </div>
 </div><!-- /analizar-page -->
 
-<script>
+<script is:inline>
 async function runAnalysis() {
   const ciudad = document.getElementById('ciudad').value.trim();
   if (!ciudad) { showError('Introduce la ciudad de tu propiedad.'); return; }
